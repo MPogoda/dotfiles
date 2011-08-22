@@ -1,0 +1,7 @@
+set guifont=Monaco
+set guiheadroom=0
+set guioptions=aegiLt
+
+map <C-s> <plug>NERDCommenterToggle<CR>
+imap <C-s> <Esc><plug>NERDCommenterToggle<CR>i
+

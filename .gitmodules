@@ -1,0 +1,36 @@
+[submodule "awesome/vicious"]
+	path = awesome/vicious
+	url = http://git.sysphere.org/vicious
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/delmitmate"]
+	path = vim/bundle/delmitmate
+	url = git://github.com/Raimondi/delimitMate.git
+[submodule "vim/bundle/closetag"]
+	path = vim/bundle/closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/SuperTab"]
+	path = vim/bundle/SuperTab
+	url = git://github.com/vim-scripts/SuperTab.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/vim-scripts/SuperTab.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/rails"]
+	path = vim/bundle/rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/snimate"]
+	path = vim/bundle/snimate
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
