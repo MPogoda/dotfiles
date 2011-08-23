@@ -248,12 +248,11 @@ globalkeys = awful.util.table.join(
   end),
   awful.key({ "Control", modkey }, "s", function ()
     naughty.notify({
-      text = awful.util.pread('mpc --format "<span color=\"' ..
-                              beautiful.fg_focus .. '\">%track%</span>.' ..
-                              '%title%<br/>%artist%<br/>%album% (%date%)"' ..
-                              'current -q'),
-      icon = awful.util.pread('echo -n /data/music/$(dirname "$(mpc current' ..
-                              '-q --format "%file%")")"/folder.png"'),
+      text = awful.util.pread('mpc current --format "<span color=\'#' ..
+                              beautiful.fg_focus .. '\'>%track%</span>.' ..
+                              '%title%<br/>%artist%<br/>%album% (%date%)"'),
+      icon = awful.util.pread('echo -n /data/music/$(dirname "$(mpc current ' ..
+                              '--format "%file%")")"/folder.png"'),
       icon_size = 128
     })
   end)
