@@ -21,35 +21,37 @@ menu_ = awful.menu({
   items = {
     { "internets",
       {
-        { "browser",    function () log_exec("firefox")         end },
-        { "konqueror",  function () log_exec("konqueror")       end },
-        { "jabber",     function () log_exec("psi")             end },
-        { "twitter",    function () log_exec("qwit")            end },
-        { "skype",      function () log_exec("skype")           end },
-        { "torrent",    function () log_exec("qbittorrent")     end },
-        { "dc++",       function () log_exec("eiskaltdcpp-qt")  end }
+        { "browser",  function () log_exec("chromium")        end },
+        { "firefox",  function () log_exec("firefox")         end },
+        { "arora",    function () log_exec("arora")           end },
+        { "jabber",   function () log_exec("psi")             end },
+        { "twitter",  function () log_exec("qwit")            end },
+        { "skype",    function () log_exec("skype")           end },
+        { "torrent",  function () log_exec("qbittorrent")     end },
+        { "dc++",     function () log_exec("eiskaltdcpp-qt")  end }
+      }
+    },
+    { "develop",
+      {
+        { "editor",   function () log_exec("gvim")      end },
+        { "texmaker", function () log_exec("texmaker")  end },
+        { "qt ide",   function () log_exec("qtcreator") end },
+        { "ide",      function () log_exec("kdevelop")  end }
       }
     },
     { "other",
       {
-        { "editor",   function () log_exec("gvim")      end },
         { "dolphin",  function () log_exec("dolphin")   end },
         { "gwenview", function () log_exec("gwenview")  end },
-        { "picasa",   function () log_exec("picasa")    end },
         { "wxmaxima", function () log_exec("wxmaxima")  end },
         { "okular",   function () log_exec("okular")    end }
-      }
-    },
-    { "media",
-      {
-        { "ncmpc", "rxvt -name ncmpc -e ncmpc-launcher.sh" }
       }
     },
     { "games",
       {
         { "kpatience",  "kpat"      },
         { "kmines",     "kmines"    },
-        { "knetwork",   "knetwork"  }
+        { "knetwalk",   "knetwalk"  }
       }
     }
   }
@@ -314,49 +316,57 @@ awful.rules.rules = {
 		}
 	},
 	{
-		rule		    = { class     = "MPlayer" },
-		properties	=	{	floating  = true      }
+		rule		    = { class     = "MPlayer"         },
+		properties	=	{	floating  = true              }
 	},
 	{
-		rule		    = { class     = "pinentry"  },
-		properties	=	{	floating  = true  	    }
+		rule		    = { class     = "pinentry"        },
+		properties	=	{	floating  = true  	          }
 	},
 	{
-    rule		    = { class     = "Xloadimage"  },
-		properties	=	{	floating  = true	        }
+    rule		    = { class     = "Xloadimage"      },
+		properties	=	{	floating  = true	            }
 	},
   {
-    rule       = { class = "Firefox"    },
-    properties = { tag   = tags[2] }
+    rule        = { class     = "Firefox"         },
+    properties  = { tag       = tags[2]           }
   },
   {
-    rule        = { class     = "Firefox"   },
-    except      = { instance  = "Navigator" },
-    properties  = { floating  = true        }
+    rule        = { class     = "Firefox"         },
+    except      = { instance  = "Navigator"       },
+    properties  = { floating  = true              }
   },
   {
-    rule       = { class = "Konqueror"  },
-    properties = { tag   = tags[2] }
+    rule        = { class     = "Chromium"        },
+    properties  = { tag       = tags[2]           }
   },
   {
-    rule        = { class     = "psi"         },
-    except      = { instance  = "tabs"        },
-    properties  = { tag       = tags[9]  }
+    rule       = { class      = "Konqueror"       },
+    properties = { tag        = tags[2]           }
   },
   {
-    rule       = { class  = "Qwit"        },
-    properties = { tag    = tags[9]  }
+    rule        = { class     = "Arora"           },
+    properties  = { tag       = tags[2]           }
   },
   {
-    rule       = { class = "Skype"      },
-    properties = { tag   = tags[9] }
+    rule        = { class     = "psi"             },
+    except      = { instance  = "tabs"            },
+    properties  = { tag       = tags[9]           }
   },
   {
-    rule       = { class = "Qbittorrent" },
-    properties = { tag   = tags[8]  }
+    rule       = { class      = "Qwit"            },
+    properties = { tag        = tags[9]           }
   },
   {
-    rule       = { class = "Eiskaltdcpp-qt" },
+    rule       = { class      = "Skype"           },
+    properties = { tag        = tags[9]           }
+  },
+  {
+    rule       = { class      = "Qbittorrent"     },
+    properties = { tag        = tags[8]           }
+  },
+  {
+    rule       = { class      = "Eiskaltdcpp-qt"  },
     properties =
     {
       floating = false,
@@ -364,24 +374,24 @@ awful.rules.rules = {
     }
   },
   {
-    rule       = { class  = "Dolphin"     },
-    properties = { tag    = tags[4]  }
+    rule       = { class      = "Dolphin"         },
+    properties = { tag        = tags[4]           }
   },
   {
-    rule       = { class  = "Gwenview"    },
-    properties = { tag    = tags[4]  }
+    rule       = { class      = "Gwenview"        },
+    properties = { tag        = tags[4]           }
   },
   {
-    rule       = { class  = "Picasa 3"    },
-    properties = { tag    = tags[4]  }
+    rule       = { class      = "Picasa 3"        },
+    properties = { tag        = tags[4]           }
   },
   {
-    rule       = { class  = "Wxmaxima"    },
-    properties = { tag    = tags[6]  }
+    rule       = { class      = "Wxmaxima"        },
+    properties = { tag        = tags[6]           }
   },
   {
-    rule       = { class  = "Okular"      },
-    properties = { tag    = tags[5]  }
+    rule       = { class      = "Okular"          },
+    properties = { tag        = tags[5]           }
   },
   {
     rule        =
