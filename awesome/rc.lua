@@ -11,40 +11,35 @@ local confdir = awful.util.getdir("config")
 
 beautiful.init(confdir .. "/theme.lua")
 
-local function log_exec(name)
-  awful.util.spawn_with_shell(name .. ">> /home/.cache/logs/" .. name ..
-                                                            ".log 2>&1")
+local function exec(name)
+  awful.util.spawn_with_shell(name .. ">/dev/null 2>&1")
 end
-local exec = awful.util.spawn
 
 menu_ = awful.menu({
   items = {
     { "internets",
       {
-        { "browser",  function () log_exec("chromium")        end },
-        { "firefox",  function () log_exec("firefox")         end },
-        { "arora",    function () log_exec("arora")           end },
-        { "jabber",   function () log_exec("psi")             end },
-        { "twitter",  function () log_exec("qwit")            end },
-        { "skype",    function () log_exec("skype")           end },
-        { "torrent",  function () log_exec("qbittorrent")     end },
-        { "dc++",     function () log_exec("eiskaltdcpp-qt")  end }
+        { "browser",  function () exec("chromium")        end },
+        { "jabber",   function () exec("leechcraft")      end },
+        { "twitter",  function () exec("qwit")            end },
+        { "torrent",  function () exec("qbittorrent")     end },
+        { "dc++",     function () exec("eiskaltdcpp-qt")  end }
       }
     },
     { "develop",
       {
-        { "editor",   function () log_exec("gvim")      end },
-        { "texmaker", function () log_exec("texmaker")  end },
-        { "qt ide",   function () log_exec("qtcreator") end },
-        { "ide",      function () log_exec("kdevelop")  end }
+        { "editor",   function () exec("gvim")      end },
+        { "texmaker", function () exec("texmaker")  end },
+        { "qt ide",   function () exec("qtcreator") end },
+        { "ide",      function () exec("kdevelop")  end }
       }
     },
     { "other",
       {
-        { "dolphin",  function () log_exec("dolphin")   end },
-        { "gwenview", function () log_exec("gwenview")  end },
-        { "wxmaxima", function () log_exec("wxmaxima")  end },
-        { "okular",   function () log_exec("okular")    end }
+        { "dolphin",  function () exec("dolphin")   end },
+        { "gwenview", function () exec("gwenview")  end },
+        { "wxmaxima", function () exec("wxmaxima")  end },
+        { "okular",   function () exec("okular")    end }
       }
     },
     { "games",
@@ -238,13 +233,6 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey }, "Return", function ()	exec("rxvt") end),
 	awful.key({ modkey }, "s", scratch.pad.toggle ),
 
-  awful.key({ "Control", modkey }, "b", function () log_exec("firefox")   end),
-  awful.key({ "Control", modkey }, "j", function () log_exec("psi")       end),
-  awful.key({ "Control", modkey }, "e", function () exec("gvim")          end),
-  awful.key({ "Control", modkey }, "f", function () log_exec("dolphin")   end),
-  awful.key({ "Control", modkey }, "g", function () log_exec("gwenview")  end),
-  awful.key({ "Control", modkey }, "m", function () log_exec("wxmaxima")  end),
-  awful.key({ "Control", modkey }, "o", function () log_exec("okular")    end),
   awful.key({ "Control", modkey }, "n", function ()
     exec("rxvt -name ncmpc -e ncmpc-launcher.sh")
   end),
@@ -257,7 +245,14 @@ globalkeys = awful.util.table.join(
                               '--format "%file%")")"/folder.png"'),
       icon_size = 128
     })
-  end)
+  end),
+  awful.key({ "Control", modkey }, "b", function () exec("chromium")    end),
+  awful.key({ "Control", modkey }, "j", function () exec("leechcraft")  end),
+  awful.key({ "Control", modkey }, "e", function () exec("gvim")            end),
+  awful.key({ "Control", modkey }, "f", function () exec("dolphin")     end),
+  awful.key({ "Control", modkey }, "g", function () exec("gwenview")    end),
+  awful.key({ "Control", modkey }, "m", function () exec("wxmaxima")    end),
+  awful.key({ "Control", modkey }, "o", function () exec("okular")      end)
 )
 
 clientkeys = awful.util.table.join(
