@@ -9,6 +9,21 @@ require("scratch")
 
 local confdir = awful.util.getdir("config")
 
+do
+    local in_error = false
+    awesome.add_signal("debug::error", function (err)
+        -- Make sure we don't go into an endless error loop
+        if in_error then return end
+        in_error = true
+
+        naughty.notify({ preset = naughty.config.presets.critical,
+                         title = "Oops, an error happened!",
+                         text = err })
+        in_error = false
+    end)
+end
+
+
 beautiful.init(confdir .. "/theme.lua")
 
 local function exec(name)
