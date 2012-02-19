@@ -123,7 +123,7 @@ vicious.register(memwidget, vicious.widgets.mem, "memory: $1% ($2M)", 5)
 
 netwidget		  = widget({ type = "textbox" })
 vicious.register(netwidget, vicious.widgets.net,
-                              "net: ${eth0 down_kb} (${eth0 rx_mb}M)", 3)
+                              "net: ${wlan0 down_kb} (${wlan0 rx_mb}M)", 3)
 
 datewidget		  = widget({ type = "textbox" })
 vicious.register(datewidget, vicious.widgets.date,
