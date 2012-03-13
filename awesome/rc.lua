@@ -34,11 +34,10 @@ menu_ = awful.menu({
   items = {
     { "internets",
       {
-        { "browser",  function () exec("chromium")        end },
-        { "jabber",   function () exec("leechcraft")      end },
-        { "twitter",  function () exec("qwit")            end },
-        { "torrent",  function () exec("qbittorrent")     end },
-        { "dc++",     function () exec("eiskaltdcpp-qt")  end }
+        { "browser",  function () exec("chromium")    end },
+        { "jabber",   function () exec("leechcraft")  end },
+        { "torrent",  function () exec("qbittorrent") end },
+        { "wicd",     function () exec("wicd-gtk")    end }
       }
     },
     { "develop",
@@ -46,7 +45,8 @@ menu_ = awful.menu({
         { "editor",   function () exec("gvim")      end },
         { "texmaker", function () exec("texmaker")  end },
         { "qt ide",   function () exec("qtcreator") end },
-        { "ide",      function () exec("kdevelop")  end }
+        { "ide",      function () exec("kdevelop")  end },
+        { "java ide", function () exec("idea")      end }
       }
     },
     { "other",
@@ -140,6 +140,9 @@ volwidget:buttons(awful.util.table.join(
 
 batwidget	    = widget({ type = "textbox" })
 vicious.register(batwidget, vicious.widgets.bat, "battery: $2", 61, "BAT1")
+batwidget:buttons(awful.util.table.join(
+  awful.button({ }, 1, function () exec(sterminal .. "htop") end)
+))
 
 systray = widget({ type = "systray" })
 
@@ -236,7 +239,7 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey }, "l",      function () awful.tag.incmwfact(0.05)     end),
 	awful.key({ modkey }, "h",      function () awful.tag.incmwfact(-0.05)    end),
 	awful.key({ modkey }, "space",  function () awful.layout.inc(layouts, 1)  end),
-	awful.key({ modkey }, "r",      function () promptbox:run()          end),
+	awful.key({ modkey }, "r",      function () promptbox:run()               end),
 	awful.key({ modkey }, "F3",     function ()
     wibox.visible = not wibox.visible
   end),
@@ -263,10 +266,13 @@ globalkeys = awful.util.table.join(
   end),
   awful.key({ "Control", modkey }, "b", function () exec("chromium")    end),
   awful.key({ "Control", modkey }, "j", function () exec("leechcraft")  end),
-  awful.key({ "Control", modkey }, "e", function () exec("gvim")            end),
+  awful.key({ "Control", modkey }, "e", function () exec("gvim")        end),
   awful.key({ "Control", modkey }, "f", function () exec("dolphin")     end),
   awful.key({ "Control", modkey }, "g", function () exec("gwenview")    end),
   awful.key({ "Control", modkey }, "m", function () exec("wxmaxima")    end),
+  awful.key({ "Control", modkey }, "z", function ()
+    exec(sterminal .. "mc")
+  end),
   awful.key({ "Control", modkey }, "o", function () exec("okular")      end)
 )
 
@@ -373,6 +379,10 @@ awful.rules.rules = {
   },
   {
     rule       = { class      = "Qbittorrent"     },
+    properties = { tag        = tags[8]           }
+  },
+  {
+    rule       = { class      = "Leechcraft"      },
     properties = { tag        = tags[8]           }
   },
   {

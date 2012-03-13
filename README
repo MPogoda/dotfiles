@@ -1,4 +1,0 @@
-hi there.
-here u can find my dotfiles.
-my awesome&vim configs r using other people' repos, so if u wanna use my configs, u have to type `git submodule init && git submodule update` to initialize this repos.
-to update these repos simply type `git submodule foreach git pull`

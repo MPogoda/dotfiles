@@ -32,11 +32,24 @@ zmodload -a zsh/zprof zprof
 zmodload -ap zsh/mapfile mapfile
 zmodload -i zsh/complist
 
+# changing directories opts
+setopt cdable_vars
+# completing opts
+setopt always_to_end
+setopt auto_list
+setopt auto_menu
+setopt complete_in_word
 unsetopt menu_complete
-setopt append_history notify auto_menu complete_in_word always_to_end
-setopt hist_ignore_space notify correct cdablevars auto_list correct_all
-setopt auto_cd recexact long_list_jobs no_beep hist_ignore_dups noclobber
-setopt extended_glob share_history
+setopt rec_exact
+# history opts
+setopt hist_ignore_dups
+setopt hist_ignore_space
+# io opts
+setopt noclobber
+setopt correct
+setopt correct_all
+# job control opts
+setopt long_list_jobs
 
 typeset -U path cdpath fpath manpath
 
@@ -100,6 +113,6 @@ alias reboot="sudo reboot"
 alias man='nocorrect man'
 alias mv='nocorrect mv'
 alias mkdir='nocorrect mkdir'
+alias sudo='nocorrect sudo'
 
-export PAGER=most
 export LC_CTYPE=$LANG
