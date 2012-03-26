@@ -24,6 +24,6 @@ theme.layout_floating       = theme.confdir .. "/icons/floating.png"
 theme.taglist_squares_sel   = theme.confdir .. "/icons/squarefz.png"
 theme.taglist_squares_unsel = theme.confdir .. "/icons/squarez.png"
 
-theme.wallpaper_cmd         = { "awsetbg " .. theme.confdir .. "/wallpapers/TronLightCycle1.png" }
+theme.wallpaper_cmd         = { "awsetbg " .. theme.confdir .. "/wallpapers/wallpaper" }
 
 return theme
