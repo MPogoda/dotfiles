@@ -30,7 +30,7 @@ local function exec(name)
   awful.util.spawn_with_shell(name .. ">/dev/null 2>&1")
 end
 
-sterminal = "rxvt -name urxvt-am -e "
+sterminal = "urxvtc -name urxvt-am -e "
 
 volume        = { }
 volume.mute   = "amixer sset Master toggle -q"
@@ -213,14 +213,14 @@ globalkeys = awful.util.table.join(
   end),
 
   awful.key({ "Control" }, "F11", function ()
-    scratch.drop("rxvt", "bottom", nil, nil, 0.30)
+    scratch.drop("urxvtc", "bottom", nil, nil, 0.30)
   end),
 
-  awful.key({ modkey }, "Return", function ()  exec("rxvt") end),
+  awful.key({ modkey }, "Return", function ()  exec("urxvtc") end),
   awful.key({ modkey }, "s", scratch.pad.toggle ),
 
   awful.key({ "Control", modkey }, "n", function ()
-    exec("rxvt -name ncmpc -e ncmpc")
+    exec("urxvtc -name ncmpc -e ncmpc")
   end),
   awful.key({ "Control", modkey }, "s", function ()
     naughty.notify({
