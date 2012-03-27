@@ -295,40 +295,6 @@ globalkeys = awful.util.table.join(
   end),
   awful.key({ "Mod1", modkey }, "0", function ()
     exec(volume.lvl4)
-  end),
-
-  --some netbooks fn-keys
-  --<down>
-  awful.key({ }, "#101", function ()
-    exec("backlight down")
-  end),
-  --<up>
-  awful.key({ }, "#212", function ()
-    exec("backlight up")
-  end),
-  --<left>
-  awful.key({ }, "#174", function ()
-    exec(volume.down)
-  end),
-  --<right>
-  awful.key({ }, "#176", function ()
-    exec(volume.up)
-  end),
-  --<F6>
-  awful.key({ }, "#160", function ()
-    exec(volume.mute)
-  end),
-  --<F9>
-  awful.key({ }, "#243", function ()
-    exec("wicd-gtk")
-  end),
-  --<escape>
-  awful.key({ }, "#223", function ()
-    exec("sudo pm-hibernate")
-  end),
-  --<F2>
-  awful.key({ }, "#241", function ()
-    exec(sterminal .. "htop")
   end)
 )
 
