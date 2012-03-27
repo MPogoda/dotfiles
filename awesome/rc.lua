@@ -244,36 +244,36 @@ globalkeys = awful.util.table.join(
   awful.key({ "Control", modkey }, "o", function () exec("okular")      end),
 
   --volume control hotkeys
-  awful.key({ "Mod1", modkey }, "6", function ()
+  awful.key({ altkey, modkey }, "6", function ()
     exec(volume.lvl0)
   end),
-  awful.key({ "Mod1", modkey }, "7", function ()
+  awful.key({ altkey, modkey }, "7", function ()
     exec(volume.lvl1)
   end),
-  awful.key({ "Mod1", modkey }, "8", function ()
+  awful.key({ altkey, modkey }, "8", function ()
     exec(volume.lvl2)
   end),
-  awful.key({ "Mod1", modkey }, "9", function ()
+  awful.key({ altkey, modkey }, "9", function ()
     exec(volume.lvl3)
   end),
-  awful.key({ "Mod1", modkey }, "0", function ()
+  awful.key({ altkey, modkey }, "0", function ()
     exec(volume.lvl4)
   end),
 
   --backlight hotkeys
-  awful.key({ "Mod1",    modkey }, "1", function ()
+  awful.key({ altkey,    modkey }, "1", function ()
     exec("backlight A")
   end),
-  awful.key({ "Mod1",    modkey }, "2", function ()
+  awful.key({ altkey,    modkey }, "2", function ()
     exec("backlight B")
   end),
-  awful.key({ "Mod1",    modkey }, "3", function ()
+  awful.key({ altkey,    modkey }, "3", function ()
     exec("backlight C")
   end),
-  awful.key({ "Mod1",    modkey }, "4", function ()
+  awful.key({ altkey,    modkey }, "4", function ()
     exec("backlight D")
   end),
-  awful.key({ "Mod1",    modkey }, "5", function ()
+  awful.key({ altkey,    modkey }, "5", function ()
     exec("backlight off")
   end),
   --some netbooks fn-keys
