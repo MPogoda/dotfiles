@@ -258,6 +258,23 @@ globalkeys = awful.util.table.join(
   end),
   awful.key({ "Mod1", modkey }, "0", function ()
     exec(volume.lvl4)
+  end),
+
+  --backlight hotkeys
+  awful.key({ "Mod1",    modkey }, "1", function ()
+    exec("backlight A")
+  end),
+  awful.key({ "Mod1",    modkey }, "2", function ()
+    exec("backlight B")
+  end),
+  awful.key({ "Mod1",    modkey }, "3", function ()
+    exec("backlight C")
+  end),
+  awful.key({ "Mod1",    modkey }, "4", function ()
+    exec("backlight D")
+  end),
+  awful.key({ "Mod1",    modkey }, "5", function ()
+    exec("backlight off")
   end)
 )
 
