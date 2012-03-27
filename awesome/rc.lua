@@ -359,7 +359,7 @@ awful.rules.rules = {
     {
       focus             = true,
       keys              = clientkeys,
-      button            = clientbuttons,
+      buttons            = clientbuttons,
       border_width      = beautiful.border_width,
       border_color      = beautiful.border_normal,
       size_hints_honor  = false,
