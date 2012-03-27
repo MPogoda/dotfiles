@@ -73,6 +73,11 @@ volume        = { }
 volume.mute   = "amixer sset Master toggle -q"
 volume.up     = "amixer sset Master 1%+ -q"
 volume.down   = "amixer sset Master 1%- -q"
+volume.lvl0   = "amixer sset Master 0db -q"
+volume.lvl1   = "amixer sset Master 16db -q"
+volume.lvl2   = "amixer sset Master 32db -q"
+volume.lvl3   = "amixer sset Master 48db -q"
+volume.lvl4   = "amixer sset Master 64db -q"
 volume.mixer  = sterminal .. "alsamixer"
 
 modkey = "Mod4"
@@ -290,6 +295,23 @@ globalkeys = awful.util.table.join(
   end),
   awful.key({ "Mod1",    modkey }, "5", function ()
     exec("backlight off")
+  end),
+
+  --volume control hotkeys
+  awful.key({ "Mod1", modkey }, "6", function ()
+    exec(volume.lvl0)
+  end),
+  awful.key({ "Mod1", modkey }, "7", function ()
+    exec(volume.lvl1)
+  end),
+  awful.key({ "Mod1", modkey }, "8", function ()
+    exec(volume.lvl2)
+  end),
+  awful.key({ "Mod1", modkey }, "9", function ()
+    exec(volume.lvl3)
+  end),
+  awful.key({ "Mod1", modkey }, "0", function ()
+    exec(volume.lvl4)
   end)
 )
 
