@@ -5,38 +5,37 @@ Xft.hinting   : 1
 Xft.antialias : 1
 Xft.rgba      : rgb
 
-ncmpc.background  :  #70a0b0
-ncmpc.font        :  xft:DejaVu Sans Mono:pixelsize=14
-ncmpc.foreground  :  #202020
-ncmpc.saveLines   :  0
-ncmpc.scrollBar   :  false
-ncmpc.visualBell  :  false
+ncmpc.background : #70a0b0
+ncmpc.font       : xft:DejaVu Sans Mono:pixelsize=14
+ncmpc.foreground : #202020
+ncmpc.saveLines  : 0
+ncmpc.scrollBar  : false
+ncmpc.visualBell : false
 
-urxvt-am.background		    :	#101010
-urxvt-am.font			        :	xft:Terminus:pixelsize=14
-urxvt-am.foreground		    :	#dcdccc
-urxvt-am.saveLines		    :	0
-urxvt-am.scrollBar		    :	false
-urxvt-am.secondaryScreen	:	false
-urxvt-am.visualBell		    :	false
+urxvt-am.background      : #101010
+urxvt-am.font            : xft:Terminus:pixelsize=14
+urxvt-am.foreground      : #dcdccc
+urxvt-am.saveLines       : 0
+urxvt-am.scrollBar       : false
+urxvt-am.secondaryScreen : false
+urxvt-am.visualBell      : false
 
-urxvt.background	      :	#101010
-urxvt.borderLess        : true
-urxvt.cutchars          : '"'()*<>[]{|}
-urxvt.externalBorder    : 0
-urxvt.font		          :	xft:Terminus:pixelsize=14
-urxvt.foreground	      :	#dcdccc
-urxvt.internalBorder    : 0
-urxvt.jumpScroll	      :	true
-urxvt.loginShell        : true
-urxvt.pastableTabs	    :	true
-urxvt.saveLines		      :	65535
-urxvt.scrollBar		      :	false
-urxvt.scrollTtyOutput	  :	true
-urxvt.scrollWithBuffer	:	true
-urxvt.secondaryScreen	  :	false
-urxvt.skipScroll	      :	true
-urxvt.urlLauncher	      :	firefox
+urxvt.background       : #101010
+urxvt.borderLess       : true
+urxvt.cutchars         : '"'()*<>[]{|}
+urxvt.externalBorder   : 0
+urxvt.font             : xft:Terminus:pixelsize=14
+urxvt.foreground       : #dcdccc
+urxvt.internalBorder   : 0
+urxvt.jumpScroll       : true
+urxvt.loginShell       : true
+urxvt.pastableTabs     : true
+urxvt.saveLines        : 65535
+urxvt.scrollBar        : false
+urxvt.scrollTtyOutput  : true
+urxvt.scrollWithBuffer : true
+urxvt.secondaryScreen  : false
+urxvt.skipScroll       : true
 
-Xcursor.theme	:	Vanilla-DMZ
-Xcursor.size	:	24
+Xcursor.theme : Vanilla-DMZ
+Xcursor.size  : 24
