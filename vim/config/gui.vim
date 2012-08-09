@@ -3,6 +3,6 @@ set guioptions-=r           " disable right scrollbar
 set guioptions-=L           " disable left scrollbar
 set guioptions-=T
 set guioptions-=m
-set guifont=Monaco
+set guifont="Liberation Mono"
 "set guiheadroom=0
 set background=dark
