@@ -13,6 +13,7 @@ alias reboot='sudo shutdown -r now'
 alias man='nocorrect man'
 alias mv='nocorrect mv'
 alias mkdir='nocorrect mkdir'
+alias sudo='nocorrect sudo'
 
 
 alias ls='ls --color=auto -b -CF'
