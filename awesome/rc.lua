@@ -4,7 +4,7 @@ require("awful.rules")
 require("beautiful")
 require("naughty")
 
-require("vicious")
+vicious = require("vicious")
 require("scratch")
 
 local confdir = awful.util.getdir("config")
@@ -73,9 +73,9 @@ separator.text  = '    '
 backlight       = widget({ type = "textbox" })
 backlight.text  = ' . '
 backlight:buttons(awful.util.table.join(
-  awful.button({ }, 1, function () exec('backlight toggle') end),
-  awful.button({ }, 4, function () exec('backlight up')     end),
-  awful.button({ }, 5, function () exec('backlight down')   end)
+  awful.button({ }, 1, function () exec('sudo backlight toggle') end),
+  awful.button({ }, 4, function () exec('sudo backlight up')     end),
+  awful.button({ }, 5, function () exec('sudo backlight down')   end)
 ))
 
 cpuwidget      = widget({ type = "textbox" })
@@ -90,9 +90,22 @@ memwidget:buttons(awful.util.table.join(
 ))
 vicious.register(memwidget, vicious.widgets.mem, "memory: $1% ($2M)", 5)
 
+netdevice      = "wlan"
 netwidget      = widget({ type = "textbox" })
 vicious.register(netwidget, vicious.widgets.net,
                               "net: ${wlan0 down_kb} (${wlan0 rx_mb}M)", 3)
+netwidget:buttons(awful.util.table.join(
+  awful.button({ }, 1, function ()
+    if netdevice == "eth" then
+      netdevice = "wlan"
+    else
+      netdevice = "eth"
+    end
+    vicious.register(netwidget, vicious.widgets.net,
+                              "net: ${" .. netdevice .. "0 down_kb} (${" .. netdevice .. "0 rx_mb}M)", 3)
+  end)
+))
+
 
 datewidget      = widget({ type = "textbox" })
 vicious.register(datewidget, vicious.widgets.date,
@@ -110,7 +123,7 @@ volwidget:buttons(awful.util.table.join(
 batwidget      = widget({ type = "textbox" })
 vicious.register(batwidget, vicious.widgets.bat, "battery: $2", 61, "BAT1")
 batwidget:buttons(awful.util.table.join(
-  awful.button({ }, 1, function () exec(sterminal .. "htop") end)
+  awful.button({ }, 1, function () exec("sudo hibernate-ram") end)
 ))
 
 systray = widget({ type = "systray" })
@@ -219,24 +232,11 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey }, "Return", function ()  exec("urxvtc") end),
   awful.key({ modkey }, "s", scratch.pad.toggle ),
 
-  awful.key({ "Control", modkey }, "n", function ()
-    exec("urxvtc -name ncmpc -e ncmpc")
-  end),
-  awful.key({ "Control", modkey }, "s", function ()
-    naughty.notify({
-      text = awful.util.pread('mpc current --format "<span color=\'#' ..
-                              beautiful.fg_focus .. '\'>%track%</span>.' ..
-                              '%title%<br/>%artist%<br/>%album% (%date%)"'),
-      icon = awful.util.pread('echo -n /data/music/$(dirname "$(mpc current ' ..
-                              '--format "%file%")")"/folder.png"'),
-      icon_size = 128
-    })
-  end),
   awful.key({ "Control", modkey }, "b", function () exec("chromium")    end),
   awful.key({ "Control", modkey }, "j", function () exec("leechcraft")  end),
+  awful.key({ "Control", modkey }, "h", function () exec("skype")       end),
   awful.key({ "Control", modkey }, "e", function () exec("gvim")        end),
   awful.key({ "Control", modkey }, "f", function () exec("dolphin")     end),
-  awful.key({ "Control", modkey }, "g", function () exec("gwenview")    end),
   awful.key({ "Control", modkey }, "m", function () exec("wxmaxima")    end),
   awful.key({ "Control", modkey }, "z", function ()
     exec(sterminal .. "mc")
@@ -262,28 +262,28 @@ globalkeys = awful.util.table.join(
 
   --backlight hotkeys
   awful.key({ altkey,    modkey }, "1", function ()
-    exec("backlight A")
+    exec("sudo backlight A")
   end),
   awful.key({ altkey,    modkey }, "2", function ()
-    exec("backlight B")
+    exec("sudo backlight B")
   end),
   awful.key({ altkey,    modkey }, "3", function ()
-    exec("backlight C")
+    exec("sudo backlight C")
   end),
   awful.key({ altkey,    modkey }, "4", function ()
-    exec("backlight D")
+    exec("sudo backlight D")
   end),
   awful.key({ altkey,    modkey }, "5", function ()
-    exec("backlight off")
+    exec("sudo backlight off")
   end),
   --some netbooks fn-keys
   --<down>
   awful.key({ }, "#101", function ()
-    exec("backlight down")
+    exec("sudo backlight down")
   end),
   --<up>
   awful.key({ }, "#212", function ()
-    exec("backlight up")
+    exec("sudo backlight up")
   end),
   --<left>
   awful.key({ }, "#174", function ()
@@ -301,9 +301,9 @@ globalkeys = awful.util.table.join(
   awful.key({ }, "#243", function ()
     exec("wicd-gtk")
   end),
-  --<escape>
+  --<ESC>
   awful.key({ }, "#223", function ()
-    exec("sudo pm-hibernate")
+    exec("sudo hibernate-ram")
   end),
   --<F2>
   awful.key({ }, "#241", function ()
@@ -367,7 +367,7 @@ awful.rules.rules = {
     }
   },
   {
-    rule       = { class    = "MPlayer" },
+    rule       = { class    = "mplayer2" },
     properties = { floating = true      }
   },
   {
