@@ -69,7 +69,7 @@
 	url = git://github.com/godlygeek/tabular.git
 [submodule "vim/bundle/UltiSnips"]
 	path = vim/bundle/UltiSnips
-	url = git://github.com/rygwdn/ultisnips.git
+	url = git://github.com/SirVer/ultisnips.git
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
