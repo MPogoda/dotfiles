@@ -31,8 +31,8 @@ zstyle ':completion:*:history-words'   menu yes
 zstyle ':completion:*:history-words'   remove-all-dups yes
 zstyle ':completion:*:history-words'   stop yes
 
-# match uppercase from lowercase
-zstyle ':completion:*'                 matcher-list 'm:{a-z}={A-Z}'
+# match uppercase from lowercase, partial-word and then substring w
+zstyle ':completion:*'                 matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # separate matches into groups
 zstyle ':completion:*:matches'         group 'yes'

@@ -1,6 +1,6 @@
 source /etc/zsh/zprofile
 
-for sh in ${HOME}/.zsh/*.sh
+for sh in ${HOME}/.zsh/*.zsh
 do
   source $sh
 done
