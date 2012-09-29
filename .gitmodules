@@ -58,9 +58,6 @@
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = git://github.com/vim-scripts/matchit.zip.git
-[submodule "vim/bundle/moria"]
-	path = vim/bundle/moria
-	url = git://github.com/vim-scripts/moria.git
 [submodule "vim/bundle/screen"]
 	path = vim/bundle/screen
 	url = git://github.com/ervandew/screen.git
@@ -79,3 +76,6 @@
 [submodule "vim/bundle/vim-narrow"]
 	path = vim/bundle/vim-narrow
 	url = git://github.com/kana/vim-narrow.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
