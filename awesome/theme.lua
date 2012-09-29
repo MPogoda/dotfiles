@@ -1,8 +1,8 @@
 theme                       = { }
 theme.confdir               = awful.util.getdir("config")
 
-theme.bg_focus              = "#dddddd"
-theme.bg_normal             = "#70a0b0" --ffcc5f
+theme.bg_normal             = "#002b36"
+theme.bg_focus              = "#586e75"
 theme.bg_urgent             = theme.bg_focus
 
 theme.border_focus          = theme.bg_focus
@@ -10,11 +10,11 @@ theme.border_marked         = theme.bg_focus
 theme.border_normal         = theme.bg_normal
 theme.border_width          = 1
 
-theme.fg_focus              = "#000000"
-theme.fg_normal             = "#101010"
+theme.fg_normal             = "#839496"
+theme.fg_focus              = "#93a1a1"
 theme.fg_urgent             = theme.fg_focus
 
-theme.font                  = "URW Gothic L 10"
+theme.font                  = "Liberation Sans 10"
 
 theme.layout_fullscreen     = theme.confdir .. "/icons/fullscreen.png"
 theme.layout_tile           = theme.confdir .. "/icons/tile.png"
