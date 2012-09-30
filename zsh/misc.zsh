@@ -6,6 +6,8 @@ zmodload -i zsh/complist
 
 # colors
 eval `dircolors -b`
+[ -f /etc/DIR_COLORS ] && eval $( dircolors -b /etc/DIR_COLORS )
+[ -f ~/.dircolors ] && eval $( dircolors -b ~/.dircolors )
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
