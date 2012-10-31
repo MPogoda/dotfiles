@@ -31,9 +31,6 @@
 [submodule "vim/bundle/haskellmode-vim"]
 	path = vim/bundle/haskellmode-vim
 	url = git://github.com/lukerandall/haskellmode-vim.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = git://github.com/jcf/vim-latex.git
@@ -82,3 +79,6 @@
 [submodule "vim/bundle/powerline"]
 	path = vim/bundle/powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/bundle/clang_complete"]
+	path = vim/bundle/clang_complete
+	url = git://github.com/Rip-Rip/clang_complete.git
