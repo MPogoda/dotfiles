@@ -70,9 +70,6 @@
 [submodule "vim/bundle/vim-narrow"]
 	path = vim/bundle/vim-narrow
 	url = git://github.com/kana/vim-narrow.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = git://github.com/seebi/dircolors-solarized.git
