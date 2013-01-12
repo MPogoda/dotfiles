@@ -1,6 +1,3 @@
-[submodule "awesome/vicious"]
-	path = awesome/vicious
-	url = http://git.sysphere.org/vicious
 [submodule "vim/bundle/delmitmate"]
 	path = vim/bundle/delmitmate
 	url = git://github.com/Raimondi/delimitMate.git
