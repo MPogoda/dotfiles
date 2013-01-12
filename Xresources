@@ -1,20 +1,22 @@
-*background:    #101010
-*foreground:    #a1a1a1
-*fading:        40
-*fadeColor:     #202020
-*cursorColor:   #bababa
+*.background  : darkgray
+*.fading      : 40
+*.fadeColor   : #202020
+*.cursorColor : #ee9a00
+*.font        : -*-terminus-medium-r-*-*-16-*-*-*-*-*-*
+*.boldFont    : -*-terminus-bold-r-*-*-16-*-*-*-*-*-*
 
-Xft.autohint:   0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintslight
-Xft.hinting:    1
-Xft.antialias:  1
-Xft.rgba:       rgb
+Xft.autohint  : 0
+Xft.lcdfilter : lcddefault
+Xft.hintstyle : hintslight
+Xft.hinting   : 1
+Xft.antialias : 1
+Xft.rgba      : rgb
 
+URxvt*.background       : #101010
+URxvt*.foreground       : #a1a1a1
 URxvt*.borderLess       : true
 URxvt*.cutchars         : '"'()*<>[]{|}
 URxvt*.externalBorder   : 0
-URxvt*.font             : xft:Terminus:pixelsize=14
 URxvt*.internalBorder   : 0
 URxvt*.jumpScroll       : true
 URxvt*.loginShell       : true
@@ -27,13 +29,15 @@ URxvt*.secondaryScreen  : false
 URxvt*.skipScroll       : true
 URxvt*.scrollTtyKeypress: false
 URxvt*.perl-ext-common  : default,matcher
+URxvt*.urlLauncher      : /usr/bin/firefox
+URxvt*.matcher.button   : 1
+URxvt*.keysym.M-u       : perl:url-select:select_next
 
-ncmpc.font:       xft:DejaVu Sans Mono:pixelsize=14
-ncmpc.saveLines:  0
-ncmpc.scrollBar:  false
-!ncmpc.visualBell: false
+ncmpc.font      : xft:Ubuntu Mono:pixelsize=16
+ncmpc.saveLines : 0
+ncmpc.scrollBar : false
 
-urxvt-am.saveLines       : 0
+urxvt-am.saveLines : 0
 
 Xcursor.theme : Vanilla-DMZ
 Xcursor.size  : 24
