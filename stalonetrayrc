@@ -1,0 +1,9 @@
+dockapp_mode simple
+geometry 168x2+1512+1032
+icon_size 16
+max_geometry 168x2
+parent_bg true
+skip_taskbar true
+sticky true
+window_layer bottom
+window_strut bottom
