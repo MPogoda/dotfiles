@@ -1,0 +1,48 @@
+Config { lowerOnStart = True
+       , hideOnStart  = False
+       , persistent   = False
+       , font         = "-*-terminus-medium-r-normal--14-*"
+       , border       = NoBorder
+       , borderColor  = "#ff0000"
+       , bgColor      = "#080808"
+       , fgColor      = "#fcdcdc"
+       , position     = BottomW L 90
+       , commands     = [ Run Network "eth0"
+                            [ "-L", "0"
+                            , "-H", "32"
+                            , "--normal", "#429942"
+                            , "--high"  , "#A36666"
+                            , "--template", "net: <rx>KB/<tx>KB"
+                            ]
+                            10
+                        , Run Cpu
+                            [ "-L", "3"
+                            , "-H", "50"
+                            , "--normal", "green"
+                            , "--high"  , "red"
+                            , "--template", "cpu: <total>%"
+                            ]
+                            10
+                        , Run Memory
+                            [ "--template", "mem: <usedratio>%"]
+                            10
+                        , Run Volume "default" "Master"
+                            [ "--template", "vol: <volume>% <status>"
+                            ]
+                            5
+                        , Run Date "/%H:%M" "date" 10
+                        , Run MPD
+                            [ "--template", "<state>: <artist> - <title>"
+                            ]
+                            10
+                        , Run Weather "UKKK"
+                            [ "--template"
+                            , "<tempC>^<skyCondition>"
+                            ] 600
+                        , Run Kbd []
+                        , Run StdinReader
+                        ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader%}{%UKKK% <fc=#ee9a00>|</fc> %mpd% <fc=#ee9a00>|</fc> %default:Master% <fc=#ee9a00>|</fc> %cpu% <fc=#ee9a00>|</fc> %memory% <fc=#ee9a00>|</fc> %eth0% <fc=#ee9a00>%date% |</fc> %kbd% "
+       }
