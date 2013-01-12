@@ -32,7 +32,7 @@ Config { lowerOnStart = True
                             5
                         , Run Date "/%H:%M" "date" 10
                         , Run MPD
-                            [ "--template", "<state>: <artist> - <title>"
+                            [ "--template", "<statei>: <artist> - <title>"
                             ]
                             10
                         , Run Weather "UKKK"
