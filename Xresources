@@ -14,7 +14,7 @@ Xft.rgba      : rgb
 
 URxvt*.background       : #101010
 URxvt*.foreground       : #a1a1a1
-URxvt*.borderLess       : true
+URxvt*.borderLess       : false
 URxvt*.cutchars         : '"'()*<>[]{|}
 URxvt*.externalBorder   : 0
 URxvt*.internalBorder   : 0
@@ -29,13 +29,9 @@ URxvt*.secondaryScreen  : false
 URxvt*.skipScroll       : true
 URxvt*.scrollTtyKeypress: false
 URxvt*.perl-ext-common  : default,matcher
-URxvt*.urlLauncher      : /usr/bin/firefox
+URxvt*.urlLauncher      : /usr/bin/xdg-open
 URxvt*.matcher.button   : 1
 URxvt*.keysym.M-u       : perl:url-select:select_next
-
-ncmpc.font      : xft:Ubuntu Mono:pixelsize=16
-ncmpc.saveLines : 0
-ncmpc.scrollBar : false
 
 urxvt-am.saveLines : 0
 
