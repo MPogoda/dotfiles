@@ -31,18 +31,10 @@ Config { lowerOnStart = True
                             ]
                             5
                         , Run Date "/%H:%M" "date" 10
-                        , Run MPD
-                            [ "--template", "<statei>: <artist> - <title>"
-                            ]
-                            10
-                        , Run Weather "UKKK"
-                            [ "--template"
-                            , "<tempC>^<skyCondition>"
-                            ] 600
                         , Run Kbd []
                         , Run StdinReader
                         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%UKKK% <fc=#ee9a00>|</fc> %mpd% <fc=#ee9a00>|</fc> %default:Master% <fc=#ee9a00>|</fc> %cpu% <fc=#ee9a00>|</fc> %memory% <fc=#ee9a00>|</fc> %eth0% <fc=#ee9a00>%date% |</fc> %kbd% "
+       , template = "%StdinReader%}{%default:Master% <fc=#ee9a00>|</fc> %cpu% <fc=#ee9a00>|</fc> %memory% <fc=#ee9a00>|</fc> %eth0% <fc=#ee9a00>%date% |</fc> %kbd% "
        }
