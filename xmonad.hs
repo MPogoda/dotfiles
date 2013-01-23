@@ -10,6 +10,10 @@ import XMonad.Hooks.EwmhDesktops    (ewmh, fullscreenEventHook)
 import XMonad.Hooks.ManageDocks     (docksEventHook, ToggleStruts(..))
 -- honor size hints
 import XMonad.Layout.LayoutHints    (layoutHintsToCenter, hintsEventHook)
+-- for auto-toggling fullscreen on fullscreen windows (like flash)
+import XMonad.Hooks.ManageHelpers   (isFullscreen, doFullFloat, isDialog)
+-- urgency stuff
+import XMonad.Hooks.UrgencyHook     (withUrgencyHook, NoUrgencyHook(..))
 -- auto-borders
 import XMonad.Layout.NoBorders      (smartBorders)
 -- enable resizing for non-master windows
@@ -26,7 +30,7 @@ main :: IO ()
 main = do
   xmonad =<< statusBar "xmobar" myPP toggleStrutsKey defaults
   where
-    defaults = ewmh defaultConfig
+    defaults = ewmh $ withUrgencyHook NoUrgencyHook $ defaultConfig
               { terminal           = myTerminal
               , borderWidth        = 5
               , modMask            = mod4Mask
@@ -79,9 +83,11 @@ myLayout = Full ||| tiled ||| Mirror tiled
 myManageHook :: ManageHook
 myManageHook = composeAll
             (
-            [ myIgnores --> doIgnore ] -- Don't manage
+            [ myIgnores    --> doIgnore ] -- Don't manage
             ++
-            [ myFloats  --> doFloat  ] -- Make floating
+            [ myFloats     --> doFloat  ] -- Make floating
+            ++
+            [ isFullscreen --> doFullFloat] -- Auto-fullscreen
             ++
             [ x --> doShift w | (x, w) <- myShifts ] -- Perform shifts
             )
@@ -92,6 +98,7 @@ myManageHook = composeAll
       , className =? "feh"
       , className =? "mplayer2"
       , className =? "Steam"
+      , isDialog
       ]
     -- list of conditions when we have to ignore window (don't manage it)
     myIgnores = foldr1 (<||>)
