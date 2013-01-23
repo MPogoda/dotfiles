@@ -15,6 +15,7 @@ then
 fi
 
 if [ $(which stalonetray) ]
+then
   pgrep stalonetray || stalonetray&
 fi
 
