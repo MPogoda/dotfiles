@@ -4,37 +4,37 @@ Config { lowerOnStart = True
        , font         = "-*-terminus-medium-r-normal--14-*"
        , border       = NoBorder
        , borderColor  = "#ff0000"
-       , bgColor      = "#080808"
-       , fgColor      = "#fcdcdc"
+       , bgColor      = "#1b1d1e"
+       , fgColor      = "#a0a0a0"
        , position     = BottomW L 90
        , commands     = [ Run Network "eth0"
-                            [ "-L", "0"
-                            , "-H", "32"
-                            , "--normal", "#429942"
-                            , "--high"  , "#A36666"
+                            [ "--Low", "0"
+                            , "--High", "32"
+                            , "--normal", "#a0a0a0"
+                            , "--high"  , "#ff5995"
                             , "--template", "net: <rx>KB/<tx>KB"
                             ]
                             10
+                        , Run Memory
+                            [ "--Low", "10"
+                            , "--High", "66"
+                            , "--normal", "#a0a0a0"
+                            , "--high", "#ff5995"
+                            , "--template", "mem: <usedratio>%"]
+                            10
                         , Run Cpu
-                            [ "-L", "3"
-                            , "-H", "50"
-                            , "--normal", "green"
-                            , "--high"  , "red"
+                            [ "--Low", "6"
+                            , "--High", "50"
+                            , "--normal", "#b6e354"
+                            , "--high"  , "#ff5995"
                             , "--template", "cpu: <total>%"
                             ]
                             10
-                        , Run Memory
-                            [ "--template", "mem: <usedratio>%"]
-                            10
-                        , Run Volume "default" "Master"
-                            [ "--template", "vol: <volume>% <status>"
-                            ]
-                            5
                         , Run Date "/%H:%M" "date" 10
                         , Run Kbd []
                         , Run StdinReader
                         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%default:Master% <fc=#ee9a00>|</fc> %cpu% <fc=#ee9a00>|</fc> %memory% <fc=#ee9a00>|</fc> %eth0% <fc=#ee9a00>%date% |</fc> %kbd% "
+       , template = "%StdinReader%}{%cpu% <fc=#fd971f>|</fc> %memory% <fc=#fd971f>|</fc> %eth0% <fc=#fd971f>%date% |</fc> %kbd% "
        }
