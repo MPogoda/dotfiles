@@ -1,7 +1,6 @@
 xsetroot -cursor_name left_ptr
 [ -f ~/.wallpaper ] && feh --bg-tile ~/.wallpaper || xsetroot -gray
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-[ -f ~/.Xresources.theme ] && xrdb -merge ~/.Xresources.theme
 setxkbmap -layout us,ru -option grp:caps_toggle
 
 if [ $(which kbdd) ]
@@ -15,6 +14,7 @@ then
 fi
 
 if [ $(which stalonetray) ]
+then
   pgrep stalonetray || stalonetray&
 fi
 
