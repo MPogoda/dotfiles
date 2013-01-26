@@ -35,8 +35,8 @@ main = do
               , borderWidth        = 5
               , modMask            = mod4Mask
               , workspaces         = myWorkspaces
-              , normalBorderColor  = darkGray
-              , focusedBorderColor = darkOrange
+              , normalBorderColor  = "#1b1d1e"
+              , focusedBorderColor = "#a0a0a0"
               , layoutHook         = layoutHintsToCenter . smartBorders $ myLayout
               , manageHook         = myManageHook <+> namedScratchpadManageHook scratchpads
               , handleEventHook    = myEventHook
@@ -83,11 +83,10 @@ myLayout = Full ||| tiled ||| Mirror tiled
 myManageHook :: ManageHook
 myManageHook = composeAll
             (
-            [ myIgnores    --> doIgnore ] -- Don't manage
-            ++
-            [ myFloats     --> doFloat  ] -- Make floating
-            ++
-            [ isFullscreen --> doFullFloat] -- Auto-fullscreen
+            [ myIgnores    --> doIgnore     -- Don't manage
+            , myFloats     --> doFloat      -- Make floating
+            , isFullscreen --> doFullFloat  -- Auto-fullscreen
+            ]
             ++
             [ x --> doShift w | (x, w) <- myShifts ] -- Perform shifts
             )
@@ -192,6 +191,4 @@ scratchpads = [ NS "htop" (sTerm "htop") (title =? "htop") nonFloating
                 role = stringProperty "WM_WINDOW_ROLE"
 
 -- colors
-orange     = "#ee9a00" :: String
-darkOrange = "#9e4a00" :: String
-darkGray   = "#3d3d3d" :: String
+orange     = "#fd971f" :: String
