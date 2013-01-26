@@ -37,9 +37,6 @@
 [submodule "vim/bundle/argtextobj"]
 	path = vim/bundle/argtextobj
 	url = git://github.com/vim-scripts/argtextobj.vim.git
-[submodule "vim/bundle/freya"]
-	path = vim/bundle/freya
-	url = git://github.com/vim-scripts/freya.git
 [submodule "vim/bundle/hexHighlight"]
 	path = vim/bundle/hexHighlight
 	url = git://github.com/vim-scripts/hexHighlight.vim.git
