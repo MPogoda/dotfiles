@@ -1,0 +1,40 @@
+! some variation of molokai theme
+URxvt*.cursorColor  : #fd971f
+URxvt*.foreground   : #a0a0a0
+URxvt*.background   : #1b1d1e
+
+!black
+URxvt*.color0 : #1b1d1e
+URxvt*.color8 : #505354
+!red
+URxvt*color1  : #f92672
+URxvt*color9  : #ff5995
+!green
+URxvt*color2  : #82b414
+URxvt*color10 : #b6e354
+!yellow
+URxvt*color3  : #fd971f
+URxvt*color11 : #feed6c
+!blue
+URxvt*color4  : #56c2d6
+URxvt*color12 : #8cedff
+!magenta
+URxvt*color5  : #8c54fe
+URxvt*color13 : #9e6ffe
+!cyan
+URxvt*color6  : #465457
+URxvt*color14 : #899ca1
+!white
+URxvt*color7  : #ccccc6
+URxvt*color15 : #f8f8f2
+
+! alsamixer scheme
+alsamixer*color1    : #ff2759
+alsamixer*color9    : #ff2759
+alsamixer*color2    : #52aebf
+alsamixer*color10   : #52aebf
+alsamixer*color7    : #ffffff
+alsamixer*color15   : #ffffff
+alsamixer*color11   : #777777
+alsamixer*color4    : #1b1d1e
+alsamixer*scrollBar : false

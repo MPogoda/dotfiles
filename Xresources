@@ -2,8 +2,7 @@
 *.fading      : 40
 *.fadeColor   : #202020
 *.cursorColor : #ee9a00
-*.font        : -*-terminus-medium-r-*-*-16-*-*-*-*-*-*
-*.boldFont    : -*-terminus-bold-r-*-*-16-*-*-*-*-*-*
+*.font        : -*-terminus-medium-r-*-*-16-*-*-*-*-*-*, xft:Liberation Mono:antialias=false
 
 Xft.autohint  : 0
 Xft.lcdfilter : lcddefault
@@ -12,26 +11,31 @@ Xft.hinting   : 1
 Xft.antialias : 1
 Xft.rgba      : rgb
 
-URxvt*.background       : #101010
-URxvt*.foreground       : #a1a1a1
 URxvt*.borderLess       : false
-URxvt*.cutchars         : '"'()*<>[]{|}
 URxvt*.externalBorder   : 0
 URxvt*.internalBorder   : 0
 URxvt*.jumpScroll       : true
-URxvt*.loginShell       : true
-URxvt*.pastableTabs     : true
+URxvt*.pastableTabs     : false
+URxvt*.pointerBlank     : true
 URxvt*.saveLines        : 65535
 URxvt*.scrollBar        : false
+URxvt*.scrollTtyKeypress: false
 URxvt*.scrollTtyOutput  : true
 URxvt*.scrollWithBuffer : true
-URxvt*.secondaryScreen  : false
 URxvt*.skipScroll       : true
-URxvt*.scrollTtyKeypress: false
-URxvt*.perl-ext-common  : default,matcher
-URxvt*.urlLauncher      : /usr/bin/xdg-open
-URxvt*.matcher.button   : 1
-URxvt*.keysym.M-u       : perl:url-select:select_next
+URxvt*.visualBell       : false
+URxvt*.urgentOnBell     : true
+URxvt*.perl-ext-common  : searchable-scrollback<C-f>,url-select,keyboard-select,clipboard
+! keyboard-select
+URxvt*.keysym.M-Escape  : perl:keyboard-select:activate
+! url-select
+URxvt*.url-select.launcher  : /usr/bin/xdg-open
+URxvt*.url-select.underline : true
+URxvt*.keysym.M-u           : perl:url-select:select_next
+! clipboard
+URxvt*.keysym.M-c   : perl:clipboard:copy
+URxvt*.keysym.M-v   : perl:clipboard:paste
+#include ".Xresources.theme"
 
 urxvt-am.saveLines : 0
 
