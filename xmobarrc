@@ -12,7 +12,7 @@ Config { lowerOnStart = True
                             , "--High", "32"
                             , "--normal", "#a0a0a0"
                             , "--high"  , "#ff5995"
-                            , "--template", "net: <rx>KB/<tx>KB"
+                            , "--template", "<fc=#ccccc6>net:</fc> <rx>KB/<tx>KB"
                             ]
                             10
                         , Run Memory
@@ -20,14 +20,14 @@ Config { lowerOnStart = True
                             , "--High", "66"
                             , "--normal", "#a0a0a0"
                             , "--high", "#ff5995"
-                            , "--template", "mem: <usedratio>%"]
+                            , "--template", "<fc=#ccccc6>mem:</fc> <usedratio>%"]
                             10
                         , Run Cpu
                             [ "--Low", "6"
                             , "--High", "50"
                             , "--normal", "#b6e354"
                             , "--high"  , "#ff5995"
-                            , "--template", "cpu: <total>%"
+                            , "--template", "<fc=#ccccc6>cpu:</fc> <total>%"
                             ]
                             10
                         , Run Date "/%H:%M" "date" 10
