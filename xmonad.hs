@@ -156,7 +156,7 @@ myKeys = \conf -> mkKeymap conf $
          , (prefix "c", kill)
          -- shortcuts
          , (prefix "b", spawn $ "chromium")
-         , (prefix "e", spawn $ "gvim")
+         , (prefix "e", spawn $ "qvim")
          , (prefix "a", spawn $ sTerm $ "alsamixer")
          , (prefix "o", spawn $ "okular")
          , (prefix "d", spawn $ "djview")
