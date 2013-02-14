@@ -16,3 +16,9 @@
   helper = cache --timeout=3600
 [push]
   default = simple
+[tig]
+  line-graphics = utf-8
+  show-date = local
+  show-id = true
+  ignore-space = all
+  commit-order = topo
