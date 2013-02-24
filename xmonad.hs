@@ -182,7 +182,7 @@ sTerm   = (++) (myTerminal ++ " -name urxvt-am -e ")
 
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "htop" (sTerm "htop") (title =? "htop") nonFloating
-              , NS "term" (myTerminal ++ " -name term") (title =? "term")
+              , NS "term" (myTerminal ++ " -name term") (resource =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "skype" "skype" (className =? "Skype" <&&> role =? "ConversationsWindow")
                   ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
