@@ -3,7 +3,7 @@
   email = do0dlez1991@gmail.com
   signingkey = C8A2DA6E
 [core]
-  editor = qvim --nofork
+  editor = gvim --nofork
 [color]
   ui = true
 [format]
