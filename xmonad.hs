@@ -58,7 +58,6 @@ myPP = xmobarPP { ppCurrent = xmobarColor orange "" . wrap "<" ">"
                                 "ResizableTall" -> "[|]"
                                 "Mirror ResizableTall" -> "[-]"
                                 _      -> n
-
                 }
 -- dummy line. needed for statusBar function.
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
@@ -108,6 +107,7 @@ myManageHook = composeAll
     myShifts = map (\(x, y) -> (className =? x, y)) clsShifts
     -- [ ( className, workspace) ]
     clsShifts = [ ("Chromium-browser", "s")
+                , ("Firefox", "s")
                 , ("Leechcraft", "a")
                 , ("Djview", "z")
                 , ("Okular", "z")
@@ -155,7 +155,7 @@ myKeys = \conf -> mkKeymap conf $
          -- close current window
          , (prefix "c", kill)
          -- shortcuts
-         , (prefix "b", spawn $ "chromium")
+         , (prefix "b", spawn $ "firefox")
          , (prefix "e", spawn $ "gvim")
          , (prefix "a", spawn $ sTerm $ "alsamixer")
          , (prefix "o", spawn $ "okular")
@@ -184,7 +184,7 @@ scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "htop" (sTerm "htop") (title =? "htop") nonFloating
               , NS "term" (myTerminal ++ " -name term") (resource =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
-              , NS "skype" "skype" (className =? "Skype" <&&> role =? "ConversationsWindow")
+              , NS "skype" "" (className =? "Skype" <&&> role =? "ConversationsWindow")
                   ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
               ]
               where
