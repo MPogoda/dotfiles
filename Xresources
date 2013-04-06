@@ -2,7 +2,7 @@
 *.fading      : 40
 *.fadeColor   : #202020
 *.cursorColor : #ee9a00
-*.font        : -*-terminus-medium-r-*-*-16-*-*-*-*-*-*, xft:Liberation Mono:antialias=false
+*.font        : -*-terminus-medium-r-*-*-16-*-*-*-*-*-*, xft:Liberation Mono:antialias=false, xft:Ubuntu Mono for Powerline
 
 Xft.autohint  : 0
 Xft.lcdfilter : lcddefault
