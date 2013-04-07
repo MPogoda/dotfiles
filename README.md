@@ -1,4 +1,4 @@
-# MPogoda's dotfiles #
+# MPogoda's dotfiles |DESKTOP EDITION| #
 
 ## About ##
 
