@@ -1,0 +1,31 @@
+{
+  "common": {
+    "term_truecolor": true,
+    "dividers": {
+      "left": {
+        "hard": " ",
+        "soft": " "
+      },
+      "right": {
+        "hard": " ",
+        "soft": " "
+      }
+    },
+    "spaces": 1
+  },
+  "ext": {
+    "tmux": {
+      "colorscheme": "default",
+      "theme": "default"
+    },
+    "vim": {
+      "colorscheme": "default",
+      "theme": "default",
+      "local_themes": {
+        "cmdwin": "cmdwin",
+        "help": "help",
+        "quickfix": "quickfix"
+      }
+    }
+  }
+}
