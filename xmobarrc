@@ -1,7 +1,7 @@
 Config { lowerOnStart = True
        , hideOnStart  = False
        , persistent   = False
-       , font         = "-*-terminus-medium-r-normal--14-*"
+       , font         = "xft:PragmataPro"
        , border       = NoBorder
        , borderColor  = "#ff0000"
        , bgColor      = "#1b1d1e"
@@ -30,11 +30,11 @@ Config { lowerOnStart = True
                             , "--template", "<fc=#ccccc6>cpu:</fc> <total>%"
                             ]
                             10
-                        , Run Date "/%H:%M" "date" 10
+                        , Run Date "%H:%M" "date" 10
                         , Run Kbd []
                         , Run StdinReader
                         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%cpu% <fc=#fd971f>|</fc> %memory% <fc=#fd971f>|</fc> %eth0% <fc=#fd971f>%date% |</fc> %kbd% "
+       , template = "%StdinReader%}{%cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %eth0% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
        }

@@ -45,9 +45,9 @@ main = do
 
 -- xmobar pretty printing stuff
 myPP :: PP
-myPP = xmobarPP { ppCurrent = xmobarColor orange "" . wrap "<" ">"
+myPP = xmobarPP { ppCurrent = xmobarColor orange "" . wrap "[" "]"
                 -- separator between elements
-                , ppSep     = xmobarColor orange "" " | "
+                , ppSep     = xmobarColor orange "" " . "
                 -- order in which we have to show elements (title is ignored)
                 , ppOrder   = \(ws:l:_) -> [l, ws]
                 -- show only workspaces that are predefined by me
