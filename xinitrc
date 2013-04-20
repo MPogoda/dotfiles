@@ -8,11 +8,6 @@ then
   pgrep kbdd || kbdd
 fi
 
-if [ $(which urxvtd) ]
-then
-  pgrep urxvtd || urxvtd --opendisplay --fork
-fi
-
 if [ $(which stalonetray) ]
 then
   pgrep stalonetray || stalonetray&
