@@ -64,7 +64,7 @@ toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
 -- terminal i'm using
 myTerminal :: String
-myTerminal = "urxvtc"
+myTerminal = "xterm"
 
 -- list of workspaces
 myWorkspaces :: [String]
@@ -178,7 +178,7 @@ myKeys = \conf -> mkKeymap conf $
 
 -- Runs console application in terminal without scrollback
 sTerm :: String -> String
-sTerm   = (++) (myTerminal ++ " -name urxvt-am -e ")
+sTerm   = (++) (myTerminal ++ " -name xterm-am -e ")
 
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "htop" (sTerm "htop") (title =? "htop") nonFloating

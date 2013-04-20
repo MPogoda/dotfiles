@@ -1,32 +1,32 @@
 ! some variation of molokai theme
-URxvt*.cursorColor  : #fd971f
-URxvt*.foreground   : #a0a0a0
-URxvt*.background   : #1b1d1e
+XTerm*.cursorColor  : #fd971f
+XTerm*.foreground   : #a0a0a0
+XTerm*.background   : #1b1d1e
 
 !black
-URxvt*.color0 : #1b1d1e
-URxvt*.color8 : #505354
+XTerm*.color0 : #1b1d1e
+XTerm*.color8 : #505354
 !red
-URxvt*color1  : #f92672
-URxvt*color9  : #ff5995
+XTerm*color1  : #f92672
+XTerm*color9  : #ff5995
 !green
-URxvt*color2  : #82b414
-URxvt*color10 : #b6e354
+XTerm*color2  : #82b414
+XTerm*color10 : #b6e354
 !yellow
-URxvt*color3  : #fd971f
-URxvt*color11 : #feed6c
+XTerm*color3  : #fd971f
+XTerm*color11 : #feed6c
 !blue
-URxvt*color4  : #56c2d6
-URxvt*color12 : #8cedff
+XTerm*color4  : #56c2d6
+XTerm*color12 : #8cedff
 !magenta
-URxvt*color5  : #8c54fe
-URxvt*color13 : #9e6ffe
+XTerm*color5  : #8c54fe
+XTerm*color13 : #9e6ffe
 !cyan
-URxvt*color6  : #465457
-URxvt*color14 : #899ca1
+XTerm*color6  : #465457
+XTerm*color14 : #899ca1
 !white
-URxvt*color7  : #ccccc6
-URxvt*color15 : #f8f8f2
+XTerm*color7  : #ccccc6
+XTerm*color15 : #f8f8f2
 
 ! alsamixer scheme
 alsamixer*color1    : #ff2759
