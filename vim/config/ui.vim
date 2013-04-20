@@ -7,3 +7,4 @@ set wildmenu                   " tab-completion menu for command mode
 set wildmode=list:longest,full
 set list                       " display otherwise invisible characters
 set listchars=tab:\\_,extends:>,precedes:<,nbsp:%
+set noshowmode
