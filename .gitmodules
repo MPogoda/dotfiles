@@ -79,3 +79,6 @@
 [submodule "vim/bundle/xkbswitch"]
 	path = vim/bundle/xkbswitch
 	url = git://github.com/lyokha/vim-xkbswitch
+[submodule "vim/bundle/git"]
+	path = vim/bundle/git
+	url = https://github.com/tpope/vim-git
