@@ -8,11 +8,6 @@ then
   pgrep kbdd || kbdd
 fi
 
-if [ $(which stalonetray) ]
-then
-  pgrep stalonetray || stalonetray&
-fi
-
 eval $(gpg-agent --write-env-file ${HOME}/.gnupg/gpg-agent.env --enable-ssh-support --daemon )
 
 exec xmonad

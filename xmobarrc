@@ -6,7 +6,7 @@ Config { lowerOnStart = True
        , borderColor  = "#ff0000"
        , bgColor      = "#1b1d1e"
        , fgColor      = "#a0a0a0"
-       , position     = BottomW L 90
+       , position     = Bottom
        , commands     = [ Run Network "eth0"
                             [ "--Low", "0"
                             , "--High", "32"
