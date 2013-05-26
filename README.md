@@ -7,7 +7,6 @@ Currently, it holds configuration files for:
   * [XMobar](http://projects.haskell.org/xmobar)
   * [Zsh](http://zsh.org)
   * [git](http://git-scm.com)
-  * [stalonetray](http://stalonetray.sourceforge.net)
   * [tmux](http://tmux.sourceforge.net)
   * [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode)
   * [Tig](http://jonas.nitro.dk/tig)
