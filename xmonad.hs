@@ -121,7 +121,7 @@ myEventHook = docksEventHook <+> hintsEventHook <+> fullscreenEventHook
 myKeys = \conf -> mkKeymap conf $
          [ ("M-<Return>",   spawn       $ myTerminal)
          , ("M-C-<Esc>",    spawn       $ "xkill")
-         , ("M-r",          spawn       $ "dmenu_run")
+         , ("M-r",          spawn       $ "dmenu_run -fn PragmataPro-32")
          -- cycle through all possible layouts
          , ("M-<Space>",    sendMessage $ NextLayout)
          -- restore default layout
