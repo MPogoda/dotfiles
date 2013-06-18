@@ -4,6 +4,7 @@
   signingkey = C8A2DA6E
 [core]
   editor = gvim --nofork
+  excludesfile = ~/.cvsignore
 [color]
   ui = true
 [format]
