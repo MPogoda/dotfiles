@@ -69,6 +69,8 @@ myTerminal = "xterm"
 -- list of workspaces
 myWorkspaces :: [String]
 myWorkspaces = words "a s d f g z x c v"
+-- in case of dvorak:
+-- myWorkspaces = words "a o e u i ; q j k"
 
 -- Layouts
 myLayout = Full ||| tiled ||| Mirror tiled
