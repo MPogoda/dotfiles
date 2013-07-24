@@ -159,13 +159,9 @@ myKeys = \conf -> mkKeymap conf $
          -- shortcuts
          , (prefix "b", spawn $ "firefox")
          , (prefix "e", spawn $ "gvim")
-         , (prefix "a", spawn $ sTerm $ "alsamixer")
-         , (prefix "o", spawn $ "okular")
-         , (prefix "d", spawn $ "djview")
-         , (prefix "h", spawn $ "kchmviewer")
-         , (prefix "t", namedScratchpadAction scratchpads "htop")
          , (prefix "r", namedScratchpadAction scratchpads "term")
          , (prefix "s", namedScratchpadAction scratchpads "skype")
+         , (prefix "d", namedScratchpadAction scratchpads "dashboard")
          ]
          ++
          -- M-[asdfgzxcv]   : switch to corresponding workspace
@@ -183,7 +179,8 @@ sTerm :: String -> String
 sTerm   = (++) (myTerminal ++ " -name xterm-am -e ")
 
 scratchpads :: [NamedScratchpad]
-scratchpads = [ NS "htop" (sTerm "htop") (title =? "htop") nonFloating
+scratchpads = [ NS "dashboard" (myTerminal ++ " -name dashboard -e '/bin/sh /home/tmux.sh'")
+                  (resource =? "dashboard") (customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
               , NS "term" (myTerminal ++ " -name term") (resource =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "skype" "" (className =? "Skype" <&&> role =? "ConversationsWindow")
