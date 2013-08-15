@@ -97,6 +97,7 @@ myManageHook = composeAll
       [ ("Figure" `isPrefixOf`) <$> title
       , className =? "feh"
       , className =? "mplayer2"
+      , className =? "mpv"
       , className =? "Steam"
       , isDialog
       ]
