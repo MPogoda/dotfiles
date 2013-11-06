@@ -1,7 +1,11 @@
 set nocompatible
 
-call pathogen#infect()
-call pathogen#helptags()
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+runtime! bundles.vim
+
+filetype plugin indent on
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
