@@ -1,5 +1,5 @@
 autocmd BufEnter *.hs compiler ghc
-autocmd BufEnter *.hs GHCReload
+autocmd FileType haskell nnoremap <Leader>h :GHCReload<CR>
 let g:ghc="/usr/bin/ghc"
 let g:haddoc_docdir="/usr/share/doc/ghc/html/"
-let g:haddock_browser="/usr/bin/chromium"
+let g:haddock_browser="/usr/bin/firefox"
