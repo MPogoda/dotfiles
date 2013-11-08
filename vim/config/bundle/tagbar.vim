@@ -1,3 +1,1 @@
-let g:tagbar_usearrows = 1
-
-nnoremap <Leader>t :TagbarToggle<Enter>
+nnoremap <Leader>t :TagbarToggle<CR>
