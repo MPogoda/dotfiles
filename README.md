@@ -1,4 +1,6 @@
-# MPogoda's dotfiles
+# MPogoda's dotfiles #
+
+## About ##
 
 Dotfiles, gathered from pieces of other people' dotfiles all around the world.
 Currently, it holds configuration files for:
@@ -8,34 +10,43 @@ Currently, it holds configuration files for:
   * [Zsh](http://zsh.org)
   * [git](http://git-scm.com)
   * [tmux](http://tmux.sourceforge.net)
-  * [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode)
+  * [xterm](http://invisible-island.net/xterm/)
   * [Tig](http://jonas.nitro.dk/tig)
   * etc
 
 Although they all present in this repo, they are (mostly) not interdependent.
 
-## Dependencies
+## Dependencies ##
 
  * VIm 7+
  * git v1.7.11+ (for push.default = simple)
- * [kbdd](https://github.com/qnikst/kbdd).
  * [xkb-switch](https://github.com/ierton/xkb-switch). Used by vim-xkbswitch
    plugin
- * [clang](http://clang.llvm.org)
+ * [clang](http://clang.llvm.org). Used by clang_complete pluging
  * [Exuberant ctags 5.5](http://ctags.sourceforge.net). Used by vim/tagbar
 
-## Submodules
+## Vim plugins ##
 
-Vim plugins are added as git-submodules to this repo.
-To initialise them you should run
+For managing plugins for VIm, [vundle](https://github.com/gmarik/vundle) is
+used.
+And, vundle is managed by itself, so chicken-egg problem arises.
+Because of that small shell script is provided for installation.
+
+Updating vim-bundles is simple:
 ```
-git submodule init && git submodule update
-```
-And to update them (after succesfull pull of this repo):
-```
-git submodule update
+vim +BundleUpdate
 ```
 
-### Thanks to
+## Installation ##
+
+```
+git clone git://github.com/MPogoda/dotfiles.git
+# edit dotfiles/vim/bundles.vim if you want to
+pushd
+sh path/to/dotfiles/install.sh
+popd
+```
+
+## Thanks to ##
   * [sunaku's .vim](https://github.com/sunaku/.vim)
   * [zsh-lovers config](http://grml.org/zsh)
