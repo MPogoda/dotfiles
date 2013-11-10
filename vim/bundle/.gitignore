@@ -24,4 +24,6 @@ vim-markdown/
 vim-narrow/
 vim-rdoc/
 vim-xkbswitch/
-vim-gitgutter
+vim-signify
+octave.vim--
+vundle
