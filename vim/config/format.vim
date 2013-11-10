@@ -1,6 +1,6 @@
 set autoindent       " automatically indent new lines
 set formatoptions+=o " continue comment marker in new lines
-set textwidth=78     " hard-wrap long lines as you type them
+set textwidth=118     " hard-wrap long lines as you type them
 set tabstop=2        " render TABs using this many spaces
 set expandtab        " insert spaces when TAB is pressed
 set softtabstop=2    " ... this many spaces

@@ -8,4 +8,4 @@ nnoremap <C-PageDown> :bnext<Enter>
 nnoremap <Leader>$ :execute 'bnext<Bar>bdelete' bufnr('%')<Enter>
 
 " reload current buffer while discarding changes
-nnoremap <Leader>7 :edit!<Enter>
+nnoremap <Leader>e :edit!<Enter>
