@@ -1,5 +1,6 @@
-.vundle/
+.neobundle
 L9/
+ack.vim
 argtextobj.vim/
 clang_complete/
 closetag.vim/
@@ -8,12 +9,17 @@ gundo.vim/
 haskellmode-vim/
 hexHighlight.vim/
 molokai/
+neobundle.vim
 nerdtree/
 syntastic/
 tabular/
 tagbar/
 tcomment_vim/
 ultisnips/
+unite-help
+unite-outline
+unite-session
+unite.vim
 vim-airline/
 vim-easymotion/
 vim-endwise/
@@ -23,7 +29,8 @@ vim-latex/
 vim-markdown/
 vim-narrow/
 vim-rdoc/
+vim-unite-history
 vim-xkbswitch/
 vim-signify
+vimproc
 octave.vim--
-vundle

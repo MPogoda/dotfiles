@@ -1,11 +1,12 @@
 set nocompatible
 
-filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-runtime! bundles.vim
+if has ('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-filetype plugin indent on
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+runtime! bundles.vim
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim

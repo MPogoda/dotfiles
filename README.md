@@ -27,14 +27,14 @@ Although they all present in this repo, they are (mostly) not interdependent.
 
 ## Vim plugins ##
 
-For managing plugins for VIm, [vundle](https://github.com/gmarik/vundle) is
+For managing plugins for VIm, [neoBundle](https://github.com/Shougo/neobundle.vim/) is
 used.
-And, vundle is managed by itself, so chicken-egg problem arises.
+And, NeoBundle is managed by itself, so chicken-egg problem arises.
 Because of that small shell script is provided for installation.
 
 Updating vim-bundles is simple:
 ```
-vim +BundleUpdate
+vim +NeoBundleUpdate
 ```
 
 ## Installation ##
