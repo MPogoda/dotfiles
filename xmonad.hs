@@ -122,6 +122,7 @@ myEventHook = docksEventHook <+> hintsEventHook <+> fullscreenEventHook
 -- Keys
 myKeys = \conf -> mkKeymap conf $
          [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
+         , ("M-S-<Return>", spawn       $ myTerminal )
          , ("M-C-<Esc>",    spawn       $ "xkill")
          , ("M-r",          spawn       $ "dmenu_run -fn PragmataPro-32")
          -- cycle through all possible layouts
