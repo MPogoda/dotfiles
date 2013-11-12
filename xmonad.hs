@@ -64,7 +64,7 @@ toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
 -- terminal i'm using
 myTerminal :: String
-myTerminal = "xterm"
+myTerminal = "st"
 
 -- list of workspaces
 myWorkspaces :: [String]
@@ -121,7 +121,7 @@ myEventHook = docksEventHook <+> hintsEventHook <+> fullscreenEventHook
 
 -- Keys
 myKeys = \conf -> mkKeymap conf $
-         [ ("M-<Return>",   spawn       $ myTerminal)
+         [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , ("M-C-<Esc>",    spawn       $ "xkill")
          , ("M-r",          spawn       $ "dmenu_run -fn PragmataPro-32")
          -- cycle through all possible layouts
@@ -174,14 +174,10 @@ myKeys = \conf -> mkKeymap conf $
     -- prefix that is used in my emacs-like keybidings
     prefix  = (++) "M-<Tab> " :: String -> String
 
--- Runs console application in terminal without scrollback
-sTerm :: String -> String
-sTerm   = (++) (myTerminal ++ " -name xterm-am -e ")
-
 scratchpads :: [NamedScratchpad]
-scratchpads = [ NS "dashboard" (myTerminal ++ " -name dashboard -e '/bin/sh /home/tmux.sh'")
+scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/tmux.sh")
                   (resource =? "dashboard") (customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
-              , NS "term" (myTerminal ++ " -name term") (resource =? "term")
+              , NS "term" (myTerminal ++ " -c term -e tmux") (resource =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "skype" "" (className =? "Skype" <&&> role =? "ConversationsWindow")
                   ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))

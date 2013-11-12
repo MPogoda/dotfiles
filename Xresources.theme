@@ -2,39 +2,3 @@
 XTerm*.cursorColor  : #fd971f
 XTerm*.foreground   : #a0a0a0
 XTerm*.background   : #1b1d1e
-
-!black
-XTerm*.color0 : #1b1d1e
-XTerm*.color8 : #505354
-!red
-XTerm*color1  : #f92672
-XTerm*color9  : #ff5995
-!green
-XTerm*color2  : #82b414
-XTerm*color10 : #b6e354
-!yellow
-XTerm*color3  : #fd971f
-XTerm*color11 : #feed6c
-!blue
-XTerm*color4  : #56c2d6
-XTerm*color12 : #8cedff
-!magenta
-XTerm*color5  : #8c54fe
-XTerm*color13 : #9e6ffe
-!cyan
-XTerm*color6  : #465457
-XTerm*color14 : #899ca1
-!white
-XTerm*color7  : #ccccc6
-XTerm*color15 : #f8f8f2
-
-! alsamixer scheme
-alsamixer*color1    : #ff2759
-alsamixer*color9    : #ff2759
-alsamixer*color2    : #52aebf
-alsamixer*color10   : #52aebf
-alsamixer*color7    : #ffffff
-alsamixer*color15   : #ffffff
-alsamixer*color11   : #777777
-alsamixer*color4    : #1b1d1e
-alsamixer*scrollBar : false
