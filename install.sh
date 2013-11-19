@@ -34,5 +34,5 @@ install_file "Xresources" ".Xresources"
 install_file "Xresources.theme" ".Xresources.theme"
 install_file "zsh" ".zsh" && install_file "zshrc" ".zshrc"
 
-install_file "vim" ".vim" && install_file "vim/vimrc" ".vimrc" && git clone git://github.com/Shougo/neobundle.vim $BASE_PATH/vim/bundle/neobundle.vim && vim +NeoBundleInstall +qall
+install_file "vim" ".vim" && install_file "vim/vimrc" ".vimrc" && git clone https://github.com/Shougo/neobundle.vim $BASE_PATH/vim/bundle/neobundle.vim && vim +NeoBundleInstall +qall
 
