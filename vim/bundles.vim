@@ -27,7 +27,6 @@ NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' : { 'filetypes' : ['c', 'cp
 NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html'] }
                                      \ , 'name' : 'closetag'
                                      \ }
-" NeoBundle 'kien/ctrlp.vim'
 
 " VCS Integration
 NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
@@ -39,8 +38,6 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'lukerandall/haskellmode-vim'
 
 NeoBundle 'tomasr/molokai'
-
-NeoBundle 'scrooloose/nerdtree', { 'augroup' : 'NERDTreeHijackNetrw'}
 
 NeoBundle 'scrooloose/syntastic'
 

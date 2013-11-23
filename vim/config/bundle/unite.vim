@@ -1,12 +1,18 @@
-" call unite#filters#matcher_default#use(['matcher_fuzzy'])
 " Open unite buffer in Insert Mode immediately.
 let g:unite_enable_start_insert = 1
 
 " Directory to store unite configurations.
 let g:unite_data_directory = "~/.cache/vim/unite"
 
+" Replaces fuzzyfinder
 nnoremap <leader>o :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
-nnoremap <leader>b :<C-u>Unite -buffer-name=buffers buffer<cr>
+" Replaces NERDTree
+nnoremap <leader>f :<C-u>Unite -buffer-name files file<cr>
+
+" Quickly find a buffer
+nnoremap <leader>b :<C-u>Unite -quick-match -buffer-name=buffers buffer<cr>
+
+nnoremap <leader>/ :<C-u>Unite -buffer-name=grep grep:.<cr>
 
 nnoremap <leader>l :<C-u>Unite -buffer-name=lines line<cr>
 nnoremap <leader>: :<C-u>Unite -buffer-name=commands command<cr>
