@@ -177,7 +177,7 @@ myKeys = \conf -> mkKeymap conf $
 
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/tmux.sh")
-                  (resource =? "dashboard") (customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
+                  (resource =? "dashboard") nonFloating
               , NS "term" (myTerminal ++ " -c term -e tmux") (resource =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "skype" "" (className =? "Skype" <&&> role =? "ConversationsWindow")
