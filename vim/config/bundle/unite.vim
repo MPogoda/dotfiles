@@ -7,7 +7,7 @@ let g:unite_data_directory = "~/.cache/vim/unite"
 " Replaces fuzzyfinder
 nnoremap <leader>o :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
 " Replaces NERDTree
-nnoremap <leader>f :<C-u>Unite -buffer-name files file<cr>
+nnoremap <leader>f :<C-u>Unite -buffer-name=files file<cr>
 
 " Quickly find a buffer
 nnoremap <leader>b :<C-u>Unite -quick-match -buffer-name=buffers buffer<cr>
@@ -26,8 +26,13 @@ nnoremap <leader>y :<C-u>Unite -buffer-name=yanks history/yank<cr>
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
   " Overwrite settings.
-  imap <silent><buffer><expr> <C-s>     unite#do_action('split')
-  imap <silent><buffer><expr> <C-v>     unite#do_action('vsplit')
+  imap <silent><buffer><expr> <C-s> unite#do_action('split')
+  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  " Enable navigation with control-j and control-k in insert mode
+  imap <silent><buffer> <C-j> <Plug>(unite_select_next_line)
+  imap <silent><buffer> <C-k> <Plug>(unite_select_previous_line)
+  " Quit from insert mode
+  imap <silent><buffer> <C-q> <Plug>(unite_exit)
 endfunction
 
 if executable('ag')
