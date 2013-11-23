@@ -160,6 +160,7 @@ myKeys = \conf -> mkKeymap conf $
          , (prefix "b", spawn $ "firefox")
          , (prefix "e", spawn $ "gvim")
          , (prefix "r", namedScratchpadAction scratchpads "term")
+         , (prefix "t", namedScratchpadAction scratchpads "rtorrent")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
          ]
          ++
@@ -176,8 +177,11 @@ myKeys = \conf -> mkKeymap conf $
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/tmux.sh")
                   (resource =? "dashboard") nonFloating
-              , NS "term" (myTerminal ++ " -c term -e tmux") (resource =? "term")
-                  ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
+
+              , NS "term" (myTerminal ++ " -c term -e tmux")
+                  (resource =? "term") ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
+              , NS "rtorrent" (myTerminal ++ " -c rtorrent -e /usr/bin/tmux attach-session -t rtorrent" )
+                  (resource =? "rtorrent") nonFloating
               ]
               where
                 role = stringProperty "WM_WINDOW_ROLE"
