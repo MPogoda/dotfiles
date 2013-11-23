@@ -11,12 +11,8 @@ NeoBundle 'Shougo/vimproc', { 'build' :
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
-" NeoBundle 'Shougo/unite-outline', { 'name' : 'unite-outline' }
-" NeoBundle 'Shougo/unite-session', { 'name' : 'unite-session' }
-" NeoBundle 'Shougo/unite-help'   , { 'name' : 'unite-help'    }
-" NeoBundle 'thinca/vim-unite-history'
 
-" NeoBundle 'mileszs/ack.vim'
+NeoBundle 'thinca/vim-unite-history'
 
 NeoBundle 'bling/vim-airline'
 

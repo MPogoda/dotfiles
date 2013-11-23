@@ -15,7 +15,8 @@ nnoremap <leader>b :<C-u>Unite -quick-match -buffer-name=buffers buffer<cr>
 nnoremap <leader>/ :<C-u>Unite -buffer-name=grep grep:.<cr>
 
 nnoremap <leader>l :<C-u>Unite -buffer-name=lines line<cr>
-nnoremap <leader>: :<C-u>Unite -buffer-name=commands command<cr>
+nnoremap <leader>; :<C-u>Unite -buffer-name=commands command<cr>
+nnoremap <leader>: :<C-u>Unite -buffer-name=commands history/command<cr>
 
 nnoremap <leader>m :<C-u>Unite -buffer-name=mrus file_mru<cr>
 

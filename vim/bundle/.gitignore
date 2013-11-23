@@ -25,3 +25,4 @@ vim-xkbswitch/
 vim-signify
 vimproc
 octave.vim--
+vim-unite-history
