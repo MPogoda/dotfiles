@@ -1,19 +1,22 @@
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/vimproc', { 'build': {
-      \ 'windows': 'make -f make_mingw32.mak',
-      \ 'cygwin': 'make -f make_cygwin.mak',
-      \ 'mac': 'make -f make_mac.mak',
-      \ 'unix': 'make -f make_unix.mak',
-      \ } }
-" Fuzzy search
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/unite-session'
-NeoBundle 'Shougo/unite-help'
-NeoBundle 'thinca/vim-unite-history'
-NeoBundle 'mileszs/ack.vim'
+NeoBundle 'Shougo/vimproc', { 'build' :
+                          \   { 'mac'  : 'make -f make_mac.mak'
+                          \   , 'unix' : 'make -f make_unix.mak'
+                          \   }
+                          \ , 'name' : 'vimproc'
+                          \ }
+" Unite.vim
+NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
+                            \ , 'depends' : 'vimproc'
+                            \ }
+" NeoBundle 'Shougo/unite-outline', { 'name' : 'unite-outline' }
+" NeoBundle 'Shougo/unite-session', { 'name' : 'unite-session' }
+" NeoBundle 'Shougo/unite-help'   , { 'name' : 'unite-help'    }
+" NeoBundle 'thinca/vim-unite-history'
+
+" NeoBundle 'mileszs/ack.vim'
 
 NeoBundle 'bling/vim-airline'
 NeoBundle 'Rip-Rip/clang_complete'
