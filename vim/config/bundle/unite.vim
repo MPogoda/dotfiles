@@ -29,3 +29,18 @@ function! s:unite_my_settings()
   imap <silent><buffer><expr> <C-s>     unite#do_action('split')
   imap <silent><buffer><expr> <C-v>     unite#do_action('vsplit')
 endfunction
+
+if executable('ag')
+  " Use ag in unite grep source.
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts =
+  \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+  \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+  let g:unite_source_grep_recursive_opt = ''
+elseif executable('ack-grep')
+  " Use ack in unite grep source.
+  let g:unite_source_grep_command = 'ack-grep'
+  let g:unite_source_grep_default_opts =
+  \ '--no-heading --no-color -a -H'
+  let g:unite_source_grep_recursive_opt = ''
+endif

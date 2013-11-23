@@ -24,6 +24,8 @@ Although they all present in this repo, they are (mostly) not interdependent.
    plugin
  * [clang](http://clang.llvm.org). Used by clang_complete pluging
  * [Exuberant ctags 5.5](http://ctags.sourceforge.net). Used by vim/tagbar
+ * [ag](https://github.com/ggreer/the_silver_searcher). Used by vim/unite and
+   vim/ag.
 
 ## Vim plugins ##
 
