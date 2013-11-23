@@ -19,29 +19,64 @@ NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
 " NeoBundle 'mileszs/ack.vim'
 
 NeoBundle 'bling/vim-airline'
-NeoBundle 'Rip-Rip/clang_complete'
-NeoBundle 'docunext/closetag.vim'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tpope/vim-fugitive'
+
+NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' : { 'filetypes' : ['c', 'cpp'] }
+                                      \ , 'name' : 'clang_complete'
+                                      \ }
+
+NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html'] }
+                                     \ , 'name' : 'closetag'
+                                     \ }
+" NeoBundle 'kien/ctrlp.vim'
+
+" VCS Integration
+NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
 NeoBundle 'tpope/vim-git'
+
+" Undo tree
 NeoBundle 'sjl/gundo.vim'
+
 NeoBundle 'lukerandall/haskellmode-vim'
+
 NeoBundle 'tomasr/molokai'
-NeoBundle 'scrooloose/nerdtree'
+
+NeoBundle 'scrooloose/nerdtree', { 'augroup' : 'NERDTreeHijackNetrw'}
+
 NeoBundle 'scrooloose/syntastic'
+
 NeoBundle 'godlygeek/tabular'
+
 NeoBundle 'majutsushi/tagbar'
+
 NeoBundle 'tomtom/tcomment_vim'
+
 NeoBundle 'SirVer/ultisnips'
+
 NeoBundle 'Lokaltog/vim-easymotion'
+
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'jcf/vim-latex'
+
+NeoBundleLazy 'jcf/vim-latex', { 'autoload' : { 'filetypes' : ['tex', 'latex', 'bib'] }
+                             \ , 'name' : 'vim-latex'
+                             \ }
+
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'kana/vim-narrow'
+
 NeoBundle 'depuracao/vim-rdoc'
-NeoBundle 'lyokha/vim-xkbswitch'
+
+NeoBundleLazy 'lyokha/vim-xkbswitch', { 'autoload' :
+                                    \   { 'filetypes' : [ 'tex'
+                                                      \ , 'latex'
+                                                      \ , 'bib'
+                                                      \ , 'markdown'
+                                                      \ ]
+                                    \   }
+                                    \ , 'name' : 'vim-xkbswitch'
+                                    \ }
+
 NeoBundle 'argtextobj.vim'
-NeoBundle 'hexHighlight.vim'
+
 NeoBundle 'mhinz/vim-signify'
-NeoBundle 'L9'
+
 NeoBundle 'MPogoda/octave.vim--'
