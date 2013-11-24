@@ -1,10 +1,13 @@
 set autoindent       " automatically indent new lines
 set formatoptions+=o " continue comment marker in new lines
-set textwidth=118     " hard-wrap long lines as you type them
-set tabstop=2        " render TABs using this many spaces
+set formatoptions+=n " recognize numbered lists
+set formatoptions+=j " remove a comment leader when joining lines
+set formatoptions+=l " don't wrap line automatically if it was longer before insert
+set textwidth=118    " hard-wrap long lines as you type them
+set tabstop=4        " render TABs using this many spaces
 set expandtab        " insert spaces when TAB is pressed
-set softtabstop=2    " ... this many spaces
-set shiftwidth=2     " indentation amount for < and > commands
+set softtabstop=4    " ... this many spaces
+set shiftwidth=4     " indentation amount for < and > commands
 
 " repeat last character to the maximum width of current line
 nnoremap <Leader>_ :execute 's/.$/'. repeat('&', &textwidth+1) .'/'<Enter>
@@ -15,6 +18,5 @@ nmap <Leader>- A-<Esc><Leader>_
 
 " format current line as a top-level heading in markdown (uses `z marker)
 nmap <Leader>= mzyypVr=:.+1g/^=\+/d<Enter>`z
-
 " format current line as a second-level heading in markdown (uses `z marker)
 nmap <Leader>+ mzyypVr-:.+1g/^-\+/d<Enter>`z
