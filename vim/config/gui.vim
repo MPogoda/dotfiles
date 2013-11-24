@@ -1,8 +1,7 @@
 set guicursor+=a:blinkwait0 " disable cursor blink in gvim
 set guioptions-=r           " disable right scrollbar
 set guioptions-=L           " disable left scrollbar
-set guioptions-=T
-set guioptions-=m
+set guioptions-=T           " disable toolbar
+set guioptions-=m           " disable menubar
 set guifont=PragmataPro\ 12
 "set guiheadroom=0
-set background=dark
