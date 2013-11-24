@@ -1,5 +1,5 @@
 " visually select the text that was last edited or pasted
-nnoremap gV `[v`]
+nnoremap gv `[v`]
 
 " visually select a search result
-nnoremap g/ //e<Enter>v??<Enter>
+nnoremap g/ //e<cr>v??<cr>
