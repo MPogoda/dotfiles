@@ -16,6 +16,8 @@ NeoBundle 'thinca/vim-unite-history'
 
 NeoBundle 'bling/vim-airline'
 
+NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : 1 } }
+
 NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' : { 'filetypes' : ['c', 'cpp'] }
                                       \ , 'name' : 'clang_complete'
                                       \ }
@@ -46,7 +48,8 @@ NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'tomtom/tcomment_vim'
 
-NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'Shougo/neosnippet.vim'
 
 NeoBundle 'Lokaltog/vim-easymotion'
 

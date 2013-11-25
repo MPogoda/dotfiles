@@ -10,7 +10,6 @@ syntastic/
 tabular/
 tagbar/
 tcomment_vim/
-ultisnips/
 unite.vim/
 vim-airline/
 vim-easymotion/
@@ -27,3 +26,6 @@ vimproc
 octave.vim--
 vim-unite-history
 gitv
+neocomplete.vim
+neosnippet.vim
+vim-snippets

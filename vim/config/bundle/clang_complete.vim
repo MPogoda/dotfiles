@@ -4,7 +4,6 @@ let g:clang_complete_copen = 1
 let g:clang_periodic_quickfix = 1
 " do some snippets magic on code placeholders.
 let g:clang_snippets = 1
-let g:clang_snippets_engine = "ultisnips"
 " preview window will be closed automatically after a completion.
 let g:clang_close_preview = 1
 " Additionnal compilation argument passed to libclang.
@@ -17,3 +16,5 @@ let g:clang_library_path = "/usr/lib/llvm/"
 let g:clang_complete_macros = 1
 " complete code patterns.
 let g:clang_complete_patterns = 1
+" let neocomplete manage completion.
+let g:clang_complete_auto = 0
