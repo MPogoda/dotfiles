@@ -34,7 +34,7 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
                                \ }
 
 " Undo tree
-NeoBundle 'sjl/gundo.vim'
+NeoBundleLazy 'mbbill/undotree', { 'autoload' : { 'commands' : 'UndotreeToggle' } }
 
 NeoBundle 'lukerandall/haskellmode-vim'
 
@@ -42,7 +42,8 @@ NeoBundle 'tomasr/molokai'
 
 NeoBundle 'scrooloose/syntastic'
 
-NeoBundle 'godlygeek/tabular'
+" NeoBundle 'godlygeek/tabular'
+NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
 
 NeoBundle 'majutsushi/tagbar'
 

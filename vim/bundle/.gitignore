@@ -3,7 +3,6 @@ neobundle.vim
 argtextobj.vim/
 clang_complete/
 closetag/
-gundo.vim/
 haskellmode-vim/
 molokai/
 syntastic/
@@ -30,3 +29,4 @@ neosnippet.vim
 vim-snippets
 NrrwRgn
 vim-expand-region
+undotree
