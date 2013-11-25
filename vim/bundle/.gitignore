@@ -18,7 +18,6 @@ vim-fugitive/
 vim-git/
 vim-latex/
 vim-markdown/
-vim-narrow/
 vim-rdoc/
 vim-xkbswitch/
 vim-signify
@@ -29,3 +28,4 @@ gitv
 neocomplete.vim
 neosnippet.vim
 vim-snippets
+NrrwRgn

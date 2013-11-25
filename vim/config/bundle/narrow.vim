@@ -1,2 +1,2 @@
-vnoremap <Leader>n :Narrow<Enter>
-nnoremap <Leader>N :Widen<Enter>
+vnoremap <Leader>n :NarrowRegion<cr>
+nnoremap <Leader>N :WidenRegion!<cr>

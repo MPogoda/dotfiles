@@ -60,7 +60,8 @@ NeoBundleLazy 'jcf/vim-latex', { 'autoload' : { 'filetypes' : ['tex', 'latex', '
                              \ }
 
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'kana/vim-narrow'
+
+NeoBundle 'chrisbra/NrrwRgn'
 
 NeoBundle 'depuracao/vim-rdoc'
 
