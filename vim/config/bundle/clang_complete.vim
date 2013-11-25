@@ -1,7 +1,7 @@
 " open quickfix window on error.
-let g:clang_complete_copen = 1
+let g:clang_complete_copen = 0
 " periodically update the quickfix window.
-let g:clang_periodic_quickfix = 1
+let g:clang_periodic_quickfix = 0
 " do some snippets magic on code placeholders.
 let g:clang_snippets = 1
 " preview window will be closed automatically after a completion.
