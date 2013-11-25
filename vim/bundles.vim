@@ -1,12 +1,12 @@
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/vimproc', { 'build' :
-                          \   { 'mac'  : 'make -f make_mac.mak'
-                          \   , 'unix' : 'make -f make_unix.mak'
-                          \   }
-                          \ , 'name' : 'vimproc'
-                          \ }
+NeoBundleDepends 'Shougo/vimproc', { 'build' :
+                                 \   { 'mac'  : 'make -f make_mac.mak'
+                                 \   , 'unix' : 'make -f make_unix.mak'
+                                 \   }
+                                 \ , 'name' : 'vimproc'
+                                 \ }
 " Unite.vim
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
@@ -65,7 +65,7 @@ NeoBundleLazy 'jcf/vim-latex', { 'autoload' : { 'filetypes' : ['tex', 'latex', '
                              \ , 'name' : 'vim-latex'
                              \ }
 
-NeoBundle 'tpope/vim-markdown'
+NeoBundleLazy 'tpope/vim-markdown', { 'autoload' : { 'filetypes' : [ 'markdown' ] } }
 
 NeoBundle 'chrisbra/NrrwRgn'
 
