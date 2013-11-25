@@ -12,7 +12,10 @@ NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
 
-NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'thinca/vim-unite-history', { 'depends' : 'unite.vim' }
+NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
+                                 \ , 'autoload' : { 'unite_sources' : 'help' }
+                                 \ }
 
 NeoBundle 'bling/vim-airline'
 
@@ -45,7 +48,7 @@ NeoBundle 'scrooloose/syntastic'
 " NeoBundle 'godlygeek/tabular'
 NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
 
-NeoBundle 'majutsushi/tagbar'
+NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
 
 NeoBundle 'tomtom/tcomment_vim'
 

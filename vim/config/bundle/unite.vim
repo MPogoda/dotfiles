@@ -23,6 +23,8 @@ nnoremap <leader>m :<C-u>Unite -buffer-name=mrus file_mru<cr>
 let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :<C-u>Unite -buffer-name=yanks history/yank<cr>
 
+nnoremap <leader>h :<C-u>Unite -buffer-name=help help<cr>
+
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
   " Overwrite settings.
