@@ -12,7 +12,9 @@ NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
 
-NeoBundle 'thinca/vim-unite-history', { 'depends' : 'unite.vim' }
+NeoBundleLazy 'thinca/vim-unite-history', { 'depends' : 'unite.vim'
+                                        \ , 'autoload' : { 'unite_sources' : 'history/command' }
+                                        \ }
 NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
                                  \ , 'autoload' : { 'unite_sources' : 'help' }
                                  \ }
@@ -86,3 +88,5 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'MPogoda/octave.vim--'
 
 NeoBundle 'terryma/vim-expand-region'
+
+NeoBundle 'nathanaelkane/vim-indent-guides'
