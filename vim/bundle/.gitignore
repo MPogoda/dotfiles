@@ -29,3 +29,4 @@ neocomplete.vim
 neosnippet.vim
 vim-snippets
 NrrwRgn
+vim-expand-region

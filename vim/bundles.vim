@@ -80,3 +80,5 @@ NeoBundle 'argtextobj.vim'
 NeoBundle 'mhinz/vim-signify'
 
 NeoBundle 'MPogoda/octave.vim--'
+
+NeoBundle 'terryma/vim-expand-region'
