@@ -27,6 +27,9 @@ NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html'] }
 " VCS Integration
 NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
 NeoBundle 'tpope/vim-git'
+NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
+                               \ , 'autoload' : { 'commands' : 'Gitv' }
+                               \ }
 
 " Undo tree
 NeoBundle 'sjl/gundo.vim'
