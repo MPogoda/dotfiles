@@ -88,3 +88,10 @@ NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
 NeoBundle 'sudo.vim'
+
+NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
+                                        \   { 'filetypes' : [ 'tex'
+                                                          \ , 'latex'
+                                                          \ ]
+                                        \   }
+                                        \ }
