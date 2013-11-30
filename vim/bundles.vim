@@ -90,3 +90,5 @@ NeoBundle 'MPogoda/octave.vim--'
 NeoBundle 'terryma/vim-expand-region'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
+
+NeoBundle 'sudo.vim'
