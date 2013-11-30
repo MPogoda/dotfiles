@@ -61,10 +61,6 @@ NeoBundle 'Lokaltog/vim-easymotion'
 
 NeoBundle 'tpope/vim-endwise'
 
-NeoBundleLazy 'jcf/vim-latex', { 'autoload' : { 'filetypes' : ['tex', 'latex', 'bib'] }
-                             \ , 'name' : 'vim-latex'
-                             \ }
-
 NeoBundleLazy 'tpope/vim-markdown', { 'autoload' : { 'filetypes' : [ 'markdown' ] } }
 
 NeoBundle 'chrisbra/NrrwRgn'
