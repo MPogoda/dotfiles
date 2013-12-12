@@ -1,3 +1,2 @@
-set spell
-set iskeyword+=:
-set grepprg=grep\ -nH\ $*
+setlocal spell
+setlocal iskeyword+=:
