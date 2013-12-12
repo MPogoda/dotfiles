@@ -29,7 +29,7 @@ NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' : { 'filetypes' : ['c', 'cp
                                       \ , 'name' : 'clang_complete'
                                       \ }
 
-NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html'] }
+NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html', 'xml'] }
                                      \ , 'name' : 'closetag'
                                      \ }
 
