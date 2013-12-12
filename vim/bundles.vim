@@ -1,3 +1,5 @@
+" vim: foldmethod=marker
+"
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -37,6 +39,16 @@ NeoBundle 'tpope/vim-git'
 NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
                                \ , 'autoload' : { 'commands' : 'Gitv' }
                                \ }
+" {{{ GitV hotkeys
+" \gv -> full repo view, \gV -> file view
+" <cr> -> view commit, <C-n>/<C-p> jump to next/previous commit and <cr>.
+" o -> <cr> with split, O -> tab, s -> vsplit
+" co -> checkout
+" S -> diffstat
+" yc -> copy SHA
+" x/X -> next/previous branching point
+" Folds are enabled
+" }}}
 
 " Undo tree
 NeoBundleLazy 'mbbill/undotree', { 'autoload' : { 'commands' : 'UndotreeToggle' } }
