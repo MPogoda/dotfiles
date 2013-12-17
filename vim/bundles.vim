@@ -108,3 +108,13 @@ NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
                                                           \ ]
                                         \   }
                                         \ }
+" {{{ LaTeX-Box
+" C-xC-o completion
+" [[ -> \begin
+" ]] -> \end / \right / whatever
+" n-f5 -- */ no-*
+" v-f7 -- wrap into command
+" ([ -- eqref
+" (( -- \left(
+" )) -- \item
+" }}} LaTeX-Box
