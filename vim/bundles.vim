@@ -3,12 +3,12 @@
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundleDepends 'Shougo/vimproc', { 'build' :
-                                 \   { 'mac'  : 'make -f make_mac.mak'
-                                 \   , 'unix' : 'make -f make_unix.mak'
-                                 \   }
-                                 \ , 'name' : 'vimproc'
-                                 \ }
+NeoBundle 'Shougo/vimproc', { 'build' :
+                          \   { 'mac'  : 'make -f make_mac.mak'
+                          \   , 'unix' : 'make -f make_unix.mak'
+                          \   }
+                          \ , 'name' : 'vimproc'
+                          \ }
 " Unite.vim
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
