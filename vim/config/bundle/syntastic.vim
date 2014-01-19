@@ -11,8 +11,5 @@ let g:syntastic_ignore_files=['^/usr/include/']
 " map non-standard filetypes to standard ones.
 let g:syntastic_filetype_map = { 'latex': 'tex',
                                \ 'gentoo-metadata': 'xml' }
-" show info about warnings.
-let g:syntastic_quiet_warnings=0
-
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_config_file = '.clang_complete'
