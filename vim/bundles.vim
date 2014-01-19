@@ -118,3 +118,5 @@ NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
 " (( -- \left(
 " )) -- \item
 " }}} LaTeX-Box
+
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
