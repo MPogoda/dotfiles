@@ -15,4 +15,6 @@ fi
 
 compton &
 
+( sleep 4 && leechcraft ) &
+
 exec xmonad
