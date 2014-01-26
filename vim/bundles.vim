@@ -68,6 +68,7 @@ NeoBundle 'tomtom/tcomment_vim'
 
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
 
 NeoBundle 'Lokaltog/vim-easymotion'
 

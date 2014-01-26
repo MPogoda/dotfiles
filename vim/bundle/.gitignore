@@ -25,6 +25,7 @@ vim-unite-history
 gitv
 neocomplete.vim
 neosnippet.vim
+neosnippet-snippets
 vim-snippets
 NrrwRgn
 vim-expand-region
