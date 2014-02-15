@@ -7,10 +7,10 @@ function install_file()
 
   echo "Install ${1} to ${2}? (y/n)"
   read answer
-  if [[ "x$answer" == "xy" ]]
+  if [[ "$answer" == "y" ]]
   then
     [[ -e $2 ]] && echo "Creating ${2}.bak" && mv -v ${2} ${2}.bak
-    ln -sfv $3/${BASE_PATH}/$1 $2
+    ln -sfv ${BASE_PATH}/$1 $2
     return 0
   else
     return 1
@@ -32,7 +32,10 @@ mkdir -pv .xmonad
 install_file "xmonad.hs" ".xmonad/xmonad.hs" ".."
 install_file "Xresources" ".Xresources"
 install_file "Xresources.theme" ".Xresources.theme"
-install_file "zsh" ".zsh" && install_file "zshrc" ".zshrc"
 
-install_file "vim" ".vim" && install_file "vim/vimrc" ".vimrc" && git clone https://github.com/Shougo/neobundle.vim $BASE_PATH/vim/bundle/neobundle.vim && vim +NeoBundleInstall +qall
+install_file "zsh" ".zsh"
+install_file "zshrc" ".zshrc"
+
+install_file "vim" ".vim"
+install_file "vim/vimrc" ".vimrc" && git clone -depth 1 https://github.com/Shougo/neobundle.vim $BASE_PATH/vim/bundle/neobundle.vim && vim +NeoBundleInstall +qall
 
