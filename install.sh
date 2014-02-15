@@ -37,5 +37,5 @@ install_file "zsh" ".zsh"
 install_file "zshrc" ".zshrc"
 
 install_file "vim" ".vim"
-install_file "vim/vimrc" ".vimrc" && git clone -depth 1 https://github.com/Shougo/neobundle.vim $BASE_PATH/vim/bundle/neobundle.vim && vim +NeoBundleInstall +qall
+install_file "vim/vimrc" ".vimrc" && git clone --depth 1 https://github.com/Shougo/neobundle.vim $BASE_PATH/vim/bundle/neobundle.vim && vim +NeoBundleInstall +qall
 
