@@ -5,7 +5,7 @@ let g:clang_close_preview = 1
 " use libclang directly.
 let g:clang_use_library = 1
 " absolute path where libclang is available.
-let g:clang_library_path = "/usr/lib/llvm/"
+let g:clang_library_path = "/usr/lib/"
 " complete preprocessor macros and constants.
 let g:clang_complete_macros = 1
 " complete code patterns.
