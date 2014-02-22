@@ -7,7 +7,7 @@ import XMonad
 -- for statusbar
 import XMonad.Hooks.DynamicLog      (statusBar, xmobarPP, xmobarColor, PP(..), wrap)
 import XMonad.Hooks.EwmhDesktops    (ewmh, fullscreenEventHook)
-import XMonad.Hooks.ManageDocks     (docksEventHook, ToggleStruts(..))
+import XMonad.Hooks.ManageDocks     (docksEventHook, ToggleStruts(..), SetStruts(..))
 -- honor size hints
 import XMonad.Layout.LayoutHints    (layoutHintsToCenter, hintsEventHook)
 -- for auto-toggling fullscreen on fullscreen windows (like flash)
@@ -41,6 +41,7 @@ main = do
               , manageHook         = myManageHook <+> namedScratchpadManageHook scratchpads
               , handleEventHook    = myEventHook
               , keys               = myKeys
+              , startupHook        = broadcastMessage $ SetStruts [] [minBound..maxBound]
               }
 
 -- xmobar pretty printing stuff
