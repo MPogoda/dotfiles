@@ -7,9 +7,9 @@ function install_file()
 
   echo "Install ${1} to ${2}? (y/n)"
   read answer
-  if [[ "$answer" == "y" ]]
+  if [ "$answer" = "y" ]
   then
-    [[ -e $2 ]] && echo "Creating ${2}.bak" && mv -v ${2} ${2}.bak
+    [ -e "$2" ] && echo "Creating ${2}.bak" && mv -v -- ${2} ${2}.bak
     ln -sfv ${BASE_PATH}/$1 $2
     return 0
   else
