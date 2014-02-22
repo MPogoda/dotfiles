@@ -38,3 +38,5 @@ Config { lowerOnStart = True
        , alignSep = "}{"
        , template = "%StdinReader%}{%cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %eth0% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
        }
+
+-- vim: filetype=haskell
