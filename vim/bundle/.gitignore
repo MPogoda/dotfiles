@@ -1,7 +1,6 @@
 .neobundle
 neobundle.vim
 argtextobj.vim/
-clang_complete/
 closetag/
 haskellmode-vim/
 molokai/
@@ -24,9 +23,6 @@ octave.vim--
 vim-unite-history
 gitv
 neocomplete.vim
-neosnippet.vim
-neosnippet-snippets
-vim-snippets
 NrrwRgn
 vim-expand-region
 undotree
@@ -35,3 +31,4 @@ vim-indent-guides
 sudo.vim
 LaTeX-Box
 vim-cpp-enhanced-highlight
+YouCompleteMe

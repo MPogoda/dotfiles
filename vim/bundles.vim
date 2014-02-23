@@ -9,6 +9,11 @@ NeoBundle 'Shougo/vimproc', { 'build' :
                           \   }
                           \ , 'name' : 'vimproc'
                           \ }
+
+NeoBundle 'Valloric/YouCompleteMe', { 'build' :
+                                  \   { 'unix' : 'sh install.sh --clang-completer --system-libclang' }
+                                  \ }
+
 " Unite.vim
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
@@ -23,11 +28,11 @@ NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
 
 NeoBundle 'bling/vim-airline'
 
-NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : 1 } }
+" NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : 1 } }
 
-NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' : { 'filetypes' : ['c', 'cpp'] }
-                                      \ , 'name' : 'clang_complete'
-                                      \ }
+" NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' : { 'filetypes' : ['c', 'cpp'] }
+"                                       \ , 'name' : 'clang_complete'
+"                                       \ }
 
 NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html', 'xml'] }
                                      \ , 'name' : 'closetag'
@@ -66,9 +71,9 @@ NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' 
 
 NeoBundle 'tomtom/tcomment_vim'
 
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
+" NeoBundle 'honza/vim-snippets'
+" NeoBundle 'Shougo/neosnippet.vim'
+" NeoBundle 'Shougo/neosnippet-snippets'
 
 NeoBundle 'Lokaltog/vim-easymotion'
 
@@ -121,3 +126,4 @@ NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
 " }}} LaTeX-Box
 
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
+
