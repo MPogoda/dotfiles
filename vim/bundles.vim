@@ -82,6 +82,7 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundleLazy 'tpope/vim-markdown', { 'autoload' : { 'filetypes' : [ 'markdown' ] } }
 
 NeoBundle 'chrisbra/NrrwRgn'
+" <leader>nr -> narrow region
 
 NeoBundle 'depuracao/vim-rdoc'
 
