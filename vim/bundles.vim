@@ -4,9 +4,7 @@
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimproc', { 'build' :
-                          \   { 'mac'  : 'make -f make_mac.mak'
-                          \   , 'unix' : 'make -f make_unix.mak'
-                          \   }
+                          \   { 'unix' : 'make -f make_unix.mak' }
                           \ , 'name' : 'vimproc'
                           \ }
 
@@ -14,7 +12,6 @@ NeoBundle 'Valloric/YouCompleteMe', { 'build' :
                                   \   { 'unix' : 'sh install.sh --clang-completer --system-libclang' }
                                   \ }
 
-" Unite.vim
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
@@ -27,12 +24,6 @@ NeoBundleLazy 'Shougo/unite-help', { 'depends' : 'unite.vim'
                                  \ }
 
 NeoBundle 'bling/vim-airline'
-
-" NeoBundleLazy 'Shougo/neocomplete.vim', { 'autoload' : { 'insert' : 1 } }
-
-" NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' : { 'filetypes' : ['c', 'cpp'] }
-"                                       \ , 'name' : 'clang_complete'
-"                                       \ }
 
 NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html', 'xml'] }
                                      \ , 'name' : 'closetag'
