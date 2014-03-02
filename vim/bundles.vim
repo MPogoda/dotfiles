@@ -87,9 +87,6 @@ NeoBundleLazy 'lyokha/vim-xkbswitch', { 'autoload' :
                                     \ , 'name' : 'vim-xkbswitch'
                                     \ }
 
-NeoBundle 'argtextobj.vim'
-" Defines _ia (_ inner argument) and _aa (_ an argument)
-
 NeoBundle 'mhinz/vim-signify'
 
 NeoBundle 'MPogoda/octave.vim--'

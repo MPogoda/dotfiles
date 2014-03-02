@@ -1,6 +1,5 @@
 .neobundle
 neobundle.vim
-argtextobj.vim/
 closetag/
 haskellmode-vim/
 molokai/
