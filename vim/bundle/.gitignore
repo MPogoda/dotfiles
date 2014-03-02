@@ -22,7 +22,6 @@ vimproc
 octave.vim--
 vim-unite-history
 gitv
-neocomplete.vim
 NrrwRgn
 vim-expand-region
 undotree
@@ -32,3 +31,4 @@ sudo.vim
 LaTeX-Box
 vim-cpp-enhanced-highlight
 YouCompleteMe
+ListToggle

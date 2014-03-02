@@ -119,3 +119,6 @@ NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
 
 NeoBundle 'octol/vim-cpp-enhanced-highlight'
 
+NeoBundle 'Valloric/ListToggle'
+" <leader>q -> quickfix list
+" <leader>w -> location list
