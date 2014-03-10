@@ -8,9 +8,8 @@ NeoBundle 'Shougo/vimproc', { 'build' :
                           \ , 'name' : 'vimproc'
                           \ }
 
-NeoBundle 'Valloric/YouCompleteMe', { 'build' :
-                                  \   { 'unix' : 'sh install.sh --clang-completer --system-libclang' }
-                                  \ }
+NeoBundle 'Valloric/YouCompleteMe'
+" To build one should run 'sh install.sh --clang-completer --system-libclang'
 
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
