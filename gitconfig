@@ -1,28 +1,28 @@
 [user]
-  name = Michael Pogoda
-  email = do0dlez1991@gmail.com
-  signingkey = C8A2DA6E
+    name = Michael Pogoda
+    email = do0dlez1991@gmail.com
+    signingkey = C8A2DA6E
 [core]
-  excludesfile = ~/.cvsignore
+    excludesfile = ~/.cvsignore
 [color]
-  ui = true
+    ui = true
 [format]
-  pretty = oneline
+    pretty = oneline
 [alias]
-  lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-  lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
-  lg = !"git lg1"
-  puush = push --force
-	up = "!git remote update -p; git merge --ff-only @{u}"
+    lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+    lg = !"git lg1"
+    puush = push --force
+    up = "!git remote update -p; git merge --ff-only @{u}"
 [credential]
-  helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [push]
-  default = simple
+    default = simple
 [pull]
-  rebase = true
+    rebase = true
 [tig]
-  line-graphics = utf-8
-  show-date = local
-  show-id = true
-  ignore-space = all
-  commit-order = topo
+    line-graphics = utf-8
+    show-date = local
+    show-id = true
+    ignore-space = all
+    commit-order = topo
