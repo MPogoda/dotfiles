@@ -4,7 +4,7 @@ xsetroot -cursor_name left_ptr
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
 setxkbmap -layout 'us,ru,us(colemak)'
-setxkbmap -option grp:lalt_toggle
+setxkbmap -option grp:rshift_toggle
 setxkbmap -option caps:backspace
 setxkbmap -option compose:ralt
 
