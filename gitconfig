@@ -1,7 +1,7 @@
 [user]
     name = Michael Pogoda
-    email = do0dlez1991@gmail.com
-    signingkey = C8A2DA6E
+    email = mi.pogoda@samsung.com
+    signingkey = 0x65173C61B52644A7
 [core]
     excludesfile = ~/.cvsignore
 [color]
