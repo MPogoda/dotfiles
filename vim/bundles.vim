@@ -50,8 +50,6 @@ NeoBundleLazy 'mbbill/undotree', { 'autoload' : { 'commands' : 'UndotreeToggle' 
 
 NeoBundle 'lukerandall/haskellmode-vim'
 
-NeoBundle 'tomasr/molokai'
-
 NeoBundle 'scrooloose/syntastic'
 
 " NeoBundle 'godlygeek/tabular'
@@ -118,3 +116,7 @@ NeoBundle 'octol/vim-cpp-enhanced-highlight'
 NeoBundle 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>w -> location list
+
+NeoBundle 'tomasr/molokai'
+NeoBundle 'altercation/vim-colors-solarized'
+

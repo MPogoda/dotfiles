@@ -1,5 +1,10 @@
 set colorcolumn=+1 " show textwidth limit
 autocmd ColorScheme * highlight! link ColorColumn StatusLineNC
 
-colorscheme molokai
-set background=dark
+if has('gui_running')
+    colorscheme solarized
+    set background=light
+else
+    colorscheme molokai
+    set background=dark
+endif
