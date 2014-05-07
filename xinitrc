@@ -25,4 +25,6 @@ else
     eval $(gpg-agent --write-env-file ${HOME}/.gnupg/gpg-agent.env --enable-ssh-support --daemon )
 fi
 
+compton --vsync opengl --use-ewmh-active-win --glx-use-gpushader4 &
+
 exec xmonad
