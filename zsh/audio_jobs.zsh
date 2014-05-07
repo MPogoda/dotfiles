@@ -10,5 +10,5 @@ function alac2flac() {
 }
 
 function flac2ogg() {
-    oggenc --quality=6.66 *.flac && rm -v *.flac && vorbisgain --album *.ogg
+    oggenc --quality=6.66 *.flac && rm -v *.flac && collectiongain .
 }
