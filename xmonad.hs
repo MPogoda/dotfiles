@@ -68,7 +68,7 @@ myTerminal = "st"
 
 -- list of workspaces
 myWorkspaces :: [String]
-myWorkspaces = words "a s d f g z x c v"
+myWorkspaces = words "a r s t d z x c v"
 -- in case of dvorak:
 -- myWorkspaces = words "a o e u i ; q j k"
 
@@ -108,13 +108,10 @@ myManageHook = composeAll
     -- when condition from first part of tuple succeed, move that window to #2
     myShifts = map (\(x, y) -> (className =? x, y)) clsShifts
     -- [ ( className, workspace) ]
-    clsShifts = [ ("Chromium-browser", "s")
-                , ("Google-chrome-unstable", "s")
+    clsShifts = [ ("Chromium-browser", "r")
+                , ("Google-chrome-unstable", "r")
                 , ("Firefox", "s")
                 , ("Leechcraft", "a")
-                , ("Djview", "z")
-                , ("Okular", "z")
-                , ("Kchmviewer", "z")
                 ] :: [(String,  String)]
 
 -- eventHook
@@ -125,7 +122,7 @@ myKeys = \conf -> mkKeymap conf $
          [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , ("M-S-<Return>", spawn       $ myTerminal )
          , ("M-C-<Esc>",    spawn       $ "xkill")
-         , ("M-r",          spawn       $ "dmenu_run -fn PragmataPro-32")
+         , ("M-p",          spawn       $ "dmenu_run -fn PragmataPro-32")
          -- cycle through all possible layouts
          , ("M-<Space>",    sendMessage $ NextLayout)
          -- restore default layout
@@ -146,7 +143,7 @@ myKeys = \conf -> mkKeymap conf $
          , ("M-u",          sendMessage $ MirrorShrink)
          , ("M-i",          sendMessage $ MirrorExpand)
          -- make floating windows non-floating
-         , ("M-t",          withFocused $ windows . W.sink)
+         , ("M-g",          withFocused $ windows . W.sink)
          -- increase/decrease number of windows in master pane
          , ("M-,",          sendMessage $ IncMasterN 1)
          , ("M-.",          sendMessage $ IncMasterN (-1))
@@ -162,7 +159,6 @@ myKeys = \conf -> mkKeymap conf $
          , (prefix "b", spawn $ "google-chrome-unstable")
          , (prefix "e", spawn $ "gvim")
          , (prefix "r", namedScratchpadAction scratchpads "term")
-         , (prefix "s", namedScratchpadAction scratchpads "skype")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
          ]
          ++
@@ -181,8 +177,6 @@ scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/tm
                   (resource =? "dashboard") nonFloating
               , NS "term" (myTerminal ++ " -c term -e tmux") (resource =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
-              , NS "skype" "" (className =? "Skype" <&&> role =? "ConversationsWindow")
-                  ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
               ]
               where
                 role = stringProperty "WM_WINDOW_ROLE"
