@@ -110,7 +110,7 @@ myManageHook = composeAll
     -- [ ( className, workspace) ]
     clsShifts = [ ("Chromium-browser", "r")
                 , ("Google-chrome-unstable", "r")
-                , ("Firefox", "s")
+                , ("Firefox", "r")
                 , ("Leechcraft", "a")
                 ] :: [(String,  String)]
 
@@ -156,7 +156,7 @@ myKeys = \conf -> mkKeymap conf $
          -- close current window
          , (prefix "c", kill)
          -- shortcuts
-         , (prefix "b", spawn $ "google-chrome-unstable")
+         , (prefix "b", spawn $ "firefox")
          , (prefix "e", spawn $ "gvim")
          , (prefix "r", namedScratchpadAction scratchpads "term")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
