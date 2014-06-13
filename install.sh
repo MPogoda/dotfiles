@@ -22,10 +22,8 @@ BASE_PATH=${PATH_TO_INSTALL_SH%/*}
 echo "Installing dotfiles from ${BASE_PATH}..."
 
 install_file "gitconfig" ".gitconfig"
-install_file "irbrc" ".irbrc"
 install_file "tmux.conf" ".tmux.conf"
 install_file "tmux.sh" "tmux.sh"
-install_file "wgetrc" ".wgetrc"
 install_file "xinitrc" ".xinitrc"
 install_file "xmobarrc" ".xmobarrc"
 mkdir -pv .xmonad
