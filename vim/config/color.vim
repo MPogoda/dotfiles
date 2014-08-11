@@ -10,3 +10,4 @@ let g:load_doxygen_syntax=1 " Load doxygen syntax by default
 " endif
 
 syntax on
+
