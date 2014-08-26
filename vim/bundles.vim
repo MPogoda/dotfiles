@@ -120,4 +120,3 @@ NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundle 'tpope/vim-vinegar'
