@@ -1,4 +1,4 @@
-alias -s {avi,mpeg,mpg,mov,mkv}=mplayer2
+alias -s {avi,mpeg,mpg,mov,mkv}=mpv
 
 alias esync='sudo eix-sync'
 alias fetch='sudo emerge --update --deep --newuse --fetchonly @world'
