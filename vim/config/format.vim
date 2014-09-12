@@ -17,6 +17,6 @@ nnoremap <Leader>_ :execute 's/.$/'. repeat('&', &textwidth+1) .'/'<Enter>
 nmap <Leader>- A-<Esc><Leader>_
 
 " format current line as a top-level heading in markdown (uses `z marker)
-nmap <Leader>= mzyypVr=:.+1g/^=\+/d<Enter>`z
+nmap <Leader>= mzyypVr=:.+1g/^=\+/d<Enter>`z<C-l>
 " format current line as a second-level heading in markdown (uses `z marker)
-nmap <Leader>+ mzyypVr-:.+1g/^-\+/d<Enter>`z
+nmap <Leader>+ mzyypVr-:.+1g/^-\+/d<Enter>`z<C-l>
