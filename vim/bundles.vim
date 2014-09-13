@@ -108,6 +108,11 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
 
 NeoBundleLazy 'tpope/vim-markdown', { 'autoload' : { 'filetypes' : [ 'markdown' ] } }
+" {{{ Markdown maps
+" <leader>= TOP LEVEL
+" <leader>+ Second level
+" <leader>- Update section separator
+" }}} Markdown maps
 
 NeoBundle 'chrisbra/NrrwRgn'
 " <leader>nr -> narrow region

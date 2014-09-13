@@ -13,10 +13,3 @@ set shiftwidth=4     " indentation amount for < and > commands
 nnoremap <Leader>_ :execute 's/.$/'. repeat('&', &textwidth+1) .'/'<Enter>
       \:execute 's/\%>'. &textwidth .'v.//g'<Enter>
 
-" insert or update section separator at end of current line
-nmap <Leader>- A-<Esc><Leader>_
-
-" format current line as a top-level heading in markdown (uses `z marker)
-nmap <Leader>= mzyypVr=:.+1g/^=\+/d<Enter>`z<C-l>
-" format current line as a second-level heading in markdown (uses `z marker)
-nmap <Leader>+ mzyypVr-:.+1g/^-\+/d<Enter>`z<C-l>
