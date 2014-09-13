@@ -9,7 +9,15 @@ NeoBundle 'Shougo/vimproc', { 'build' :
                           \ }
 
 NeoBundle 'Valloric/YouCompleteMe'
-" To build one should run 'sh install.sh --clang-completer --system-libclang'
+" {{{Build instruction for YCM
+"   1. git submodule update --init --recursive
+"   2. cd third_party/ycmd
+"   3. mkdir -p build
+"   4. cd build
+"   5. cmake .. ../cpp
+"   5a. (optional) ccmake . # configure
+"   6. make
+" }}}
 
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
