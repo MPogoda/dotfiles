@@ -22,6 +22,18 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
+" {{{ Unite hotkeys
+" <leader>o recursive files
+" <leader>f files
+" <leader>b buffers
+" <leader>/ grep
+" <leader>l lines
+" <leader>; command
+" <leader>: history/command
+" <leader>m MRU files
+" <leader>y history/yank
+" <leader>h help
+" }}}
 
 NeoBundleLazy 'thinca/vim-unite-history', { 'depends' : 'unite.vim'
                                         \ , 'autoload' : { 'unite_sources' : 'history/command' }
