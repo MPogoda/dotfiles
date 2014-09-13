@@ -1,12 +1,16 @@
-set nocompatible
-
 if has ('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set nocompatible
+
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 runtime! bundles.vim
+
+call neobundle#end()
+
+NeoBundleCheck
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
