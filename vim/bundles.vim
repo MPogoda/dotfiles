@@ -97,6 +97,14 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 " Start with ,.
 
+NeoBundle 'tpope/vim-surround'
+" {{{ Surround mappings
+" ds   delete
+" cs   change
+" ys   create with motion
+" S    create in visual mode
+" }}} Surround mappings
+
 NeoBundle 'tpope/vim-endwise'
 
 NeoBundleLazy 'tpope/vim-markdown', { 'autoload' : { 'filetypes' : [ 'markdown' ] } }
