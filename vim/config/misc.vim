@@ -3,9 +3,6 @@ if has("autocmd")
         \| exe "normal g'\"" | endif
 endif
 
-" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
-
 " add json syntax highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
 

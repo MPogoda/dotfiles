@@ -14,7 +14,6 @@ vim-endwise/
 vim-fugitive/
 vim-git/
 vim-markdown/
-vim-rdoc/
 vim-xkbswitch/
 vim-signify
 vimproc

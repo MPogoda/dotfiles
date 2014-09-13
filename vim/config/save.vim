@@ -18,5 +18,5 @@ function! StripTrailingWhitespace()
   endif
 endfunction
 
-nnoremap <Leader>s :write<cr>
-nnoremap <Leader>S :saveas<Space>
+nnoremap <leader>s :write<cr>
+nnoremap <leader>S :saveas<Space>
