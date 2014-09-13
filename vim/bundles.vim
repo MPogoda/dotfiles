@@ -19,8 +19,6 @@ NeoBundle 'Valloric/YouCompleteMe'
 "   6. make
 " }}}
 
-
-
 " {{{ Unite
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
@@ -54,8 +52,17 @@ NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html', '
                                      \ , 'name' : 'closetag'
                                      \ }
 
-" VCS Integration
+" {{{ GIT Integration
 NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
+" {{{ Fugitive hotkeys
+" <leader>gs   Gstatus
+"               D for diff
+"               r for reload
+" <leader>gl   Glog
+" <leader>gd   Gdiff
+" <leader>gw   Gwrite
+" <leader>gb   Gblame
+" }}} Fugitive hotkeys
 NeoBundle 'tpope/vim-git'
 NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
                                \ , 'autoload' : { 'commands' : 'Gitv' }
@@ -70,7 +77,7 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
 " x/X -> next/previous branching point
 " Folds are enabled
 " }}}
-
+" }}} GIT Integration
 " Undo tree
 NeoBundleLazy 'mbbill/undotree', { 'autoload' : { 'commands' : 'UndotreeToggle' } }
 
