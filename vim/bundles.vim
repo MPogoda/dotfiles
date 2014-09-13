@@ -163,3 +163,6 @@ NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'altercation/vim-colors-solarized'
 
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+
