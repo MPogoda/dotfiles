@@ -78,25 +78,24 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
 " Folds are enabled
 " }}}
 " }}} GIT Integration
+"
 " Undo tree
 NeoBundleLazy 'mbbill/undotree', { 'autoload' : { 'commands' : 'UndotreeToggle' } }
 
-NeoBundle 'lukerandall/haskellmode-vim'
+NeoBundleLazy 'lukerandall/haskellmode-vim', { 'autoload' : { 'filetypes' : ['haskell', 'hs'] }
+                                           \ }
+
 
 NeoBundle 'scrooloose/syntastic'
 
-" NeoBundle 'godlygeek/tabular'
 NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
 
 NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
 
 NeoBundle 'tomtom/tcomment_vim'
 
-" NeoBundle 'honza/vim-snippets'
-" NeoBundle 'Shougo/neosnippet.vim'
-" NeoBundle 'Shougo/neosnippet-snippets'
-
 NeoBundle 'Lokaltog/vim-easymotion'
+" Start with ,.
 
 NeoBundle 'tpope/vim-endwise'
 
