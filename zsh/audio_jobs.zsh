@@ -24,6 +24,4 @@ function alac2ogg() {
         alac $alac | oggenc --quality=6.66 -o "$(echo $alac | sed -e 's/m4a$/ogg/')" -
         rm -v $alac
     done
-
-    collectiongain .
 }
