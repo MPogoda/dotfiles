@@ -7,3 +7,12 @@ bindkey "^[[8~" end-of-line                       # End
 bindkey "^[[5~" history-beginning-search-backward # PgUp
 bindkey "^[[6~" history-beginning-search-forward  # PgDown
 bindkey "^[z"   insert-sudo                       # Alt+Z
+
+bindkey "^r"    history-incremental-search-backward # C-r
+
+autoload -U edit-command-line
+zle -N edit-command-line
+
+bindkey '^f'   edit-command-line
+
+bindkey '^n'   copy-prev-shell-word
