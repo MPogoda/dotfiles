@@ -71,7 +71,7 @@ git_prompt_status() {
 
 #compare the provided version of git to the version installed and on path
 #prints 1 if input version <= installed version
-#prints -1 otherwise 
+#prints -1 otherwise
 function git_compare_version() {
   local INPUT_GIT_VERSION=$1;
   local INSTALLED_GIT_VERSION

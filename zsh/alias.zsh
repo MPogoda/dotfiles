@@ -1,5 +1,3 @@
-alias -s {avi,mpeg,mpg,mov,mkv}=mpv
-
 alias esync='sudo eix-sync'
 alias fetch='sudo emerge --update --deep --newuse --fetchonly @world'
 alias update='sudo emerge --update --deep --newuse @world'
@@ -14,7 +12,6 @@ alias man='nocorrect man'
 alias mv='nocorrect mv'
 alias mkdir='nocorrect mkdir'
 alias sudo='nocorrect sudo'
-
 
 alias ls='ls --color=auto -b -CF'
 # list all files, with colors
