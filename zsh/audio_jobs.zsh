@@ -1,4 +1,4 @@
-#! /bin/zsh
+#!/bin/zsh
 
 # Find all ALAC files and convert them to flac.
 alac2flac() {
@@ -21,7 +21,7 @@ createHelper() {
     readonly output="$1"
 
     # If file exists, then do nothing
-    test -x $output && exit
+    test -x $output && return
 
     echo '#!/bin/zsh' >! $output
     echo 'readonly tagfile="$1"' >> $output
@@ -37,7 +37,7 @@ createHelper() {
     echo "readonly year=\"\$(grep ^DATE= \$tagfile | sed -e 's/^.*=\(....\).*$/\1/')\"" >> $output
     echo "readonly track=\"\$(grep ^TRACKNUMBER= \$tagfile | sed -e 's/^.*=//')/\$(grep ^TRACKTOTAL= \$tagfile | sed -e 's/^.*=//')\"" >> $output
 
-    echo 'lame -q0 --noreplaygain --id3v2-only --ignore-tag-errors $@ --tt "$title" --ta "$artist" --tl "$album" --ty "$year" --tn "$track" $wavfile $mp3file' >> $output
+    echo 'lame -q0 --noreplaygain --id3v2-only --ignore-tag-errors $@ --tt "$title" --ta "$artist" --tl "$album" --ty "$year" --tn "$track" "$wavfile" "$mp3file"' >> $output
     echo 'rm $tagfile' >> $output
 
     chmod +x $output
@@ -55,6 +55,7 @@ prepare_for_what() {
 flac_320() {
     createHelper /tmp/wavs/helper
     readonly input_directory="$1"
+    export input_directory
 
     readonly output_directory="$input_directory (320)"
     mkdir -p $output_directory
@@ -64,7 +65,7 @@ flac_320() {
     cd $output_directory
     find /tmp/wavs/$input_directory -iname '*.tags' | parallel --no-notice -X 'cp {} .'
 
-    find -iname '*.tags' | parallel --no-notice --progress /tmp/wavs/helper {} /tmp/wavs/{.}.wav {.}.mp3 --cbr -b 320
+    find -iname '*.tags' | parallel --no-notice --progress /tmp/wavs/helper {} '/tmp/wavs/$input_directory/{.}.wav' {.}.mp3 --cbr -b 320
 
     collectiongain .
     popd
@@ -73,8 +74,9 @@ flac_320() {
 flac_V0() {
     createHelper /tmp/wavs/helper
     readonly input_directory="$1"
+    export input_directory
 
-    readonly output_directory="$input_directory (320)"
+    readonly output_directory="$input_directory (V0)"
     mkdir -p $output_directory
 
     test -e $input_directory/folder.png && cp $input_directory/folder.png $output_directory/
@@ -82,7 +84,7 @@ flac_V0() {
     cd $output_directory
     find /tmp/wavs/$input_directory -iname '*.tags' | parallel --no-notice -X 'cp {} .'
 
-    find -iname '*.tags' | parallel --no-notice --progress /tmp/wavs/helper {} /tmp/wavs/{.}.wav {.}.mp3 --vbr-new -V0
+    find -iname '*.tags' | parallel --no-notice --progress /tmp/wavs/helper {} '/tmp/wavs/$input_directory/{.}.wav' {.}.mp3 --vbr-new -V0
 
     collectiongain .
     popd
@@ -91,8 +93,9 @@ flac_V0() {
 flac_V2() {
     createHelper /tmp/wavs/helper
     readonly input_directory="$1"
+    export input_directory
 
-    readonly output_directory="$input_directory (320)"
+    readonly output_directory="$input_directory (V2)"
     mkdir -p $output_directory
 
     test -e $input_directory/folder.png && cp $input_directory/folder.png $output_directory/
@@ -100,7 +103,7 @@ flac_V2() {
     cd $output_directory
     find /tmp/wavs/$input_directory -iname '*.tags' | parallel --no-notice -X 'cp {} .'
 
-    find -iname '*.tags' | parallel --no-notice --progress /tmp/wavs/helper {} /tmp/wavs/{.}.wav {.}.mp3 --vbr-new -V2
+    find -iname '*.tags' | parallel --no-notice --progress /tmp/wavs/helper {} '/tmp/wavs/$input_directory/{.}.wav' {.}.mp3 --vbr-new -V2
 
     collectiongain .
     popd
