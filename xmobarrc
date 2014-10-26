@@ -7,12 +7,12 @@ Config { lowerOnStart = True
        , bgColor      = "#1b1d1e"
        , fgColor      = "#a0a0a0"
        , position     = Bottom
-       , commands     = [ Run Network "eth0"
-                            [ "--Low", "0"
-                            , "--High", "32"
+       , commands     = [ Run DynNetwork
+                            [ "--High", "128000"
                             , "--normal", "#a0a0a0"
                             , "--high"  , "#ff5995"
-                            , "--template", "<fc=#ccccc6>net:</fc> <rx>KB/<tx>KB"
+                            , "--suffix", "True"
+                            , "--template", "<fc=#ccccc6>net:</fc> <rx> <fc=#ccccc6>:</fc> <tx>"
                             ]
                             10
                         , Run Memory
@@ -36,7 +36,7 @@ Config { lowerOnStart = True
                         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %eth0% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
+       , template = "%StdinReader%}{%cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %dynnetwork% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
        }
 
 -- vim: filetype=haskell
