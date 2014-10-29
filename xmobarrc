@@ -1,12 +1,12 @@
 Config { lowerOnStart = True
        , hideOnStart  = False
        , persistent   = False
-       , font         = "xft:Monospace"
+       , font         = "xft:Monospace:pixelsize=14:hinting=false"
        , border       = NoBorder
        , borderColor  = "#ff0000"
        , bgColor      = "#1b1d1e"
        , fgColor      = "#a0a0a0"
-       , position     = Bottom
+       , position     = Top
        , commands     = [ Run DynNetwork
                             [ "--High", "128000"
                             , "--normal", "#a0a0a0"
