@@ -24,17 +24,17 @@ NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
                             \ }
 " {{{ Unite hotkeys
-" -o recursive files
-" -f files
-" -b buffers
-" -/ grep
-" -l lines
-" -; command
-" -: history/command
-" -m MRU files
-" -y history/yank
-" -u outline
-" -n file/new
+" <space>o recursive files
+" <space>f files
+" <space>b buffers
+" <space>/ grep
+" <space>l lines
+" <space>; command
+" <space>: history/command
+" <space>m MRU files
+" <space>y history/yank
+" <space>u outline
+" <space>n file/new
 " }}}
 
 NeoBundleLazy 'thinca/vim-unite-history', { 'depends' : 'unite.vim'
