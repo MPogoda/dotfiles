@@ -6,7 +6,6 @@ call unite#custom#profile('default', 'context', {
 " Directory to store unite configurations.
 let g:unite_data_directory = "~/.cache/vim/unite"
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
 " Replaces fuzzyfinder
 nnoremap <silent> <space>o :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
 " Replaces NERDTree
