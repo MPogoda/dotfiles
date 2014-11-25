@@ -33,7 +33,3 @@ vim-colors-solarized
 vim-surround
 ultisnips
 vim-snippets
-neosnippet.vim
-neocomplete.vim
-neosnippet-snippets/
-clang_complete/

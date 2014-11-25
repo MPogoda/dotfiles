@@ -8,6 +8,17 @@ NeoBundle 'Shougo/vimproc', { 'build' :
                           \ , 'name' : 'vimproc'
                           \ }
 
+NeoBundle 'Valloric/YouCompleteMe'
+" {{{Build instruction for YCM
+"   1. git submodule update --init --recursive
+"   2. cd third_party/ycmd
+"   3. mkdir -p build
+"   4. cd build
+"   5. cmake .. ../cpp
+"   5a. (optional) ccmake . # configure
+"   6. make
+" }}}
+
 " {{{ Unite
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
                             \ , 'depends' : 'vimproc'
@@ -152,19 +163,6 @@ NeoBundle 'Valloric/ListToggle'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundleLazy 'Rip-Rip/clang_complete', { 'autoload' :
-                                      \   { 'filetypes' : [ 'cpp'
-                                                        \ , 'c'
-                                                        \ ]
-                                      \   }
-                                      \ }
+NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/neosnippet.vim' " {{{
-" <tab> for expand.
-" }}} neosnippet.vim
-NeoBundle 'Shougo/neocomplete.vim' " {{{
-" <c-g> to UNDO completion
-" }}} neocomplete.vim
-
 
