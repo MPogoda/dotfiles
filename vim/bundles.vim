@@ -127,7 +127,8 @@ NeoBundleLazy 'lyokha/vim-xkbswitch', { 'autoload' :
                                     \ , 'name' : 'vim-xkbswitch'
                                     \ }
 
-NeoBundle 'mhinz/vim-signify'
+" NeoBundle 'mhinz/vim-signify'
+NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'MPogoda/octave.vim--'
 

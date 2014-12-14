@@ -15,7 +15,6 @@ vim-fugitive/
 vim-git/
 vim-markdown/
 vim-xkbswitch/
-vim-signify
 vimproc
 octave.vim--
 vim-unite-history
@@ -33,3 +32,4 @@ vim-colors-solarized
 vim-surround
 ultisnips
 vim-snippets
+vim-gitgutter
