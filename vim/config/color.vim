@@ -11,3 +11,5 @@ else
     colorscheme molokai
     set background=dark
 endif
+
+syntax on
