@@ -15,6 +15,9 @@ fi
 
 compton &
 
+SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | cut -d' ' -f2)
+[ -S "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+
 xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 xrandr --addmode VBOX0 "1920x1080_60.00"
 xrandr --size 1920x1080
