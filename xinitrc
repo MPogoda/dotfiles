@@ -23,6 +23,6 @@ SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | c
 # xrandr --size 1920x1080
 # xrandr --dpi 82x82
 
-VBoxClient --display --clipboard --seamless
+VBoxClient-all
 
 exec xmonad
