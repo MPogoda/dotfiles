@@ -1,0 +1,7 @@
+crls.d
+private-keys-v1.d
+pubring.*
+random_seed
+sshcontrol
+*.gpg
+.gpg-v21-migrated
