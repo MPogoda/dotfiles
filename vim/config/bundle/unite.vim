@@ -7,27 +7,27 @@ call unite#custom#profile('default', 'context', {
 let g:unite_data_directory = "~/.cache/vim/unite"
 
 " Replaces fuzzyfinder
-nnoremap <silent> <space>o :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
+nnoremap <silent> <leader>o :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
 " Replaces NERDTree
-nnoremap <silent> <space>f :<C-u>Unite -buffer-name=files -profile-name=files file<cr>
+nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files -profile-name=files file<cr>
 " Create new file
-nnoremap <silent> <space>n :<C-u>Unite -buffer-name=New -profile-name=files file/new<cr>
+nnoremap <silent> <leader>n :<C-u>Unite -buffer-name=New -profile-name=files file/new<cr>
 
 " Quickly find a buffer
-nnoremap <silent> <space>b :<C-u>Unite -quick-match -buffer-name=buffers buffer<cr>
+nnoremap <silent> <leader>b :<C-u>Unite -quick-match -buffer-name=buffers buffer<cr>
 
-nnoremap <silent> <space>/ :<C-u>Unite -buffer-name=grep grep:.<cr>
+nnoremap <silent> <leader>/ :<C-u>Unite -buffer-name=grep grep:.<cr>
 
-nnoremap <silent> <space>l :<C-u>Unite -buffer-name=lines line<cr>
-nnoremap <silent> <space>; :<C-u>Unite -buffer-name=commands command<cr>
-nnoremap <silent> <space>: :<C-u>Unite -buffer-name=commands history/command<cr>
+nnoremap <silent> <leader>l :<C-u>Unite -buffer-name=lines line<cr>
+nnoremap <silent> <leader>; :<C-u>Unite -buffer-name=commands command<cr>
+nnoremap <silent> <leader>: :<C-u>Unite -buffer-name=commands history/command<cr>
 
-nnoremap <silent> <space>m :<C-u>Unite -buffer-name=mrus file_mru<cr>
+nnoremap <silent> <leader>m :<C-u>Unite -buffer-name=mrus file_mru<cr>
 
 let g:unite_source_history_yank_enable = 1
-nnoremap <silent> <space>y :<C-u>Unite -buffer-name=yanks history/yank<cr>
+nnoremap <silent> <leader>y :<C-u>Unite -buffer-name=yanks history/yank<cr>
 
-nnoremap <silent> <space>u :<C-u>Unite -buffer-name=Outline outline<cr>
+nnoremap <silent> <leader>u :<C-u>Unite -buffer-name=Outline outline<cr>
 
 
 autocmd FileType unite call s:unite_my_settings()
