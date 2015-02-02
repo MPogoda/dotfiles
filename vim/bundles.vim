@@ -95,7 +95,7 @@ NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' 
 NeoBundle 'tomtom/tcomment_vim'
 
 NeoBundle 'Lokaltog/vim-easymotion'
-" Start with ,.
+" Start with <leader><leader>
 
 NeoBundle 'tpope/vim-surround'
 " {{{ Surround mappings
