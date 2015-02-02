@@ -163,8 +163,7 @@ NeoBundle 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>w -> location list
 
-NeoBundle 'tomasr/molokai'
-NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'morhetz/gruvbox'
 
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'

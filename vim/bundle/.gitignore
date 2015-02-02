@@ -2,7 +2,6 @@
 neobundle.vim
 closetag/
 haskellmode-vim/
-molokai/
 syntastic/
 tabular/
 tagbar/
@@ -28,9 +27,9 @@ LaTeX-Box
 vim-cpp-enhanced-highlight
 YouCompleteMe
 ListToggle
-vim-colors-solarized
 vim-surround
 ultisnips
 vim-snippets
 vim-gitgutter
 NeoBundle.lock
+gruvbox
