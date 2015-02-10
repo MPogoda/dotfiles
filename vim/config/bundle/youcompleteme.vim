@@ -1,5 +1,5 @@
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
-let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_fallback.conf'
 let g:ycm_complete_in_comments_and_strings = 1
 let g:ycm_key_list_select_completion = ['<c-n>', '<down>']
