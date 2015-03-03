@@ -33,3 +33,4 @@ vim-snippets
 vim-gitgutter
 NeoBundle.lock
 gruvbox
+vim-qml
