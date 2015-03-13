@@ -21,6 +21,12 @@
     default = simple
 [pull]
     rebase = true
+[diff]
+    submodule = log
+[fetch]
+    recurseSubmodules = on-demand
+[status]
+    submoduleSummary = true
 [tig]
     line-graphics = utf-8
     ignore-space = all
