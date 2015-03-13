@@ -25,6 +25,8 @@
     submodule = log
 [fetch]
     recurseSubmodules = on-demand
+[rerere]
+    enabled = true
 [status]
     submoduleSummary = true
 [tig]
