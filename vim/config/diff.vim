@@ -26,3 +26,5 @@ if &diff
   vnoremap p :diffput <bar> diffupdate<enter>
   vnoremap o :diffget <bar> diffupdate<enter>
 endif
+
+set diffopt=filler,vertical
