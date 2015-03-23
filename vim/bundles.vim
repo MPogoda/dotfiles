@@ -171,3 +171,5 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 
 NeoBundle 'kien/rainbow_parentheses.vim'
+
+NeoBundle 'mhinz/vim-startify'
