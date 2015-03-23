@@ -2,3 +2,5 @@
 nnoremap Y y$
 set encoding=utf-8
 set backspace=indent,eol,start
+
+inoremap <silent> jj <esc>
