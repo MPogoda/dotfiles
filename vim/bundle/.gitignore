@@ -34,3 +34,4 @@ vim-gitgutter
 NeoBundle.lock
 gruvbox
 vim-qml
+rainbow_parentheses.vim

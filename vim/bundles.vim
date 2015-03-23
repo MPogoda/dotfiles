@@ -170,3 +170,4 @@ NeoBundle 'morhetz/gruvbox'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 
+NeoBundle 'kien/rainbow_parentheses.vim'
