@@ -65,7 +65,6 @@ NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
 " <leader>gw   Gwrite
 " <leader>gb   Gblame
 " }}} Fugitive hotkeys
-NeoBundle 'tpope/vim-git'
 NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
                                \ , 'autoload' : { 'commands' : 'Gitv' }
                                \ }
@@ -109,13 +108,6 @@ NeoBundle 'tpope/vim-surround'
 
 NeoBundle 'tpope/vim-endwise'
 
-NeoBundleLazy 'tpope/vim-markdown', { 'autoload' : { 'filetypes' : [ 'markdown' ] } }
-" {{{ Markdown maps
-" <leader>= TOP LEVEL
-" <leader>+ Second level
-" <leader>- Update section separator
-" }}} Markdown maps
-
 NeoBundle 'chrisbra/NrrwRgn'
 " <leader>nr -> narrow region
 
@@ -140,26 +132,7 @@ NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " <leader>ig to show indent guides
 
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', { 'autoload' :
-                                        \   { 'filetypes' : [ 'tex'
-                                                          \ , 'latex'
-                                                          \ ]
-                                        \   }
-                                        \ }
-" {{{ LaTeX-Box
-" C-xC-o completion
-" [[ -> \begin
-" ]] -> \end / \right / whatever
-" n-f5 -- */ no-*
-" v-f7 -- wrap into command
-" ([ -- eqref
-" (( -- \left(
-" )) -- \item
-" }}} LaTeX-Box
-
-NeoBundle 'octol/vim-cpp-enhanced-highlight'
 NeoBundle 'peterhoeg/vim-qml'
-
 
 NeoBundle 'Valloric/ListToggle'
 " <leader>q -> quickfix list
@@ -173,3 +146,21 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'kien/rainbow_parentheses.vim'
 
 NeoBundle 'mhinz/vim-startify'
+
+NeoBundle 'sheerun/vim-polyglot'
+" {{{ Markdown maps
+" <leader>= TOP LEVEL
+" <leader>+ Second level
+" <leader>- Update section separator
+" }}} Markdown maps
+" {{{ LaTeX-Box
+" C-xC-o completion
+" [[ -> \begin
+" ]] -> \end / \right / whatever
+" n-f5 -- */ no-*
+" v-f7 -- wrap into command
+" ([ -- eqref
+" (( -- \left(
+" )) -- \item
+" }}} LaTeX-Box
+
