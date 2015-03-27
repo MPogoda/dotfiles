@@ -164,3 +164,15 @@ NeoBundle 'sheerun/vim-polyglot'
 " )) -- \item
 " }}} LaTeX-Box
 
+
+NeoBundle 'jeetsukumaran/vim-indentwise'
+" map [- <Plug>(IndentWisePreviousLesserIndent)
+" map [= <Plug>(IndentWisePreviousEqualIndent)
+" map [+ <Plug>(IndentWisePreviousGreaterIndent)
+" map ]- <Plug>(IndentWiseNextLesserIndent)
+" map ]= <Plug>(IndentWiseNextEqualIndent)
+" map ]+ <Plug>(IndentWiseNextGreaterIndent)
+" map [_ <Plug>(IndentWisePreviousAbsoluteIndent)
+" map ]_ <Plug>(IndentWiseNextAbsoluteIndent)
+" map [% <Plug>(IndentWiseBlockScopeBoundaryBegin)
+" map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
