@@ -19,7 +19,7 @@ flags = [
 # more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
 compilation_database_folder = '.'
 
-if os.path.exists( compilation_database_folder ):
+if os.path.exists( compilation_database_folder + 'compile_commands.json' ):
     database = ycm_core.CompilationDatabase( compilation_database_folder )
 else:
     database = None
