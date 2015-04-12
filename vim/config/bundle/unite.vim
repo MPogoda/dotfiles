@@ -3,9 +3,6 @@ call unite#custom#profile('default', 'context', {
                         \ 'start_insert' : 1
                         \ })
 
-" Directory to store unite configurations.
-let g:unite_data_directory = "~/.cache/vim/unite"
-
 " Replaces fuzzyfinder
 nnoremap <silent> <leader>o :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
 " Replaces NERDTree
@@ -51,11 +48,11 @@ if executable('ag')
     let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --hidden --ignore ' .
                                         \  '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
     let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup -g ""'
+    " let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup -g ""'
 elseif executable('ack-grep')
     " Use ack in unite grep source.
     let g:unite_source_grep_command = 'ack-grep'
     let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
     let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_rec_async_command = 'ack -f --nofilter'
+    " let g:unite_source_rec_async_command = 'ack -f --nofilter'
 endif
