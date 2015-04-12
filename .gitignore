@@ -1,2 +1,3 @@
 vim/spell
 doc/tags*
+*.sw?
