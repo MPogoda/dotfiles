@@ -11,7 +11,7 @@ Xft.rgba      : rgb
 XTerm*.allowBoldFonts : false
 XTerm*.bellIsUrgent   : true
 XTerm*.cutNewline     : true
-XTerm*.faceName       : PragmataPro
+XTerm*.faceName       : Monospace
 XTerm*.faceSize       : 12
 XTerm*.fullscreen     : never
 XTerm*.internalBorder : 0

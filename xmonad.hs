@@ -122,7 +122,7 @@ myKeys = \conf -> mkKeymap conf $
          [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , ("M-S-<Return>", spawn       $ myTerminal )
          , ("M-C-<Esc>",    spawn       $ "xkill")
-         , ("M-p",          spawn       $ "dmenu_run -fn PragmataPro-32")
+         , ("M-p",          spawn       $ "dmenu_run -fn Monospace-32")
          -- cycle through all possible layouts
          , ("M-<Space>",    sendMessage $ NextLayout)
          -- restore default layout

@@ -9,7 +9,7 @@ sub-auto=fuzzy # Load all subs containing movie name.
 hwdec=vdpau
 vo=vdpau
 
-osd-font='PragmataPro'
+osd-font='Monospace'
 
 save-position-on-quit
 

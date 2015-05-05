@@ -1,7 +1,7 @@
 Config { lowerOnStart = True
        , hideOnStart  = False
        , persistent   = False
-       , font         = "xft:PragmataPro"
+       , font         = "xft:Monospace"
        , border       = NoBorder
        , borderColor  = "#ff0000"
        , bgColor      = "#1b1d1e"
