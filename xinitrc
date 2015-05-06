@@ -25,4 +25,6 @@ SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | c
 
 VBoxClient-all
 
+( sleep 1 && leechcraft-qt5 ) &
+
 exec xmonad
