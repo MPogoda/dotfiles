@@ -72,3 +72,9 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+
+# {{{ SSH AGENT
+SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | cut -d' ' -f2)
+[ -S "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+# }}} SSH AGENT
