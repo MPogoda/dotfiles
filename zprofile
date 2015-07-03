@@ -83,3 +83,5 @@ then
     [ -S "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
 fi
 # }}} SSH AGENT
+#
+# vim: filetype=zsh
