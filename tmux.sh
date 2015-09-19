@@ -18,6 +18,7 @@ then
     tmux split-window -h -t $SESSION_NAME:logs "dmesg -w"
     tmux new-window -n htop    -t $SESSION_NAME htop
     tmux split-window -h -t $SESSION_NAME:htop "sudo iotop -a"
+
     tmux set-window-option -t $SESSION_NAME:htop    monitor-activity off
 fi
 
