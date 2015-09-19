@@ -175,7 +175,7 @@ myKeys = \conf -> mkKeymap conf $
     prefix  = (++) "M-<Tab> " :: String -> String
 
 scratchpads :: [NamedScratchpad]
-scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/tmux.sh")
+scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mpogoda/tmux.sh")
                   (resource =? "dashboard") nonFloating
 
               , NS "term" (myTerminal ++ " -c term -e tmux")
