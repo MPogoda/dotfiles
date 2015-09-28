@@ -17,7 +17,7 @@ flags = [
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
 # more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
-compilation_database_folder = '.'
+compilation_database_folder = './'
 
 if os.path.exists( compilation_database_folder + 'compile_commands.json' ):
     database = ycm_core.CompilationDatabase( compilation_database_folder )
