@@ -146,6 +146,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'kien/rainbow_parentheses.vim'
 
 NeoBundle 'mhinz/vim-startify'
+NeoBundle 'tpope/vim-obsession'
 
 NeoBundle 'sheerun/vim-polyglot'
 " {{{ Markdown maps
