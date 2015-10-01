@@ -1,8 +1,8 @@
 " use the :sign interface to mark syntax errors.
 let g:syntastic_enable_signs=1
 " what the syntastic |:sign| text contains.
-  let g:syntastic_error_symbol='✗'
-  let g:syntastic_warning_symbol='⚠'
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 " the error window will be automatically closed when no errors are detected,
 " but not opened automatically.
 let g:syntastic_auto_loc_list=1
