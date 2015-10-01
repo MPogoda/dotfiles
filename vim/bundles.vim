@@ -129,8 +129,7 @@ NeoBundle 'MPogoda/octave.vim--'
 NeoBundle 'terryma/vim-expand-region'
 " + to expand, _ to shrink
 
-NeoBundle 'nathanaelkane/vim-indent-guides'
-" <leader>ig to show indent guides
+NeoBundle 'Yggdroot/indentLine'
 
 NeoBundle 'peterhoeg/vim-qml'
 

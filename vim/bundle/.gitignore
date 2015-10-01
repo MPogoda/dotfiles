@@ -22,7 +22,6 @@ NrrwRgn
 vim-expand-region
 undotree
 unite-outline
-vim-indent-guides
 LaTeX-Box
 vim-cpp-enhanced-highlight
 YouCompleteMe
@@ -38,4 +37,5 @@ rainbow_parentheses.vim
 vim-startify
 vim-polyglot
 vim-indentwise
+indentLine
 vim-obsession
