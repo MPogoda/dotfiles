@@ -4,6 +4,8 @@ call unite#custom#profile('default', 'context', {
                         \ })
 
 " Replaces fuzzyfinder
+nnoremap <silent> <leader>g :<c-u>Unite -buffer-name=gitfiles file_rec/git:--cached:--others:--exclude-standard<cr>
+" Replaces fuzzyfinder
 nnoremap <silent> <leader>o :<C-u>Unite -buffer-name=files file_rec/async:!<cr>
 " Replaces NERDTree
 nnoremap <silent> <leader>f :<C-u>Unite -buffer-name=files -profile-name=files file<cr>
