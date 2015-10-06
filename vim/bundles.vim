@@ -176,3 +176,6 @@ NeoBundle 'jeetsukumaran/vim-indentwise'
 " map ]_ <Plug>(IndentWiseNextAbsoluteIndent)
 " map [% <Plug>(IndentWiseBlockScopeBoundaryBegin)
 " map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
+
+NeoBundle 't9md/vim-choosewin'
+" nmap - <Plug>(choosewin)
