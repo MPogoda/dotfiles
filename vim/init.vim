@@ -1,12 +1,20 @@
 if has ('vim_starting')
     set nocompatible
 
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    if has ('nvim')
+        set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
+    else
+        set runtimepath+=~/.vim/bundle/neobundle.vim/
+    endif
 
     let mapleader = " "
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+if has ('nvim')
+    call neobundle#begin(expand('~/.config/nvim/bundle/'))
+else
+    call neobundle#begin(expand('~/.vim/bundle/'))
+endif
 
 runtime! bundles.vim
 
