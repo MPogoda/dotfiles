@@ -7,6 +7,10 @@ if has ('vim_starting')
         set runtimepath+=~/.vim/bundle/neobundle.vim/
     endif
 
+    if has ('nvim')
+        let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+    endif
+
     let mapleader = " "
 endif
 
