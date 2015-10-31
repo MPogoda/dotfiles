@@ -154,8 +154,6 @@ myKeys = \conf -> mkKeymap conf $
          , ("M-S-q",        io          $ exitWith ExitSuccess)
          , ("M-q",          restart "xmonad" True)
 
-         , ("M-S-l",          spawn $ "/usr/lib/kde4/libexec/kscreenlocker_greet --immediateLock" )
-
          -- close current window
          , (prefix "c", kill)
          -- shortcuts
