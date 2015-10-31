@@ -17,4 +17,6 @@ compton &
 
 ( while pgrep ntpdate; do sleep 0.5; done; sleep 4; leechcraft ) &
 
+(sleep 4; syncthing) &
+
 exec xmonad
