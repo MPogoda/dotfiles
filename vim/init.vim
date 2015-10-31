@@ -9,6 +9,9 @@ if has ('vim_starting')
 
     if has ('nvim')
         let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+        if !exists ('$TMUX')
+            let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+        endif
     endif
 
     let mapleader = " "
