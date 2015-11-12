@@ -3,3 +3,4 @@ shada
 haskellmode.config
 *.confc
 *.pyc
+*~
