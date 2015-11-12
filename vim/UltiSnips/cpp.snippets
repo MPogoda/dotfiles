@@ -1,0 +1,31 @@
+snippet cl
+/*!
+ * \class $1
+ * \brief $6
+ */
+class ${1:`vim_snippets#Filename('$1', 'name')`} ${2:parents}
+{
+public:
+	${3:interface}
+private: // functions
+	${4:private functions}
+private: // fields
+	${5:private fields}
+}; // class $1
+endsnippet
+
+snippet cout
+std::cout << ${1} << '\n';
+endsnippet
+
+snippet ns
+namespace ${1:`vim_snippets#Filename('', 'my')`}
+{
+${2:contents}
+} // namespace $1
+
+endsnippet
+
+snippet inc
+#include <${1:cassert}>
+endsnippet
