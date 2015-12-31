@@ -176,15 +176,11 @@ myKeys = \conf -> mkKeymap conf $
 
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mpogoda/tmux.sh")
-                  (resource =? "dashboard") nonFloating
+                  (className =? "dashboard") nonFloating
 
-              , NS "term" (myTerminal ++ " -c term -e tmux")
-                  (resource =? "term") ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
-              , NS "rtorrent" (myTerminal ++ " -c rtorrent -e /usr/bin/tmux attach-session -t rtorrent" )
-                  (resource =? "rtorrent") nonFloating
+              , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
+                  ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               ]
-              where
-                role = stringProperty "WM_WINDOW_ROLE"
 
 -- colors
 orange     = "#fd971f" :: String
