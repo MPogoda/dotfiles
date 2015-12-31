@@ -160,7 +160,6 @@ myKeys = \conf -> mkKeymap conf $
          , (prefix "b", spawn $ "firefox")
          , (prefix "e", spawn $ "gvim")
          , (prefix "r", namedScratchpadAction scratchpads "term")
-         , (prefix "t", namedScratchpadAction scratchpads "rtorrent")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
          ]
          ++
