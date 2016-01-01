@@ -175,12 +175,10 @@ myKeys = \conf -> mkKeymap conf $
 
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/tmux.sh")
-                  (resource =? "dashboard") nonFloating
-              , NS "term" (myTerminal ++ " -c term -e tmux") (resource =? "term")
+                  (className =? "dashboard") nonFloating
+              , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               ]
-              where
-                role = stringProperty "WM_WINDOW_ROLE"
 
 -- colors
 orange     = "#fd971f" :: String
