@@ -10,6 +10,8 @@ hwdec=vdpau
 vo=vdpau
 
 osd-font='Monospace'
+sub-text-font='Monospace'
+sub-text-font-size=25
 
 save-position-on-quit
 
