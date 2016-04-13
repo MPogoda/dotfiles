@@ -29,5 +29,3 @@ bindkey "^r"    history-incremental-search-backward # C-r
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^f'   edit-command-line
-
-fortune vimtips | cowsay
