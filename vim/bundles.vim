@@ -3,8 +3,6 @@
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-let g:neobundle#types#git#default_protocol = "ssh"
-
 NeoBundle 'Shougo/vimproc', { 'build' :
                           \   { 'unix' : 'make -f make_unix.mak' }
                           \ , 'name' : 'vimproc'
