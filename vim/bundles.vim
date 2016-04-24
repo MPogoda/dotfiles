@@ -39,20 +39,14 @@ NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
 " <leader>n file/new
 " }}}
 
-NeoBundleLazy 'thinca/vim-unite-history', { 'depends' : 'unite.vim'
-                                        \ , 'autoload' : { 'unite_sources' : 'history/command' }
-                                        \ }
+NeoBundle 'thinca/vim-unite-history', { 'depends' : 'unite.vim' }
 
-NeoBundleLazy 'Shougo/unite-outline', { 'depends' : 'unite.vim'
-                                    \ , 'autoload' : { 'unite_sources' : 'outline' }
-                                    \ }
+NeoBundle 'Shougo/unite-outline', { 'depends' : 'unite.vim' }
 " }}} Unite
 
 NeoBundle 'bling/vim-airline'
 
-NeoBundleLazy 'docunext/closetag.vim', { 'autoload' : { 'filetypes' : ['html', 'xml'] }
-                                     \ , 'name' : 'closetag'
-                                     \ }
+NeoBundle 'docunext/closetag.vim'
 
 " {{{ GIT Integration
 NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
@@ -65,9 +59,7 @@ NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
 " <leader>gw   Gwrite
 " <leader>gb   Gblame
 " }}} Fugitive hotkeys
-NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
-                               \ , 'autoload' : { 'commands' : 'Gitv' }
-                               \ }
+NeoBundle 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ] }
 " {{{ GitV hotkeys
 " \gv -> full repo view, \gV -> file view
 " <cr> -> view commit, <C-n>/<C-p> jump to next/previous commit and <cr>.
@@ -81,17 +73,15 @@ NeoBundleLazy 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ]
 " }}} GIT Integration
 "
 " Undo tree
-NeoBundleLazy 'mbbill/undotree', { 'autoload' : { 'commands' : 'UndotreeToggle' } }
+NeoBundle 'mbbill/undotree'
 
-NeoBundleLazy 'lukerandall/haskellmode-vim', { 'autoload' : { 'filetypes' : ['haskell', 'hs'] }
-                                           \ }
-
+NeoBundle 'lukerandall/haskellmode-vim'
 
 NeoBundle 'scrooloose/syntastic'
 
-NeoBundleLazy 'godlygeek/tabular', { 'autoload' : { 'commands' : 'Tabularize' } }
+NeoBundle 'godlygeek/tabular'
 
-NeoBundleLazy 'majutsushi/tagbar', { 'autoload' : { 'commands' : 'TagbarToggle' } }
+NeoBundle 'majutsushi/tagbar'
 
 NeoBundle 'tomtom/tcomment_vim'
 
@@ -111,15 +101,7 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'chrisbra/NrrwRgn'
 " <leader>nr -> narrow region
 
-NeoBundleLazy 'lyokha/vim-xkbswitch', { 'autoload' :
-                                    \   { 'filetypes' : [ 'tex'
-                                                      \ , 'latex'
-                                                      \ , 'bib'
-                                                      \ , 'markdown'
-                                                      \ ]
-                                    \   }
-                                    \ , 'name' : 'vim-xkbswitch'
-                                    \ }
+NeoBundle 'lyokha/vim-xkbswitch'
 
 " NeoBundle 'mhinz/vim-signify'
 NeoBundle 'airblade/vim-gitgutter'
@@ -138,7 +120,6 @@ NeoBundle 'Valloric/ListToggle'
 " <leader>w -> location list
 
 NeoBundle 'morhetz/gruvbox'
-NeoBundle 'mhartington/oceanic-next'
 
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'

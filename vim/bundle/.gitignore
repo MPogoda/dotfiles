@@ -4,13 +4,12 @@ ListToggle
 NeoBundle.lock
 NrrwRgn
 YouCompleteMe
-closetag/
+closetag.vim/
 gitv
 gruvbox
 haskellmode-vim/
 indentLine
 neobundle.vim
-oceanic-next
 octave.vim--
 rainbow_parentheses.vim
 syntastic/
