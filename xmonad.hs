@@ -69,8 +69,6 @@ myTerminal = "st"
 -- list of workspaces
 myWorkspaces :: [String]
 myWorkspaces = words "a r s t d z x c v"
--- in case of dvorak:
--- myWorkspaces = words "a o e u i ; q j k"
 
 -- Layouts
 myLayout = Full ||| tiled ||| Mirror tiled
@@ -96,7 +94,6 @@ myManageHook = composeAll
     myFloats = foldr1 (<||>)
       [ ("Figure" `isPrefixOf`) <$> title
       , className =? "feh"
-      , className =? "mplayer2"
       , className =? "mpv"
       , className =? "Steam"
       , isDialog
@@ -104,14 +101,12 @@ myManageHook = composeAll
     -- list of conditions when we have to ignore window (don't manage it)
     myIgnores = foldr1 (<||>)
       [ resource  =? "panel"
-      , className =? "stalonetray"
       ]
     -- when condition from first part of tuple succeed, move that window to #2
     myShifts = map (\(x, y) -> (className =? x, y)) clsShifts
     -- [ ( className, workspace) ]
-    clsShifts = [ ("Chromium-browser", "r")
-                , ("Google-chrome-unstable", "r")
-                , ("Firefox", "r")
+    clsShifts = [ ("Firefox", "r")
+                , ("Cantata", "z")
                 , ("Leechcraft", "a")
                 ] :: [(String,  String)]
 
