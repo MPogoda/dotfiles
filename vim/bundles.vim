@@ -120,7 +120,6 @@ NeoBundle 'Valloric/ListToggle'
 " <leader>w -> location list
 
 NeoBundle 'morhetz/gruvbox'
-NeoBundle 'mhartington/oceanic-next'
 
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
