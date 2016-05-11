@@ -173,7 +173,7 @@ myKeys = \conf -> mkKeymap conf $
     prefix  = (++) "M-<Tab> " :: String -> String
 
 scratchpads :: [NamedScratchpad]
-scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/tmux.sh")
+scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/.tmux/dashboard.sh")
                   (className =? "dashboard") nonFloating
               , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
