@@ -70,8 +70,6 @@ NeoBundle 'lyokha/vim-xkbswitch'
 
 NeoBundle 'airblade/vim-gitgutter'
 
-NeoBundle 'MPogoda/octave.vim--'
-
 NeoBundle 'terryma/vim-expand-region'
 " + to expand, _ to shrink
 
