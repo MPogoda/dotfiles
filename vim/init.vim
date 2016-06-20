@@ -20,7 +20,7 @@ else
         silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
             \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     endif
-    call plug#plug#begin(expand('~/.vim/bundle/'))
+    call plug#begin(expand('~/.vim/bundle/'))
 endif
 
 runtime! bundles.vim
