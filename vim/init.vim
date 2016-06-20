@@ -2,26 +2,30 @@ if has ('vim_starting')
     if has ('nvim')
         let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
         let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-        set runtimepath+=~/.config/nvim/bundle/Vundle.vim
     else
         set nocompatible
-
-        set runtimepath+=~/.vim/bundle/Vundle.vim
     endif
 
     let mapleader = " "
 endif
 
 if has ('nvim')
-    call vundle#begin(expand('~/.config/nvim/bundle/'))
+    if empty(glob('~/.config/nvim/autoload/plug.vim'))
+        silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    endif
+    call plug#begin(expand('~/.config/nvim/bundle/'))
 else
-    call vundle#begin(expand('~/.vim/bundle/'))
+    if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    endif
+    call plug#plug#begin(expand('~/.vim/bundle/'))
 endif
 
 runtime! bundles.vim
 
-call vundle#end()
+call plug#end()
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim

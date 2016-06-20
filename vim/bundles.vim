@@ -1,8 +1,6 @@
 " vim: foldmethod=marker
 "
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 " {{{Build instruction for YCM
 "   1. git submodule update --init --recursive
 "   2. cd third_party/ycmd
@@ -13,13 +11,13 @@ Plugin 'Valloric/YouCompleteMe'
 "   6. make
 " }}}
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-Plugin 'docunext/closetag.vim'
+Plug 'docunext/closetag.vim'
 
 " {{{ GIT Integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " {{{ Fugitive hotkeys
 " <leader>gs   Gstatus
 "               D for diff
@@ -29,7 +27,7 @@ Plugin 'tpope/vim-fugitive'
 " <leader>gw   Gwrite
 " <leader>gb   Gblame
 " }}} Fugitive hotkeys
-Plugin 'gregsexton/gitv'
+Plug 'gregsexton/gitv'
 " {{{ GitV hotkeys
 " \gv -> full repo view, \gV -> file view
 " <cr> -> view commit, <C-n>/<C-p> jump to next/previous commit and <cr>.
@@ -43,18 +41,18 @@ Plugin 'gregsexton/gitv'
 " }}} GIT Integration
 "
 
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree'
 
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
-Plugin 'tomtom/tcomment_vim'
+Plug 'tomtom/tcomment_vim'
 
-Plugin 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 " Start with <leader><leader>
 
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " {{{ Surround mappings
 " ds   delete
 " cs   change
@@ -62,32 +60,32 @@ Plugin 'tpope/vim-surround'
 " S    create in visual mode
 " }}} Surround mappings
 
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 
-Plugin 'lyokha/vim-xkbswitch'
+Plug 'lyokha/vim-xkbswitch'
 
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'
 " + to expand, _ to shrink
 
-Plugin 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
-Plugin 'Valloric/ListToggle'
+Plug 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>w -> location list
 
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
-Plugin 'mhinz/vim-startify'
-Plugin 'tpope/vim-obsession'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-obsession'
 
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " {{{ Markdown maps
 " <leader>= TOP LEVEL
 " <leader>+ Second level
@@ -104,5 +102,5 @@ Plugin 'sheerun/vim-polyglot'
 " )) -- \item
 " }}} LaTeX-Box
 
-Plugin 't9md/vim-choosewin'
+Plug 't9md/vim-choosewin'
 " nmap - <Plug>(choosewin)
