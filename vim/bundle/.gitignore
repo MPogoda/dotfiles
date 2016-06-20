@@ -7,7 +7,6 @@ YouCompleteMe
 closetag.vim/
 gitv
 gruvbox
-haskellmode-vim/
 indentLine
 neobundle.vim
 octave.vim--
@@ -22,7 +21,6 @@ unite-outline
 unite.vim/
 vim-airline/
 vim-choosewin
-vim-cpp-enhanced-highlight
 vim-easymotion/
 vim-endwise/
 vim-expand-region
