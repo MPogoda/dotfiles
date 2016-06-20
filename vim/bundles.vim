@@ -5,11 +5,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 let g:neobundle#types#git#default_protocol = "ssh"
 
-NeoBundle 'Shougo/vimproc', { 'build' :
-                          \   { 'unix' : 'make -f make_unix.mak' }
-                          \ , 'name' : 'vimproc'
-                          \ }
-
 NeoBundle 'Valloric/YouCompleteMe'
 " {{{Build instruction for YCM
 "   1. git submodule update --init --recursive
@@ -23,7 +18,6 @@ NeoBundle 'Valloric/YouCompleteMe'
 
 " {{{ Unite
 NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
-                            \ , 'depends' : 'vimproc'
                             \ }
 " {{{ Unite hotkeys
 " <leader>o recursive files
