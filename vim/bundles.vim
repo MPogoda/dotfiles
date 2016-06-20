@@ -47,8 +47,6 @@ NeoBundle 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ] }
 " Undo tree
 NeoBundle 'mbbill/undotree'
 
-NeoBundle 'scrooloose/syntastic'
-
 NeoBundle 'godlygeek/tabular'
 
 NeoBundle 'majutsushi/tagbar'
