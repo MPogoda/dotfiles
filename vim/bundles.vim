@@ -1,11 +1,8 @@
 " vim: foldmethod=marker
 "
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-let g:neobundle#types#git#default_protocol = "ssh"
-
-NeoBundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " {{{Build instruction for YCM
 "   1. git submodule update --init --recursive
 "   2. cd third_party/ycmd
@@ -16,12 +13,12 @@ NeoBundle 'Valloric/YouCompleteMe'
 "   6. make
 " }}}
 
-NeoBundle 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline'
 
-NeoBundle 'docunext/closetag.vim'
+Plugin 'docunext/closetag.vim'
 
 " {{{ GIT Integration
-NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
+Plugin 'tpope/vim-fugitive'
 " {{{ Fugitive hotkeys
 " <leader>gs   Gstatus
 "               D for diff
@@ -31,7 +28,7 @@ NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
 " <leader>gw   Gwrite
 " <leader>gb   Gblame
 " }}} Fugitive hotkeys
-NeoBundle 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ] }
+Plugin 'gregsexton/gitv'
 " {{{ GitV hotkeys
 " \gv -> full repo view, \gV -> file view
 " <cr> -> view commit, <C-n>/<C-p> jump to next/previous commit and <cr>.
@@ -44,19 +41,19 @@ NeoBundle 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ] }
 " }}}
 " }}} GIT Integration
 "
-" Undo tree
-NeoBundle 'mbbill/undotree'
 
-NeoBundle 'godlygeek/tabular'
+Plugin 'mbbill/undotree'
 
-NeoBundle 'majutsushi/tagbar'
+Plugin 'godlygeek/tabular'
 
-NeoBundle 'tomtom/tcomment_vim'
+Plugin 'majutsushi/tagbar'
 
-NeoBundle 'Lokaltog/vim-easymotion'
+Plugin 'tomtom/tcomment_vim'
+
+Plugin 'Lokaltog/vim-easymotion'
 " Start with <leader><leader>
 
-NeoBundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " {{{ Surround mappings
 " ds   delete
 " cs   change
@@ -64,32 +61,32 @@ NeoBundle 'tpope/vim-surround'
 " S    create in visual mode
 " }}} Surround mappings
 
-NeoBundle 'tpope/vim-endwise'
+Plugin 'tpope/vim-endwise'
 
-NeoBundle 'lyokha/vim-xkbswitch'
+Plugin 'lyokha/vim-xkbswitch'
 
-NeoBundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
-NeoBundle 'terryma/vim-expand-region'
+Plugin 'terryma/vim-expand-region'
 " + to expand, _ to shrink
 
-NeoBundle 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
 
-NeoBundle 'Valloric/ListToggle'
+Plugin 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>w -> location list
 
-NeoBundle 'morhetz/gruvbox'
+Plugin 'morhetz/gruvbox'
 
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
-NeoBundle 'kien/rainbow_parentheses.vim'
+Plugin 'kien/rainbow_parentheses.vim'
 
-NeoBundle 'mhinz/vim-startify'
-NeoBundle 'tpope/vim-obsession'
+Plugin 'mhinz/vim-startify'
+Plugin 'tpope/vim-obsession'
 
-NeoBundle 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'
 " {{{ Markdown maps
 " <leader>= TOP LEVEL
 " <leader>+ Second level
@@ -106,5 +103,5 @@ NeoBundle 'sheerun/vim-polyglot'
 " )) -- \item
 " }}} LaTeX-Box
 
-NeoBundle 't9md/vim-choosewin'
+Plugin 't9md/vim-choosewin'
 " nmap - <Plug>(choosewin)

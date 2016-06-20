@@ -1,12 +1,10 @@
-.neobundle
 ListToggle
-NeoBundle.lock
+Vundle.vim
 YouCompleteMe
 closetag.vim/
 gitv
 gruvbox
 indentLine
-neobundle.vim
 rainbow_parentheses.vim
 tabular
 tagbar
