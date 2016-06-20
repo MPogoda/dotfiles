@@ -75,8 +75,6 @@ NeoBundle 'terryma/vim-expand-region'
 
 NeoBundle 'Yggdroot/indentLine'
 
-NeoBundle 'peterhoeg/vim-qml'
-
 NeoBundle 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>w -> location list
