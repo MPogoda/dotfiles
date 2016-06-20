@@ -16,7 +16,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 "   6. make
 " }}}
 
-NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline'
 
 NeoBundle 'docunext/closetag.vim'
 
