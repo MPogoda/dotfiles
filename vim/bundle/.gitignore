@@ -20,7 +20,6 @@ vim-endwise/
 vim-expand-region
 vim-fugitive/
 vim-gitgutter
-vim-indentwise
 vim-obsession
 vim-polyglot
 vim-snippets
