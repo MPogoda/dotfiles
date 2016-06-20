@@ -66,9 +66,6 @@ NeoBundle 'tpope/vim-surround'
 
 NeoBundle 'tpope/vim-endwise'
 
-NeoBundle 'chrisbra/NrrwRgn'
-" <leader>nr -> narrow region
-
 NeoBundle 'lyokha/vim-xkbswitch'
 
 " NeoBundle 'mhinz/vim-signify'
