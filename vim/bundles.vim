@@ -16,28 +16,6 @@ NeoBundle 'Valloric/YouCompleteMe'
 "   6. make
 " }}}
 
-" {{{ Unite
-NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
-                            \ }
-" {{{ Unite hotkeys
-" <leader>o recursive files
-" <leader>f files
-" <leader>b buffers
-" <leader>/ grep
-" <leader>l lines
-" <leader>; command
-" <leader>: history/command
-" <leader>m MRU files
-" <leader>y history/yank
-" <leader>u outline
-" <leader>n file/new
-" }}}
-
-NeoBundle 'thinca/vim-unite-history', { 'depends' : 'unite.vim' }
-
-NeoBundle 'Shougo/unite-outline', { 'depends' : 'unite.vim' }
-" }}} Unite
-
 NeoBundle 'bling/vim-airline'
 
 NeoBundle 'docunext/closetag.vim'

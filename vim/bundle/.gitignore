@@ -17,8 +17,6 @@ tagbar/
 tcomment_vim/
 ultisnips
 undotree
-unite-outline
-unite.vim/
 vim-airline/
 vim-choosewin
 vim-easymotion/
@@ -35,5 +33,4 @@ vim-qml
 vim-snippets
 vim-startify
 vim-surround
-vim-unite-history
 vim-xkbswitch/
