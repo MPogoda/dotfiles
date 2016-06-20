@@ -68,7 +68,6 @@ NeoBundle 'tpope/vim-endwise'
 
 NeoBundle 'lyokha/vim-xkbswitch'
 
-" NeoBundle 'mhinz/vim-signify'
 NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'MPogoda/octave.vim--'
