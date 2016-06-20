@@ -1,7 +1,7 @@
 ListToggle
 Vundle.vim
 YouCompleteMe
-closetag.vim/
+closetag.vim
 gitv
 gruvbox
 indentLine
@@ -12,6 +12,7 @@ tcomment_vim
 ultisnips
 undotree
 vim-airline
+vim-airline-themes
 vim-choosewin
 vim-easymotion
 vim-endwise
