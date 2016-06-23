@@ -4,6 +4,7 @@ closetag.vim
 gitv
 gruvbox
 indentLine
+neomake
 rainbow_parentheses.vim
 tabular
 tagbar
