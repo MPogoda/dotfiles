@@ -1,14 +1,6 @@
 " vim: foldmethod=marker
 "
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/vimproc', { 'build' :
-                          \   { 'unix' : 'make -f make_unix.mak' }
-                          \ , 'name' : 'vimproc'
-                          \ }
-
-NeoBundle 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 " {{{Build instruction for YCM
 "   1. git submodule update --init --recursive
 "   2. cd third_party/ycmd
@@ -19,35 +11,13 @@ NeoBundle 'Valloric/YouCompleteMe'
 "   6. make
 " }}}
 
-" {{{ Unite
-NeoBundle 'Shougo/unite.vim', { 'name' : 'unite.vim'
-                            \ , 'depends' : 'vimproc'
-                            \ }
-" {{{ Unite hotkeys
-" <leader>o recursive files
-" <leader>f files
-" <leader>b buffers
-" <leader>/ grep
-" <leader>l lines
-" <leader>; command
-" <leader>: history/command
-" <leader>m MRU files
-" <leader>y history/yank
-" <leader>u outline
-" <leader>n file/new
-" }}}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-NeoBundle 'thinca/vim-unite-history', { 'depends' : 'unite.vim' }
-
-NeoBundle 'Shougo/unite-outline', { 'depends' : 'unite.vim' }
-" }}} Unite
-
-NeoBundle 'bling/vim-airline'
-
-NeoBundle 'docunext/closetag.vim'
+Plug 'docunext/closetag.vim'
 
 " {{{ GIT Integration
-NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
+Plug 'tpope/vim-fugitive'
 " {{{ Fugitive hotkeys
 " <leader>gs   Gstatus
 "               D for diff
@@ -57,7 +27,7 @@ NeoBundle 'tpope/vim-fugitive', { 'augroup' : 'fugitive'}
 " <leader>gw   Gwrite
 " <leader>gb   Gblame
 " }}} Fugitive hotkeys
-NeoBundle 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ] }
+Plug 'gregsexton/gitv'
 " {{{ GitV hotkeys
 " \gv -> full repo view, \gV -> file view
 " <cr> -> view commit, <C-n>/<C-p> jump to next/previous commit and <cr>.
@@ -70,23 +40,19 @@ NeoBundle 'gregsexton/gitv', { 'depends' : [ 'tpope/vim-fugitive' ] }
 " }}}
 " }}} GIT Integration
 "
-" Undo tree
-NeoBundle 'mbbill/undotree'
 
-NeoBundle 'lukerandall/haskellmode-vim'
+Plug 'mbbill/undotree'
 
-NeoBundle 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
 
-NeoBundle 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
 
-NeoBundle 'majutsushi/tagbar'
+Plug 'tomtom/tcomment_vim'
 
-NeoBundle 'tomtom/tcomment_vim'
-
-NeoBundle 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 " Start with <leader><leader>
 
-NeoBundle 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " {{{ Surround mappings
 " ds   delete
 " cs   change
@@ -94,40 +60,32 @@ NeoBundle 'tpope/vim-surround'
 " S    create in visual mode
 " }}} Surround mappings
 
-NeoBundle 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 
-NeoBundle 'chrisbra/NrrwRgn'
-" <leader>nr -> narrow region
+Plug 'lyokha/vim-xkbswitch'
 
-NeoBundle 'lyokha/vim-xkbswitch'
+Plug 'airblade/vim-gitgutter'
 
-" NeoBundle 'mhinz/vim-signify'
-NeoBundle 'airblade/vim-gitgutter'
-
-NeoBundle 'MPogoda/octave.vim--'
-
-NeoBundle 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'
 " + to expand, _ to shrink
 
-NeoBundle 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
-NeoBundle 'peterhoeg/vim-qml'
-
-NeoBundle 'Valloric/ListToggle'
+Plug 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>w -> location list
 
-NeoBundle 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
-NeoBundle 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
-NeoBundle 'mhinz/vim-startify'
-NeoBundle 'tpope/vim-obsession'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-obsession'
 
-NeoBundle 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " {{{ Markdown maps
 " <leader>= TOP LEVEL
 " <leader>+ Second level
@@ -144,18 +102,5 @@ NeoBundle 'sheerun/vim-polyglot'
 " )) -- \item
 " }}} LaTeX-Box
 
-
-NeoBundle 'jeetsukumaran/vim-indentwise'
-" map [- <Plug>(IndentWisePreviousLesserIndent)
-" map [= <Plug>(IndentWisePreviousEqualIndent)
-" map [+ <Plug>(IndentWisePreviousGreaterIndent)
-" map ]- <Plug>(IndentWiseNextLesserIndent)
-" map ]= <Plug>(IndentWiseNextEqualIndent)
-" map ]+ <Plug>(IndentWiseNextGreaterIndent)
-" map [_ <Plug>(IndentWisePreviousAbsoluteIndent)
-" map ]_ <Plug>(IndentWiseNextAbsoluteIndent)
-" map [% <Plug>(IndentWiseBlockScopeBoundaryBegin)
-" map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
-
-NeoBundle 't9md/vim-choosewin'
+Plug 't9md/vim-choosewin'
 " nmap - <Plug>(choosewin)
