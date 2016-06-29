@@ -104,3 +104,5 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 't9md/vim-choosewin'
 " nmap - <Plug>(choosewin)
+
+Plug 'neomake/neomake'
