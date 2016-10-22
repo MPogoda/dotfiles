@@ -1,7 +1,7 @@
 [user]
     name = Michael Pogoda
     email = do0dlez1991@gmail.com
-    signingkey = C8A2DA6E
+    signingkey = 0xA286A180C8A2DA6E
 [core]
     excludesfile = ~/.cvsignore
 [color]
