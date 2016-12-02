@@ -156,6 +156,7 @@ myKeys = \conf -> mkKeymap conf $
          , (prefix "e", spawn $ "gvim")
          , (prefix "r", namedScratchpadAction scratchpads "term")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
+         , (prefix "t", namedScratchpadAction scratchpads "telegram")
          ]
          ++
          -- M-[asdfgzxcv]   : switch to corresponding workspace
@@ -171,6 +172,8 @@ myKeys = \conf -> mkKeymap conf $
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mpogoda/.tmux/dashboard.sh")
                   (className =? "dashboard") nonFloating
+              , NS "telegram" "telegram-desktop" (className =? "TelegramDesktop")
+                  ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
 
               , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
