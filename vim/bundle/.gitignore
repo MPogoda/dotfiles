@@ -14,12 +14,14 @@ undotree
 vim-airline
 vim-airline-themes
 vim-choosewin
+vim-clang-format
 vim-easymotion
 vim-endwise
 vim-expand-region
 vim-fugitive
 vim-gitgutter
 vim-obsession
+vim-operator-user
 vim-polyglot
 vim-snippets
 vim-startify

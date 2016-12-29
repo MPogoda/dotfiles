@@ -106,3 +106,9 @@ Plug 't9md/vim-choosewin'
 " nmap - <Plug>(choosewin)
 
 Plug 'neomake/neomake'
+
+Plug 'kana/vim-operator-user'
+Plug 'rhysd/vim-clang-format'
+" {{{ vim-clang-format
+"  <leader>gq Format selection.
+" }}} vim-clang-format
