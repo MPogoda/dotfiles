@@ -1,7 +1,8 @@
+*.gpg
+.gpg-v21-migrated
 crls.d
 private-keys-v1.d
 pubring.*
 random_seed
 sshcontrol
-*.gpg
-.gpg-v21-migrated
+trustlist.txt
