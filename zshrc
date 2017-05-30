@@ -11,7 +11,7 @@ alias esync='sudo nice eix-sync'
 alias update='sudo nice emerge --update --deep --newuse @world'
 alias emerge='sudo nice emerge'
 alias qlop='sudo qlop'
-alias vimu="sudo vim /etc/portage/package.use"
+alias vimu="sudo nvim /etc/portage/package.use"
 
 insert_sudo() {
     [[ -z $BUFFER ]] && zle up-history
