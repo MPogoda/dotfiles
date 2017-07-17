@@ -112,3 +112,5 @@ Plug 'rhysd/vim-clang-format'
 " {{{ vim-clang-format
 "  <leader>gq Format selection.
 " }}} vim-clang-format
+
+Plug 'jceb/vim-orgmode'
