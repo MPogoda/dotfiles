@@ -2,6 +2,7 @@ if has ('vim_starting')
     set nocompatible
 
     let mapleader = " "
+    let maplocalleader = "_"
 endif
 
 set rtp^=/usr/share/vim/vimfiles/
