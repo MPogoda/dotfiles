@@ -114,3 +114,5 @@ Plug 'rhysd/vim-clang-format'
 " }}} vim-clang-format
 
 Plug 'jceb/vim-orgmode'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

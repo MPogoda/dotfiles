@@ -30,3 +30,5 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^f'   edit-command-line
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
