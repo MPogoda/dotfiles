@@ -73,8 +73,10 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
-
 # {{{ SSH AGENT
 SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | cut -d' ' -f2)
 [ -S "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
 # }}} SSH AGENT
+
+export CCACHE_PREFIX=icecc
+export PATH=$HOME/cmake-3.8.2-Linux-x86_64/bin:$PATH
