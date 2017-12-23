@@ -30,7 +30,7 @@ main :: IO ()
 main = do
   xmonad =<< statusBar "xmobar" myPP toggleStrutsKey defaults
   where
-    defaults = ewmh $ withUrgencyHook NoUrgencyHook $ defaultConfig
+    defaults = ewmh $ withUrgencyHook NoUrgencyHook $ def
               { terminal           = myTerminal
               , borderWidth        = 5
               , modMask            = mod4Mask
@@ -167,6 +167,13 @@ myKeys = \conf -> mkKeymap conf $
          [ ( m ++ i, windows $ f i)
             | i <- myWorkspaces
             , (m, f) <- [("M-", W.view), ("M-S-", W.shift)]
+         ]
+         ++
+         -- M-[1234] : switch to screen 1, 2, 3…
+         -- M-S-[1234] : move client to screen 123…
+         [ ( m ++ [i], screenWorkspace sc >>= flip whenJust (windows . f))
+           | (i, sc) <- zip ['1'..] [0..]
+           , (m, f) <- [("M-", W.view), ("M-S-", W.shift)]
          ]
   where
     -- prefix that is used in my emacs-like keybidings
