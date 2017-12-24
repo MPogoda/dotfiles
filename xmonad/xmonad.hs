@@ -64,14 +64,13 @@ myPP = xmobarPP { ppCurrent = xmobarColor orange ""
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
 -- terminal i'm using
-myTerminal :: String
-myTerminal = "st"
+myTerminal = "st" :: String
 
 -- list of workspaces
-myWorkspaces :: [String]
-myWorkspaces = words "a r s t d z x c v"
--- in case of dvorak:
--- myWorkspaces = words "a o e u i ; q j k"
+myWorkspaces = words "a r s t d z x c v" :: [String]
+
+-- list of screens
+myScreens = words "1 2" :: [String]
 
 -- Layouts
 myLayout = Full ||| tiled ||| Mirror tiled
@@ -165,14 +164,14 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          -- M-S-[asdfgzxcv] : move window to " " " " " " "
          [ ( m ++ i, windows $ f i)
             | i <- myWorkspaces
-            , (m, f) <- [("M-", W.view), ("M-S-", W.shift)]
+            , (m, f) <- [("M-", W.greedyView), ("M-S-", W.shift)]
          ]
          ++
          -- M-[1234] : switch to screen 1, 2, 3…
          -- M-S-[1234] : move client to screen 123…
-         [ ( m ++ [i], screenWorkspace sc >>= flip whenJust (windows . f))
-           | (i, sc) <- zip ['1'..] [0..]
-           , (m, f) <- [("M-", W.view), ("M-S-", W.shift)]
+         [ ( m ++ i, screenWorkspace sc >>= flip whenJust (windows . f))
+           | (i, sc) <- zip myScreens [0..]
+           , (m, f) <- [("M-", W.greedyView), ("M-S-", W.shift)]
          ]
   where
     -- prefix that is used in my emacs-like keybidings
