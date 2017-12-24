@@ -21,7 +21,7 @@ import XMonad.Layout.ResizableTile  (ResizableTall(..), MirrorResize(..))
 -- hiding & showing some windows
 import XMonad.Util.NamedScratchpad  (namedScratchpadAction, namedScratchpadManageHook, NamedScratchpad(..), nonFloating, customFloating)
 -- easy way to specify shortcuts (including emacs-like submaps)
-import XMonad.Util.EZConfig         (mkKeymap)
+import XMonad.Util.EZConfig         (mkKeymap, checkKeymap)
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -40,7 +40,8 @@ main = do
               , layoutHook         = layoutHintsToCenter . smartBorders $ myLayout
               , manageHook         = myManageHook <+> namedScratchpadManageHook scratchpads
               , handleEventHook    = myEventHook
-              , keys               = myKeys
+              , keys               = \c -> mkKeymap c myKeys
+              , startupHook        = return () >> checkKeymap defaults myKeys
               }
 
 -- xmobar pretty printing stuff
@@ -118,15 +119,13 @@ myManageHook = composeAll
 myEventHook = docksEventHook <+> hintsEventHook <+> fullscreenEventHook
 
 -- Keys
-myKeys = \conf -> mkKeymap conf $
-         [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
+myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , ("M-S-<Return>", spawn       $ myTerminal )
          , ("M-C-<Esc>",    spawn       $ "xkill")
          , ("M-p",          spawn       $ "dmenu_run -fn Monospace-32")
          -- cycle through all possible layouts
          , ("M-<Space>",    sendMessage $ NextLayout)
          -- restore default layout
-         , ("M-S-<Space>",  setLayout   $ XMonad.layoutHook conf)
          , ("M-n",          refresh)
          -- cycle through all windows
          , ("M-j",          windows     $ W.focusDown)
