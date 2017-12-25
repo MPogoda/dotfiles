@@ -67,7 +67,7 @@ toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 myTerminal = "st" :: String
 
 -- list of workspaces
-myWorkspaces = words "a r s t d z x c v" :: [String]
+myWorkspaces = words "a d r s t z x c v" :: [String]
 
 -- list of screens
 myScreens = words "1 2" :: [String]
@@ -108,8 +108,8 @@ myManageHook = composeAll
     myShifts = map (\(x, y) -> (className =? x, y)) clsShifts
     -- [ ( className, workspace) ]
     clsShifts = [ ("Firefox", "r")
-                , ("Cantata", "z")
                 , ("Leechcraft", "a")
+                , ("qBittorrent", "a")
                 ] :: [(String,  String)]
 
 -- eventHook
@@ -157,6 +157,7 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , (prefix "r", namedScratchpadAction scratchpads "term")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
          , (prefix "t", namedScratchpadAction scratchpads "telegram")
+         , (prefix "z", namedScratchpadAction scratchpads "cantata")
          ]
          ++
          -- M-[asdfgzxcv]   : switch to corresponding workspace
@@ -184,6 +185,8 @@ scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mp
 
               , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
+              , NS "cantata" "cantata" (className =? "cantata")
+                  ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
               ]
 
 -- colors
