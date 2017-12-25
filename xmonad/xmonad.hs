@@ -158,6 +158,7 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
          , (prefix "t", namedScratchpadAction scratchpads "telegram")
          , (prefix "z", namedScratchpadAction scratchpads "cantata")
+         , (prefix "x", namedScratchpadAction scratchpads "pavucontrol")
          ]
          ++
          -- M-[asdfgzxcv]   : switch to corresponding workspace
@@ -187,6 +188,8 @@ scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mp
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "cantata" "cantata" (className =? "cantata")
                   ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
+              , NS "pavucontrol" "pavucontrol" (className =? "Pavucontrol")
+                  ( customFloating $ W.RationalRect (1/2) (1/4) (1/2) (1/2))
               ]
 
 -- colors
