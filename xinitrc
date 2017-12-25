@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # vim: ft=sh
 xsetroot -cursor_name left_ptr
 [ -f ~/.wallpaper ] && feh --bg-tile ~/.wallpaper || xsetroot -gray
@@ -14,5 +16,10 @@ then
 fi
 
 compton &
+
+( while pgrep ntpdate; do sleep 0.5; done; sleep 4 && leechcraft ) &
+qbittorrent &
+cantata &
+redshift -l 50.449551:30.450408 &
 
 exec xmonad
