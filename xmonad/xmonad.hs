@@ -108,10 +108,12 @@ myManageHook = composeAll
     -- when condition from first part of tuple succeed, move that window to #2
     myShifts = map (\(x, y) -> (className =? x, y)) clsShifts
     -- [ ( className, workspace) ]
-    clsShifts = [ ("Chromium-browser", "r")
-                , ("Google-chrome-unstable", "r")
-                , ("Firefox", "r")
+    clsShifts = [ ("Firefox", "r")
+
                 , ("Leechcraft", "a")
+                , ("Skype", "a")
+                , ("TelegramDesktop", "a")
+                , ("Google-chrome", "a")
                 ] :: [(String,  String)]
 
 -- eventHook
@@ -155,7 +157,7 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , (prefix "c", kill)
          -- shortcuts
          , (prefix "b", spawn $ "firefox")
-         , (prefix "e", spawn $ "gvim")
+         , (prefix "o", namedScratchpadAction scratchpads "org")
          , (prefix "r", namedScratchpadAction scratchpads "term")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
          ]
@@ -178,10 +180,12 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
     prefix  = (++) "M-<Tab> " :: String -> String
 
 scratchpads :: [NamedScratchpad]
-scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/.tmux/dashboard.sh")
+scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e ~/.tmux/dashboard.sh")
                   (className =? "dashboard") nonFloating
               , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
-                  ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
+                  (customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
+              , NS "org" (myTerminal ++ " -c org -e nvim ~/plan.org") (className =? "org")
+                  (customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
               ]
 
 -- colors
