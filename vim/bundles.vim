@@ -124,3 +124,5 @@ Plug 'junegunn/fzf.vim'
 " <leader>fa Search text using Ag.
 " <leader>fs Search snippets.
 " }}} fzf
+
+Plug 'dodie/vim-disapprove-deep-indentation'
