@@ -161,6 +161,7 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , (prefix "o", namedScratchpadAction scratchpads "org")
          , (prefix "r", namedScratchpadAction scratchpads "term")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
+         , (prefix "q", namedScratchpadAction scratchpads "qtcreator")
          ]
          ++
          -- M-[asdfgzxcv]   : switch to corresponding workspace
@@ -182,11 +183,13 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
 
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e ~/.tmux/dashboard.sh")
-                  (className =? "dashboard") nonFloating
+                (className =? "dashboard") nonFloating
               , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
-                  (customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
+                (customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "org" (myTerminal ++ " -c org -e nvim ~/plan.org") (className =? "org")
-                  (customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
+                (customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
+              , NS "qtcreator" "~/Qt/Tools/QtCreator/bin/qtcreator" (className =? "QtCreator")
+                nonFloating
               ]
 
 -- colors
