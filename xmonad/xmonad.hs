@@ -172,7 +172,7 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          -- M-S-[1234] : move client to screen 123…
          [ ( m ++ i, screenWorkspace sc >>= flip whenJust (windows . f))
            | (i, sc) <- zip myScreens [0..]
-           , (m, f) <- [("M-", W.greedyView), ("M-S-", W.shift)]
+           , (m, f) <- [("M-", W.view), ("M-S-", W.shift)]
          ]
   where
     -- prefix that is used in my emacs-like keybidings
