@@ -152,7 +152,7 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
 
          , ("M-S-q",        io          $ exitWith ExitSuccess)
          , ("M-q",          restart "xmonad" True)
-         , ("M-<F9>", spawn $ "/usr/lib/x86_64-linux-gnu/libexec/kscreenlocker_greet")
+         , ("M-<F9>",       spawn $ "slock")
 
          -- close current window
          , (prefix "c", kill)
