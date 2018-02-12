@@ -79,4 +79,4 @@ SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | c
 # }}} SSH AGENT
 
 export CCACHE_PREFIX=icecc
-export PATH=$HOME/cmake-3.8.2-Linux-x86_64/bin:$PATH
+export PATH=$HOME/cmake-3.10.1-Linux-x86_64/bin:$PATH
