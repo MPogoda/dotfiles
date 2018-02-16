@@ -15,6 +15,15 @@ Config { lowerOnStart = True
                             , "--template", "<fc=#ccccc6>net:</fc> <rx> <fc=#ccccc6>:</fc> <tx>"
                             ]
                             10
+                        , Run Battery
+                            [ "--Low", "10"
+                            , "--High", "66"
+                            , "--low", "#ff5995"
+                            , "--normal", "#b6e354"
+                            , "--high", "#899ca1"
+                            , "--template", "<fc=#ccccc6>bat:</fc> <left>%"
+                            ]
+                            60
                         , Run Memory
                             [ "--Low", "10"
                             , "--High", "66"
@@ -36,7 +45,7 @@ Config { lowerOnStart = True
                         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %dynnetwork% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
+       , template = "%StdinReader%}{%battery% <fc=#fd971f></fc> %cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %dynnetwork% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
        }
 
 -- vim: filetype=haskell
