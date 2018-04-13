@@ -75,6 +75,5 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 
 
 # {{{ SSH AGENT
-SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | cut -d' ' -f2)
-[ -S "$SSH_AUTH_SOCK" ] && export SSH_AUTH_SOCK
+export SSH_AUTH_SOCK="/run/user/$(id -u)/gnupg/S.gpg-agent.ssh"
 # }}} SSH AGENT
