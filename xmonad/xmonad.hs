@@ -188,7 +188,7 @@ scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mp
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "cantata" "cantata" (className =? "cantata")
                   ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
-              , NS "pavucontrol" "pavucontrol" (className =? "Pavucontrol")
+              , NS "pavucontrol" "pavucontrol-qt" (className =? "pavucontrol-qt")
                   ( customFloating $ W.RationalRect (1/2) (1/4) (1/2) (1/2))
               ]
 
