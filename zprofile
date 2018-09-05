@@ -81,3 +81,4 @@ SSH_AUTH_SOCK=$(gpg-connect-agent 'getinfo ssh_socket_name' /bye | grep '^D' | c
 
 export CCACHE_PREFIX=icecc
 export PATH=$HOME/cmake-3.12.1-Linux-x86_64/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
+export REPO_URL=ssh://gerrit/external/git-repo
