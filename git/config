@@ -36,6 +36,15 @@
     ignore-space = all
     commit-order = topo
 [review "gerrit"]
-	username = pogoda
+    username = pogoda
 [review "gerrit.it.here.com"]
-	username = pogoda
+    username = pogoda
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge --skip -- %f
+    process = git-lfs filter-process --skip
+    required = true
+[url "ssh://rep-gerrit-ams"]
+    insteadOf = ssh://gerrit
+[url "ssh://gerrit"]
+    pushInsteadOf = ssh://gerrit
