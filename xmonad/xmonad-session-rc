@@ -14,5 +14,5 @@ fi
 
 compton &
 skypeforlinux &
-xrandr --output HDMI-1-1 --right-of eDP-1-1 --auto --primary
+xrandr --output DP1 --right-of eDP1 --auto --primary
 
