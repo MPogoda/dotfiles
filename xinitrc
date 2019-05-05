@@ -17,8 +17,6 @@ fi
 
 compton &
 
-( while pgrep ntpdate; do sleep 0.5; done; sleep 4 && leechcraft ) &
-qbittorrent &
 cantata &
 redshift -l 50.449551:30.450408 &
 
