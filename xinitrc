@@ -17,6 +17,7 @@ fi
 
 compton &
 
+leechcraft &
 cantata &
 redshift -l 50.449551:30.450408 &
 
