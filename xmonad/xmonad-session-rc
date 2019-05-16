@@ -13,6 +13,5 @@ then
 fi
 
 compton &
-skypeforlinux &
 xrandr --output DP1 --right-of eDP1 --auto --primary
 
