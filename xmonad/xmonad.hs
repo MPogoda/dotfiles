@@ -67,7 +67,7 @@ toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 myTerminal = "st" :: String
 
 -- list of workspaces
-myWorkspaces = words "a d r s t z x c v" :: [String]
+myWorkspaces = words "a r s t d z x c v" :: [String]
 
 -- list of screens
 myScreens = words "1 2" :: [String]
