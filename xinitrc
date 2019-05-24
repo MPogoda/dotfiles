@@ -21,4 +21,5 @@ leechcraft &
 cantata &
 redshift -l 50.449551:30.450408 &
 
+( sleep 3; xrandr --output HDMI-0 --mode 1920x1080 --below DP-2 ) &
 exec xmonad
