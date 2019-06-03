@@ -48,3 +48,7 @@
     insteadOf = ssh://gerrit
 [url "ssh://gerrit"]
     pushInsteadOf = ssh://gerrit
+[url "http://192.168.40.110"]
+	insteadOf = https://artifactory.in.here.com
+[url "http://anonymous:@192.168.40.110"]
+	insteadOf = https://anonymous:@artifactory.in.here.com
