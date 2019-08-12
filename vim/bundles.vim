@@ -75,7 +75,7 @@ Plug 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>w -> location list
 
-Plug 'morhetz/gruvbox'
+Plug 'davidosomething/vim-colors-meh'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
