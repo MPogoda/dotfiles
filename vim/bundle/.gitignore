@@ -3,7 +3,6 @@ YouCompleteMe
 closetag.vim
 fzf.vim
 gitv
-gruvbox
 indentLine
 neomake
 rainbow_parentheses.vim
@@ -16,6 +15,7 @@ vim-airline
 vim-airline-themes
 vim-choosewin
 vim-clang-format
+vim-colors-meh
 vim-easymotion
 vim-endwise
 vim-expand-region
