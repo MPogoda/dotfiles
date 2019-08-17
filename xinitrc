@@ -17,7 +17,7 @@ fi
 
 compton &
 
-cantata &
+(sleep 10; cantata) &
 redshift -l 50.449551:30.450408 &
 
 exec xmonad
