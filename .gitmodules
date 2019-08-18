@@ -1,6 +1,8 @@
 [submodule "tmux/plugins/tpm"]
-	path = tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+    path = tmux/plugins/tpm
+    url = https://github.com/tmux-plugins/tpm
+    branch = master
 [submodule "zsh/.zprezto"]
-	path = zsh/.zprezto
-	url = github:MPogoda/prezto
+    path = zsh/.zprezto
+    url = github:MPogoda/prezto
+    branch = master
