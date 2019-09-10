@@ -1,6 +1,6 @@
 " vim: foldmethod=marker
 "
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 " {{{Build instruction for YCM
 "   1. git submodule update --init --recursive
 "   2. cd third_party/ycmd
