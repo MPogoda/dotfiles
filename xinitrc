@@ -5,7 +5,7 @@ xsetroot -cursor_name left_ptr
 [ -f ~/.wallpaper ] && feh --bg-tile ~/.wallpaper || xsetroot -gray
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
-setxkbmap -layout 'us(colemak),ru'
+setxkbmap -layout 'us(colemak),ua'
 setxkbmap -option grp:rctrl_rshift_toggle
 setxkbmap -option caps:backspace
 setxkbmap -option compose:ralt
