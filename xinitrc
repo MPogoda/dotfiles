@@ -10,8 +10,6 @@ then
     pgrep kbdd || kbdd
 fi
 
-compton &
-
 (sleep 10; cantata) &
 redshift -l 50.449551:30.450408 &
 
