@@ -18,6 +18,5 @@ if [ $(which unclutter) ]
 then
     unclutter &
 fi
-redshift -l 50.449551:30.450408 &
 
 exec xmonad
