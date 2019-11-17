@@ -159,6 +159,16 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , (prefix "t", namedScratchpadAction scratchpads "telegram")
          , (prefix "z", namedScratchpadAction scratchpads "cantata")
          , (prefix "x", namedScratchpadAction scratchpads "pavucontrol")
+
+        -- media hotkeys
+         , ( "<XF86AudioPlay>", spawn $ "mpc toggle" )
+         , ( "<XF86AudioStop>", spawn $ "mpc stop" )
+         , ( "<XF86AudioPrev>", spawn $ "mpc prev" )
+         , ( "<XF86AudioNext>", spawn $ "mpc next" )
+
+         , ( "<XF86AudioMute>", spawn $ "pactl set-sink-mute 1 toggle" )
+         , ( "<XF86AudioLowerVolume>", spawn $ "pactl set-sink-mute 1 false; pactl set-sink-volume 1 -5%" )
+         , ( "<XF86AudioRaiseVolume>", spawn $ "pactl set-sink-mute 1 false; pactl set-sink-volume 1 +5%" )
          ]
          ++
          -- M-[asdfgzxcv]   : switch to corresponding workspace
