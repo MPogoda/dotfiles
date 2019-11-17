@@ -10,7 +10,10 @@ then
     pgrep kbdd || kbdd
 fi
 
-(sleep 10; cantata) &
+if [ $(which cantata) ]
+then
+    (sleep 2; cantata) &
+fi
 redshift -l 50.449551:30.450408 &
 
 exec xmonad
