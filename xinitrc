@@ -14,6 +14,10 @@ if [ $(which cantata) ]
 then
     (sleep 2; cantata) &
 fi
+if [ $(which unclutter) ]
+then
+    unclutter &
+fi
 redshift -l 50.449551:30.450408 &
 
 exec xmonad
