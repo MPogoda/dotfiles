@@ -12,7 +12,7 @@ fi
 
 if [ $(which cantata) ]
 then
-    (sleep 2; cantata) &
+    (sleep 10; cantata) &
 fi
 if [ $(which unclutter) ]
 then
