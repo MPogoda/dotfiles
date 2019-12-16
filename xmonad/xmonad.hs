@@ -187,7 +187,7 @@ scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e ~/.tmux/dashboar
               , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
                 (customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "org" (myTerminal ++ " -c org -e nvim ~/plan.org") (className =? "org")
-                (customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
+                (customFloating $ W.RationalRect (1/8) (1/8) (1/2) (3/4))
               , NS "qtcreator" "~/Qt/Tools/QtCreator/bin/qtcreator" (className =? "QtCreator")
                 nonFloating
               ]
