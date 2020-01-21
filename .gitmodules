@@ -5,4 +5,4 @@
 [submodule "zsh/.zprezto"]
     path = zsh/.zprezto
     url = github:MPogoda/prezto
-    branch = master
+    branch = bolt
