@@ -110,3 +110,5 @@ Plug 'othree/yajs.vim'
 Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'editorconfig/editorconfig-vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}

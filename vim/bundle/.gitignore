@@ -1,5 +1,6 @@
 ListToggle
 closetag.vim
+coc.nvim
 editorconfig-vim
 fzf.vim
 gitv
