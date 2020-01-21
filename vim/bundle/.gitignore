@@ -13,6 +13,7 @@ ultisnips
 undotree
 vim-airline
 vim-airline-themes
+vim-better-whitespace
 vim-choosewin
 vim-clang-format
 vim-colors-meh
@@ -28,5 +29,5 @@ vim-polyglot
 vim-snippets
 vim-startify
 vim-surround
-yats
 yajs.vim
+yats
