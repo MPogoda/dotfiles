@@ -1,7 +1,7 @@
 [user]
-    name = Michael Pogoda
-    email = do0dlez1991@gmail.com
-    signingkey = 0xA286A180C8A2DA6E
+    name = Mykhailo Pohoda
+    email = mykhailo.pohoda@bolt.eu
+    signingkey = 0xE65D9AC0C8F6E8C6CDE64DE92A8456DC0524B17D
 [core]
     excludesfile = ~/.cvsignore
 [color]
@@ -20,7 +20,7 @@
 [credential]
     helper = cache --timeout=3600
 [push]
-    default = simple
+    default = current
 [pull]
     rebase = true
 [diff]
