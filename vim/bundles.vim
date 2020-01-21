@@ -1,16 +1,5 @@
 " vim: foldmethod=marker
 "
-Plug 'ycm-core/YouCompleteMe'
-" {{{Build instruction for YCM
-"   1. git submodule update --init --recursive
-"   2. cd third_party/ycmd
-"   3. mkdir -p build
-"   4. cd build
-"   5. cmake .. ../cpp
-"   5a. (optional) ccmake . # configure
-"   6. make
-" }}}
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
