@@ -114,3 +114,4 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'herringtondarkholme/yats'
 Plug 'StanAngeloff/php.vim'
+Plug 'othree/yajs.vim'
