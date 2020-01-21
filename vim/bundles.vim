@@ -94,8 +94,6 @@ Plug 't9md/vim-choosewin'
 
 Plug 'neomake/neomake'
 
-Plug 'jceb/vim-orgmode'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " {{{ fzf
