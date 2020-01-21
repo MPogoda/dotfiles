@@ -113,3 +113,4 @@ Plug 'junegunn/fzf.vim'
 " }}} fzf
 
 Plug 'herringtondarkholme/yats'
+Plug 'StanAngeloff/php.vim'

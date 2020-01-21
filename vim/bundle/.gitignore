@@ -4,6 +4,7 @@ fzf.vim
 gitv
 indentLine
 neomake
+php.vim
 rainbow_parentheses.vim
 tabular
 tagbar
