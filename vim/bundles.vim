@@ -51,8 +51,6 @@ Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-endwise'
 
-Plug 'lyokha/vim-xkbswitch'
-
 Plug 'airblade/vim-gitgutter'
 
 Plug 'terryma/vim-expand-region'
