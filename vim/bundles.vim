@@ -94,12 +94,6 @@ Plug 't9md/vim-choosewin'
 
 Plug 'neomake/neomake'
 
-Plug 'kana/vim-operator-user'
-Plug 'rhysd/vim-clang-format'
-" {{{ vim-clang-format
-"  <leader>gq Format selection.
-" }}} vim-clang-format
-
 Plug 'jceb/vim-orgmode'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -119,4 +113,3 @@ Plug 'othree/yajs.vim'
 Plug 'ntpeters/vim-better-whitespace'
 
 Plug 'editorconfig/editorconfig-vim'
-

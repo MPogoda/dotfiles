@@ -16,7 +16,6 @@ vim-airline
 vim-airline-themes
 vim-better-whitespace
 vim-choosewin
-vim-clang-format
 vim-colors-meh
 vim-easymotion
 vim-endwise
@@ -24,7 +23,6 @@ vim-expand-region
 vim-fugitive
 vim-gitgutter
 vim-obsession
-vim-operator-user
 vim-orgmode
 vim-polyglot
 vim-snippets
