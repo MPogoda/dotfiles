@@ -64,7 +64,6 @@ Plug 'Valloric/ListToggle'
 
 Plug 'davidosomething/vim-colors-meh'
 
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'kien/rainbow_parentheses.vim'
