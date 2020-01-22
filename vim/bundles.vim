@@ -49,8 +49,6 @@ Plug 'tpope/vim-surround'
 " S    create in visual mode
 " }}} Surround mappings
 
-Plug 'tpope/vim-endwise'
-
 Plug 'airblade/vim-gitgutter'
 
 Plug 'terryma/vim-expand-region'
