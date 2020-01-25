@@ -61,8 +61,6 @@ augroup end
 xmap <leader>na  <Plug>(coc-codeaction-selected)
 nmap <leader>na  <Plug>(coc-codeaction-selected)
 
-" Remap for do codeAction of current line
-nmap <leader>nac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>nf  <Plug>(coc-fix-current)
 
