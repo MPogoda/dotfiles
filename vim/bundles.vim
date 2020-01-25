@@ -58,7 +58,7 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'Valloric/ListToggle'
 " <leader>q -> quickfix list
-" <leader>w -> location list
+" <leader>l -> location list
 
 Plug 'davidosomething/vim-colors-meh'
 
