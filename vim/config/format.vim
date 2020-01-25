@@ -10,6 +10,6 @@ set softtabstop=4    " ... this many spaces
 set shiftwidth=4     " indentation amount for < and > commands
 
 " repeat last character to the maximum width of current line
-nnoremap <Leader>_ :execute 's/.$/'. repeat('&', &textwidth+1) .'/'<Enter>
+nnoremap <leader>- :execute 's/.$/'. repeat('&', &textwidth+1) .'/'<Enter>
       \:execute 's/\%>'. &textwidth .'v.//g'<Enter>
 
