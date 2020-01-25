@@ -25,5 +25,6 @@ vim-polyglot
 vim-snippets
 vim-startify
 vim-surround
+vim-which-key
 yajs.vim
 yats
