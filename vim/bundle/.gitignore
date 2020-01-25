@@ -9,7 +9,6 @@ neomake
 php.vim
 rainbow_parentheses.vim
 tabular
-tagbar
 tcomment_vim
 undotree
 vim-airline

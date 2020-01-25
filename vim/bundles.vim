@@ -34,8 +34,6 @@ Plug 'mbbill/undotree'
 
 Plug 'godlygeek/tabular'
 
-Plug 'majutsushi/tagbar'
-
 Plug 'tomtom/tcomment_vim'
 
 Plug 'Lokaltog/vim-easymotion'
