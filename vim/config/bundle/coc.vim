@@ -1,5 +1,7 @@
+let g:coc_node_path="/Users/mpohoda/.nvm/versions/node/v12.14.1/bin/node"
+
 set updatetime=300
-"
+
 inoremap <silent><expr> <TAB>
      \ pumvisible() ? "\<C-n>" :
      \ <SID>check_back_space() ? "\<TAB>" :
