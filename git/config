@@ -35,3 +35,5 @@
     line-graphics = utf-8
     ignore-space = all
     commit-order = topo
+[commit]
+    gpgSign = true
