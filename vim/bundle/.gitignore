@@ -15,8 +15,8 @@ vim-airline
 vim-airline-themes
 vim-better-whitespace
 vim-choosewin
-vim-colors-meh
 vim-easymotion
+vim-equinusocio-material
 vim-expand-region
 vim-fugitive
 vim-gitgutter

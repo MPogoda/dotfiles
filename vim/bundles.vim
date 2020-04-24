@@ -58,7 +58,7 @@ Plug 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>l -> location list
 
-Plug 'davidosomething/vim-colors-meh'
+Plug 'chuling/vim-equinusocio-material'
 
 Plug 'honza/vim-snippets'
 
