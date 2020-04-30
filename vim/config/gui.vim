@@ -6,3 +6,9 @@ set guioptions-=T           " disable toolbar
 set guioptions-=m           " disable menubar
 set termguicolors
 "set guiheadroom=0
+set colorcolumn=+1 " show textwidth limit
+autocmd ColorScheme * highlight! link ColorColumn StatusLineNC
+
+colorscheme equinusocio_material
+
+syntax on
