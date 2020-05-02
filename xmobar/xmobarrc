@@ -6,7 +6,7 @@ Config { lowerOnStart = True
        , borderColor  = "#ff0000"
        , bgColor      = "#1b1d1e"
        , fgColor      = "#a0a0a0"
-       , commands     = [ Run Weather "UKKK"
+       , commands     = [ Run Weather "EETN"
                             [ "--template"
                             , "<fc=#ccccc6>wthr:</fc> <skyCondition> <fc=#b6e354>@</fc> <tempC>ºC"
                             ]
@@ -51,7 +51,7 @@ Config { lowerOnStart = True
                         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%mpd% <fc=#fd971f></fc> %UKKK% <fc=#fd971f></fc> %default:Master% <fc=#fd971f></fc> %cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %dynnetwork% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
+       , template = "%StdinReader%}{%mpd% <fc=#fd971f></fc> %EETN% <fc=#fd971f></fc> %default:Master% <fc=#fd971f></fc> %cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %dynnetwork% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
        }
 
 -- vim: filetype=haskell
