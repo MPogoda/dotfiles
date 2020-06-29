@@ -110,3 +110,5 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'liuchengxu/vim-which-key'
+
+Plug 'danilamihailov/beacon.nvim'
