@@ -20,7 +20,7 @@
 [credential]
     helper = cache --timeout=3600
 [push]
-    default = simple
+    default = current
 [pull]
     rebase = true
 [diff]
@@ -35,3 +35,10 @@
     line-graphics = utf-8
     ignore-space = all
     commit-order = topo
+[commit]
+    gpgSign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
