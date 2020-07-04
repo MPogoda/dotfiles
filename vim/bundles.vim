@@ -1,16 +1,5 @@
 " vim: foldmethod=marker
 "
-Plug 'ycm-core/YouCompleteMe'
-" {{{Build instruction for YCM
-"   1. git submodule update --init --recursive
-"   2. cd third_party/ycmd
-"   3. mkdir -p build
-"   4. cd build
-"   5. cmake .. ../cpp
-"   5a. (optional) ccmake . # configure
-"   6. make
-" }}}
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -45,8 +34,6 @@ Plug 'mbbill/undotree'
 
 Plug 'godlygeek/tabular'
 
-Plug 'majutsushi/tagbar'
-
 Plug 'tomtom/tcomment_vim'
 
 Plug 'Lokaltog/vim-easymotion'
@@ -60,10 +47,6 @@ Plug 'tpope/vim-surround'
 " S    create in visual mode
 " }}} Surround mappings
 
-Plug 'tpope/vim-endwise'
-
-Plug 'lyokha/vim-xkbswitch'
-
 Plug 'airblade/vim-gitgutter'
 
 Plug 'terryma/vim-expand-region'
@@ -73,11 +56,10 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'Valloric/ListToggle'
 " <leader>q -> quickfix list
-" <leader>w -> location list
+" <leader>l -> location list
 
-Plug 'davidosomething/vim-colors-meh'
+Plug 'chuling/vim-equinusocio-material'
 
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 Plug 'kien/rainbow_parentheses.vim'
@@ -107,14 +89,6 @@ Plug 't9md/vim-choosewin'
 
 Plug 'neomake/neomake'
 
-Plug 'kana/vim-operator-user'
-Plug 'rhysd/vim-clang-format'
-" {{{ vim-clang-format
-"  <leader>gq Format selection.
-" }}} vim-clang-format
-
-Plug 'jceb/vim-orgmode'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " {{{ fzf
@@ -124,3 +98,11 @@ Plug 'junegunn/fzf.vim'
 " <leader>fa Search text using Ag.
 " <leader>fs Search snippets.
 " }}} fzf
+
+Plug 'ntpeters/vim-better-whitespace'
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'liuchengxu/vim-which-key'

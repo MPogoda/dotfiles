@@ -10,3 +10,4 @@ set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
 set showbreak=↪
 set noshowmode
 set lazyredraw      " don't redraw screen while macros are executing
+set shortmess+=c    " don't give ins-completion-menu messages
