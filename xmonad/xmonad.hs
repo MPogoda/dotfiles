@@ -119,19 +119,19 @@ myEventHook = docksEventHook <+> hintsEventHook <+> fullscreenEventHook
 myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , ("M-S-<Return>", spawn       $ myTerminal )
          , ("M-C-<Esc>",    spawn       $ "xkill")
-         , ("M-p",          spawn       $ "dmenu_run -fn Monospace-32")
+         , ("M-<Space>",          spawn       $ "dmenu_run -fn Monospace-32")
          -- cycle through all possible layouts
-         , ("M-<Space>",    sendMessage $ NextLayout)
+         , ("M-p",    sendMessage $ NextLayout)
          -- restore default layout
          , ("M-n",          refresh)
          -- cycle through all windows
-         , ("M-j",          windows     $ W.focusDown)
-         , ("M-k",          windows     $ W.focusUp)
+         , ("M-[",          windows     $ W.focusDown)
+         , ("M-]",          windows     $ W.focusUp)
          -- jump to master pane
          , ("M-m",          windows     $ W.focusMaster)
          -- moving stuff
-         , ("M-S-j",        windows     $ W.swapDown)
-         , ("M-S-k",        windows     $ W.swapUp)
+         , ("M-S-[",        windows     $ W.swapDown)
+         , ("M-S-]",        windows     $ W.swapUp)
          , ("M-S-m",        windows     $ W.swapMaster)
          -- enlarging|shrinking stuff
          , ("M-h",          sendMessage $ Shrink)
@@ -153,10 +153,8 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
          , (prefix "c", kill)
          -- shortcuts
          , (prefix "b", spawn $ "firefox")
-         , (prefix "e", spawn $ "gvim")
          , (prefix "r", namedScratchpadAction scratchpads "term")
          , (prefix "d", namedScratchpadAction scratchpads "dashboard")
-         , (prefix "t", namedScratchpadAction scratchpads "telegram")
          , (prefix "z", namedScratchpadAction scratchpads "cantata")
          , (prefix "x", namedScratchpadAction scratchpads "pavucontrol")
 
@@ -191,9 +189,6 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
 scratchpads :: [NamedScratchpad]
 scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mpogoda/.tmux/dashboard.sh")
                   (className =? "dashboard") nonFloating
-              , NS "telegram" "telegram-desktop" (className =? "TelegramDesktop")
-                  ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
-
               , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "cantata" "cantata" (className =? "cantata")
