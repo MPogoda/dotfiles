@@ -1,8 +1,12 @@
-[submodule "tmux/plugins/tpm"]
-    path = tmux/plugins/tpm
-    url = https://github.com/tmux-plugins/tpm
-    branch = master
 [submodule "zsh/.zprezto"]
     path = zsh/.zprezto
     url = github:MPogoda/prezto
     branch = bolt
+[submodule "tmux/plugins/tpm"]
+    path = tmux/plugins/tpm
+    url = github:tmux-plugins/tpm
+    branch = master
+[submodule "tmux/plugins/tmux-sensible"]
+	path = tmux/plugins/tmux-sensible
+	url = github:tmux-plugins/tmux-sensible
+    branch = master
