@@ -1,5 +1,3 @@
-let g:coc_node_path="/Users/mpohoda/.nvm/versions/node/v12.16.3/bin/node"
-
 set updatetime=300
 
 inoremap <silent><expr> <TAB>
