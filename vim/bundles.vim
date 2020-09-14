@@ -107,4 +107,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'liuchengxu/vim-which-key'
 
+Plug 'norcalli/nvim-colorizer.lua'
+
 Plug 'ryanoasis/vim-devicons'

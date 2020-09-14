@@ -1,4 +1,5 @@
 ListToggle
+nvim-colorizer.lua
 closetag.vim
 coc.nvim
 editorconfig-vim
