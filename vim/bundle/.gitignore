@@ -7,6 +7,7 @@ gitv
 indentLine
 neomake
 rainbow_parentheses.vim
+sonokai
 tabular
 tcomment_vim
 undotree

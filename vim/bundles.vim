@@ -58,7 +58,7 @@ Plug 'Valloric/ListToggle'
 " <leader>q -> quickfix list
 " <leader>l -> location list
 
-Plug 'chuling/vim-equinusocio-material'
+Plug 'sainnhe/sonokai'
 
 Plug 'honza/vim-snippets'
 
