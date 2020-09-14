@@ -1,5 +1,4 @@
 ListToggle
-nvim-colorizer.lua
 closetag.vim
 coc.nvim
 editorconfig-vim
@@ -7,6 +6,7 @@ fzf.vim
 gitv
 indentLine
 neomake
+nvim-colorizer.lua
 rainbow_parentheses.vim
 sonokai
 tabular
@@ -22,6 +22,7 @@ vim-equinusocio-material
 vim-expand-region
 vim-fugitive
 vim-gitgutter
+vim-highlightedyank
 vim-obsession
 vim-polyglot
 vim-snippets

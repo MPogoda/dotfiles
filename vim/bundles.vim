@@ -109,4 +109,6 @@ Plug 'liuchengxu/vim-which-key'
 
 Plug 'norcalli/nvim-colorizer.lua'
 
+Plug 'machakann/vim-highlightedyank'
+
 Plug 'ryanoasis/vim-devicons'
