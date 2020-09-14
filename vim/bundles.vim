@@ -106,3 +106,5 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'liuchengxu/vim-which-key'
+
+Plug 'ryanoasis/vim-devicons'
