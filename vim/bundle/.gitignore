@@ -6,7 +6,9 @@ fzf.vim
 gitv
 indentLine
 neomake
+nvim-colorizer.lua
 rainbow_parentheses.vim
+sonokai
 tabular
 tcomment_vim
 undotree
@@ -14,11 +16,13 @@ vim-airline
 vim-airline-themes
 vim-better-whitespace
 vim-choosewin
+vim-devicons
 vim-easymotion
 vim-equinusocio-material
 vim-expand-region
 vim-fugitive
 vim-gitgutter
+vim-highlightedyank
 vim-obsession
 vim-polyglot
 vim-snippets
