@@ -35,13 +35,6 @@ Config { lowerOnStart = True
                             ]
                             10
                         , Run Date "%H:%M" "date" 10
-                        , Run Volume "default" "Master"
-                            [ "--template", "<fc=#ccccc6>vol:</fc> <volume>% <status>"
-                            , "--"
-                            , "--onc", "#b6e354"
-                            , "--offc", "#ff5995"
-                            ]
-                            10
                         , Run MPD
                             [ "--template", "<fc=#ccccc6><state>:</fc> <artist> - <title>"
                             ]
@@ -51,7 +44,7 @@ Config { lowerOnStart = True
                         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader%}{%mpd% <fc=#fd971f></fc> %EETN% <fc=#fd971f></fc> %default:Master% <fc=#fd971f></fc> %cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %dynnetwork% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
+       , template = "%StdinReader%}{%mpd% <fc=#fd971f></fc> %EETN% <fc=#fd971f></fc> %cpu% <fc=#fd971f></fc> %memory% <fc=#fd971f></fc> %dynnetwork% <fc=#fd971f>%date% </fc><fc=#1b1d1e,#fd971f> %kbd% </fc>"
        }
 
 -- vim: filetype=haskell
