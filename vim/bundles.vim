@@ -84,9 +84,6 @@ Plug 'sheerun/vim-polyglot'
 " )) -- \item
 " }}} LaTeX-Box
 
-Plug 't9md/vim-choosewin'
-" nmap - <Plug>(choosewin)
-
 Plug 'neomake/neomake'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -99,8 +96,6 @@ Plug 'junegunn/fzf.vim'
 " <leader>fs Search snippets.
 " }}} fzf
 
-Plug 'herringtondarkholme/yats'
-Plug 'StanAngeloff/php.vim'
 Plug 'othree/yajs.vim'
 
 Plug 'ntpeters/vim-better-whitespace'
