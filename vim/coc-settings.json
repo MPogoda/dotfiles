@@ -1,0 +1,5 @@
+{
+    "rust-client": {
+        "disableRustup": true
+    }
+}
