@@ -77,7 +77,6 @@ require('packer').startup(function()
     })
     use({
         'nvim-treesitter/nvim-treesitter',
-        event = 'BufRead',
         config = function()
             require('plugin.treesitter')
         end,
@@ -85,7 +84,10 @@ require('packer').startup(function()
     use({
         'nvim-treesitter/nvim-treesitter-textobjects',
         requires = { 'nvim-treesitter/nvim-treesitter' },
-        event = 'BufRead',
+    })
+    use({
+        'p00f/nvim-ts-rainbow',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
     })
 
     use({
