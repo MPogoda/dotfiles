@@ -146,4 +146,11 @@ require('packer').startup(function()
             require('plugin.format')
         end,
     })
+
+    use({
+        'karb94/neoscroll.nvim',
+        config = function ()
+            require('neoscroll').setup()
+        end
+    })
 end)
