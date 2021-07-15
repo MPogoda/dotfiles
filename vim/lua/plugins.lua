@@ -198,4 +198,6 @@ require('packer').startup(function()
         end
     })
     use('tpope/vim-obsession')
+
+    use('editorconfig/editorconfig-vim')
 end)
