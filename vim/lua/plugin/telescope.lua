@@ -10,6 +10,15 @@ telescope.setup({
                 ['<esc>'] = require('telescope.actions').close,
             },
         },
+        vimgrep_arguments = {
+            'rg',
+            '--hidden',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+        },
     },
 })
 
@@ -22,6 +31,7 @@ require('which-key').register({
         f = { [[<cmd>Telescope find_files<cr>]], 'Files' },
         g = { [[<cmd>Telescope git_status<cr>]], 'Git status' },
         o = { [[<cmd>Telescope oldfiles<cr>]], 'Oldfiles' },
+        ['/'] = { [[<cmd>Telescope live_grep<cr>]], 'Live grep' },
     },
 }, {
     prefix = '<leader>',
