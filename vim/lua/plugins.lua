@@ -171,4 +171,7 @@ require('packer').startup(function()
             require('plugin.mundo')
         end,
     })
+
+    use('tpope/vim-surround')
+    use('tpope/vim-repeat')
 end)
