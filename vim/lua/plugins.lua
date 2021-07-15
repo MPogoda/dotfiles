@@ -164,4 +164,11 @@ require('packer').startup(function()
     use({
         'ggandor/lightspeed.nvim',
     })
+
+    use({
+        'simnalamburt/vim-mundo',
+        config = function()
+            require('plugin.mundo')
+        end,
+    })
 end)
