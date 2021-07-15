@@ -32,6 +32,7 @@ require('packer').startup(function()
             require('plugin.fugitive')
         end,
     })
+    use('sindrets/diffview.nvim')
     use('tpope/vim-rhubarb')
     use('b3nj5m1n/kommentary')
 
