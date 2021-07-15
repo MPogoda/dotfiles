@@ -89,6 +89,13 @@ require('packer').startup(function()
         'p00f/nvim-ts-rainbow',
         requires = { 'nvim-treesitter/nvim-treesitter' },
     })
+    use({
+        'windwp/nvim-ts-autotag',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('nvim-ts-autotag').setup()
+        end,
+    })
 
     use({
         'neovim/nvim-lspconfig',
