@@ -194,4 +194,12 @@ require('packer').startup(function()
             pcall(vim.cmd, 'PackerLoad fzf')
         end,
     })
+
+    use({
+        'mhinz/vim-startify',
+        config = function()
+            require('plugin.startify')
+        end
+    })
+    use('tpope/vim-obsession')
 end)
