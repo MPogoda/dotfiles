@@ -114,10 +114,6 @@ require('packer').startup(function()
     })
 
     use({
-        'axelf4/vim-strip-trailing-whitespace',
-    })
-
-    use({
         'folke/trouble.nvim',
         requires = {
             { 'kyazdani42/nvim-web-devicons' },
