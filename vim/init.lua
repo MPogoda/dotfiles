@@ -7,6 +7,7 @@ vim.o.termguicolors = true
 require('plugins')
 require('colors')
 require('keybinds')
+require('qfutils')
 
 vim.opt.runtimepath:prepend('/usr/share/vim/vimfiles')
 

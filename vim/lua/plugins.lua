@@ -174,4 +174,24 @@ require('packer').startup(function()
 
     use('tpope/vim-surround')
     use('tpope/vim-repeat')
+
+    use({
+        'junegunn/fzf',
+        run = './install --bin',
+    })
+    use({
+        'ibhagwan/fzf-lua',
+        requires = {
+            'vijaymarupudi/nvim-fzf',
+            'kyazdani42/nvim-web-devicons',
+        },
+        opt = true,
+    })
+    use({
+        'kevinhwang91/nvim-bqf',
+        ft = { 'qf' },
+        config = function()
+            pcall(vim.cmd, 'PackerLoad fzf')
+        end,
+    })
 end)
