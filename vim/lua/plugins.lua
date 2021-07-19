@@ -113,6 +113,20 @@ require('packer').startup(function()
             require('plugin.compe')
         end,
     })
+    use({
+        'jose-elias-alvarez/nvim-lsp-ts-utils',
+        requires = {
+            { 'neovim/nvim-lspconfig' },
+            { 'nvim-lua/plenary.nvim' },
+            { 'jose-elias-alvarez/null-ls.nvim' },
+        }
+    })
+    use({
+        'jose-elias-alvarez/null-ls.nvim',
+        config = function()
+            require('null-ls').setup()
+        end,
+    })
 
     use({
         'folke/trouble.nvim',

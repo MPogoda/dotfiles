@@ -86,3 +86,21 @@ nvim_lsp.sumneko_lua.setup({
     },
 })
 -- }}}
+-- {{{ typescript
+nvim_lsp.tsserver.setup({
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+
+        local ts_utils = require('nvim-lsp-ts-utils')
+        ts_utils.setup({
+            eslint_enable_diagnostics= true,
+            enable_formatting = true,
+        })
+        ts_utils.setup_client(client)
+        on_attach(client, bufnr)
+
+        vim.cmd('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()')
+    end,
+})
+-- }}}
