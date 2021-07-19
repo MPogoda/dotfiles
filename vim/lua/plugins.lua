@@ -145,13 +145,6 @@ require('packer').startup(function()
     use('yamatsum/nvim-cursorline')
 
     use({
-        'lukas-reineke/format.nvim',
-        config = function()
-            require('plugin.format')
-        end,
-    })
-
-    use({
         'karb94/neoscroll.nvim',
         config = function()
             require('neoscroll').setup()
