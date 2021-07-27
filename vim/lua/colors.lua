@@ -1,3 +1,4 @@
-vim.g.sonokai_enable_italic = 1
-vim.g.sonokai_style = 'andromeda'
-vim.cmd([[colorscheme sonokai]])
+vim.g.neon_italic_keyword = true
+vim.g.neon_bold = true
+vim.g.neon_style = "doom"
+vim.cmd([[colorscheme neon]])

@@ -48,7 +48,7 @@ require('packer').startup(function()
         end,
     })
 
-    use('sainnhe/sonokai')
+    use('rafamadriz/neon')
     use({
         'Famiu/feline.nvim',
         requires = {
