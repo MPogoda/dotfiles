@@ -102,6 +102,7 @@ require('packer').startup(function()
         'neovim/nvim-lspconfig',
         requires = {
             { 'ray-x/lsp_signature.nvim' },
+            { 'jose-elias-alvarez/null-ls.nvim' },
         },
         config = function()
             require('plugin.lspconfig')
@@ -120,12 +121,6 @@ require('packer').startup(function()
             { 'nvim-lua/plenary.nvim' },
             { 'jose-elias-alvarez/null-ls.nvim' },
         }
-    })
-    use({
-        'jose-elias-alvarez/null-ls.nvim',
-        config = function()
-            require('null-ls').setup()
-        end,
     })
 
     use({

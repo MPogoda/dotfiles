@@ -54,6 +54,9 @@ capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
 local nvim_lsp = require('lspconfig')
 
+require('null-ls').config({})
+nvim_lsp["null-ls"].setup({})
+
 -- {{{ LUA
 local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/macOs/lua-language-server'
