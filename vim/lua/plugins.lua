@@ -48,7 +48,13 @@ require('packer').startup(function()
         end,
     })
 
-    use('rafamadriz/neon')
+    use({
+        'folke/tokyonight.nvim',
+        config = function()
+            vim.g.tokyonight_sidebars = { 'qf', 'Trouble' }
+            vim.cmd('colorscheme tokyonight')
+        end,
+    })
     use({
         'Famiu/feline.nvim',
         requires = {
