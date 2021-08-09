@@ -48,7 +48,13 @@ require('packer').startup(function()
         end,
     })
 
-    use('sainnhe/sonokai')
+    use({
+        'folke/tokyonight.nvim',
+        config = function()
+            vim.g.tokyonight_sidebars = { 'qf', 'Trouble' }
+            vim.cmd('colorscheme tokyonight')
+        end,
+    })
     use({
         'Famiu/feline.nvim',
         requires = {
