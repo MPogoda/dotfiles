@@ -23,7 +23,7 @@ require('packer').startup(function()
     use({
         'folke/which-key.nvim',
         config = function()
-            require('plugin.whichkey')
+            require('which-key').setup()
         end,
     })
     use({
