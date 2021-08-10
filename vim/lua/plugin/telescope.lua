@@ -31,7 +31,7 @@ require('which-key').register({
         f = { [[<cmd>Telescope find_files<cr>]], 'Files' },
         g = { [[<cmd>Telescope git_status<cr>]], 'Git status' },
         o = { [[<cmd>Telescope oldfiles<cr>]], 'Oldfiles' },
-        ['/'] = { [[<cmd>Telescope live_grep<cr>]], 'Live grep' },
+        ['/'] = { [[<cmd>Telescope grep_string<cr>]], 'Grep string' },
     },
 }, {
     prefix = '<leader>',

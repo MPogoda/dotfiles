@@ -23,7 +23,7 @@ require('packer').startup(function()
     use({
         'folke/which-key.nvim',
         config = function()
-            require('plugin.whichkey')
+            require('which-key').setup()
         end,
     })
     use({
@@ -32,7 +32,10 @@ require('packer').startup(function()
             require('plugin.fugitive')
         end,
     })
-    use('sindrets/diffview.nvim')
+    use({
+        'sindrets/diffview.nvim',
+        cmd = 'DiffviewOpen',
+    })
     use('tpope/vim-rhubarb')
     use('b3nj5m1n/kommentary')
 
@@ -103,6 +106,13 @@ require('packer').startup(function()
             require('nvim-ts-autotag').setup()
         end,
     })
+    use({
+        'lewis6991/spellsitter.nvim',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('spellsitter').setup()
+        end,
+    })
 
     use({
         'neovim/nvim-lspconfig',
@@ -140,14 +150,6 @@ require('packer').startup(function()
         end,
     })
 
-    use({
-        'lewis6991/spellsitter.nvim',
-        requires = { { 'nvim-treesitter/nvim-treesitter' } },
-        config = function()
-            require('spellsitter').setup()
-        end,
-    })
-
     use('yamatsum/nvim-cursorline')
 
     use({
@@ -160,7 +162,9 @@ require('packer').startup(function()
     use({
         'karb94/neoscroll.nvim',
         config = function()
-            require('neoscroll').setup()
+            require('neoscroll').setup({
+                hide_cursor = false,
+            })
         end,
     })
 
@@ -179,30 +183,15 @@ require('packer').startup(function()
     use('tpope/vim-repeat')
 
     use({
-        'junegunn/fzf',
-        run = './install --bin',
-    })
-    use({
-        'ibhagwan/fzf-lua',
-        requires = {
-            'vijaymarupudi/nvim-fzf',
-            'kyazdani42/nvim-web-devicons',
-        },
-        opt = true,
-    })
-    use({
         'kevinhwang91/nvim-bqf',
         ft = { 'qf' },
-        config = function()
-            pcall(vim.cmd, 'PackerLoad fzf')
-        end,
     })
 
     use({
         'mhinz/vim-startify',
         config = function()
             require('plugin.startify')
-        end
+        end,
     })
     use('tpope/vim-obsession')
 

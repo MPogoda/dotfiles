@@ -1,13 +1,11 @@
 require('compe').setup({
     source = {
         path = true,
+        emoji = true,
         nvim_lsp = true,
-        luasnip = true,
         buffer = false,
         calc = true,
         nvim_lua = false,
-        vsnip = false,
-        ultisnips = false,
     },
 })
 
