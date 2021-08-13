@@ -97,13 +97,15 @@ nvim_lsp.tsserver.setup({
 
         local ts_utils = require('nvim-lsp-ts-utils')
         ts_utils.setup({
-            eslint_enable_diagnostics= true,
+            eslint_enable_diagnostics = true,
+            eslint_bin = 'eslint_d',
             enable_formatting = true,
+            formatter = 'prettierd',
         })
         ts_utils.setup_client(client)
         on_attach(client, bufnr)
 
-        vim.cmd('autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()')
+        vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
     end,
 })
 -- }}}
