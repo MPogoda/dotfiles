@@ -59,14 +59,25 @@ require('packer').startup(function()
         end,
     })
     use({
-        'Famiu/feline.nvim',
+        'hoob3rt/lualine.nvim',
         requires = {
             { 'kyazdani42/nvim-web-devicons' },
-            { 'lewis6991/gitsigns.nvim' },
             { 'nvim-lua/lsp-status.nvim' },
         },
         config = function()
-            require('feline').setup()
+            require('lualine').setup({
+                extensions = {
+                    'quickfix',
+                    'fugitive',
+                },
+                sections = {
+                    lualine_c = {
+                        'filename',
+                        require('lsp-status').status
+                    },
+                },
+                theme = 'tokyonight',
+            })
         end,
     })
 
@@ -94,6 +105,13 @@ require('packer').startup(function()
     use({
         'nvim-treesitter/nvim-treesitter-textobjects',
         requires = { 'nvim-treesitter/nvim-treesitter' },
+    })
+    use({
+        'romgrk/nvim-treesitter-context',
+        requires = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('treesitter-context').setup()
+        end,
     })
     use({
         'p00f/nvim-ts-rainbow',
