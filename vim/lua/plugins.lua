@@ -28,6 +28,9 @@ require('packer').startup(function()
     })
     use({
         'tpope/vim-fugitive',
+        requires = {
+            { 'tpope/vim-rhubarb' },
+        },
         config = function()
             require('plugin.fugitive')
         end,
@@ -36,7 +39,7 @@ require('packer').startup(function()
         'sindrets/diffview.nvim',
         cmd = 'DiffviewOpen',
     })
-    use('tpope/vim-rhubarb')
+
     use('b3nj5m1n/kommentary')
 
     use({
@@ -45,6 +48,7 @@ require('packer').startup(function()
             { 'nvim-lua/popup.nvim' },
             { 'nvim-lua/plenary.nvim' },
             { 'gbrlsnchs/telescope-lsp-handlers.nvim' },
+            { 'kyazdani42/nvim-web-devicons' },
         },
         config = function()
             require('plugin.telescope')
