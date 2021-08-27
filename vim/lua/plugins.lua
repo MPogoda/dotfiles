@@ -112,36 +112,17 @@ require('packer').startup(function()
     })
     use({
         'nvim-treesitter/nvim-treesitter',
+        requires = {
+            { 'nvim-treesitter/nvim-treesitter-textobjects' },
+            { 'romgrk/nvim-treesitter-context' },
+            { 'p00f/nvim-ts-rainbow' },
+            { 'windwp/nvim-ts-autotag' },
+            { 'lewis6991/spellsitter.nvim' },
+        },
         config = function()
             require('plugin.treesitter')
-        end,
-    })
-    use({
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-    })
-    use({
-        'romgrk/nvim-treesitter-context',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
             require('treesitter-context').setup()
-        end,
-    })
-    use({
-        'p00f/nvim-ts-rainbow',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-    })
-    use({
-        'windwp/nvim-ts-autotag',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
             require('nvim-ts-autotag').setup()
-        end,
-    })
-    use({
-        'lewis6991/spellsitter.nvim',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
             require('spellsitter').setup()
         end,
     })

@@ -14,7 +14,7 @@ map('n', 'Y', 'y$', { noremap = true })
 map('i', 'jj', '<esc>', { silent = true, noremap = true })
 map('c', 'jj', '<esc>', {})
 
-map('n', '<c-l>', ':<c-u>nohlsearch <bar> syntax off <bar> syntax on<cr><c-l>', { noremap = true })
+map('n', '<c-l>', ':<c-u>nohlsearch<c-l>', { noremap = true })
 
 map('n', 'gv', '`[v`]', { noremap = true }) -- last edited or pasted
 
