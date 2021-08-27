@@ -2,6 +2,11 @@
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 
+require('lsp_signature').setup({
+    bind = true,
+    toggle_key = '<C-k>'
+})
+
 local function on_attach(client, bufnr)
     vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
@@ -44,7 +49,6 @@ local function on_attach(client, bufnr)
 
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
-    require('lsp_signature').on_attach()
     lsp_status.on_attach(client)
 end
 
