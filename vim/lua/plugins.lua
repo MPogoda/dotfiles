@@ -52,10 +52,20 @@ require('packer').startup(function()
     })
 
     use({
-        'folke/tokyonight.nvim',
+        'Pocco81/Catppuccino.nvim',
         config = function()
-            vim.g.tokyonight_sidebars = { 'qf', 'Trouble' }
-            vim.cmd('colorscheme tokyonight')
+            local catppuccino = require('catppuccino')
+            catppuccino.setup({
+                colorscheme = 'neon_latte',
+                integrations = {
+                    lsp_trouble = true,
+                    gitsigns = true,
+                    telescope = true,
+                    which_key = true,
+                    indent_blankline = true,
+                },
+            })
+            catppuccino.load()
         end,
     })
     use({
@@ -76,7 +86,7 @@ require('packer').startup(function()
                         require('lsp-status').status
                     },
                 },
-                theme = 'tokyonight',
+                theme = 'catppuccino',
             })
         end,
     })
