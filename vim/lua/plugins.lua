@@ -28,6 +28,9 @@ require('packer').startup(function()
     })
     use({
         'tpope/vim-fugitive',
+        requires = {
+            { 'tpope/vim-rhubarb' },
+        },
         config = function()
             require('plugin.fugitive')
         end,
@@ -36,7 +39,7 @@ require('packer').startup(function()
         'sindrets/diffview.nvim',
         cmd = 'DiffviewOpen',
     })
-    use('tpope/vim-rhubarb')
+
     use('b3nj5m1n/kommentary')
 
     use({
@@ -45,6 +48,7 @@ require('packer').startup(function()
             { 'nvim-lua/popup.nvim' },
             { 'nvim-lua/plenary.nvim' },
             { 'gbrlsnchs/telescope-lsp-handlers.nvim' },
+            { 'kyazdani42/nvim-web-devicons' },
         },
         config = function()
             require('plugin.telescope')
@@ -52,21 +56,42 @@ require('packer').startup(function()
     })
 
     use({
-        'folke/tokyonight.nvim',
+        'Pocco81/Catppuccino.nvim',
         config = function()
-            vim.g.tokyonight_sidebars = { 'qf', 'Trouble' }
-            vim.cmd('colorscheme tokyonight')
+            local catppuccino = require('catppuccino')
+            catppuccino.setup({
+                colorscheme = 'neon_latte',
+                integrations = {
+                    lsp_trouble = true,
+                    gitsigns = true,
+                    telescope = true,
+                    which_key = true,
+                    indent_blankline = true,
+                },
+            })
+            catppuccino.load()
         end,
     })
     use({
-        'Famiu/feline.nvim',
+        'hoob3rt/lualine.nvim',
         requires = {
             { 'kyazdani42/nvim-web-devicons' },
-            { 'lewis6991/gitsigns.nvim' },
             { 'nvim-lua/lsp-status.nvim' },
         },
         config = function()
-            require('feline').setup()
+            require('lualine').setup({
+                extensions = {
+                    'quickfix',
+                    'fugitive',
+                },
+                sections = {
+                    lualine_c = {
+                        'filename',
+                        require('lsp-status').status
+                    },
+                },
+                theme = 'catppuccino',
+            })
         end,
     })
 
@@ -87,36 +112,17 @@ require('packer').startup(function()
     })
     use({
         'nvim-treesitter/nvim-treesitter',
+        requires = {
+            { 'nvim-treesitter/nvim-treesitter-textobjects' },
+            { 'romgrk/nvim-treesitter-context' },
+            { 'p00f/nvim-ts-rainbow' },
+            { 'windwp/nvim-ts-autotag' },
+            { 'lewis6991/spellsitter.nvim' },
+        },
         config = function()
             require('plugin.treesitter')
-        end,
-    })
-    use({
-        'nvim-treesitter/nvim-treesitter-textobjects',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-    })
-    use({
-        'romgrk/nvim-treesitter-context',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
             require('treesitter-context').setup()
-        end,
-    })
-    use({
-        'p00f/nvim-ts-rainbow',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-    })
-    use({
-        'windwp/nvim-ts-autotag',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
             require('nvim-ts-autotag').setup()
-        end,
-    })
-    use({
-        'lewis6991/spellsitter.nvim',
-        requires = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
             require('spellsitter').setup()
         end,
     })
