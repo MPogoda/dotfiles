@@ -66,7 +66,9 @@ require('packer').startup(function()
                     gitsigns = true,
                     telescope = true,
                     which_key = true,
-                    indent_blankline = true,
+                    indent_blankline = {
+                        enabled = true,
+                    },
                     lightspeed = true,
                     ts_rainbow = true,
                 },
