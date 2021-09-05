@@ -60,13 +60,15 @@ require('packer').startup(function()
         config = function()
             local catppuccino = require('catppuccino')
             catppuccino.setup({
-                colorscheme = 'neon_latte',
+                colorscheme = 'soft_manilo',
                 integrations = {
                     lsp_trouble = true,
                     gitsigns = true,
                     telescope = true,
                     which_key = true,
                     indent_blankline = true,
+                    lightspeed = true,
+                    ts_rainbow = true,
                 },
             })
             catppuccino.load()
