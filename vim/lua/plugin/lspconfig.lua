@@ -3,7 +3,7 @@ lsp_status.register_progress()
 
 require('lsp_signature').setup({
     bind = true,
-    toggle_key = '<C-k>'
+    toggle_key = '<C-h>'
 })
 
 local function on_attach(client, bufnr)
@@ -44,7 +44,7 @@ local function on_attach(client, bufnr)
     end
 
     map('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-    map('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+    map('<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
