@@ -2,7 +2,7 @@ local cmp = require('cmp')
 cmp.setup({
     snippet = {
         expand = function(args)
-            vim.fn['vsnip#anonymous'](args.body)
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     sources = {
@@ -11,7 +11,7 @@ cmp.setup({
         { name = 'calc' },
         { name = 'emoji' },
         { name = 'spell' },
-        { name = 'vsnip' },
+        { name = 'luasnip' },
     },
     mapping = {
         ['<c-p>'] = cmp.mapping.select_prev_item(),
