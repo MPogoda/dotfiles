@@ -20,3 +20,12 @@ map('n', 'gv', '`[v`]', { noremap = true }) -- last edited or pasted
 
 map('v', '>', '>gv', { noremap = true })
 map('v', '<', '<gv', { noremap = true })
+
+map('i', '<c-e>', [[luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-e>']], { expr = true, silent = true, noremap = true })
+map('s', '<c-e>', [[luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<c-e>']], { expr = true, silent = true, noremap = true })
+-- Jump forward or backward
+map('i', '<tab>', [[luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<tab>']], { expr = true, silent = true })
+map('i', '<s-tab>', [[<cmd>lua require('luasnip').jump(-1)<cr>]], { silent = true, noremap = true })
+
+map('s', '<tab>', [[<cmd>lua require('luasnip').jump(1)<cr>]], { noremap = true, silent = true })
+map('s', '<s-tab>', [[<cmd>lua require('luasnip').jump(-1)<cr>]], { noremap = true, silent = true })

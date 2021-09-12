@@ -104,7 +104,7 @@ require('packer').startup(function()
         event = 'BufRead',
         requires = { 'nvim-lua/plenary.nvim' },
         config = function()
-            require('plugin.gitsigns')
+            require('plugin.git-signs')
         end,
     })
     use({
@@ -135,15 +135,44 @@ require('packer').startup(function()
         'neovim/nvim-lspconfig',
         requires = {
             { 'ray-x/lsp_signature.nvim' },
+            { 'jose-elias-alvarez/null-ls.nvim' },
+            { 'hrsh7th/cmp-nvim-lsp' },
         },
         config = function()
             require('plugin.lspconfig')
         end,
     })
     use({
-        'hrsh7th/nvim-compe',
+        'jose-elias-alvarez/nvim-lsp-ts-utils',
+        requires = {
+            { 'neovim/nvim-lspconfig' },
+            { 'nvim-lua/plenary.nvim' },
+            { 'jose-elias-alvarez/null-ls.nvim' },
+        }
+    })
+
+    use({
+        'L3MON4D3/LuaSnip',
+        requires = {
+            { 'rafamadriz/friendly-snippets', module = { 'luasnip' } },
+        },
         config = function()
-            require('plugin.compe')
+            require('luasnip.loaders.from_vscode').load({})
+        end,
+    })
+    use({
+        'hrsh7th/nvim-cmp',
+        requires = {
+            { 'L3MON4D3/LuaSnip' },
+            { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-calc', after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-emoji', after = 'nvim-cmp' },
+            { 'f3fora/cmp-spell', after = 'nvim-cmp' },
+        },
+        config = function()
+            require('plugin.completion')
         end,
     })
 
