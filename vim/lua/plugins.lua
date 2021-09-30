@@ -19,6 +19,7 @@ vim.api.nvim_exec(
 local use = require('packer').use
 require('packer').startup(function()
     use('wbthomason/packer.nvim')
+    use('lewis6991/impatient.nvim')
 
     use({
         'folke/which-key.nvim',
@@ -202,15 +203,6 @@ require('packer').startup(function()
         'lukas-reineke/format.nvim',
         config = function()
             require('plugin.format')
-        end,
-    })
-
-    use({
-        'karb94/neoscroll.nvim',
-        config = function()
-            require('neoscroll').setup({
-                hide_cursor = false,
-            })
         end,
     })
 
