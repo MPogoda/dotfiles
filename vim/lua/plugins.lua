@@ -234,4 +234,17 @@ require('packer').startup(function()
     use('tpope/vim-obsession')
 
     use('editorconfig/editorconfig-vim')
+    use({
+        'weilbith/nvim-code-action-menu',
+        cmd = 'CodeActionMenu',
+    })
+
+    use({
+        'kosayoda/nvim-lightbulb',
+        config = function()
+            vim.cmd(
+                [[autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb({virtual_text={enabled = true}})]]
+            )
+        end,
+    })
 end)
