@@ -29,7 +29,7 @@ local function on_attach(client, bufnr)
             a = {
                 name = 'Actions',
                 r = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
-                c = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code action' },
+                c = { '<cmd>CodeActionMenu<cr>', 'Code action' },
                 e = { '<cmd>lua vim.lsp.buf.show_line_diagnostics()<cr>', 'Line diagnostics' },
             },
             s = { [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>]], 'Symbols' },
