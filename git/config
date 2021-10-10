@@ -2,17 +2,11 @@
     name = Mykhailo Pohoda
     email = mykhailo.pohoda@bolt.eu
     signingkey = 0xE65D9AC0C8F6E8C6CDE64DE92A8456DC0524B17D
-[core]
-    excludesfile = ~/.cvsignore
 [color]
     ui = true
 [format]
     pretty = oneline
 [alias]
-    lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-    lg2 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
-    lg = !"git lg1"
-    puush = push --force
     up = "!git remote update -p; git merge --ff-only @{u}"
     news = log -p HEAD@{1}..HEAD@{0}
     ignore = update-index --assume-unchanged
