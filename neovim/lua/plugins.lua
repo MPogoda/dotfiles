@@ -204,18 +204,9 @@ require('packer').startup({function()
         end,
     })
 
-    use('yamatsum/nvim-cursorline')
+    use({ 'yamatsum/nvim-cursorline' })
 
-    use({
-        'lukas-reineke/format.nvim',
-        config = function()
-            require('plugin.format')
-        end,
-    })
-
-    use({
-        'ggandor/lightspeed.nvim',
-    })
+    use({ 'ggandor/lightspeed.nvim' })
 
     use({
         'simnalamburt/vim-mundo',
