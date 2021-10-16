@@ -44,10 +44,12 @@ require('packer').startup({function()
     })
 
     use({
-        'b3nj5m1n/kommentary',
+        'numToStr/Comment.nvim',
         config = function()
-            require('kommentary.config').configure_language('default', {
-                prefer_single_line_comments = true,
+            require('Comment').setup({
+                pre_hook = function()
+                    return require('ts_context_commentstring.internal').calculate_commentstring()
+                end,
             })
         end,
     })
@@ -76,9 +78,7 @@ require('packer').startup({function()
                     gitsigns = true,
                     telescope = true,
                     which_key = true,
-                    indent_blankline = {
-                        enabled = true,
-                    },
+                    indent_blankline = { enabled = true },
                     lightspeed = true,
                     ts_rainbow = true,
                 },
@@ -127,11 +127,11 @@ require('packer').startup({function()
     use({
         'nvim-treesitter/nvim-treesitter',
         requires = {
-            { 'nvim-treesitter/nvim-treesitter-textobjects' },
             { 'romgrk/nvim-treesitter-context' },
             { 'p00f/nvim-ts-rainbow' },
             { 'windwp/nvim-ts-autotag' },
             { 'lewis6991/spellsitter.nvim' },
+            { 'JoosepAlviste/nvim-ts-context-commentstring' },
         },
         config = function()
             require('plugin.treesitter')
