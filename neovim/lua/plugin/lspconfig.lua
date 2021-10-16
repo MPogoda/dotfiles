@@ -59,8 +59,16 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities);
 
 local nvim_lsp = require('lspconfig')
 
-require('null-ls').config({})
-nvim_lsp["null-ls"].setup({})
+local null_ls = require('null-ls')
+null_ls.config({
+    sources = {
+        null_ls.builtins.formatting.stylua
+    }
+})
+nvim_lsp["null-ls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
 
 -- {{{ LUA
 local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'

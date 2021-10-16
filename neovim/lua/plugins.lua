@@ -9,22 +9,24 @@ vim.api.nvim_exec(
     [[
     augroup Packer
         autocmd!
-        autocmd BufWritePost init.lua PackerCompile
-        autocmd BufWritePost plugins.lua PackerCompile
+        autocmd BufWritePost init.lua source <afile> | PackerCompile
+        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
     augroup end
     ]],
     false
 )
 
 local use = require('packer').use
-require('packer').startup(function()
+require('packer').startup({function()
     use('wbthomason/packer.nvim')
     use('lewis6991/impatient.nvim')
 
     use({
         'folke/which-key.nvim',
         config = function()
-            require('which-key').setup()
+            require('which-key').setup({
+                window = { position = 'top' },
+            })
         end,
     })
     use({
@@ -42,10 +44,12 @@ require('packer').startup(function()
     })
 
     use({
-        'b3nj5m1n/kommentary',
+        'numToStr/Comment.nvim',
         config = function()
-            require('kommentary.config').configure_language('default', {
-                prefer_single_line_comments = true,
+            require('Comment').setup({
+                pre_hook = function()
+                    return require('ts_context_commentstring.internal').calculate_commentstring()
+                end,
             })
         end,
     })
@@ -74,9 +78,7 @@ require('packer').startup(function()
                     gitsigns = true,
                     telescope = true,
                     which_key = true,
-                    indent_blankline = {
-                        enabled = true,
-                    },
+                    indent_blankline = { enabled = true },
                     lightspeed = true,
                     ts_rainbow = true,
                 },
@@ -125,11 +127,11 @@ require('packer').startup(function()
     use({
         'nvim-treesitter/nvim-treesitter',
         requires = {
-            { 'nvim-treesitter/nvim-treesitter-textobjects' },
             { 'romgrk/nvim-treesitter-context' },
             { 'p00f/nvim-ts-rainbow' },
             { 'windwp/nvim-ts-autotag' },
             { 'lewis6991/spellsitter.nvim' },
+            { 'JoosepAlviste/nvim-ts-context-commentstring' },
         },
         config = function()
             require('plugin.treesitter')
@@ -204,11 +206,9 @@ require('packer').startup(function()
         end,
     })
 
-    use('yamatsum/nvim-cursorline')
+    use({ 'yamatsum/nvim-cursorline' })
 
-    use({
-        'ggandor/lightspeed.nvim',
-    })
+    use({ 'ggandor/lightspeed.nvim' })
 
     use({
         'simnalamburt/vim-mundo',
@@ -247,4 +247,8 @@ require('packer').startup(function()
             )
         end,
     })
-end)
+end, config = {
+    compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
+}})
+
+require('packer_compiled')
