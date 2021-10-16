@@ -9,15 +9,15 @@ vim.api.nvim_exec(
     [[
     augroup Packer
         autocmd!
-        autocmd BufWritePost init.lua PackerCompile
-        autocmd BufWritePost plugins.lua PackerCompile
+        autocmd BufWritePost init.lua source <afile> | PackerCompile
+        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
     augroup end
     ]],
     false
 )
 
 local use = require('packer').use
-require('packer').startup(function()
+require('packer').startup({function()
     use('wbthomason/packer.nvim')
     use('lewis6991/impatient.nvim')
 
@@ -254,4 +254,8 @@ require('packer').startup(function()
             )
         end,
     })
-end)
+end, config = {
+    compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
+}})
+
+require('packer_compiled')
