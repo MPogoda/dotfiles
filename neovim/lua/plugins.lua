@@ -247,6 +247,14 @@ require('packer').startup({function()
             )
         end,
     })
+
+    use({
+        'nanozuki/tabby.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+        config = function()
+            require('tabby').setup()
+        end,
+    })
 end, config = {
     compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua'
 }})
