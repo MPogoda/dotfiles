@@ -87,7 +87,7 @@ require('packer').startup({function()
         end,
     })
     use({
-        'hoob3rt/lualine.nvim',
+        'nvim-lualine/lualine.nvim',
         requires = {
             { 'kyazdani42/nvim-web-devicons' },
             { 'nvim-lua/lsp-status.nvim' },
