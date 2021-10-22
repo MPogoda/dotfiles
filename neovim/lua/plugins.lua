@@ -133,6 +133,7 @@ require('packer').startup({
                 { 'windwp/nvim-ts-autotag' },
                 { 'lewis6991/spellsitter.nvim' },
                 { 'JoosepAlviste/nvim-ts-context-commentstring' },
+                { 'haringsrob/nvim_context_vt' },
             },
             config = function()
                 require('plugin.treesitter')
