@@ -21,4 +21,3 @@ require('which-key').register({
     prefix = '<leader>',
     mode = 'v',
 })
-
