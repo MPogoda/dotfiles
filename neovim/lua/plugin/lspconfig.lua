@@ -28,8 +28,9 @@ local function on_attach(client, bufnr)
             a = {
                 name = 'Actions',
                 r = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
-                c = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code action' },
-                e = { '<cmd>lua vim.lsp.buf.show_line_diagnostics()<cr>', 'Line diagnostics' },
+                c = { '<cmd>CodeActionMenu<cr>', 'Code action' },
+                C = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code action' },
+                e = { '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', 'Line diagnostics' },
             },
             s = { [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>]], 'Symbols' },
             q = { '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', 'To loclist' },
@@ -56,6 +57,17 @@ capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities);
 
 local nvim_lsp = require('lspconfig')
+
+local null_ls = require('null-ls')
+null_ls.config({
+    sources = {
+        null_ls.builtins.formatting.stylua
+    }
+})
+nvim_lsp["null-ls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
 
 -- {{{ LUA
 local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'

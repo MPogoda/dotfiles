@@ -22,7 +22,7 @@ require('which-key').register({
         f = { [[<cmd>Telescope find_files theme=get_dropdown<cr>]], 'Files' },
         g = { [[<cmd>Telescope git_status theme=get_dropdown<cr>]], 'Git status' },
         o = { [[<cmd>Telescope oldfiles<cr>]], 'Oldfiles' },
-        ['/'] = { [[<cmd>Telescope grep_string theme=get_cursor<cr>]], 'Grep string' },
+        ['/'] = { [[<cmd>Telescope grep_string<cr>]], 'Grep string' },
     },
 }, {
     prefix = '<leader>',

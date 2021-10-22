@@ -13,7 +13,7 @@ require('qfutils')
 vim.opt.runtimepath:prepend('/usr/share/vim/vimfiles')
 
 vim.opt.hidden = true
-vim.opt.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menu,menuone,noselect'
 
 vim.opt.diffopt:append('vertical')
 vim.opt.diffopt:append('indent-heuristic')
