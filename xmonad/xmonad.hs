@@ -60,11 +60,11 @@ myPP = xmobarPP { ppCurrent = xmobarColor orange ""
                                 "Mirror ResizableTall" -> "[-]"
                                 _      -> n
                 }
--- dummy line. needed for statusBar function.
+-- dummy line. Needed for statusBar function.
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
 -- terminal i'm using
-myTerminal = "st" :: String
+myTerminal = "kitty" :: String
 
 -- list of workspaces
 myWorkspaces = words "a r s t d z x c v" :: [String]
@@ -116,8 +116,8 @@ myManageHook = composeAll
 myEventHook = docksEventHook <+> hintsEventHook <+> fullscreenEventHook
 
 -- Keys
-myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
-         , ("M-S-<Return>", spawn       $ myTerminal )
+myKeys = [ ("M-<Return>",   spawn       $ myTerminal)
+         , ("M-S-<Return>", spawn       $ myTerminal ++ " -e tmux")
          , ("M-C-<Esc>",    spawn       $ "xkill")
          , ("M-<Space>",          spawn       $ "dmenu_run -fn Monospace-32")
          -- cycle through all possible layouts
@@ -187,9 +187,9 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal ++ " -e tmux")
     prefix  = (++) "M-<Tab> " :: String -> String
 
 scratchpads :: [NamedScratchpad]
-scratchpads = [ NS "dashboard" (myTerminal ++ " -c dashboard -e /bin/sh /home/mpogoda/.tmux/dashboard.sh")
+scratchpads = [ NS "dashboard" (myTerminal ++ " --class=dashboard -e /bin/sh /home/mpogoda/.tmux/dashboard.sh")
                   (className =? "dashboard") nonFloating
-              , NS "term" (myTerminal ++ " -c term -e tmux") (className =? "term")
+              , NS "term" (myTerminal ++ " --class=term") (className =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "cantata" "cantata" (className =? "cantata")
                   ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
