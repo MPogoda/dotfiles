@@ -47,7 +47,12 @@ local function on_attach(client, bufnr)
     map('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
     map('<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 
-    vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
+    vim.cmd([[
+        augroup lsp_buf_format
+            au! BufWritePre <buffer>
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        augroup END
+    ]])
 
     lsp_status.on_attach(client)
 end
@@ -105,7 +110,13 @@ nvim_lsp.sumneko_lua.setup({
             telemetry = {
                 enable = false,
             },
+            completion = { callSnippet = 'Replace' },
         },
     },
 })
 -- }}}
+
+nvim_lsp.rust_analyzer.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
