@@ -4,7 +4,7 @@ lsp_status.register_progress()
 
 require('lsp_signature').setup({
     bind = true,
-    toggle_key = '<C-h>'
+    toggle_key = '<C-h>',
 })
 
 local function on_attach(client, bufnr)
@@ -48,24 +48,29 @@ local function on_attach(client, bufnr)
     map('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
     map('<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 
-    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+    vim.cmd([[
+        augroup lsp_buf_format
+            au! BufWritePre <buffer>
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        augroup END
+    ]])
 
     lsp_status.on_attach(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities);
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local nvim_lsp = require('lspconfig')
 
 local null_ls = require('null-ls')
 null_ls.config({
     sources = {
-        null_ls.builtins.formatting.stylua
-    }
+        null_ls.builtins.formatting.stylua,
+    },
 })
-nvim_lsp["null-ls"].setup({
+nvim_lsp['null-ls'].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
@@ -98,6 +103,7 @@ nvim_lsp.sumneko_lua.setup({
             telemetry = {
                 enable = false,
             },
+            completion = { callSnippet = 'Replace' },
         },
     },
 })
@@ -118,8 +124,12 @@ nvim_lsp.tsserver.setup({
         })
         ts_utils.setup_client(client)
         on_attach(client, bufnr)
-
-        vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
     end,
+})
+-- }}}
+-- {{{ rust
+nvim_lsp.rust_analyzer.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
 })
 -- }}}
