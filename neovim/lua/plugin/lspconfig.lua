@@ -71,6 +71,12 @@ nvim_lsp['null-ls'].setup({
     on_attach = on_attach,
 })
 
+-- {{{ HLS
+nvim_lsp.hls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+-- }}}
 -- {{{ LUA
 local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
