@@ -1,3 +1,4 @@
+-- vim: foldmethod=marker
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 
@@ -63,6 +64,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local nvim_lsp = require('lspconfig')
 
+-- {{{ null-ls
 local null_ls = require('null-ls')
 null_ls.config({
     sources = {
@@ -75,6 +77,7 @@ nvim_lsp['null-ls'].setup({
     capabilities = capabilities,
     on_attach = on_attach,
 })
+-- }}}
 
 -- {{{ HLS
 nvim_lsp.hls.setup({
@@ -116,7 +119,9 @@ nvim_lsp.sumneko_lua.setup({
 })
 -- }}}
 
+-- {{{ rust
 nvim_lsp.rust_analyzer.setup({
     on_attach = on_attach,
     capabilities = capabilities,
 })
+-- }}}
