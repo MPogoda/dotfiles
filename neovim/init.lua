@@ -26,7 +26,8 @@ vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
-vim.opt.grepprg = 'rg --vimgrep'
+vim.opt.grepprg = 'rg --vimgrep --no-heading'
+vim.opt.grepformat = '%f:%l:%c:%m,%f:%l:%m'
 vim.opt.colorcolumn = '+1' -- show line after textwidth
 
 vim.opt.scrolloff = 3 -- context lines around cursor

@@ -1,6 +1,9 @@
 require('gitsigns').setup({
     current_line_blame = true,
-    current_line_blame_delay = 500,
+    numhl = true,
+    current_line_blame_opts = {
+        delay = 2000,
+    },
 })
 require('which-key').register({
     h = {

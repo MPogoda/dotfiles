@@ -176,12 +176,14 @@ require('packer').startup({
             'hrsh7th/nvim-cmp',
             requires = {
                 { 'L3MON4D3/LuaSnip' },
-                { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+                { 'saadparwaiz1/cmp_luasnip' },
                 { 'hrsh7th/cmp-nvim-lsp' },
-                { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-                { 'hrsh7th/cmp-calc', after = 'nvim-cmp' },
-                { 'hrsh7th/cmp-emoji', after = 'nvim-cmp' },
-                { 'f3fora/cmp-spell', after = 'nvim-cmp' },
+                { 'hrsh7th/cmp-path' },
+                { 'hrsh7th/cmp-buffer' },
+                { 'hrsh7th/cmp-calc' },
+                { 'hrsh7th/cmp-emoji' },
+                { 'f3fora/cmp-spell' },
+                { 'onsails/lspkind-nvim' },
             },
             config = function()
                 require('plugin.completion')
