@@ -1,4 +1,5 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -8,10 +9,11 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'path' },
+        { name = 'luasnip' },
+        { name = 'buffer', keyword_length = 5 },
         { name = 'calc' },
         { name = 'emoji' },
         { name = 'spell' },
-        { name = 'luasnip' },
     },
     mapping = {
         ['<c-p>'] = cmp.mapping.select_prev_item(),
@@ -26,4 +28,16 @@ cmp.setup({
         }),
     },
     experimental = { ghost_text = true },
+    formatting = {
+        format = lspkind.cmp_format({
+            with_text = false,
+            menu = {
+                buffer = '[bf]',
+                nvim_lsp = '[lsp]',
+                path = '[pth]',
+                spell = '[spl]',
+                luasnip = '[snp]',
+            },
+        }),
+    },
 })
