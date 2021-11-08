@@ -259,6 +259,12 @@ require('packer').startup({
                 require('tabby').setup()
             end,
         })
+        use({
+            'luukvbaal/stabilize.nvim',
+            config = function()
+                require('stabilize').setup()
+            end,
+        })
     end,
     config = {
         compile_path = vim.fn.stdpath('config') .. '/lua/packer_compiled.lua',
