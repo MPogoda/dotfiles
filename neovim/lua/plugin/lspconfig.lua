@@ -110,6 +110,7 @@ nvim_lsp.sumneko_lua.setup({
     },
 })
 -- }}}
+
 -- {{{ typescript
 nvim_lsp.tsserver.setup({
     capabilities = capabilities,
@@ -119,6 +120,7 @@ nvim_lsp.tsserver.setup({
 
         local ts_utils = require('nvim-lsp-ts-utils')
         ts_utils.setup({
+            eslint_enable_disable_comments = false,
             eslint_enable_diagnostics = true,
             eslint_bin = 'eslint_d',
             enable_formatting = true,
@@ -129,6 +131,7 @@ nvim_lsp.tsserver.setup({
     end,
 })
 -- }}}
+
 -- {{{ rust
 nvim_lsp.rust_analyzer.setup({
     on_attach = on_attach,
