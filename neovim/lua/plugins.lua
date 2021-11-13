@@ -69,11 +69,10 @@ require('packer').startup({
         })
 
         use({
-            'Pocco81/Catppuccino.nvim',
+            'catppuccin/nvim',
             config = function()
-                local catppuccino = require('catppuccino')
-                catppuccino.setup({
-                    colorscheme = 'soft_manilo',
+                local catppuccin = require('catppuccin')
+                catppuccin.setup({
                     integrations = {
                         lsp_trouble = true,
                         gitsigns = true,
@@ -84,7 +83,7 @@ require('packer').startup({
                         ts_rainbow = true,
                     },
                 })
-                catppuccino.load()
+                catppuccin.load()
             end,
         })
         use({
@@ -92,6 +91,7 @@ require('packer').startup({
             requires = {
                 { 'kyazdani42/nvim-web-devicons' },
                 { 'nvim-lua/lsp-status.nvim' },
+                { 'catppuccin/nvim' },
             },
             config = function()
                 require('lualine').setup({
@@ -105,7 +105,7 @@ require('packer').startup({
                             require('lsp-status').status,
                         },
                     },
-                    theme = 'catppuccino',
+                    theme = 'catppuccin',
                 })
             end,
         })
@@ -257,6 +257,12 @@ require('packer').startup({
             requires = { 'kyazdani42/nvim-web-devicons' },
             config = function()
                 require('tabby').setup()
+            end,
+        })
+        use({
+            'luukvbaal/stabilize.nvim',
+            config = function()
+                require('stabilize').setup()
             end,
         })
     end,
