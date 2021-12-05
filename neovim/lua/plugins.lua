@@ -265,6 +265,8 @@ require('packer').startup({
                 require('stabilize').setup()
             end,
         })
+
+        use('stevearc/dressing.nvim')
     end,
     config = {
         compile_path = vim.fn.stdpath('config') .. '/lua/packer_compiled.lua',
