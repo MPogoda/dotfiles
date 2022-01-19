@@ -68,10 +68,10 @@ local nvim_lsp = require('lspconfig')
 local null_ls = require('null-ls')
 null_ls.setup({
     sources = {
-        null_ls.builtins.code_actions.eslint,
-        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettierd,
     },
     on_attach = on_attach,
 })
@@ -114,6 +114,7 @@ nvim_lsp.sumneko_lua.setup({
 -- {{{ typescript
 nvim_lsp.tsserver.setup({
     capabilities = capabilities,
+    init_options = require('nvim-lsp-ts-utils').init_options,
     on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
         client.resolved_capabilities.document_range_formatting = false
