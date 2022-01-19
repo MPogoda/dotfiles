@@ -70,6 +70,7 @@ require('packer').startup({
 
         use({
             'catppuccin/nvim',
+            as = 'catppuccin',
             config = function()
                 local catppuccin = require('catppuccin')
                 catppuccin.setup({
@@ -79,6 +80,7 @@ require('packer').startup({
                         telescope = true,
                         which_key = true,
                         indent_blankline = { enabled = true },
+                        neogit = true,
                         lightspeed = true,
                         ts_rainbow = true,
                     },
@@ -86,6 +88,7 @@ require('packer').startup({
                 catppuccin.load()
             end,
         })
+
         use({
             'nvim-lualine/lualine.nvim',
             requires = {
