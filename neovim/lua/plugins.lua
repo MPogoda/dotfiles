@@ -267,6 +267,13 @@ require('packer').startup({
         })
 
         use('stevearc/dressing.nvim')
+
+        use({
+            'petertriho/nvim-scrollbar',
+            config = function()
+                require('scrollbar').setup()
+            end,
+        })
     end,
     config = {
         compile_path = vim.fn.stdpath('config') .. '/lua/packer_compiled.lua',
