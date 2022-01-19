@@ -6,3 +6,4 @@ pubring.*
 random_seed
 sshcontrol
 trustlist.txt
+tofu.db
