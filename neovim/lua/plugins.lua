@@ -30,6 +30,7 @@ require('packer').startup({
                 })
             end,
         })
+
         use({
             'tpope/vim-fugitive',
             requires = {
@@ -38,10 +39,6 @@ require('packer').startup({
             config = function()
                 require('plugin.fugitive')
             end,
-        })
-        use({
-            'sindrets/diffview.nvim',
-            cmd = 'DiffviewOpen',
         })
 
         use({
