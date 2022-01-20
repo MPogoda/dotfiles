@@ -274,6 +274,14 @@ require('packer').startup({
                 require('scrollbar').setup()
             end,
         })
+
+        use({
+            'anuvyklack/pretty-fold.nvim',
+            config = function()
+                require('pretty-fold').setup({})
+                require('pretty-fold.preview').setup()
+            end,
+        })
     end,
     config = {
         compile_path = vim.fn.stdpath('config') .. '/lua/packer_compiled.lua',
