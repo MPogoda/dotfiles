@@ -1,7 +1,7 @@
 [user]
     name = Mykhailo Pohoda
     email = mykhailo.pohoda@bolt.eu
-    signingkey = 0xE65D9AC0C8F6E8C6CDE64DE92A8456DC0524B17D
+	signingkey = 8795B85B03FA3578
 [color]
     ui = true
 [format]
