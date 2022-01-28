@@ -79,7 +79,7 @@ null_ls.setup({
 
 -- {{{ LUA
 local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
-local sumneko_binary = sumneko_root_path .. '/bin/macOs/lua-language-server'
+local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
