@@ -273,13 +273,6 @@ require('packer').startup({
         })
 
         use({
-            'nanozuki/tabby.nvim',
-            requires = { 'kyazdani42/nvim-web-devicons' },
-            config = function()
-                require('tabby').setup()
-            end,
-        })
-        use({
             'luukvbaal/stabilize.nvim',
             config = function()
                 require('stabilize').setup()
