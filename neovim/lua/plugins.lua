@@ -111,6 +111,9 @@ require('packer').startup({
             },
             config = function()
                 require('lualine').setup({
+                    options = {
+                        globalstatus = true,
+                    },
                     extensions = {
                         'quickfix',
                         'fugitive',
