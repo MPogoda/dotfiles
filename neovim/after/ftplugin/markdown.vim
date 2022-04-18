@@ -1,11 +1,6 @@
 setlocal textwidth=78
 setlocal spell
 
-augroup markdown_preview
-  autocmd!
-  autocmd BufWritePost *.markdown :silent !markdown % > %.html &
-augroup END
-"
 " insert or update section separator at end of current line
 nmap <silent> <leader>- A-<esc><Leader>_
 
