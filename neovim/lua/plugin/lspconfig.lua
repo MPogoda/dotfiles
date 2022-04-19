@@ -48,12 +48,19 @@ local function on_attach(client, bufnr)
     map('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
     map('<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
 
-    vim.cmd([[
-        augroup lsp_buf_format
-            au! BufWritePre <buffer>
-            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-        augroup END
-    ]])
+    local group = vim.api.nvim_create_augroup('LspBufFormat', { clear = false })
+    vim.api.nvim_clear_autocmds({
+        event = 'BufWritePre',
+        group = group,
+        buffer = bufnr,
+    })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+        group = group,
+        buffer = bufnr,
+        callback = function()
+            vim.lsp.buf.formatting_sync()
+        end,
+    })
 
     lsp_status.on_attach(client)
 end

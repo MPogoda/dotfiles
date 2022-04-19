@@ -4,6 +4,9 @@ require('impatient')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0
+
 vim.o.termguicolors = true
 
 require('plugins')
@@ -55,14 +58,12 @@ vim.opt.shortmess:append('c') -- don't give ins-completion-menu messages
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.api.nvim_exec(
-    [[
-    augroup YankHighlight
-        autocmd!
-        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-    augroup end
-]],
-    false
-)
+local yhGroup = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+    group = yhGroup,
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
 
 vim.opt.timeoutlen = 500
