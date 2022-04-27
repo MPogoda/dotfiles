@@ -15,14 +15,30 @@ telescope.setup({
 
 telescope.load_extension('lsp_handlers')
 
+local t = require('telescope.builtin')
 require('which-key').register({
     f = {
         name = '+find',
-        b = { [[<cmd>Telescope buffers theme=get_dropdown<cr>]], 'Buffers' },
-        f = { [[<cmd>Telescope find_files theme=get_dropdown<cr>]], 'Files' },
-        g = { [[<cmd>Telescope git_status theme=get_dropdown<cr>]], 'Git status' },
-        o = { [[<cmd>Telescope oldfiles<cr>]], 'Oldfiles' },
-        ['/'] = { [[<cmd>Telescope grep_string<cr>]], 'Grep string' },
+        b = {
+            function()
+                t.buffers({ theme = 'get_dropdown' })
+            end,
+            'Buffers',
+        },
+        f = {
+            function()
+                t.find_files({ theme = 'get_dropdown' })
+            end,
+            'Files',
+        },
+        g = {
+            function()
+                t.git_status({ theme = 'get_dropdown' })
+            end,
+            'Git status',
+        },
+        o = { t.oldfiles, 'Oldfiles' },
+        ['/'] = { t.grep_string, 'Grep string' },
     },
 }, {
     prefix = '<leader>',

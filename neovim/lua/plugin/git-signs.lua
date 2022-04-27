@@ -1,4 +1,6 @@
-require('gitsigns').setup({
+local gitsigns = require('gitsigns')
+
+gitsigns.setup({
     current_line_blame = true,
     numhl = true,
     current_line_blame_opts = {
@@ -9,21 +11,23 @@ require('gitsigns').setup({
         wk.register({
             h = {
                 name = '+hunks',
-                b = { '<cmd>lua require("gitsigns").blame_line({full=true})<cr>', 'Blame line' },
-                s = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage hunk' },
-                r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset hunk' },
-                S = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage ALL' },
-                u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Undo stage' },
-                R = { '<cmd>Gitsigns reset_buffer<cr>', 'Reset ALL' },
-                p = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview hunk' },
-                d = { '<cmd>Gitsigns diffthis<cr>', 'diffthis' },
+                b = {
+                    function()
+                        gitsigns.blame_line({ full = true })
+                    end,
+                    'Blame line',
+                },
+                s = { gitsigns.stage_hunk, 'Stage hunk' },
+                r = { gitsigns.reset_hunk, 'Reset hunk' },
+                S = { gitsigns.stage_buffer, 'Stage ALL' },
+                u = { gitsigns.undo_stage_hunk, 'Undo stage' },
+                R = { gitsigns.reset_buffer, 'Reset ALL' },
+                p = { gitsigns.preview_hunk, 'Preview hunk' },
+                d = { gitsigns.diffthis, 'diffthis' },
             },
             t = {
-                b = {
-                    '<cmd>Gitsigns toggle_current_line_blame<cr>',
-                    'Toggle current line blame',
-                },
-                d = { '<cmd>Gitsigns toggle_deleted<cr>', 'Toggle deleted' },
+                b = { gitsigns.toggle_current_line_blame, 'Toggle current line blame' },
+                d = { gitsigns.toggle_deleted, 'Toggle deleted' },
             },
         }, {
             prefix = '<leader>',
@@ -32,8 +36,8 @@ require('gitsigns').setup({
 
         wk.register({
             h = {
-                s = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage hunk' },
-                r = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset hunk' },
+                s = { gitsigns.stage_hunk, 'Stage hunk' },
+                r = { gitsigns.reset_hunk, 'Reset hunk' },
             },
         }, { buffer = bufnr, prefix = '<leader>', mode = 'v' })
 
