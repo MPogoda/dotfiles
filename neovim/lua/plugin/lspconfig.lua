@@ -13,18 +13,23 @@ local function on_attach(client, bufnr)
     require('which-key').register({
         n = {
             name = '+lsp',
-            d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Definition' },
-            D = { '<cmd>lua vim.lsp.buf.declaration()<cr>', 'Declaration' },
-            t = { '<cmd>lua vim.lsp.buf.type_definition()<cr>', 'Type definition' },
-            i = { '<cmd>lua vim.lsp.buf.implementation()<cr>', 'Implementation' },
-            r = { '<cmd>lua vim.lsp.buf.references()<cr>', 'References' },
-            ['[d'] = { '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', 'Prev diagnostics' },
-            [']d'] = { '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', 'Prev diagnostics' },
+            d = { vim.lsp.buf.definition, 'Definition' },
+            D = { vim.lsp.buf.declaration, 'Declaration' },
+            t = { vim.lsp.buf.type_definition, 'Type definition' },
+            i = { vim.lsp.buf.implementation, 'Implementation' },
+            r = { vim.lsp.buf.references, 'References' },
+            ['[d'] = { vim.lsp.diagnostic.goto_prev, 'Prev diagnostics' },
+            [']d'] = { vim.lsp.diagnostic.goto_next, 'Prev diagnostics' },
             w = {
                 name = 'workspaces',
-                a = { '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', 'Add workspace' },
-                r = { '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', 'Remove workspace' },
-                l = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', 'List workspaces' },
+                a = { vim.lsp.buf.add_workspace_folder, 'Add workspace' },
+                r = { vim.lsp.buf.remove_workspace_folder, 'Remove workspace' },
+                l = {
+                    function()
+                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                    end,
+                    'List workspaces',
+                },
             },
             a = {
                 name = 'Actions',
@@ -41,12 +46,12 @@ local function on_attach(client, bufnr)
         buffer = bufnr,
     })
 
-    local function map(key, action)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', key, action, { noremap = true, silent = true })
+    local function map(key, callback)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', key, '', { noremap = true, silent = true, callback = callback })
     end
 
-    map('K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-    map('<C-h>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
+    map('K', vim.lsp.buf.hover)
+    map('<C-h>', vim.lsp.buf.signature_help)
 
     local group = vim.api.nvim_create_augroup('LspBufFormat', { clear = false })
     vim.api.nvim_clear_autocmds({

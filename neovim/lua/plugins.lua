@@ -1,7 +1,7 @@
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    vim.fn.system({ 'git', 'clone', 'git@github:wbthomason/packer.nvim', install_path })
+    vim.fn.system({ 'git', 'clone', 'github.com:wbthomason/packer.nvim', install_path })
     vim.api.nvim_command('packadd packer.nvim')
 end
 
@@ -83,7 +83,6 @@ require('packer').startup({
 
         use({
             'catppuccin/nvim',
-            as = 'catppuccin',
             config = function()
                 local catppuccin = require('catppuccin')
                 catppuccin.setup({
@@ -111,13 +110,8 @@ require('packer').startup({
             },
             config = function()
                 require('lualine').setup({
-                    options = {
-                        globalstatus = true,
-                    },
-                    extensions = {
-                        'quickfix',
-                        'fugitive',
-                    },
+                    options = { globalstatus = true },
+                    extensions = { 'quickfix', 'fugitive' },
                     sections = {
                         lualine_c = {
                             'filename',
@@ -265,9 +259,14 @@ require('packer').startup({
         use({
             'kosayoda/nvim-lightbulb',
             config = function()
-                vim.cmd(
-                    [[autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb({virtual_text={enabled = true}})]]
-                )
+                local lightBulbGroup = vim.api.nvim_create_augroup('LightBulb', { clear = true })
+                local lightBulb = require('nvim-lightbulb')
+                vim.api.nvim_create_autocmd('CursorHold,CursorHoldI', {
+                    group = lightBulbGroup,
+                    callback = function()
+                        lightBulb.update_lightbulb({ virtual_text = { enabled = true } })
+                    end,
+                })
             end,
         })
 
