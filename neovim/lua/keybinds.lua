@@ -40,7 +40,27 @@ map(
     [[luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<tab>']],
     { expr = true, silent = true }
 )
-map('i', '<s-tab>', [[<cmd>lua require('luasnip').jump(-1)<cr>]], { silent = true, noremap = true })
 
-map('s', '<tab>', [[<cmd>lua require('luasnip').jump(1)<cr>]], { noremap = true, silent = true })
-map('s', '<s-tab>', [[<cmd>lua require('luasnip').jump(-1)<cr>]], { noremap = true, silent = true })
+local luasnip = require('luasnip')
+map('i', '<s-tab>', '', {
+    silent = true,
+    noremap = true,
+    callback = function()
+        luasnip.jump(-1)
+    end,
+})
+
+map('s', '<tab>', '', {
+    noremap = true,
+    silent = true,
+    callback = function()
+        luasnip.jump(1)
+    end,
+})
+map('s', '<s-tab>', '', {
+    noremap = true,
+    silent = true,
+    callback = function()
+        luasnip.jump(-1)
+    end,
+})
