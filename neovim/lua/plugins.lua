@@ -219,7 +219,6 @@ require('packer').startup({
             event = 'BufRead',
             config = function()
                 require('colorizer').setup()
-                vim.cmd('ColorizerReloadAllBuffers')
             end,
         })
 
@@ -288,6 +287,9 @@ require('packer').startup({
 
         use({
             'anuvyklack/pretty-fold.nvim',
+            requires = {
+                { 'anuvyklack/nvim-keymap-amend' },
+            },
             config = function()
                 require('pretty-fold').setup({})
                 require('pretty-fold.preview').setup()
