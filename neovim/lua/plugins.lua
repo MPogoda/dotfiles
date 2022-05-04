@@ -222,10 +222,10 @@ require('packer').startup({
 
         use({ 'yamatsum/nvim-cursorline' })
 
-        use({ 
+        use({
             'ggandor/leap.nvim',
             config = function()
-                require('leap').set_default_keymap()
+                require('leap').set_default_keymaps()
             end,
         })
 
