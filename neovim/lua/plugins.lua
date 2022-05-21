@@ -92,8 +92,6 @@ require('packer').startup({
                         telescope = true,
                         which_key = true,
                         indent_blankline = { enabled = true },
-                        neogit = true,
-                        lightspeed = true,
                         ts_rainbow = true,
                     },
                 })
@@ -219,13 +217,17 @@ require('packer').startup({
             event = 'BufRead',
             config = function()
                 require('colorizer').setup()
-                vim.cmd('ColorizerReloadAllBuffers')
             end,
         })
 
         use({ 'yamatsum/nvim-cursorline' })
 
-        use({ 'ggandor/lightspeed.nvim' })
+        use({
+            'ggandor/leap.nvim',
+            config = function()
+                require('leap').set_default_keymaps()
+            end,
+        })
 
         use({
             'simnalamburt/vim-mundo',
@@ -288,6 +290,9 @@ require('packer').startup({
 
         use({
             'anuvyklack/pretty-fold.nvim',
+            requires = {
+                { 'anuvyklack/nvim-keymap-amend' },
+            },
             config = function()
                 require('pretty-fold').setup({})
                 require('pretty-fold.preview').setup()
