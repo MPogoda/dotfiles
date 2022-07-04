@@ -6,7 +6,7 @@ gitsigns.setup({
     current_line_blame_opts = {
         delay = 2000,
     },
-    on_attach = function(bufnr)
+    on_attach = function()
         local wk = require('which-key')
         wk.register({
             h = {
@@ -31,7 +31,7 @@ gitsigns.setup({
             },
         }, {
             prefix = '<leader>',
-            buffer = bufnr,
+            buffer = 0,
         })
 
         wk.register({
@@ -39,18 +39,38 @@ gitsigns.setup({
                 s = { gitsigns.stage_hunk, 'Stage hunk' },
                 r = { gitsigns.reset_hunk, 'Reset hunk' },
             },
-        }, { buffer = bufnr, prefix = '<leader>', mode = 'v' })
+        }, { buffer = 0, prefix = '<leader>', mode = 'v' })
 
         wk.register({
-            [']c'] = { "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", 'Next hunk', expr = true },
-            ['[c'] = { "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<cr>'", 'Prev hunk', expr = true },
-        }, { buffer = bufnr })
+            [']c'] = {
+                function()
+                    if vim.wo.diff then
+                        return ']c'
+                    end
+                    vim.schedule(gitsigns.next_hunk)
+                    return '<Ignore>'
+                end,
+                'Next hunk',
+                expr = true,
+            },
+            ['[c'] = {
+                function()
+                    if vim.wo.diff then
+                        return '[c'
+                    end
+                    vim.schedule(gitsigns.prev_hunk)
+                    return '<Ignore>'
+                end,
+                'Prev hunk',
+                expr = true,
+            },
+        }, { buffer = 0 })
 
         wk.register({
-            ['ih'] = { ':<c-u>Gitsigns select_hunk<cr>', 'HUNK' },
-        }, { buffer = bufnr, mode = 'o' })
+            ['ih'] = { gitsigns.select_hunk, 'HUNK' },
+        }, { buffer = 0, mode = 'o' })
         wk.register({
-            ['ih'] = { ':<c-u>Gitsigns select_hunk<cr>', 'HUNK' },
-        }, { buffer = bufnr, mode = 'x' })
+            ['ih'] = { gitsigns.select_hunk, 'HUNK' },
+        }, { buffer = 0, mode = 'x' })
     end,
 })
