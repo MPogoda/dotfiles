@@ -2,7 +2,7 @@ local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.n
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.fn.system({ 'git', 'clone', 'github.com:wbthomason/packer.nvim', install_path })
-    vim.api.nvim_command('packadd packer.nvim')
+    -- vim.api.nvim_command('packadd packer.nvim')
 end
 
 local packerGroup = vim.api.nvim_create_augroup('Packer', { clear = true })
@@ -71,7 +71,6 @@ require('packer').startup({
         use({
             'nvim-telescope/telescope.nvim',
             requires = {
-                { 'nvim-lua/popup.nvim' },
                 { 'nvim-lua/plenary.nvim' },
                 { 'gbrlsnchs/telescope-lsp-handlers.nvim' },
                 { 'kyazdani42/nvim-web-devicons' },
@@ -113,7 +112,7 @@ require('packer').startup({
                     sections = {
                         lualine_c = {
                             'filename',
-                            require('lsp-status').status,
+                            [[require('lsp-status').status()]],
                         },
                     },
                     theme = 'catppuccin',
@@ -124,7 +123,6 @@ require('packer').startup({
         use({
             'lewis6991/gitsigns.nvim',
             event = 'BufRead',
-            requires = { 'nvim-lua/plenary.nvim' },
             config = function()
                 require('plugin.git-signs')
             end,
@@ -180,7 +178,34 @@ require('packer').startup({
                 { 'rafamadriz/friendly-snippets', module = { 'luasnip' } },
             },
             config = function()
-                require('luasnip.loaders.from_vscode').load({})
+                require('luasnip.loaders.from_vscode').lazy_load()
+                local l = require('luasnip')
+
+                vim.keymap.set({ 'i', 's' }, '<c-e>', function()
+                    if not l.choice_active() then
+                        return '<c-e>'
+                    end
+                    vim.schedule(function()
+                        l.change_choice(1)
+                    end)
+                    return '<Ignore>'
+                end, { expr = true, silent = true, noremap = true })
+                -- Jump forward or backward
+                vim.keymap.set('i', '<tab>', function()
+                    if not l.expand_or_jumpable() then
+                        return '<tab>'
+                    end
+                    vim.schedule(l.expand_or_jump)
+                    return '<Ignore>'
+                end, { expr = true, silent = true })
+
+                vim.keymap.set({ 'i', 's' }, '<s-tab>', function()
+                    l.jump(-1)
+                end, { silent = true, noremap = true })
+
+                vim.keymap.set('s', '<tab>', function()
+                    l.jump(1)
+                end, { noremap = true, silent = true })
             end,
         })
         use({
@@ -220,7 +245,12 @@ require('packer').startup({
             end,
         })
 
-        use({ 'yamatsum/nvim-cursorline' })
+        use({
+            'yamatsum/nvim-cursorline',
+            config = function()
+                require('nvim-cursorline').setup({})
+            end,
+        })
 
         use({
             'ggandor/leap.nvim',
@@ -260,14 +290,10 @@ require('packer').startup({
 
         use({
             'kosayoda/nvim-lightbulb',
+            requires = { 'antoinemadec/FixCursorHold.nvim' },
             config = function()
-                local lightBulbGroup = vim.api.nvim_create_augroup('LightBulb', { clear = true })
-                local lightBulb = require('nvim-lightbulb')
-                vim.api.nvim_create_autocmd('CursorHold,CursorHoldI', {
-                    group = lightBulbGroup,
-                    callback = function()
-                        lightBulb.update_lightbulb({ virtual_text = { enabled = true } })
-                    end,
+                require('nvim-lightbulb').setup({
+                    virtual_text = { enabled = true },
                 })
             end,
         })

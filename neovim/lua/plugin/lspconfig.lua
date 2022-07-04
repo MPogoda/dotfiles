@@ -7,8 +7,8 @@ require('lsp_signature').setup({
     toggle_key = '<C-h>',
 })
 
-local function on_attach(client, bufnr)
-    vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+local function on_attach(client)
+    vim.bo[0].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     require('which-key').register({
         n = {
@@ -43,11 +43,11 @@ local function on_attach(client, bufnr)
         },
     }, {
         prefix = '<leader>',
-        buffer = bufnr,
+        buffer = 0,
     })
 
     local function map(key, callback)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', key, '', { noremap = true, silent = true, callback = callback })
+        vim.api.nvim_buf_set_keymap(0, 'n', key, '', { noremap = true, silent = true, callback = callback })
     end
 
     map('K', vim.lsp.buf.hover)
@@ -57,11 +57,11 @@ local function on_attach(client, bufnr)
     vim.api.nvim_clear_autocmds({
         event = 'BufWritePre',
         group = group,
-        buffer = bufnr,
+        buffer = 0,
     })
     vim.api.nvim_create_autocmd('BufWritePre', {
         group = group,
-        buffer = bufnr,
+        buffer = 0,
         callback = function()
             vim.lsp.buf.formatting_sync()
         end,
