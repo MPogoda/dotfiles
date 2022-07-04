@@ -7,7 +7,7 @@ vim.g.maplocalleader = ' '
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
 
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
 require('plugins')
 require('keybinds')
@@ -16,7 +16,7 @@ require('qfutils')
 vim.opt.runtimepath:prepend('/usr/share/vim/vimfiles')
 
 vim.opt.hidden = true
-vim.opt.completeopt = 'menu,menuone,noselect'
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 vim.opt.diffopt:append('vertical')
 vim.opt.diffopt:append('indent-heuristic')
