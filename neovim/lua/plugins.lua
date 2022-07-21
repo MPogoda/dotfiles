@@ -85,13 +85,13 @@ require('packer').startup({
             config = function()
                 local catppuccin = require('catppuccin')
                 catppuccin.setup({
+                    dim_inactive = { enabled = true },
+                    compile = { enabled = true },
                     integrations = {
                         lsp_trouble = true,
-                        gitsigns = true,
-                        telescope = true,
                         which_key = true,
-                        indent_blankline = { enabled = true },
                         ts_rainbow = true,
+                        leap = true,
                     },
                 })
                 catppuccin.load()
@@ -316,12 +316,16 @@ require('packer').startup({
 
         use({
             'anuvyklack/pretty-fold.nvim',
-            requires = {
-                { 'anuvyklack/nvim-keymap-amend' },
-            },
             config = function()
                 require('pretty-fold').setup({})
-                require('pretty-fold.preview').setup()
+            end,
+        })
+
+        use({
+            'anuvyklack/fold-preview.nvim',
+            requires = { 'anuvyklack/keymap-amend.nvim' },
+            config = function()
+                require('fold-preview').setup({})
             end,
         })
     end,
