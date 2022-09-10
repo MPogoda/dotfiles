@@ -2,7 +2,6 @@ require('which-key').register({
     ['$'] = { "<cmd>execute 'bnext<bar>bdelete' bufnr('%')<cr>", 'Close current buffer' },
     e = { '<cmd>edit!<cr>', 'Reload' },
     s = { '<cmd>write<cr>', 'Save' },
-    ['!'] = { '/\\v^[<=>]{7}( <bar>$)/<cr>', 'Merge conflicts' },
 }, {
     prefix = '<leader>',
 })
