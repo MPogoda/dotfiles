@@ -3,9 +3,7 @@ local gitsigns = require('gitsigns')
 gitsigns.setup({
     current_line_blame = true,
     numhl = true,
-    current_line_blame_opts = {
-        delay = 2000,
-    },
+    current_line_blame_opts = { delay = 2000 },
     on_attach = function()
         local wk = require('which-key')
         wk.register({
@@ -39,7 +37,11 @@ gitsigns.setup({
                 s = { gitsigns.stage_hunk, 'Stage hunk' },
                 r = { gitsigns.reset_hunk, 'Reset hunk' },
             },
-        }, { buffer = 0, prefix = '<leader>', mode = 'v' })
+        }, {
+            buffer = 0,
+            prefix = '<leader>',
+            mode = 'v',
+        })
 
         wk.register({
             [']c'] = {
@@ -64,7 +66,9 @@ gitsigns.setup({
                 'Prev hunk',
                 expr = true,
             },
-        }, { buffer = 0 })
+        }, {
+            buffer = 0,
+        })
 
         wk.register({
             ['ih'] = { gitsigns.select_hunk, 'HUNK' },
