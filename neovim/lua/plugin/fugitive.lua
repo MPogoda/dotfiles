@@ -2,6 +2,7 @@ require('which-key').register({
     g = {
         name = '+git',
         s = { '<cmd>Git<cr>', 'Status' },
+        c = { '<cmd>Git commit --no-verify<cr>', 'Commit [no verify]' },
         w = { '<cmd>Gwrite<cr>', 'Stage' },
         b = { '<cmd>Git blame<cr>', 'Blame' },
         d = { '<cmd>Gdiffsplit<cr>', 'Diff' },
