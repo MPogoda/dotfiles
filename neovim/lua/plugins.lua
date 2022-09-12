@@ -189,7 +189,11 @@ require('packer').startup({
                         l.change_choice(1)
                     end)
                     return '<Ignore>'
-                end, { expr = true, silent = true, noremap = true })
+                end, {
+                    expr = true,
+                    silent = true,
+                    noremap = true,
+                })
                 -- Jump forward or backward
                 vim.keymap.set('i', '<tab>', function()
                     if not l.expand_or_jumpable() then
@@ -197,15 +201,24 @@ require('packer').startup({
                     end
                     vim.schedule(l.expand_or_jump)
                     return '<Ignore>'
-                end, { expr = true, silent = true })
+                end, {
+                    expr = true,
+                    silent = true,
+                })
 
                 vim.keymap.set({ 'i', 's' }, '<s-tab>', function()
                     l.jump(-1)
-                end, { silent = true, noremap = true })
+                end, {
+                    silent = true,
+                    noremap = true,
+                })
 
                 vim.keymap.set('s', '<tab>', function()
                     l.jump(1)
-                end, { noremap = true, silent = true })
+                end, {
+                    noremap = true,
+                    silent = true,
+                })
             end,
         })
         use({
@@ -326,6 +339,14 @@ require('packer').startup({
             requires = { 'anuvyklack/keymap-amend.nvim' },
             config = function()
                 require('fold-preview').setup({})
+            end,
+        })
+
+        use({
+            'akinsho/git-conflict.nvim',
+            tag = '*',
+            config = function()
+                require('git-conflict').setup()
             end,
         })
     end,
