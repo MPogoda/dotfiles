@@ -17,6 +17,7 @@ local function on_attach(client)
             D = { vim.lsp.buf.declaration, 'Declaration' },
             t = { vim.lsp.buf.type_definition, 'Type definition' },
             i = { vim.lsp.buf.implementation, 'Implementation' },
+            e = { vim.diagnostic.open_float, 'Diagnostics' },
             r = { vim.lsp.buf.references, 'References' },
             ['[d'] = { vim.lsp.diagnostic.goto_prev, 'Prev diagnostics' },
             [']d'] = { vim.lsp.diagnostic.goto_next, 'Prev diagnostics' },
@@ -63,16 +64,17 @@ local function on_attach(client)
         group = group,
         buffer = 0,
         callback = function()
-            vim.lsp.buf.formatting_sync()
+            vim.lsp.buf.format({
+                filter = function(c)
+                    return c.name == 'null-ls'
+                end,
+                bufnr = 0,
+            })
         end,
     })
 
     lsp_status.on_attach(client)
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local nvim_lsp = require('lspconfig')
 
@@ -101,7 +103,6 @@ table.insert(runtime_path, 'lua/plugin/?.lua')
 nvim_lsp.sumneko_lua.setup({
     cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
     on_attach = on_attach,
-    capabilities = capabilities,
     settings = {
         Lua = {
             runtime = {
@@ -124,30 +125,9 @@ nvim_lsp.sumneko_lua.setup({
 -- }}}
 
 -- {{{ typescript
-nvim_lsp.tsserver.setup({
-    capabilities = capabilities,
-    init_options = require('nvim-lsp-ts-utils').init_options,
-    on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
-
-        local ts_utils = require('nvim-lsp-ts-utils')
-        ts_utils.setup({
-            eslint_enable_disable_comments = false,
-            eslint_enable_diagnostics = true,
-            eslint_bin = 'eslint_d',
-            enable_formatting = true,
-            formatter = 'prettierd',
-        })
-        ts_utils.setup_client(client)
-        on_attach(client)
-    end,
-})
+require('typescript').setup({ server = { on_attach = on_attach } })
 -- }}}
 
 -- {{{ rust
-nvim_lsp.rust_analyzer.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-})
+nvim_lsp.rust_analyzer.setup({ on_attach = on_attach })
 -- }}}

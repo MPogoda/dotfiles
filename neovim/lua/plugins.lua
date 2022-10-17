@@ -146,11 +146,10 @@ require('packer').startup({
             end,
         })
         use({
-            'jose-elias-alvarez/nvim-lsp-ts-utils',
+            'jose-elias-alvarez/typescript.nvim',
             requires = {
                 { 'neovim/nvim-lspconfig' },
                 { 'nvim-lua/plenary.nvim' },
-                { 'jose-elias-alvarez/null-ls.nvim' },
             },
         })
 
