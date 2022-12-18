@@ -10,10 +10,6 @@ then
     pgrep kbdd || kbdd
 fi
 
-if [ $(which cantata) ]
-then
-    (sleep 10; cantata) &
-fi
 if [ $(which unclutter) ]
 then
     unclutter &
