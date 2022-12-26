@@ -5,11 +5,11 @@ local M = {
     dependencies = {
         'jose-elias-alvarez/null-ls.nvim',
         'folke/which-key.nvim',
-        'ray-x/lsp_signature.nvim',
         'hrsh7th/cmp-nvim-lsp',
         'jose-elias-alvarez/typescript.nvim',
         'nvim-lua/lsp-status.nvim',
         'weilbith/nvim-code-action-menu',
+        'folke/neodev.nvim',
     },
 }
 
@@ -22,7 +22,6 @@ end
 local function attachFormatting(client)
     local ft = vim.api.nvim_buf_get_option(0, 'filetype')
     local enable = nullLsHasFormatter(ft) == (client.name == 'null-ls')
-    client.server_capabilities.documentFormattingProvider = enable
     client.server_capabilities.documentFormattingProvider = enable
     -- format on save
     if client.server_capabilities.documentFormattingProvider then
@@ -113,16 +112,12 @@ function M.config()
         vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = 0 })
 
         require('lsp-status').on_attach(client)
-        require('lsp_signature').on_attach({ toggle_key = '<c-h>' })
     end
 
     local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
     local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
 
-    local runtime_path = vim.split(package.path, ';')
-    table.insert(runtime_path, 'lua/?.lua')
-    table.insert(runtime_path, 'lua/?/init.lua')
-    table.insert(runtime_path, 'lua/plugins/?.lua')
+    require('neodev').setup({})
 
     local servers = {
         eslint = {},
@@ -132,21 +127,8 @@ function M.config()
         },
         rust_analyzer = {},
         sumneko_lua = {
-            single_file_support = true,
-            cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
-            settings = {
-                Lua = {
-                    workspace = {
-                        library = vim.api.nvim_get_runtime_file('', true),
-                        checkThirdParty = false,
-                    },
-                    completion = { callSnippet = 'Both' },
-                    diagnostics = { globals = { 'vim' } },
-                    format = { enable = false },
-                    runtime = { version = 'LuaJIT', path = runtime_path },
-                    telemetry = { enable = false },
-                },
-            },
+            -- cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
+            cmd = { sumneko_binary, '-E' },
         },
         hls = {},
     }
