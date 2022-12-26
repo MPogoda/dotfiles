@@ -8,7 +8,7 @@ local M = {
 }
 
 function M.init()
-    vim.keymap.set('n', '<leader>m', require('mind').open_main, { desc = '+MIND' })
+    vim.keymap.set('n', '<leader>M', require('mind').open_main, { desc = '+MIND' })
 end
 
 return M
