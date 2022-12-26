@@ -122,7 +122,7 @@ function M.config()
     local runtime_path = vim.split(package.path, ';')
     table.insert(runtime_path, 'lua/?.lua')
     table.insert(runtime_path, 'lua/?/init.lua')
-    table.insert(runtime_path, 'lua/plugin/?.lua')
+    table.insert(runtime_path, 'lua/plugins/?.lua')
 
     local servers = {
         eslint = {},
@@ -132,6 +132,7 @@ function M.config()
         },
         rust_analyzer = {},
         sumneko_lua = {
+            single_file_support = true,
             cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
             settings = {
                 Lua = {
@@ -143,15 +144,15 @@ function M.config()
                     diagnostics = { globals = { 'vim' } },
                     format = { enable = false },
                     runtime = { version = 'LuaJIT', path = runtime_path },
+                    telemetry = { enable = false },
                 },
             },
         },
         hls = {},
     }
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
     capabilities = vim.tbl_extend('keep', capabilities, require('lsp-status').capabilities)
-    capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
     local options = { on_attach = on_attach, capabilities = capabilities }
 
