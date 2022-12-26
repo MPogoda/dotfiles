@@ -4,3 +4,4 @@ haskellmode.config
 *.confc
 *.pyc
 *~
+lazy-lock.json
