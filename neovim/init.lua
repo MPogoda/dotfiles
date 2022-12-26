@@ -59,6 +59,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.opt.timeoutlen = 500
 
+vim.opt.spell = true
+
 local install_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(install_path) then
     vim.fn.system({
