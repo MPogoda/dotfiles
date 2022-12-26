@@ -10,6 +10,7 @@ local M = {
         'hrsh7th/cmp-emoji',
         'f3fora/cmp-spell',
         'onsails/lspkind-nvim',
+        'dmitmel/cmp-digraphs',
     },
 }
 
@@ -30,7 +31,15 @@ function M.config()
             { name = 'buffer', keyword_length = 5 },
             { name = 'calc' },
             { name = 'emoji' },
-            { name = 'spell' },
+            {
+                name = 'spell',
+                option = {
+                    enable_in_context = function()
+                        return require('cmp.config.context').in_treesitter_capture('spell')
+                    end,
+                },
+            },
+            { name = 'digraphs' },
         },
         mapping = cmp.mapping.preset.insert({
             ['<c-d>'] = cmp.mapping.scroll_docs(-4),
