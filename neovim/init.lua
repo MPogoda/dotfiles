@@ -1,14 +1,8 @@
 -- vim: foldmethod=marker
-require('impatient')
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.opt.termguicolors = true
-
-require('plugins')
-require('keybinds')
-require('qfutils')
 
 vim.opt.runtimepath:prepend('/usr/share/vim/vimfiles')
 
@@ -64,3 +58,23 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.opt.timeoutlen = 500
+
+vim.opt.spell = true
+
+local install_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(install_path) then
+    vim.fn.system({
+        'git',
+        'clone',
+        '--filter=blob:none',
+        '--single-branch',
+        'github.com:folke/lazy.nvim',
+        install_path,
+    })
+end
+vim.opt.runtimepath:prepend(install_path)
+
+require('lazy').setup('plugins')
+
+require('keybinds')
+require('qfutils')
