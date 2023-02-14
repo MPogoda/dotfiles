@@ -30,7 +30,7 @@ function M.config()
             { name = 'luasnip' },
             { name = 'buffer', keyword_length = 5 },
             { name = 'calc' },
-            { name = 'emoji' },
+            -- { name = 'emoji' },
             {
                 name = 'spell',
                 option = {
@@ -39,7 +39,7 @@ function M.config()
                     end,
                 },
             },
-            { name = 'digraphs' },
+            -- { name = 'digraphs' },
         },
         mapping = cmp.mapping.preset.insert({
             ['<c-d>'] = cmp.mapping.scroll_docs(-4),
