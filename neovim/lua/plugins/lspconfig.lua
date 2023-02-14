@@ -67,40 +67,28 @@ function M.config()
                 a = {
                     name = 'Actions',
                     r = {
-                        function()
-                            vim.lsp.buf.rename()
-                        end,
+                        vim.lsp.buf.rename,
                         'Rename',
                     },
                     c = {
-                        function()
-                            require('code_action_menu').open_code_action_menu()
-                        end,
+                        require('code_action_menu').open_code_action_menu,
                         'Code action',
                     },
                     C = {
-                        function()
-                            vim.lsp.buf.code_action()
-                        end,
+                        vim.lsp.buf.code_action,
                         'Code action',
                     },
                     e = {
-                        function()
-                            vim.lsp.diagnostic.show_line_diagnostics()
-                        end,
+                        vim.lsp.diagnostic.show_line_diagnostics,
                         'Line diagnostics',
                     },
                 },
                 s = {
-                    function()
-                        require('telescope.builtin').lsp_document_symbols()
-                    end,
+                    require('telescope.builtin').lsp_document_symbols,
                     'Symbols',
                 },
                 q = {
-                    function()
-                        vim.lsp.diagnostic.set_loclist()
-                    end,
+                    vim.lsp.diagnostic.set_loclist,
                     'To loclist',
                 },
             },
@@ -115,18 +103,17 @@ function M.config()
     end
 
     local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
-    local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
+    local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
 
     require('neodev').setup({})
 
     local servers = {
-        eslint = {},
         html = {},
         jsonls = {
             json = { format = { enable = true } },
         },
         rust_analyzer = {},
-        sumneko_lua = {
+        lua_ls = {
             -- cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
             cmd = { sumneko_binary, '-E' },
         },
@@ -146,12 +133,10 @@ function M.config()
     local null_ls = require('null-ls')
     null_ls.setup({
         sources = {
-            null_ls.builtins.formatting.stylua.with({
-                command = vim.fn.expand('~/.cargo/bin/stylua'),
-            }),
-            null_ls.builtins.code_actions.eslint,
-            null_ls.builtins.diagnostics.eslint,
-            null_ls.builtins.formatting.prettier,
+            null_ls.builtins.code_actions.eslint_d,
+            null_ls.builtins.diagnostics.eslint_d,
+            null_ls.builtins.formatting.stylua,
+            null_ls.builtins.formatting.prettierd,
         },
         on_attach = on_attach,
     })
