@@ -102,9 +102,6 @@ function M.config()
         require('lsp-status').on_attach(client)
     end
 
-    local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
-    local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
-
     require('neodev').setup({})
 
     local servers = {
@@ -113,10 +110,7 @@ function M.config()
             json = { format = { enable = true } },
         },
         rust_analyzer = {},
-        lua_ls = {
-            -- cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
-            cmd = { sumneko_binary, '-E' },
-        },
+        lua_ls = {},
         hls = {},
     }
 
