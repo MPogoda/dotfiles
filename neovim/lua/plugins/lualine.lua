@@ -16,6 +16,7 @@ function M.config()
             lualine_c = {
                 'filename',
                 [[require('lsp-status').status()]],
+                [[require('nvim-lightbulb').get_status_text()]],
             },
         },
         theme = 'catppuccin',
