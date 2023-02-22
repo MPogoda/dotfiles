@@ -17,19 +17,14 @@ function M.config()
             d = { '<cmd>Gdiffsplit<cr>', 'Diff' },
             o = { '<cmd>GBrowse<cr>', 'Open in …' },
         },
-    }, {
-        prefix = '<leader>',
-    })
+    }, { prefix = '<leader>' })
 
     require('which-key').register({
         g = {
             name = '+git',
             o = { [[<cmd>'<,'>GBrowse<cr>]], 'Open in …' },
         },
-    }, {
-        prefix = '<leader>',
-        mode = 'v',
-    })
+    }, { prefix = '<leader>', mode = 'v' })
 end
 
 return M
