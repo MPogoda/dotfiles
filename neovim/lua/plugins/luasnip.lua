@@ -8,6 +8,7 @@ local M = {
             end,
         },
     },
+    build = 'make install_jsregexp',
 }
 function M.config()
     local l = require('luasnip')
