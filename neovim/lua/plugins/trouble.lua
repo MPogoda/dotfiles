@@ -17,9 +17,7 @@ end
 function M.init()
     require('which-key').register({
         x = { '<cmd>TroubleToggle<cr>', 'Troubles?' },
-    }, {
-        prefix = '<leader>',
-    })
+    }, { prefix = '<leader>' })
 end
 
 return M
