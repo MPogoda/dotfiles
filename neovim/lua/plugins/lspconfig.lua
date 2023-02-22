@@ -42,6 +42,8 @@ local function attachFormatting(client)
 end
 
 function M.config()
+    local lsp_status = require('lsp-status')
+    lsp_status.register_progress()
     vim.diagnostic.config({
         severity_sort = true,
     })
@@ -66,18 +68,12 @@ function M.config()
                 [']d'] = { vim.lsp.diagnostic.goto_next, 'Prev diagnostics' },
                 a = {
                     name = 'Actions',
-                    r = {
-                        vim.lsp.buf.rename,
-                        'Rename',
-                    },
+                    r = { vim.lsp.buf.rename, 'Rename' },
                     c = {
                         require('code_action_menu').open_code_action_menu,
                         'Code action',
                     },
-                    C = {
-                        vim.lsp.buf.code_action,
-                        'Code action',
-                    },
+                    C = { vim.lsp.buf.code_action, 'Code action' },
                     e = {
                         vim.lsp.diagnostic.show_line_diagnostics,
                         'Line diagnostics',
@@ -87,19 +83,13 @@ function M.config()
                     require('telescope.builtin').lsp_document_symbols,
                     'Symbols',
                 },
-                q = {
-                    vim.lsp.diagnostic.set_loclist,
-                    'To loclist',
-                },
+                q = { vim.lsp.diagnostic.set_loclist, 'To loclist' },
             },
-        }, {
-            prefix = '<leader>',
-            buffer = 0,
-        })
+        }, { prefix = '<leader>', buffer = 0 })
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true, buffer = 0 })
         vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = 0 })
 
-        require('lsp-status').on_attach(client)
+        lsp_status.on_attach(client)
     end
 
     local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
@@ -121,7 +111,7 @@ function M.config()
     }
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    capabilities = vim.tbl_extend('keep', capabilities, require('lsp-status').capabilities)
+    capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
     local options = { on_attach = on_attach, capabilities = capabilities }
 
