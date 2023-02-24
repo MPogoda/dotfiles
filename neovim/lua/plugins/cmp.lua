@@ -1,5 +1,6 @@
 local M = {
     'hrsh7th/nvim-cmp',
+
     dependencies = {
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
@@ -9,7 +10,7 @@ local M = {
         'hrsh7th/cmp-calc',
         'hrsh7th/cmp-emoji',
         'f3fora/cmp-spell',
-        'onsails/lspkind-nvim',
+        'onsails/lspkind.nvim',
         'dmitmel/cmp-digraphs',
     },
 }
@@ -18,7 +19,6 @@ function M.config()
     local cmp = require('cmp')
     local lspkind = require('lspkind')
     cmp.setup({
-        completion = { completeopt = 'menu,menuone,noinsert' },
         snippet = {
             expand = function(args)
                 require('luasnip').lsp_expand(args.body)
@@ -30,7 +30,6 @@ function M.config()
             { name = 'luasnip' },
             { name = 'buffer', keyword_length = 5 },
             { name = 'calc' },
-            { name = 'emoji' },
             {
                 name = 'spell',
                 option = {
@@ -39,13 +38,14 @@ function M.config()
                     end,
                 },
             },
-            { name = 'digraphs' },
+            { name = 'emoji', trigger_characters = { ':' }, option = { insert = true } },
         },
         mapping = cmp.mapping.preset.insert({
             ['<c-d>'] = cmp.mapping.scroll_docs(-4),
             ['<c-f>'] = cmp.mapping.scroll_docs(4),
-            ['<c-space>'] = cmp.mapping.complete(),
+            ['<c-space>'] = cmp.mapping.complete({}),
             ['<c-e>'] = cmp.mapping.close(),
+            ['<c-k>'] = cmp.mapping.complete({ config = { sources = { { name = 'digraphs' } } } }),
             ['<cr>'] = cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Replace,
                 select = true,
@@ -61,6 +61,7 @@ function M.config()
                     path = '[pth]',
                     spell = '[spl]',
                     luasnip = '[snp]',
+                    emoji = '[em]',
                 },
             }),
         },

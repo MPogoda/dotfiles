@@ -7,9 +7,7 @@ function M.config()
         plugins = {
             spelling = { enabled = true },
         },
-        window = {
-            position = 'top',
-        },
+        window = { position = 'top' },
     })
 end
 

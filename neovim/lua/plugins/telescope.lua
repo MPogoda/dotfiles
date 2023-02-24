@@ -28,7 +28,6 @@ function M.config()
     })
 
     telescope.load_extension('lsp_handlers')
-    telescope.load_extension('noice')
 end
 
 function M.init()

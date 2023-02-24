@@ -42,6 +42,8 @@ local function attachFormatting(client)
 end
 
 function M.config()
+    local lsp_status = require('lsp-status')
+    lsp_status.register_progress()
     vim.diagnostic.config({
         severity_sort = true,
     })
@@ -66,67 +68,42 @@ function M.config()
                 [']d'] = { vim.lsp.diagnostic.goto_next, 'Prev diagnostics' },
                 a = {
                     name = 'Actions',
-                    r = {
-                        function()
-                            vim.lsp.buf.rename()
-                        end,
-                        'Rename',
-                    },
+                    r = { vim.lsp.buf.rename, 'Rename' },
                     c = {
-                        function()
-                            require('code_action_menu').open_code_action_menu()
-                        end,
+                        require('code_action_menu').open_code_action_menu,
                         'Code action',
                     },
-                    C = {
-                        function()
-                            vim.lsp.buf.code_action()
-                        end,
-                        'Code action',
-                    },
+                    C = { vim.lsp.buf.code_action, 'Code action' },
                     e = {
-                        function()
-                            vim.lsp.diagnostic.show_line_diagnostics()
-                        end,
+                        vim.lsp.diagnostic.show_line_diagnostics,
                         'Line diagnostics',
                     },
                 },
                 s = {
-                    function()
-                        require('telescope.builtin').lsp_document_symbols()
-                    end,
+                    require('telescope.builtin').lsp_document_symbols,
                     'Symbols',
                 },
-                q = {
-                    function()
-                        vim.lsp.diagnostic.set_loclist()
-                    end,
-                    'To loclist',
-                },
+                q = { vim.lsp.diagnostic.set_loclist, 'To loclist' },
             },
-        }, {
-            prefix = '<leader>',
-            buffer = 0,
-        })
+        }, { prefix = '<leader>', buffer = 0 })
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true, buffer = 0 })
         vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = 0 })
 
-        require('lsp-status').on_attach(client)
+        lsp_status.on_attach(client)
     end
 
     local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
-    local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
+    local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
 
     require('neodev').setup({})
 
     local servers = {
-        eslint = {},
         html = {},
         jsonls = {
             json = { format = { enable = true } },
         },
         rust_analyzer = {},
-        sumneko_lua = {
+        lua_ls = {
             -- cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
             cmd = { sumneko_binary, '-E' },
         },
@@ -134,7 +111,7 @@ function M.config()
     }
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    capabilities = vim.tbl_extend('keep', capabilities, require('lsp-status').capabilities)
+    capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
     local options = { on_attach = on_attach, capabilities = capabilities }
 
@@ -146,12 +123,10 @@ function M.config()
     local null_ls = require('null-ls')
     null_ls.setup({
         sources = {
-            null_ls.builtins.formatting.stylua.with({
-                command = vim.fn.expand('~/.cargo/bin/stylua'),
-            }),
-            null_ls.builtins.code_actions.eslint,
-            null_ls.builtins.diagnostics.eslint,
-            null_ls.builtins.formatting.prettier,
+            null_ls.builtins.code_actions.eslint_d,
+            null_ls.builtins.diagnostics.eslint_d,
+            null_ls.builtins.formatting.stylua,
+            null_ls.builtins.formatting.prettierd,
         },
         on_attach = on_attach,
     })
