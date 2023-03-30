@@ -11,7 +11,7 @@ function M.config()
     require('lsp-status').register_progress()
     require('lualine').setup({
         options = { globalstatus = true },
-        extensions = { 'quickfix', 'fugitive' },
+        extensions = { 'quickfix', 'fugitive', 'lazy', 'trouble' },
         sections = {
             lualine_c = {
                 'filename',
