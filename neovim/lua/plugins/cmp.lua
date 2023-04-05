@@ -12,6 +12,7 @@ local M = {
         'f3fora/cmp-spell',
         'onsails/lspkind.nvim',
         'dmitmel/cmp-digraphs',
+        'zbirenbaum/copilot-cmp',
     },
 }
 
@@ -25,6 +26,7 @@ function M.config()
             end,
         },
         sources = {
+            { name = 'copilot', group_index = 2 },
             { name = 'nvim_lsp' },
             { name = 'path' },
             { name = 'luasnip' },
@@ -54,14 +56,16 @@ function M.config()
         experimental = { ghost_text = true },
         formatting = {
             format = lspkind.cmp_format({
-                with_text = false,
-                menu = {
-                    buffer = '[bf]',
+                mode = 'symbol',
+                max_width = 50,
+                symbol_map = {
+                    buffer = 'b',
                     nvim_lsp = '[lsp]',
                     path = '[pth]',
                     spell = '[spl]',
                     luasnip = '[snp]',
                     emoji = '[em]',
+                    Copilot = '',
                 },
             }),
         },
