@@ -1,6 +1,8 @@
 local M = {
     'catppuccin/nvim',
     name = 'catppuccin',
+    lazy = false,
+    priority = 10000,
 }
 
 function M.config()
@@ -8,12 +10,10 @@ function M.config()
     catppuccin.setup({
         dim_inactive = { enabled = true },
         integrations = {
+            fidget = true,
+            leap = true,
             lsp_trouble = true,
             which_key = true,
-            ts_rainbow = true,
-            leap = true,
-            fidget = true,
-            native_lsp = { enabled = true },
         },
     })
     catppuccin.load()
