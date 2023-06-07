@@ -1,7 +1,7 @@
 local M = {
     'neovim/nvim-lspconfig',
     name = 'lsp',
-    event = 'BufReadPre',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
         'jose-elias-alvarez/null-ls.nvim',
         'folke/which-key.nvim',

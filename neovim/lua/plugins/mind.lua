@@ -1,14 +1,15 @@
-local M = {
+return {
     'phaazon/mind.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     cmd = { 'MindOpenMain' },
-    config = function()
-        require('mind').setup()
-    end,
+    config = true,
+    keys = {
+        {
+            '<leader>M',
+            function()
+                require('mind').open_main()
+            end,
+            desc = '+MIND',
+        },
+    },
 }
-
-function M.init()
-    vim.keymap.set('n', '<leader>M', require('mind').open_main, { desc = '+MIND' })
-end
-
-return M
