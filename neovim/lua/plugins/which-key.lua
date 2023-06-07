@@ -1,14 +1,10 @@
-local M = {
+return {
     'folke/which-key.nvim',
-}
-
-function M.config()
-    require('which-key').setup({
+    lazy = false,
+    opts = {
         plugins = {
             spelling = { enabled = true },
         },
         window = { position = 'top' },
-    })
-end
-
-return M
+    },
+}

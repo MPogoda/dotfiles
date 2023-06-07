@@ -1,4 +1,4 @@
-local M = {
+return {
     'zbirenbaum/copilot-cmp',
     dependencies = { 'zbirenbaum/copilot.lua' },
     cmd = 'Copilot',
@@ -11,4 +11,3 @@ local M = {
         require('copilot_cmp').setup()
     end,
 }
-return M

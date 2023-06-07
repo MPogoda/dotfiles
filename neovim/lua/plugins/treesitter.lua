@@ -3,7 +3,7 @@ local M = {
     build = ':TSUpdate',
     event = 'BufReadPost',
     dependencies = {
-        'p00f/nvim-ts-rainbow',
+        'HiPhish/nvim-ts-rainbow2',
         'JoosepAlviste/nvim-ts-context-commentstring',
         'haringsrob/nvim_context_vt',
     },
@@ -22,11 +22,7 @@ function M.config()
             },
         },
         indent = { enable = true },
-        rainbow = {
-            enable = true,
-            extended_mode = true,
-            max_file_lines = 1000,
-        },
+        rainbow = { enable = true },
         context_commentstring = {
             enable = true,
             enable_autocmd = false,

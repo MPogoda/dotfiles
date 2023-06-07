@@ -5,4 +5,5 @@ return {
         vim.g.startify_fortune_use_unicode = true
         vim.g.startify_change_to_dir = false
     end,
+    lazy = false,
 }

@@ -5,6 +5,7 @@ local M = {
         'nvim-lua/lsp-status.nvim',
         'catppuccin',
     },
+    event = 'BufReadPre',
 }
 
 function M.config()

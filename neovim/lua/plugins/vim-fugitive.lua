@@ -1,5 +1,6 @@
 local M = {
     'tpope/vim-fugitive',
+    lazy = false,
     dependencies = {
         'folke/which-key.nvim',
         'tpope/vim-rhubarb',
