@@ -72,7 +72,7 @@ if not vim.loop.fs_stat(install_path) then
 end
 vim.opt.runtimepath:prepend(install_path)
 
-require('lazy').setup('plugins')
+require('lazy').setup('plugins', { lazy = true })
 
 require('keybinds')
 require('qfutils')
