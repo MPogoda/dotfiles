@@ -1,8 +1,5 @@
-local M = {
+return {
     'j-hui/fidget.nvim',
-    opts = {
-        window = { blend = 0 },
-    },
+    event = 'BufReadPre',
+    opts = { window = { blend = 0 } },
 }
-
-return M

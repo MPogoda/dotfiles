@@ -1,6 +1,7 @@
 local M = {
     'echasnovski/mini.comment',
     version = false,
+    event = 'BufReadPost',
     dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
     opts = {
         options = {
