@@ -1,4 +1,6 @@
 return {
-    'tpope/vim-surround',
+    'echasnovski/mini.surround',
+    version = false,
     event = 'BufReadPost',
+    config = true,
 }
