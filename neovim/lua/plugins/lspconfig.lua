@@ -10,6 +10,7 @@ local M = {
         'nvim-lua/lsp-status.nvim',
         'weilbith/nvim-code-action-menu',
         'folke/neodev.nvim',
+        'SmiteshP/nvim-navic',
     },
 }
 
@@ -55,6 +56,10 @@ function M.config()
 
     local function on_attach(client)
         attachFormatting(client)
+
+        if client.server_capabilities.documentSymbolProvider then
+            require('nvim-navic').attach(client)
+        end
 
         require('which-key').register({
             n = {
