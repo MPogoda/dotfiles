@@ -1,9 +1,5 @@
-local M = {
+return {
     'norcalli/nvim-colorizer.lua',
     event = 'BufReadPre',
+    config = true,
 }
-function M.config()
-    require('colorizer').setup()
-end
-
-return M

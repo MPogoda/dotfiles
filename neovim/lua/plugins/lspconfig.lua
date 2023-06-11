@@ -1,7 +1,7 @@
 local M = {
     'neovim/nvim-lspconfig',
     name = 'lsp',
-    event = 'BufReadPre',
+    event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
         'jose-elias-alvarez/null-ls.nvim',
         'folke/which-key.nvim',
@@ -10,6 +10,7 @@ local M = {
         'nvim-lua/lsp-status.nvim',
         'weilbith/nvim-code-action-menu',
         'folke/neodev.nvim',
+        'SmiteshP/nvim-navic',
     },
 }
 
@@ -56,6 +57,10 @@ function M.config()
     local function on_attach(client)
         attachFormatting(client)
 
+        if client.server_capabilities.documentSymbolProvider then
+            require('nvim-navic').attach(client)
+        end
+
         require('which-key').register({
             n = {
                 name = '+lsp',
@@ -92,9 +97,6 @@ function M.config()
         lsp_status.on_attach(client)
     end
 
-    local sumneko_root_path = vim.fn.getenv('HOME') .. '/lua-language-server'
-    local sumneko_binary = sumneko_root_path .. '/bin/lua-language-server'
-
     require('neodev').setup({})
 
     local servers = {
@@ -103,10 +105,7 @@ function M.config()
             json = { format = { enable = true } },
         },
         rust_analyzer = {},
-        lua_ls = {
-            -- cmd = { sumneko_binary, '-E', sumneko_root_path .. '/main.lua' },
-            cmd = { sumneko_binary, '-E' },
-        },
+        lua_ls = { },
         hls = {},
     }
 

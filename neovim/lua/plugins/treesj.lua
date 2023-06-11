@@ -1,10 +1,6 @@
-local M = {
+return {
     'Wansmer/treesj',
-    event = 'BufReadPost',
-    dependencies = { 'nvim-treesitter' },
-    config = function()
-        require('treesj').setup()
-    end,
+    keys = { '<space>j', '<space>s' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = true,
 }
-
-return M
