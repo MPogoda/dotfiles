@@ -64,7 +64,7 @@ myPP = xmobarPP { ppCurrent = xmobarColor orange ""
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
 
 -- terminal i'm using
-myTerminal = "kitty" :: String
+myTerminal = "wezterm" :: String
 
 -- list of workspaces
 myWorkspaces = words "a r s t d z x c v" :: [String]
@@ -187,9 +187,9 @@ myKeys = [ ("M-<Return>",   spawn       $ myTerminal)
     prefix  = (++) "M-<Tab> " :: String -> String
 
 scratchpads :: [NamedScratchpad]
-scratchpads = [ NS "dashboard" (myTerminal ++ " --class=dashboard -e /bin/sh /home/mpogoda/.tmux/dashboard.sh")
+scratchpads = [ NS "dashboard" (myTerminal ++ " start --class=dashboard -e /bin/sh /home/mpogoda/.tmux/dashboard.sh")
                   (className =? "dashboard") nonFloating
-              , NS "term" (myTerminal ++ " --class=term") (className =? "term")
+              , NS "term" (myTerminal ++ " start --class=term") (className =? "term")
                   ( customFloating $ W.RationalRect 0 (2/3) 1 (1/3))
               , NS "cantata" "cantata" (className =? "cantata")
                   ( customFloating $ W.RationalRect (1/8) (1/8) (3/4) (3/4))
