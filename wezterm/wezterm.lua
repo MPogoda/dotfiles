@@ -12,7 +12,48 @@ config.inactive_pane_hsb = {
 
 config.native_macos_fullscreen_mode = true
 
-config.font = wezterm.font("Iosevka SS09")
+local monaspace_harfbuzz_features =
+	{ "calt", "liga", "dlig", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08" }
+
+config.font = wezterm.font({
+	-- family = "Monaspace Neon",
+	family = "Monaspace Argon",
+	-- family = "Monaspace Xenon",
+	-- family = "Monaspace Radon",
+	-- family = "Monaspace Krypton",
+	weight = "Regular",
+	harfbuzz_features = monaspace_harfbuzz_features,
+})
+
+-- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
+-- wezterm ls-fonts
+-- wezterm ls-fonts --list-system
+config.font_rules = {
+	-- Italic (comments)
+	{
+		intensity = "Normal",
+		italic = true,
+		font = wezterm.font({
+			family = "Monaspace Radon",
+			weight = "ExtraLight",
+			stretch = "Normal",
+			style = "Normal",
+			harfbuzz_features = monaspace_harfbuzz_features,
+		}),
+	},
+	-- Bold (highlighting)
+	{
+		intensity = "Bold",
+		italic = false,
+		font = wezterm.font({
+			family = "Monaspace Krypton",
+			weight = "Light",
+			stretch = "Normal",
+			style = "Normal",
+			harfbuzz_features = monaspace_harfbuzz_features,
+		}),
+	},
+}
 config.font_size = 13
 
 config.quick_select_alphabet = "arstqwfpzxcvneioluymdhgjbk"
