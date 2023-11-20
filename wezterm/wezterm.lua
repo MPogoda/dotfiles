@@ -12,17 +12,15 @@ config.inactive_pane_hsb = {
 
 config.native_macos_fullscreen_mode = true
 
-local monaspace_harfbuzz_features =
-	{ "calt", "liga", "dlig", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08" }
+config.harfbuzz_features = { "calt", "liga", "dlig", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08" }
 
 config.font = wezterm.font({
-	-- family = "Monaspace Neon",
-	family = "Monaspace Argon",
+	family = "Monaspace Neon",
+	-- family = "Monaspace Argon",
 	-- family = "Monaspace Xenon",
 	-- family = "Monaspace Radon",
 	-- family = "Monaspace Krypton",
 	weight = "Regular",
-	harfbuzz_features = monaspace_harfbuzz_features,
 })
 
 -- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
@@ -38,7 +36,6 @@ config.font_rules = {
 			weight = "ExtraLight",
 			stretch = "Normal",
 			style = "Normal",
-			harfbuzz_features = monaspace_harfbuzz_features,
 		}),
 	},
 	-- Bold (highlighting)
@@ -50,11 +47,11 @@ config.font_rules = {
 			weight = "Light",
 			stretch = "Normal",
 			style = "Normal",
-			harfbuzz_features = monaspace_harfbuzz_features,
 		}),
 	},
 }
 config.font_size = 13
+config.cell_width = 0.9
 
 config.quick_select_alphabet = "arstqwfpzxcvneioluymdhgjbk"
 config.leader = { key = "t", mods = "ALT" }
