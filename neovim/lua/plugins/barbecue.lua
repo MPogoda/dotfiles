@@ -5,7 +5,9 @@ return {
     event = 'BufReadPre',
     dependencies = {
         'SmiteshP/nvim-navic',
-        'nvim-web-devicons',
+        'nvim-tree/nvim-web-devicons',
     },
-    config = true,
+    opts = {
+        theme = 'catppuccin'
+    }
 }

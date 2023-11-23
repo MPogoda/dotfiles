@@ -1,6 +1,5 @@
 local M = {
     'hrsh7th/nvim-cmp',
-
     event = 'InsertEnter',
     dependencies = {
         'L3MON4D3/LuaSnip',
@@ -27,7 +26,7 @@ function M.config()
                 require('luasnip').lsp_expand(args.body)
             end,
         },
-        sources = {
+        sources = cmp.config.sources({
             { name = 'copilot', group_index = 2 },
             { name = 'nvim_lsp' },
             { name = 'nvim_lsp_signature_help' },
@@ -44,7 +43,7 @@ function M.config()
                 },
             },
             { name = 'emoji', trigger_characters = { ':' }, option = { insert = true } },
-        },
+        }),
         mapping = cmp.mapping.preset.insert({
             ['<c-d>'] = cmp.mapping.scroll_docs(-4),
             ['<c-f>'] = cmp.mapping.scroll_docs(4),
@@ -76,9 +75,9 @@ function M.config()
 
     cmp.setup.cmdline('/', {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = {
+        sources = cmp.config.sources({
             { name = 'buffer' },
-        },
+        }),
     })
 
     cmp.setup.cmdline(':', {
