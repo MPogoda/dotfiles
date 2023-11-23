@@ -1,13 +1,12 @@
+vim.g.skip_ts_context_commentstring_module = true
+
 return {
-    'echasnovski/mini.comment',
-    version = false,
-    event = 'BufReadPost',
-    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
-    opts = {
-        options = {
-            custom_commentstring = function()
-                return require('ts_context_commentstring.internal').calculate_commentstring({}) or vim.bo.commentstring
-            end,
-        },
+    {
+        'echasnovski/mini.comment',
+        version = false,
+        event = 'BufReadPost',
+        dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+        config = true,
     },
+    { 'JoosepAlviste/nvim-ts-context-commentstring', event = 'BufReadPost', config = true },
 }

@@ -1,6 +1,5 @@
 local M = {
     'hrsh7th/nvim-cmp',
-
     event = 'InsertEnter',
     dependencies = {
         'L3MON4D3/LuaSnip',
@@ -26,12 +25,12 @@ function M.config()
                 require('luasnip').lsp_expand(args.body)
             end,
         },
-        sources = {
+        sources = cmp.config.sources({
             { name = 'nvim_lsp' },
             { name = 'nvim_lsp_signature_help' },
             { name = 'path' },
             { name = 'luasnip' },
-            { name = 'buffer', keyword_length = 5 },
+            { name = 'buffer',                 keyword_length = 5 },
             { name = 'calc' },
             {
                 name = 'spell',
@@ -42,7 +41,7 @@ function M.config()
                 },
             },
             { name = 'emoji', trigger_characters = { ':' }, option = { insert = true } },
-        },
+        }),
         mapping = cmp.mapping.preset.insert({
             ['<c-d>'] = cmp.mapping.scroll_docs(-4),
             ['<c-f>'] = cmp.mapping.scroll_docs(4),
@@ -57,7 +56,7 @@ function M.config()
         experimental = { ghost_text = { hl_group = 'LspCodeLens' } },
         formatting = {
             format = lspkind.cmp_format({
-                with_text = false,
+                mode = 'symbol',
                 menu = {
                     buffer = '[bf]',
                     nvim_lsp = '[lsp]',
@@ -72,9 +71,9 @@ function M.config()
 
     cmp.setup.cmdline('/', {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = {
+        sources = cmp.config.sources({
             { name = 'buffer' },
-        },
+        }),
     })
 
     cmp.setup.cmdline(':', {
