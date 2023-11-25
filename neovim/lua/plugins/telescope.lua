@@ -5,7 +5,7 @@ local M = {
         'folke/which-key.nvim',
         'nvim-lua/plenary.nvim',
         'gbrlsnchs/telescope-lsp-handlers.nvim',
-        'kyazdani42/nvim-web-devicons',
+        'nvim-tree/nvim-web-devicons',
     },
 }
 
@@ -65,9 +65,7 @@ function M.init()
                 'Grep string',
             },
         },
-    }, {
-        prefix = '<leader>',
-    })
+    }, { prefix = '<leader>' })
 end
 
 return M

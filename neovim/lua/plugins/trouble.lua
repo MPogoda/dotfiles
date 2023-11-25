@@ -2,7 +2,7 @@ return {
     'folke/trouble.nvim',
     cmd = { 'Trouble', 'TroubleToggle' },
     dependencies = {
-        'kyazdani42/nvim-web-devicons',
+        'nvim-tree/nvim-web-devicons',
         'folke/lsp-colors.nvim',
     },
     opts = {

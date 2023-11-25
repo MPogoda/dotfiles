@@ -3,7 +3,7 @@ local M = {
     name = 'lsp',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
-        'jose-elias-alvarez/null-ls.nvim',
+        'nvimtools/none-ls.nvim',
         'folke/which-key.nvim',
         'hrsh7th/cmp-nvim-lsp',
         'jose-elias-alvarez/typescript.nvim',
