@@ -33,21 +33,14 @@ function M.config()
                     b = { gitsigns.toggle_current_line_blame, 'Toggle current line blame' },
                     d = { gitsigns.toggle_deleted, 'Toggle deleted' },
                 },
-            }, {
-                prefix = '<leader>',
-                buffer = 0,
-            })
+            }, { prefix = '<leader>', buffer = 0 })
 
             wk.register({
                 h = {
                     s = { gitsigns.stage_hunk, 'Stage hunk' },
                     r = { gitsigns.reset_hunk, 'Reset hunk' },
                 },
-            }, {
-                buffer = 0,
-                prefix = '<leader>',
-                mode = 'v',
-            })
+            }, { buffer = 0, prefix = '<leader>', mode = 'v' })
 
             wk.register({
                 [']c'] = {
@@ -72,22 +65,14 @@ function M.config()
                     'Prev hunk',
                     expr = true,
                 },
-            }, {
-                buffer = 0,
-            })
+            }, { buffer = 0 })
 
             wk.register({
                 ['ih'] = { gitsigns.select_hunk, 'HUNK' },
-            }, {
-                buffer = 0,
-                mode = 'o',
-            })
+            }, { buffer = 0, mode = 'o' })
             wk.register({
                 ['ih'] = { gitsigns.select_hunk, 'HUNK' },
-            }, {
-                buffer = 0,
-                mode = 'x',
-            })
+            }, { buffer = 0, mode = 'x' })
         end,
     })
 end
