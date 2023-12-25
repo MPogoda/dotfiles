@@ -8,9 +8,9 @@ local M = {
         'hrsh7th/cmp-nvim-lsp',
         'jose-elias-alvarez/typescript.nvim',
         'nvim-lua/lsp-status.nvim',
-        'weilbith/nvim-code-action-menu',
         'folke/neodev.nvim',
         'SmiteshP/nvim-navic',
+        'aznhe21/actions-preview.nvim'
     },
 }
 
@@ -75,7 +75,7 @@ function M.config()
                     name = 'Actions',
                     r = { vim.lsp.buf.rename, 'Rename' },
                     c = {
-                        require('code_action_menu').open_code_action_menu,
+                        require('actions-preview').code_actions,
                         'Code action',
                     },
                     C = { vim.lsp.buf.code_action, 'Code action' },
