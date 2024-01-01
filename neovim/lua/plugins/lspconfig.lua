@@ -6,11 +6,12 @@ local M = {
         'nvimtools/none-ls.nvim',
         'folke/which-key.nvim',
         'hrsh7th/cmp-nvim-lsp',
-        'jose-elias-alvarez/typescript.nvim',
+        'pmizio/typescript-tools.nvim',
+        'nvim-lua/plenary.nvim',
         'nvim-lua/lsp-status.nvim',
         'folke/neodev.nvim',
         'SmiteshP/nvim-navic',
-        'aznhe21/actions-preview.nvim'
+        'aznhe21/actions-preview.nvim',
     },
 }
 
@@ -129,7 +130,7 @@ function M.config()
         },
         on_attach = on_attach,
     })
-    require('typescript').setup({ server = options })
+    require('typescript-tools').setup({ on_attach = on_attach, settings = { expose_as_code_action = 'all' } })
 end
 
 return M
