@@ -130,7 +130,7 @@ function M.config()
         },
         on_attach = on_attach,
     })
-    require('typescript-tools').setup({ on_attach = on_attach, settings = { expose_as_code_action = 'all' } })
+    require('typescript-tools').setup({ on_attach = on_attach })
 end
 
 return M
