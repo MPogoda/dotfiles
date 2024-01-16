@@ -33,11 +33,12 @@ local function attachFormatting(client)
             group = group,
             buffer = 0,
             callback = function()
-                if vim.lsp.buf.format then
-                    vim.lsp.buf.format()
-                else
-                    vim.lsp.buf.formatting_sync()
-                end
+                vim.lsp.buf.format({
+                    filter = function(c)
+                        return c.name == 'null-ls'
+                    end,
+                    bufnr = 0,
+                })
             end,
         })
     end
