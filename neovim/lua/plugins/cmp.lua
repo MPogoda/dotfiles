@@ -57,12 +57,14 @@ function M.config()
         }),
         experimental = { ghost_text = { hl_group = 'LspCodeLens' } },
         formatting = {
+            expandable_indicator = true,
+            fields = { 'menu', 'abbr', 'kind' },
             format = lspkind.cmp_format({
                 mode = 'symbol',
                 max_width = 50,
                 symbol_map = {
                     buffer = 'b',
-                    nvim_lsp = '[lsp]',
+                    nvim_lsp = 'λ',
                     path = '[pth]',
                     spell = '[spl]',
                     luasnip = '[snp]',
