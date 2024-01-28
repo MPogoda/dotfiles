@@ -1,6 +1,6 @@
 return {
     'otavioschwanck/arrow.nvim',
-    event = 'BufReadPost',
+    keys = { ';' },
     opts = {
         leader_key = ';',
         separate_by_branch = true,

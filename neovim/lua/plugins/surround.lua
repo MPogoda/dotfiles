@@ -1,7 +1,7 @@
 return {
     'echasnovski/mini.surround',
     version = false,
-    event = 'BufReadPost',
+    keys = { '<leader><leader>' },
     opts = {
         mappings = {
             add = '<leader><leader>a',
