@@ -4,8 +4,9 @@ local M = {
         'nvim-tree/nvim-web-devicons',
         'nvim-lua/lsp-status.nvim',
         'catppuccin',
+        'otavioschwanck/arrow.nvim',
     },
-    event = 'BufReadPre',
+    lazy = false,
 }
 
 function M.config()
@@ -16,6 +17,7 @@ function M.config()
         sections = {
             lualine_c = {
                 'filename',
+                [[require('arrow.statusline').text_for_statusline_with_icons()]],
                 [[require('lsp-status').status()]],
                 [[require('nvim-lightbulb').get_status_text()]],
             },
