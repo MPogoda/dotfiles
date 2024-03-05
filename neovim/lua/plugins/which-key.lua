@@ -11,6 +11,7 @@ return {
             t = { name = '+toggle' },
             h = { name = '+hunks' },
             f = { name = '+find' },
+            g = { name = '+git' },
         }, { prefix = '<leader>', mode = { 'n', 'v' } })
     end,
 }

@@ -8,7 +8,7 @@ return {
                 return require('ts_context_commentstring').calculate_commentstring() or vim.bo.commentstring
             end,
         },
-        keys = { 'gc' },
+        keys = { { 'gc', mode = { 'n', 'v' }, desc = '+comment' } },
     },
     {
         'JoosepAlviste/nvim-ts-context-commentstring',
