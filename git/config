@@ -36,5 +36,7 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[maintenance]
+    repo = /Users/mykhailopohoda/repos/taxify/server
 [branch]
     sort = -committerdate
