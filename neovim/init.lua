@@ -49,9 +49,9 @@ vim.opt.shortmess:append('c') -- don't give ins-completion-menu messages
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-local yhGroup = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
-    group = yhGroup,
+    desc = 'Highlight on yank!',
+    group = vim.api.nvim_create_augroup('YankHighlight', { clear = true }),
     callback = function()
         vim.highlight.on_yank()
     end,
