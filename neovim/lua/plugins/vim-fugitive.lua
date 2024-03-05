@@ -1,31 +1,16 @@
-local M = {
+return {
     'tpope/vim-fugitive',
-    lazy = false,
     dependencies = {
-        'folke/which-key.nvim',
         'tpope/vim-rhubarb',
     },
+    keys = {
+        { '<leader>gs', '<cmd>Git<cr>', desc = 'Status' },
+        { '<leader>gc', '<cmd>Git commit --no-verify<cr>', desc = 'Commit [no verify]' },
+        { '<leader>gw', '<cmd>Gwrite<cr>', desc = 'Stage' },
+        { '<leader>gb', '<cmd>Git blame<cr>', desc = 'Blame' },
+        { '<leader>gd', '<cmd>Gdiffsplit<cr>', desc = 'Diff' },
+        { '<leader>go', '<cmd>GBrowse<cr>', desc = 'Open in …' },
+
+        { '<leader>go', [[<cmd>'<,'>GBrowse<cr>]], mode = 'v', desc = 'Open in …' },
+    },
 }
-
-function M.config()
-    require('which-key').register({
-        g = {
-            name = '+git',
-            s = { '<cmd>Git<cr>', 'Status' },
-            c = { '<cmd>Git commit --no-verify<cr>', 'Commit [no verify]' },
-            w = { '<cmd>Gwrite<cr>', 'Stage' },
-            b = { '<cmd>Git blame<cr>', 'Blame' },
-            d = { '<cmd>Gdiffsplit<cr>', 'Diff' },
-            o = { '<cmd>GBrowse<cr>', 'Open in …' },
-        },
-    }, { prefix = '<leader>' })
-
-    require('which-key').register({
-        g = {
-            name = '+git',
-            o = { [[<cmd>'<,'>GBrowse<cr>]], 'Open in …' },
-        },
-    }, { prefix = '<leader>', mode = 'v' })
-end
-
-return M
