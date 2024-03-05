@@ -11,68 +11,46 @@ function M.config()
         numhl = true,
         current_line_blame_opts = { delay = 2000 },
         on_attach = function()
-            local wk = require('which-key')
-            wk.register({
-                h = {
-                    name = '+hunks',
-                    b = {
-                        function()
-                            gitsigns.blame_line({ full = true })
-                        end,
-                        'Blame line',
-                    },
-                    s = { gitsigns.stage_hunk, 'Stage hunk' },
-                    r = { gitsigns.reset_hunk, 'Reset hunk' },
-                    S = { gitsigns.stage_buffer, 'Stage ALL' },
-                    u = { gitsigns.undo_stage_hunk, 'Undo stage' },
-                    R = { gitsigns.reset_buffer, 'Reset ALL' },
-                    p = { gitsigns.preview_hunk, 'Preview hunk' },
-                    d = { gitsigns.diffthis, 'diffthis' },
-                },
-                t = {
-                    b = { gitsigns.toggle_current_line_blame, 'Toggle current line blame' },
-                    d = { gitsigns.toggle_deleted, 'Toggle deleted' },
-                },
-            }, { prefix = '<leader>', buffer = 0 })
+            vim.keymap.set({ 'v', 'n' }, '<leader>hs', gitsigns.stage_hunk, { buffer = 0, desc = 'Stage hunk' })
+            vim.keymap.set({ 'v', 'n' }, '<leader>hr', gitsigns.reset_hunk, { buffer = 0, desc = 'Reset hunk' })
+            vim.keymap.set('n', '<leader>hS', gitsigns.stage_buffer, { buffer = 0, desc = 'Stage ALL' })
+            vim.keymap.set('n', '<leader>hu', gitsigns.undo_stage_hunk, { buffer = 0, desc = 'Undo stage' })
+            vim.keymap.set('n', '<leader>hR', gitsigns.reset_buffer, { buffer = 0, desc = 'Reset ALL' })
+            vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk, { buffer = 0, desc = 'Preview hunk' })
+            vim.keymap.set('n', '<leader>hd', gitsigns.diffthis, { buffer = 0, desc = 'diffthis' })
+            vim.keymap.set('n', '<leader>hb', function()
+                gitsigns.blame_line({ full = true })
+            end, { buffer = 0, desc = 'Blame line' })
 
-            wk.register({
-                h = {
-                    s = { gitsigns.stage_hunk, 'Stage hunk' },
-                    r = { gitsigns.reset_hunk, 'Reset hunk' },
-                },
-            }, { buffer = 0, prefix = '<leader>', mode = 'v' })
+            vim.keymap.set(
+                'n',
+                '<leader>tb',
+                gitsigns.toggle_current_line_blame,
+                { buffer = 0, desc = 'Toggle current line [b]lame' }
+            )
+            vim.keymap.set(
+                'n',
+                '<leader>td',
+                gitsigns.toggle_current_line_blame,
+                { buffer = 0, desc = 'Toggle [d]eleted' }
+            )
 
-            wk.register({
-                [']c'] = {
-                    function()
-                        if vim.wo.diff then
-                            return ']c'
-                        end
-                        vim.schedule(gitsigns.next_hunk)
-                        return '<Ignore>'
-                    end,
-                    'Next hunk',
-                    expr = true,
-                },
-                ['[c'] = {
-                    function()
-                        if vim.wo.diff then
-                            return '[c'
-                        end
-                        vim.schedule(gitsigns.prev_hunk)
-                        return '<Ignore>'
-                    end,
-                    'Prev hunk',
-                    expr = true,
-                },
-            }, { buffer = 0 })
+            vim.keymap.set('n', ']c', function()
+                if vim.wo.diff then
+                    return ']c'
+                end
+                vim.schedule(gitsigns.next_hunk)
+                return '<Ignore>'
+            end, { desc = 'Next hunk', expr = true, buffer = 0 })
+            vim.keymap.set('n', '[c', function()
+                if vim.wo.diff then
+                    return '[c'
+                end
+                vim.schedule(gitsigns.prev_hunk)
+                return '<Ignore>'
+            end, { desc = 'Prev hunk', expr = true, buffer = 0 })
 
-            wk.register({
-                ['ih'] = { gitsigns.select_hunk, 'HUNK' },
-            }, { buffer = 0, mode = 'o' })
-            wk.register({
-                ['ih'] = { gitsigns.select_hunk, 'HUNK' },
-            }, { buffer = 0, mode = 'x' })
+            vim.keymap.set({ 'o', 'x' }, 'ih', gitsigns.select_hunk, { desc = 'HUNK', buffer = 0 })
         end,
     })
 end
