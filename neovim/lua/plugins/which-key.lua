@@ -1,10 +1,16 @@
 return {
     'folke/which-key.nvim',
-    lazy = false,
-    opts = {
-        plugins = {
-            spelling = { enabled = true },
-        },
-        window = { position = 'top' },
-    },
+    event = 'VimEnter',
+    config = function()
+        local wk = require('which-key')
+        wk.setup({
+            plugins = { spelling = { enabled = true } },
+            window = { position = 'top' },
+        })
+        wk.register({
+            t = { name = '+toggle' },
+            h = { name = '+hunks' },
+            f = { name = '+find' },
+        }, { prefix = '<leader>', mode = { 'n', 'v' } })
+    end,
 }
