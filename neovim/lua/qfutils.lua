@@ -58,19 +58,9 @@ local function toggle_qf(type)
     end
 end
 
-require('which-key').register({
-    q = {
-        function()
-            toggle_qf('q')
-        end,
-        'quickfix',
-    },
-    Q = {
-        function()
-            toggle_qf('l')
-        end,
-        'loclist',
-    },
-}, {
-    prefix = '<leader>',
-})
+vim.keymap.set('n', '<leader>q', function()
+    toggle_qf('q')
+end, { desc = 'quickfix' })
+vim.keymap.set('n', '<leader>l', function()
+    toggle_qf('l')
+end, { desc = 'loclist' })
