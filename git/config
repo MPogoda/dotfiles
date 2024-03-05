@@ -1,7 +1,7 @@
 [user]
     name = Mykhailo Pohoda
     email = mykhailo.pohoda@bolt.eu
-	signingkey = 8795B85B03FA3578
+    signingkey = 8795B85B03FA3578
 [color]
     ui = true
 [format]
@@ -32,7 +32,9 @@
 [commit]
     gpgSign = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[branch]
+    sort = -committerdate
