@@ -4,9 +4,9 @@ local M = {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
         'nvimtools/none-ls.nvim',
+        'nvimtools/none-ls-extras.nvim',
         'folke/which-key.nvim',
         'hrsh7th/cmp-nvim-lsp',
-        'pmizio/typescript-tools.nvim',
         'nvim-lua/plenary.nvim',
         'nvim-lua/lsp-status.nvim',
         'folke/neodev.nvim',
@@ -71,8 +71,6 @@ function M.config()
                 t = { vim.lsp.buf.type_definition, 'Type definition' },
                 i = { vim.lsp.buf.implementation, 'Implementation' },
                 r = { vim.lsp.buf.references, 'References' },
-                ['[d'] = { vim.lsp.diagnostic.goto_prev, 'Prev diagnostics' },
-                [']d'] = { vim.lsp.diagnostic.goto_next, 'Prev diagnostics' },
                 a = {
                     name = 'Actions',
                     r = { vim.lsp.buf.rename, 'Rename' },
@@ -81,10 +79,6 @@ function M.config()
                         'Code action',
                     },
                     C = { vim.lsp.buf.code_action, 'Code action' },
-                    e = {
-                        vim.lsp.diagnostic.show_line_diagnostics,
-                        'Line diagnostics',
-                    },
                 },
                 s = {
                     require('telescope.builtin').lsp_document_symbols,
@@ -92,7 +86,7 @@ function M.config()
                 },
                 q = { vim.lsp.diagnostic.set_loclist, 'To loclist' },
             },
-        }, { prefix = '<leader>', buffer = 0 })
+        }, { prefix = '<leader>', buffer = 0, noremap = true })
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true, buffer = 0 })
         vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = 0 })
 
@@ -109,9 +103,14 @@ function M.config()
         rust_analyzer = {},
         lua_ls = {},
         hls = {},
+        tsserver = {},
     }
 
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local capabilities = vim.tbl_extend(
+        'force',
+        vim.lsp.protocol.make_client_capabilities(),
+        require('cmp_nvim_lsp').default_capabilities()
+    )
     capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
     local options = { on_attach = on_attach, capabilities = capabilities }
@@ -124,14 +123,13 @@ function M.config()
     local null_ls = require('null-ls')
     null_ls.setup({
         sources = {
-            null_ls.builtins.code_actions.eslint_d,
-            null_ls.builtins.diagnostics.eslint_d,
+            require('none-ls.code_actions.eslint_d'),
+            require('none-ls.diagnostics.eslint_d'),
             null_ls.builtins.formatting.stylua,
             null_ls.builtins.formatting.prettierd,
         },
         on_attach = on_attach,
     })
-    require('typescript-tools').setup({ on_attach = on_attach })
 end
 
 return M
