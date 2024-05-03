@@ -18,6 +18,7 @@
 [pull]
     rebase = true
 [diff]
+    algorithm = histogram
     submodule = log
 [fetch]
     recurseSubmodules = on-demand
@@ -40,3 +41,10 @@
     repo = /Users/mykhailopohoda/repos/taxify/server
 [branch]
     sort = -committerdate
+[merge]
+    conflictstyle = zdiff3
+[rebase]
+    autosquash = true
+    updateRefs = true
+[submodule]
+    recurse = true
