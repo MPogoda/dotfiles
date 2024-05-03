@@ -18,6 +18,7 @@
 [pull]
     rebase = true
 [diff]
+    algorithm = histogram
     submodule = log
 [fetch]
     recurseSubmodules = on-demand
@@ -38,3 +39,10 @@
     required = true
 [branch]
     sort = -committerdate
+[merge]
+    conflictstyle = zdiff3
+[rebase]
+    autosquash = true
+    updateRefs = true
+[submodule]
+    recurse = true
