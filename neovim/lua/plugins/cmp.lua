@@ -13,7 +13,6 @@ local M = {
         'f3fora/cmp-spell',
         'onsails/lspkind.nvim',
         'dmitmel/cmp-digraphs',
-        'zbirenbaum/copilot-cmp',
     },
 }
 
@@ -27,7 +26,6 @@ function M.config()
             end,
         },
         sources = cmp.config.sources({
-            { name = 'copilot', group_index = 2 },
             { name = 'nvim_lsp' },
             { name = 'nvim_lsp_signature_help' },
             { name = 'path' },
