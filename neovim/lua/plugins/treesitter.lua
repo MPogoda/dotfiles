@@ -3,7 +3,7 @@ local M = {
     build = ':TSUpdate',
     event = 'BufReadPost',
     dependencies = {
-        'haringsrob/nvim_context_vt',
+        'andersevenrud/nvim_context_vt',
     },
 }
 function M.config()
