@@ -21,23 +21,24 @@ local function nullLsHasFormatter(ft)
     return #available > 0
 end
 
-local function attachFormatting(client)
-    local ft = vim.api.nvim_buf_get_option(0, 'filetype')
+local function attachFormatting(client, bufNr)
+    local ft = vim.api.nvim_buf_get_option(bufNr, 'filetype')
     local enable = nullLsHasFormatter(ft) == (client.name == 'null-ls')
+
     client.server_capabilities.documentFormattingProvider = enable
     -- format on save
     if client.server_capabilities.documentFormattingProvider then
         local group = vim.api.nvim_create_augroup('LspBufFormat', { clear = false })
-        vim.api.nvim_clear_autocmds({ event = 'BufWritePre', group = group, buffer = 0 })
+        vim.api.nvim_clear_autocmds({ event = 'BufWritePre', group = group, buffer = bufNr })
         vim.api.nvim_create_autocmd('BufWritePre', {
             group = group,
-            buffer = 0,
+            buffer = bufNr,
             callback = function()
                 vim.lsp.buf.format({
                     filter = function(c)
                         return c.name == 'null-ls'
                     end,
-                    bufnr = 0,
+                    bufnr = bufNr,
                 })
             end,
         })
@@ -56,11 +57,11 @@ function M.config()
         return true
     end
 
-    local function on_attach(client)
-        attachFormatting(client)
+    local function on_attach(client, bufNr)
+        attachFormatting(client, bufNr)
 
         if client.server_capabilities.documentSymbolProvider then
-            require('nvim-navic').attach(client)
+            require('nvim-navic').attach(client, bufNr)
         end
 
         require('which-key').register({
@@ -86,9 +87,8 @@ function M.config()
                 },
                 q = { vim.lsp.diagnostic.set_loclist, 'To loclist' },
             },
-        }, { prefix = '<leader>', buffer = 0, noremap = true })
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, { noremap = true, silent = true, buffer = 0 })
-        vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = 0 })
+        }, { prefix = '<leader>', buffer = bufNr, noremap = true })
+        vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = bufNr })
 
         lsp_status.on_attach(client)
     end
