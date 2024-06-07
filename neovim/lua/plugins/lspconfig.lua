@@ -1,15 +1,16 @@
 local M = {
     'neovim/nvim-lspconfig',
     name = 'lsp',
-    event = { 'BufReadPre', 'BufNewFile' },
+    lazy = false,
     dependencies = {
-        'nvimtools/none-ls.nvim',
-        'nvimtools/none-ls-extras.nvim',
+        {
+            'nvimtools/none-ls.nvim',
+            dependencies = { 'nvimtools/none-ls-extras.nvim' },
+        },
         'folke/which-key.nvim',
         'hrsh7th/cmp-nvim-lsp',
         'nvim-lua/plenary.nvim',
         'nvim-lua/lsp-status.nvim',
-        'folke/neodev.nvim',
         'SmiteshP/nvim-navic',
         'aznhe21/actions-preview.nvim',
     },
@@ -93,33 +94,13 @@ function M.config()
         lsp_status.on_attach(client)
     end
 
-    require('neodev').setup({})
-
     local servers = {
         html = {},
         jsonls = {
             json = { format = { enable = true } },
         },
         rust_analyzer = {},
-        lua_ls = {
-            settings = {
-                runtime = { version = 'LuaJIT' },
-                workspace = {
-                    checkThirdParty = false,
-                    -- Tells lua_ls where to find all the Lua files that you have loaded
-                    -- for your neovim configuration.
-                    library = {
-                        '${3rd}/luv/library',
-                        unpack(vim.api.nvim_get_runtime_file('', true)),
-                    },
-                    -- If lua_ls is really slow on your computer, you can try this instead:
-                    -- library = { vim.env.VIMRUNTIME },
-                },
-                completion = {
-                    callSnippet = 'Replace',
-                },
-            },
-        },
+        lua_ls = {},
         hls = {},
         tsserver = {},
     }
