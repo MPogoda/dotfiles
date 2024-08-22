@@ -65,30 +65,55 @@ function M.config()
             require('nvim-navic').attach(client, bufNr)
         end
 
-        require('which-key').register({
-            n = {
-                name = '+lsp',
-                d = { vim.lsp.buf.definition, 'Definition' },
-                D = { vim.lsp.buf.declaration, 'Declaration' },
-                t = { vim.lsp.buf.type_definition, 'Type definition' },
-                i = { vim.lsp.buf.implementation, 'Implementation' },
-                r = { vim.lsp.buf.references, 'References' },
-                a = {
-                    name = 'Actions',
-                    r = { vim.lsp.buf.rename, 'Rename' },
-                    c = {
-                        require('actions-preview').code_actions,
-                        'Code action',
-                    },
-                    C = { vim.lsp.buf.code_action, 'Code action' },
-                },
-                s = {
-                    require('telescope.builtin').lsp_document_symbols,
-                    'Symbols',
-                },
-                q = { vim.lsp.diagnostic.set_loclist, 'To loclist' },
-            },
-        }, { prefix = '<leader>', buffer = bufNr, noremap = true })
+        vim.keymap.set(
+            'n',
+            '<leader>nd',
+            vim.lsp.buf.definition,
+            { desc = 'Definition', buffer = bufNr, noremap = true, silent = true }
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>nD',
+            vim.lsp.buf.declaration,
+            { desc = 'Declaration', buffer = bufNr, noremap = true, silent = true }
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>nt',
+            vim.lsp.buf.type_definition,
+            { desc = 'Type definition', buffer = bufNr, noremap = true, silent = true }
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>ni',
+            vim.lsp.buf.implementation,
+            { desc = 'Implementation', buffer = bufNr, noremap = true, silent = true }
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>nr',
+            vim.lsp.buf.references,
+            { desc = 'References', buffer = bufNr, noremap = true, silent = true }
+        )
+
+        vim.keymap.set(
+            'n',
+            '<leader>nar',
+            vim.lsp.buf.rename,
+            { desc = 'Rename', buffer = bufNr, noremap = true, silent = true }
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>nac',
+            require('actions-preview').code_actions,
+            { desc = 'Code action', buffer = bufNr, noremap = true, silent = true }
+        )
+        vim.keymap.set(
+            'n',
+            '<leader>naC',
+            vim.lsp.buf.code_action,
+            { desc = 'Code action', buffer = bufNr, noremap = true, silent = true }
+        )
         vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = bufNr })
 
         lsp_status.on_attach(client)
@@ -103,6 +128,7 @@ function M.config()
         lua_ls = {},
         hls = {},
         tsserver = {},
+        pylsp = {},
     }
 
     local capabilities = vim.tbl_extend(
