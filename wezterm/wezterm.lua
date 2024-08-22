@@ -15,43 +15,14 @@ config.native_macos_fullscreen_mode = true
 config.harfbuzz_features = { "calt", "liga", "dlig", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08" }
 
 config.font = wezterm.font({
-	family = "Monaspace Neon",
-	-- family = "Monaspace Argon",
-	-- family = "Monaspace Xenon",
-	-- family = "Monaspace Radon",
-	-- family = "Monaspace Krypton",
-	weight = "Regular",
+	family = "Iosevka SS09",
+	weight = "Book",
 })
 
--- https://wezfurlong.org/wezterm/config/lua/config/font_rules.html
--- wezterm ls-fonts
--- wezterm ls-fonts --list-system
-config.font_rules = {
-	-- Italic (comments)
-	{
-		intensity = "Normal",
-		italic = true,
-		font = wezterm.font({
-			family = "Monaspace Radon",
-			weight = "ExtraLight",
-			stretch = "Normal",
-			style = "Normal",
-		}),
-	},
-	-- Bold (highlighting)
-	{
-		intensity = "Bold",
-		italic = false,
-		font = wezterm.font({
-			family = "Monaspace Krypton",
-			weight = "Light",
-			stretch = "Normal",
-			style = "Normal",
-		}),
-	},
-}
-config.font_size = 13
-config.cell_width = 0.9
+config.font_size = 14
+config.line_height = 0.9
+
+config.front_end = "WebGpu"
 
 config.quick_select_alphabet = "arstqwfpzxcvneioluymdhgjbk"
 config.leader = { key = "t", mods = "ALT" }
