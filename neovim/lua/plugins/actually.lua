@@ -1,1 +1,4 @@
-return { 'mong8se/actually.nvim' }
+return {
+    'mong8se/actually.nvim',
+    dependencies = { 'stevearc/dressing.nvim' },
+}
