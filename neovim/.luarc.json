@@ -55,5 +55,8 @@
         "/Users/mykhailopohoda/.local/share/nvim/lazy/git-conflict.nvim/lua",
         "/Users/mykhailopohoda/dotfiles/neovim/lua",
         "${3rd}/luv/library"
+    ],
+    "diagnostics.globals": [
+        "vim"
     ]
 }
