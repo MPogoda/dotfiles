@@ -14,6 +14,8 @@ function M.config()
             leap = true,
             lsp_trouble = true,
             which_key = true,
+            colorful_winsep = { enabled = true },
+            navic = { enabled = true },
         },
     })
     catppuccin.load()
