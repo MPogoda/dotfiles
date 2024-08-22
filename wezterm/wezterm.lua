@@ -15,8 +15,7 @@ config.native_macos_fullscreen_mode = true
 config.harfbuzz_features = { "calt", "liga", "dlig", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07", "ss08" }
 
 config.font = wezterm.font({
-	family = "Monaspace Neon",
-	weight = "Regular",
+	family = "Iosevka SS09",
 })
 config.font_size = 13
 config.cell_width = 0.9
