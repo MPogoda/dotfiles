@@ -3,6 +3,8 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     lazy = false,
     opts = {
-        patterns = { '/%.git/', '/%gen/' },
+        ignore_sources = {
+            patterns = { '/%.git/', '/%gen/' },
+        },
     },
 }
