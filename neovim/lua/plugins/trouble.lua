@@ -1,15 +1,18 @@
 return {
     'folke/trouble.nvim',
-    cmd = { 'Trouble', 'TroubleToggle' },
-    dependencies = {
-        'nvim-tree/nvim-web-devicons',
-        'folke/lsp-colors.nvim',
-    },
-    opts = {
-        auto_close = true,
-        use_diagnostic_signs = true,
-    },
+    cmd = { 'Trouble' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {},
     keys = {
-        { '<leader>x', '<cmd>TroubleToggle<cr>', desc = 'Troubles?' },
+        { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'diagnostics (toggle)' },
+        { '<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'buffer diagnostics (toggle)' },
+        { '<leader>cs', '<cmd>Trouble symbols toggle focus=false<cr>', desc = 'symbols (toggle)' },
+        {
+            '<leader>cl',
+            '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+            desc = 'lsp definitions‥ (toggle)',
+        },
+        { '<leader>xL', '<cmd>Trouble loclist toggle<cr>', desc = 'loclist (toggle)' },
+        { '<leader>xQ', '<cmd>Trouble qflist toggle<cr>', desc = 'quickfix list (toggle)' },
     },
 }
