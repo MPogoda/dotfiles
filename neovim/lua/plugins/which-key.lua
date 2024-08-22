@@ -1,17 +1,18 @@
 return {
     'folke/which-key.nvim',
     event = 'VimEnter',
+    dependencies = { 'echasnovski/mini.icons' },
     config = function()
         local wk = require('which-key')
-        wk.setup({
-            plugins = { spelling = { enabled = true } },
-            window = { position = 'top' },
+        wk.setup({ preset = 'modern' })
+        wk.add({
+            mode = { 'n', 'v' },
+            { '<leader>t', group = '+toggle' },
+            { '<leader>h', group = '+hunks' },
+            { '<leader>f', group = '+find' },
+            { '<leader>g', group = '+git' },
+            { '<leader>n', group = '+lsp' },
+            { '<leader>na', group = '+action' },
         })
-        wk.register({
-            t = { name = '+toggle' },
-            h = { name = '+hunks' },
-            f = { name = '+find' },
-            g = { name = '+git' },
-        }, { prefix = '<leader>', mode = { 'n', 'v' } })
     end,
 }
