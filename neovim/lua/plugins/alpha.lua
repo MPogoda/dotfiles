@@ -1,6 +1,6 @@
 return {
     'goolord/alpha-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'echasnovski/mini.icons' },
     opts = function()
         return require('alpha.themes.startify').config
     end,
