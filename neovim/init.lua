@@ -59,8 +59,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.opt.timeoutlen = 500
 
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 local install_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(install_path) then
+if not vim.uv.fs_stat(install_path) then
     vim.fn.system({
         'git',
         'clone',
@@ -72,7 +77,10 @@ if not vim.loop.fs_stat(install_path) then
 end
 vim.opt.runtimepath:prepend(install_path)
 
-require('lazy').setup('plugins', { lazy = true })
+require('lazy').setup('plugins', {
+    lazy = true,
+    rocks = { enabled = false },
+})
 
 require('keybinds')
 require('qfutils')
