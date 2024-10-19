@@ -31,7 +31,7 @@ function M.config()
             { name = 'nvim_lsp_signature_help' },
             { name = 'path' },
             { name = 'luasnip' },
-            { name = 'buffer',                 keyword_length = 5 },
+            { name = 'buffer', keyword_length = 5 },
             { name = 'calc' },
             {
                 name = 'spell',

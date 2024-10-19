@@ -23,7 +23,7 @@ local function nullLsHasFormatter(ft)
 end
 
 local function attachFormatting(client, bufNr)
-    local ft = vim.api.nvim_buf_get_option(bufNr, 'filetype')
+    local ft = vim.api.nvim_get_option_value('filetype', { buf = bufNr })
     local enable = nullLsHasFormatter(ft) == (client.name == 'null-ls')
 
     client.server_capabilities.documentFormattingProvider = enable
@@ -127,7 +127,7 @@ function M.config()
         rust_analyzer = {},
         lua_ls = {},
         hls = {},
-        tsserver = {},
+        ts_ls = {},
         pylsp = {},
     }
 
