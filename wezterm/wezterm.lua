@@ -16,13 +16,17 @@ config.harfbuzz_features = { "calt", "liga", "dlig", "ss01", "ss02", "ss03", "ss
 
 config.font = wezterm.font({
 	family = "Iosevka SS09",
-	weight = "Book",
+	-- weight = "Book",
 })
 
 config.font_size = 14
 config.line_height = 0.9
+config.cell_width = 0.9
 
-config.front_end = "WebGpu"
+config.front_end = "OpenGL"
+config.freetype_load_target = "Light"
+config.freetype_render_target = "HorizontalLcd"
+config.freetype_load_flags = "NO_HINTING"
 
 config.quick_select_alphabet = "arstqwfpzxcvneioluymdhgjbk"
 config.leader = { key = "t", mods = "ALT" }
