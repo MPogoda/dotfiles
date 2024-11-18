@@ -22,7 +22,6 @@ function M.config()
                 [[require('nvim-lightbulb').get_status_text()]],
             },
         },
-        theme = 'catppuccin',
     })
 end
 
