@@ -10,6 +10,7 @@ vim.keymap.set('n', 'Y', 'y$', { noremap = true })
 
 vim.keymap.set('i', 'jj', '<esc>', { silent = true, noremap = true })
 vim.keymap.set('c', 'jj', '<esc>', {})
+vim.keymap.set('t', 'tt', '<c-\\><c-n>', { silent = true })
 
 vim.keymap.set('n', 'gv', '`[v`]', { noremap = true }) -- last edited or pasted
 
