@@ -36,15 +36,10 @@ function M.config()
 end
 
 local live_multigrep = function(opts)
-    local pickers = require('telescope.pickers')
-    local finders = require('telescope.finders')
-    local make_entry = require('telescope.make_entry')
-    local conf = require('telescope.config').values
-
     opts = opts or {}
     opts.cwd = opts.cwd or vim.uv.cwd()
 
-    local finder = finders.new_async_job({
+    local finder = require('telescope.finders').new_async_job({
         command_generator = function(prompt)
             if not prompt or prompt == '' then
                 return nil
@@ -67,16 +62,16 @@ local live_multigrep = function(opts)
                 { '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case' },
             })
         end,
-        entry_maker = make_entry.gen_from_vimgrep(opts),
+        entry_maker = require('telescope.make_entry').gen_from_vimgrep(opts),
         cwd = opts.cwd,
     })
 
-    pickers
+    require('telescope.pickers')
         .new(opts, {
             debounce = 100,
             prompt_title = 'Multi Grep',
             finder = finder,
-            previewer = conf.grep_previewer(opts),
+            previewer = require('telescope.config').values.grep_previewer(opts),
             sorter = require('telescope.sorters').empty(),
         })
         :find()
