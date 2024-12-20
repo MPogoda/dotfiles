@@ -3,6 +3,7 @@ local M = {
     cmd = { 'Telescope' },
     dependencies = {
         'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         'gbrlsnchs/telescope-lsp-handlers.nvim',
         'nvim-tree/nvim-web-devicons',
     },
@@ -12,6 +13,10 @@ function M.config()
     local telescope = require('telescope')
 
     telescope.setup({
+        extensions = { fzf = {} },
+        pickers = {
+            find_files = { theme = 'ivy' },
+        },
         defaults = {
             mappings = {
                 i = {
@@ -27,6 +32,7 @@ function M.config()
     })
 
     telescope.load_extension('lsp_handlers')
+    telescope.load_extension('fzf')
 end
 
 function M.init()
@@ -34,7 +40,7 @@ function M.init()
         require('telescope.builtin').buffers({ theme = 'get_dropdown' })
     end, { desc = 'Buffers' })
     vim.keymap.set('n', '<leader>ff', function()
-        require('telescope.builtin').find_files({ theme = 'get_dropdown' })
+        require('telescope.builtin').find_files()
     end, { desc = 'Files' })
     vim.keymap.set('n', '<leader>fg', function()
         require('telescope.builtin').git_status({ theme = 'get_dropdown' })
