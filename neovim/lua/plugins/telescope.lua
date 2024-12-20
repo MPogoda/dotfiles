@@ -77,35 +77,64 @@ local live_multigrep = function(opts)
         :find()
 end
 
-function M.init()
-    vim.keymap.set('n', '<leader>fb', function()
-        require('telescope.builtin').buffers({ theme = 'get_dropdown' })
-    end, { desc = 'Buffers' })
-    vim.keymap.set('n', '<leader>ff', function()
-        require('telescope.builtin').find_files()
-    end, { desc = 'Files' })
-    vim.keymap.set('n', '<leader>fg', live_multigrep, { desc = 'Live Multigrep' })
-    vim.keymap.set('n', '<leader>fo', function()
-        require('telescope.builtin').oldfiles()
-    end, { desc = 'Oldfiles' })
-    vim.keymap.set('n', '<leader>f/', function()
-        require('telescope.builtin').grep_string()
-    end, { desc = 'Grep string' })
-    vim.keymap.set('n', '<leader>fr', function()
-        require('telescope.builtin').resume()
-    end, { desc = 'Resume' })
-    vim.keymap.set('n', '<leader>fk', function()
-        require('telescope.builtin').keymaps()
-    end, { desc = 'Keymaps' })
-    vim.keymap.set('n', '<leader>fh', function()
-        require('telescope.builtin').help_tags()
-    end, { desc = 'Help' })
-    vim.keymap.set('n', '<leader>fd', function()
-        require('telescope.builtin').diagnostics()
-    end, { desc = 'Help' })
-    vim.keymap.set('n', '<leader>fn', function()
-        require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
-    end, { desc = 'Nvim config' })
-end
+M.keys = {
+    {
+        '<leader>fb',
+        function()
+            require('telescope.builtin').buffers({ theme = 'get_dropdown' })
+        end,
+        desc = 'Buffers',
+    },
+    {
+        '<leader>ff',
+        function()
+            require('telescope.builtin').find_files()
+        end,
+        desc = 'Files',
+    },
+    { '<leader>fg', live_multigrep, desc = 'Live Multigrep' },
+    {
+        '<leader>fo',
+        function()
+            require('telescope.builtin').oldfiles()
+        end,
+        desc = 'Oldfiles',
+    },
+    {
+        '<leader>f/',
+        function()
+            require('telescope.builtin').grep_string()
+        end,
+        desc = 'Grep current word',
+    },
+    {
+        '<leader>fk',
+        function()
+            require('telescope.builtin').keymaps()
+        end,
+        desc = 'Keymaps',
+    },
+    {
+        '<leader>fh',
+        function()
+            require('telescope.builtin').help_tags()
+        end,
+        desc = 'Help',
+    },
+    {
+        '<leader>fd',
+        function()
+            require('telescope.builtin').diagnostics()
+        end,
+        desc = 'Diagnostics',
+    },
+    {
+        '<leader>fn',
+        function()
+            require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
+        end,
+        desc = 'Nvim config',
+    },
+}
 
 return M
