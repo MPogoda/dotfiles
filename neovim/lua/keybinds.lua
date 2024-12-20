@@ -20,3 +20,6 @@ vim.keymap.set('n', '<C-Left>', '<cmd>bprevious<cr>')
 vim.keymap.set('n', '<C-Right>', '<cmd>bnext<cr>')
 
 vim.keymap.set({ 'i', 'n' }, '<esc>', '<cmd>nohlsearch<cr><esc>')
+
+vim.keymap.set('n', '<m-j>', '<cmd>cnext<cr>')
+vim.keymap.set('n', '<m-k>', '<cmd>cprev<cr>')
