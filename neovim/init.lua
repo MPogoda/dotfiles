@@ -57,6 +57,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+vim.api.nvim_create_autocmd('TermOpen', {
+    desc = 'Make terminals better',
+    group = vim.api.nvim_create_augroup('custom-term-open', { clear = true }),
+    callback = function()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+    end,
+})
+
 vim.opt.timeoutlen = 500
 
 vim.g.loaded_node_provider = 0
