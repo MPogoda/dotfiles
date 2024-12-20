@@ -57,6 +57,9 @@ function M.init()
     vim.keymap.set('n', '<leader>fd', function()
         require('telescope.builtin').diagnostics()
     end, { desc = 'Help' })
+    vim.keymap.set('n', '<leader>fn', function()
+        require('telescope.builtin').find_files({ cwd = vim.fn.stdpath('config') })
+    end, { desc = 'Nvim config' })
 end
 
 return M
