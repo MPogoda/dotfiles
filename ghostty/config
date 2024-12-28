@@ -133,7 +133,7 @@ font-feature =
 # depending on your `window-inherit-font-size` setting. If that setting is
 # true, only the first window will be affected by this change since all
 # subsequent windows will inherit the font size of the previous window.
-font-size = 14
+font-size = 11
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -346,7 +346,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
-theme = xcodewwdc
+theme = Adventure
 
 # The foreground and background color for selection. If this is not set, then
 # the selection color is just the inverted window background and foreground
@@ -1033,7 +1033,7 @@ window-inherit-font-size = true
 # 
 # macOS: To hide the titlebar without removing the native window borders
 #        or rounded corners, use `macos-titlebar-style = hidden` instead.
-window-decoration = true
+window-decoration = false
 
 # The font that will be used for the application's window and tab titles.
 # 
@@ -1778,7 +1778,7 @@ macos-icon-screen-color =
 #   * `single-instance` - Enable cgroups only for Ghostty instances launched
 #     as single-instance applications (see gtk-single-instance).
 # 
-linux-cgroup = single-instance
+linux-cgroup = always
 
 # Memory limit for any individual terminal process (tab, split, window,
 # etc.) in bytes. If this is unset then no memory limit will be set.
@@ -1867,7 +1867,7 @@ adw-toolbar-style = raised
 # are the new typical Gnome style where tabs fill their available space.
 # If you set this to `false` then tabs will only take up space they need,
 # which is the old style.
-gtk-wide-tabs = true
+gtk-wide-tabs = false
 
 # If `true` (default), Ghostty will enable Adwaita theme support. This
 # will make `window-theme` work properly and will also allow Ghostty to
@@ -1881,7 +1881,7 @@ gtk-wide-tabs = true
 # 
 # This configuration only has an effect if Ghostty was built with
 # Adwaita support.
-gtk-adwaita = true
+gtk-adwaita = false
 
 # If `true` (default), applications running in the terminal can show desktop
 # notifications using certain escape sequences such as OSC 9 or OSC 777.
