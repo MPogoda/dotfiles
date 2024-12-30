@@ -93,3 +93,4 @@ require('lazy').setup('plugins', {
 
 require('keybinds')
 require('qfutils')
+require('neovide')
