@@ -1,8 +1,6 @@
 return {
     'tpope/vim-fugitive',
-    dependencies = {
-        'tpope/vim-rhubarb',
-    },
+    lazy = false,
     keys = {
         { '<leader>gs', '<cmd>Git<cr>', desc = 'Status' },
         { '<leader>gc', '<cmd>Git commit --no-verify<cr>', desc = 'Commit [no verify]' },

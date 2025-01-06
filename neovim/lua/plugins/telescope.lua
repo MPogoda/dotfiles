@@ -16,6 +16,8 @@ function M.config()
         extensions = { fzf = {} },
         pickers = {
             find_files = { theme = 'ivy' },
+            diagnostics = { theme = 'ivy' },
+            oldfiles = { theme = 'ivy' },
         },
         defaults = {
             mappings = {
@@ -96,7 +98,7 @@ M.keys = {
     {
         '<leader>fo',
         function()
-            require('telescope.builtin').oldfiles()
+            require('telescope.builtin').oldfiles({ theme = 'ivy' })
         end,
         desc = 'Oldfiles',
     },
