@@ -16,6 +16,18 @@ local M = {
     },
 }
 
+M.opts = {
+    html = {},
+    jsonls = {
+        json = { format = { enable = true } },
+    },
+    rust_analyzer = {},
+    lua_ls = {},
+    hls = {},
+    ts_ls = {},
+    pylsp = {},
+}
+
 local function nullLsHasFormatter(ft)
     local sources = require('null-ls.sources')
     local available = sources.get_available(ft, 'NULL_LS_FORMATTING')
@@ -46,7 +58,7 @@ local function attachFormatting(client, bufNr)
     end
 end
 
-function M.config()
+function M.config(_, opts)
     local lsp_status = require('lsp-status')
     lsp_status.register_progress()
     vim.diagnostic.config({
@@ -119,18 +131,6 @@ function M.config()
         lsp_status.on_attach(client)
     end
 
-    local servers = {
-        html = {},
-        jsonls = {
-            json = { format = { enable = true } },
-        },
-        rust_analyzer = {},
-        lua_ls = {},
-        hls = {},
-        ts_ls = {},
-        pylsp = {},
-    }
-
     local capabilities = vim.tbl_extend(
         'force',
         vim.lsp.protocol.make_client_capabilities(),
@@ -140,9 +140,10 @@ function M.config()
 
     local options = { on_attach = on_attach, capabilities = capabilities }
 
-    for server, opts in pairs(servers) do
-        opts = vim.tbl_deep_extend('force', {}, options, opts or {})
-        require('lspconfig')[server].setup(opts)
+    local lspconfig = require('lspconfig')
+    for server, config in pairs(opts) do
+        config = vim.tbl_deep_extend('force', {}, options, config or {})
+        lspconfig[server].setup(config)
     end
 
     local null_ls = require('null-ls')
