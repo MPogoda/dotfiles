@@ -50,6 +50,8 @@
 # Changing this configuration at runtime will only affect new terminals, i.e.
 # new windows, tabs, etc.
 font-family = "Iosevka SS09"
+font-family = "Hack Nerd Font Mono"
+font-family = "Monaco"
 
 font-family-bold = 
 font-family-italic = 
