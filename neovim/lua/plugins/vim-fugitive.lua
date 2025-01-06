@@ -1,5 +1,6 @@
 return {
     'tpope/vim-fugitive',
+    dependencies = { 'tpope/vim-rhubarb' },
     lazy = false,
     keys = {
         { '<leader>gs', '<cmd>Git<cr>', desc = 'Status' },
