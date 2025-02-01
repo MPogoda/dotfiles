@@ -129,6 +129,7 @@ function M.config()
         hls = {},
         ts_ls = {},
         pylsp = {},
+        bashls = {},
     }
 
     local capabilities = vim.tbl_extend(
