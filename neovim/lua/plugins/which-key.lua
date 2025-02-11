@@ -13,6 +13,7 @@ return {
             { '<leader>g', group = '+git' },
             { '<leader>n', group = '+lsp' },
             { '<leader>na', group = '+action' },
+            { '<leader>s', group = '+bolt' },
         })
     end,
 }
