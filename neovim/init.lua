@@ -12,7 +12,10 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.diffopt:append('vertical')
 vim.opt.diffopt:append('indent-heuristic')
 
-vim.opt.foldmethod = 'indent'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldminlines = 5
+vim.opt.foldlevelstart = 2
 
 vim.opt.formatoptions:append('n') -- recognise numbered lists
 vim.opt.tabstop = 4
