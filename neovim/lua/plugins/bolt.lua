@@ -1,39 +1,66 @@
 local key_prefix = '<leader>s'
-local function createKeyMap(keybind, command, description)
+local function createKeyMap(keybind, command, description, opts)
     return {
         key_prefix .. keybind,
         function()
-            require('bolt-server')[command]()
+            require('bolt-server')[command](opts)
         end,
         desc = description,
     }
 end
 
 return {
-    'git@github.com:bolteu/bolt-server.nvim',
+    -- 'git@github.com:bolteu/bolt-server.nvim',
+    dir = '~/repos/bolt.nvim',
     dependencies = {
-        'nvim-telescope/telescope-file-browser.nvim',
         'nvim-telescope/telescope.nvim',
     },
     cond = function()
         local cwd = vim.fn.getcwd()
         return cwd == vim.fn.expand('~/repos/taxify/server')
     end,
+    config = function()
+        local terminal = require('bolt-server.terminal')
+        require('bolt-server').setup({
+            term_configs = {
+                test = terminal.configs.bottom_split,
+                compile = terminal.configs.bottom_split,
+                genapi = terminal.configs.bottom_split,
+            },
+        })
+    end,
     keys = {
         createKeyMap('b', 'find_service', 'service [b]ootstrap'),
-        createKeyMap('C', 'find_service_comp_tests', 'service [c]omp tests'),
-        createKeyMap('d', 'find_service_db_schema', 'service [d]atabase'),
         createKeyMap('f', 'find_service_files', 'service [f]iles'),
+        {
+            key_prefix .. 'F',
+            function()
+                require('telescope.builtin').find_files({
+                    cwd = require('bolt-server').find_parent_subdir('test'),
+                })
+            end,
+            desc = 'service tests',
+        },
+        createKeyMap('d', 'find_service_db_schema', 'service [d]atabase'),
         createKeyMap('/', 'grep_service_files', 'live /grep service'),
-        createKeyMap('s', 'compile_service', 'compile [s]ervice'),
-        createKeyMap('S', 'compile_service_force', 'compile [S]ervice (force)'),
-        createKeyMap('<c-s>', 'compile_service_with_tests', 'compile [^s]ervice with tests'),
+        createKeyMap('s', 'compile_service', 'compile [s]ervice', { watch = true }),
+        createKeyMap('S', 'compile_service', 'compile [S]ervice (force)', { watch = true, force = true }),
+        createKeyMap('<c-s>', 'compile_service', 'compile [^s]ervice with tests', { with_tests = true, watch = true }),
         createKeyMap('g', 'api_gen_service', '[g]enerate api'),
-        createKeyMap('<c-x>', 'select_comp_test_to_run', 'select comp test to run'),
-        createKeyMap('x', 'run_comp_test_under_cursor', 'run comp test under cursor'),
-        createKeyMap('X', 'run_buffer_comp_tests', 'run all comp tests in buffer'),
-        createKeyMap('<c-s-x>', 'run_service_comp_tests', 'run all comp tests for service'),
+
+        createKeyMap('<c-x>', 'select_test_to_run', 'select test to run'),
+        createKeyMap('x', 'run_test_under_cursor', 'e[x]ecute test under cursor'),
+        createKeyMap('X', 'run_test_under_cursor', 'e[X]ecute & watch test under cursor', { watch = true }),
+
+        createKeyMap('T', 'run_buffer_tests', 'run all [t]ests in buffer'),
+
+        createKeyMap('ts', 'run_service_spec_tests', 'run server [s]pec tests'),
+        createKeyMap('tc', 'run_service_comp_tests', 'run server [c]omp tests'),
+
         createKeyMap('v', 'goto_api_definition', 'goto api definition'),
         createKeyMap('V', 'goto_api_endpoint', 'goto api endpoint'),
+
+        createKeyMap('q', 'toggle_terminal', 'toggle terminal'),
+        createKeyMap('Q', 'close_terminal', 'close terminal'),
     },
 }
