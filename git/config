@@ -12,7 +12,7 @@
     ignore = update-index --assume-unchanged
     unignore = update-index --no-assume-unchanged
 [credential]
-    helper = cache --timeout=3600
+    helper = osxkeychain
 [push]
     default = current
 [pull]
@@ -21,8 +21,10 @@
     algorithm = histogram
     submodule = log
     orderFile = ~/.config/git/diffOrder
+    colorMoved = default
 [fetch]
     recurseSubmodules = on-demand
+    prune = true
 [rerere]
     enabled = true
 [status]
@@ -40,8 +42,14 @@
     required = true
 [maintenance]
     repo = /Users/mykhailopohoda/repos/taxify/server
+[column]
+    ui = auto
 [branch]
     sort = -committerdate
+[tag]
+    sort = version:refname
+[log]
+    date = iso
 [merge]
     conflictstyle = zdiff3
 [rebase]
