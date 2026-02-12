@@ -10,7 +10,7 @@ font-thicken = true
 freetype-load-flags = hinting,force-autohint,monochrome,autohint
 
 # Theme
-theme = Neobones Dark
+theme = Ayu Mirage
 
 # Cursor
 mouse-hide-while-typing = true
