@@ -16,8 +16,21 @@ return {
         'nvim-telescope/telescope.nvim',
     },
     cond = function()
-        local cwd = vim.fn.getcwd()
-        return cwd == vim.fn.expand('~/repos/taxify/server')
+        local dir = vim.fn.getcwd()
+        while true do
+            local path = dir .. '/package.json'
+            if vim.fn.filereadable(path) == 1 then
+                local content = vim.fn.readfile(path, '', 5)
+                for _, line in ipairs(content) do
+                    if line:find('"name": "taxify-server"', 1, true) then return true end
+                end
+            end
+            if dir == vim.env.HOME then break end
+            local parent = vim.fn.fnamemodify(dir, ':h')
+            if parent == dir then break end
+            dir = parent
+        end
+        return false
     end,
     config = function()
         local terminal = require('bolt-server.terminal')
