@@ -20,8 +20,10 @@
 [diff]
     algorithm = histogram
     submodule = log
+    colorMoved = default
 [fetch]
     recurseSubmodules = on-demand
+    prune = true
 [rerere]
     enabled = true
 [status]
@@ -37,8 +39,14 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[column]
+    ui = auto
 [branch]
     sort = -committerdate
+[tag]
+    sort = version:refname
+[log]
+    date = iso
 [merge]
     conflictstyle = zdiff3
 [rebase]
