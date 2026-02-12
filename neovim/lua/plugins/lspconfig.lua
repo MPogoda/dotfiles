@@ -79,31 +79,31 @@ function M.config(_, opts)
         vim.keymap.set(
             'n',
             '<leader>nd',
-            vim.lsp.buf.definition,
+            function() Snacks.picker.lsp_definitions() end,
             { desc = 'Definition', buffer = bufNr, noremap = true, silent = true }
         )
         vim.keymap.set(
             'n',
             '<leader>nD',
-            vim.lsp.buf.declaration,
+            function() Snacks.picker.lsp_declarations() end,
             { desc = 'Declaration', buffer = bufNr, noremap = true, silent = true }
         )
         vim.keymap.set(
             'n',
             '<leader>nt',
-            vim.lsp.buf.type_definition,
+            function() Snacks.picker.lsp_type_definitions() end,
             { desc = 'Type definition', buffer = bufNr, noremap = true, silent = true }
         )
         vim.keymap.set(
             'n',
             '<leader>ni',
-            vim.lsp.buf.implementation,
+            function() Snacks.picker.lsp_implementations() end,
             { desc = 'Implementation', buffer = bufNr, noremap = true, silent = true }
         )
         vim.keymap.set(
             'n',
             '<leader>nr',
-            vim.lsp.buf.references,
+            function() Snacks.picker.lsp_references() end,
             { desc = 'References', buffer = bufNr, noremap = true, silent = true }
         )
 
