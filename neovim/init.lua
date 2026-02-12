@@ -14,8 +14,8 @@ vim.opt.diffopt:append('indent-heuristic')
 
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldminlines = 5
-vim.opt.foldlevelstart = 2
+vim.opt.foldminlines = 100
+vim.opt.foldlevelstart = 3
 
 vim.opt.formatoptions:append('n') -- recognise numbered lists
 vim.opt.tabstop = 4
