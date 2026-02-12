@@ -9,6 +9,7 @@ local M = {
         },
         'folke/which-key.nvim',
         'hrsh7th/cmp-nvim-lsp',
+        -- 'saghen/blink.cmp',
         'nvim-lua/plenary.nvim',
         'nvim-lua/lsp-status.nvim',
         'SmiteshP/nvim-navic',
@@ -138,12 +139,13 @@ function M.config(_, opts)
     )
     capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
+    -- local capabilities = require('blink.cmp').get_lsp_capabilities(lsp_status.capabilities)
     local options = { on_attach = on_attach, capabilities = capabilities }
 
-    local lspconfig = require('lspconfig')
     for server, config in pairs(opts) do
         config = vim.tbl_deep_extend('force', {}, options, config or {})
-        lspconfig[server].setup(config)
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
     end
 
     local null_ls = require('null-ls')
