@@ -2,4 +2,4 @@ setlocal textwidth=72
 setlocal nofoldenable
 setlocal spell
 
-noremap <silent> cx :<c-u>Gcommit -S<cr>
+noremap <silent> cx :<c-u>Git commit -S<cr>

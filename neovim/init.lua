@@ -5,8 +5,6 @@ vim.g.maplocalleader = ' '
 vim.opt.termguicolors = true
 
 vim.opt.runtimepath:prepend('/usr/share/vim/vimfiles')
-
-vim.opt.hidden = true
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 vim.opt.diffopt:append('vertical')
@@ -82,7 +80,7 @@ if not vim.uv.fs_stat(install_path) then
         'git',
         'clone',
         '--filter=blob:none',
-        'github.com:folke/lazy.nvim',
+        'https://github.com/folke/lazy.nvim.git',
         '--branch=stable',
         install_path,
     })
