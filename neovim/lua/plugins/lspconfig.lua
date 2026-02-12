@@ -11,7 +11,6 @@ local M = {
         'hrsh7th/cmp-nvim-lsp',
         -- 'saghen/blink.cmp',
         'nvim-lua/plenary.nvim',
-        'nvim-lua/lsp-status.nvim',
         'SmiteshP/nvim-navic',
         'aznhe21/actions-preview.nvim',
     },
@@ -60,8 +59,6 @@ local function attachFormatting(client, bufNr)
 end
 
 function M.config(_, opts)
-    local lsp_status = require('lsp-status')
-    lsp_status.register_progress()
     vim.diagnostic.config({
         severity_sort = true,
     })
@@ -128,8 +125,6 @@ function M.config(_, opts)
             { desc = 'Code action', buffer = bufNr, noremap = true, silent = true }
         )
         vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = bufNr })
-
-        lsp_status.on_attach(client)
     end
 
     local capabilities = vim.tbl_extend(
@@ -137,9 +132,7 @@ function M.config(_, opts)
         vim.lsp.protocol.make_client_capabilities(),
         require('cmp_nvim_lsp').default_capabilities()
     )
-    capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
-    -- local capabilities = require('blink.cmp').get_lsp_capabilities(lsp_status.capabilities)
     local options = { on_attach = on_attach, capabilities = capabilities }
 
     for server, config in pairs(opts) do

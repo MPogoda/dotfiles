@@ -8,8 +8,18 @@ local M = {
 }
 function M.config()
     require('nvim-treesitter.configs').setup({
-        ensure_installed = 'all',
-        ignore_install = { 'ipkg' },
+        ensure_installed = {
+            'typescript', 'tsx', 'javascript', 'jsdoc',
+            'lua', 'luadoc', 'luap',
+            'python',
+            'rust',
+            'html', 'css', 'json', 'jsonc', 'yaml', 'toml',
+            'bash', 'diff', 'regex', 'query',
+            'markdown', 'markdown_inline',
+            'vim', 'vimdoc',
+            'gitcommit', 'git_rebase', 'gitignore',
+            'dockerfile', 'haskell',
+        },
         highlight = { enable = true },
         incremental_selection = {
             enable = true,
