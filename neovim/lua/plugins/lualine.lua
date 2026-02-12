@@ -3,7 +3,6 @@ local M = {
     dependencies = {
         'nvim-tree/nvim-web-devicons',
         'nvim-lua/lsp-status.nvim',
-        'catppuccin',
     },
     lazy = false,
 }
