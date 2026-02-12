@@ -94,6 +94,13 @@ M.keys = {
         end,
         desc = 'Files',
     },
+    {
+        '<leader>fG',
+        function()
+            require('telescope.builtin').git_status()
+        end,
+        desc = 'Git status',
+    },
     { '<leader>fg', live_multigrep, desc = 'Live Multigrep' },
     {
         '<leader>fo',
@@ -108,6 +115,13 @@ M.keys = {
             require('telescope.builtin').grep_string()
         end,
         desc = 'Grep current word',
+    },
+    {
+        '<leader>f:',
+        function()
+            require('telescope.builtin').commands()
+        end,
+        desc = 'Commands',
     },
     {
         '<leader>fk',
