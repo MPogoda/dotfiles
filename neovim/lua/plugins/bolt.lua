@@ -13,7 +13,7 @@ return {
     -- 'git@github.com:bolteu/bolt-server.nvim',
     dir = '~/repos/bolt.nvim',
     dependencies = {
-        'nvim-telescope/telescope.nvim',
+        'folke/snacks.nvim',
     },
     cond = function()
         local dir = vim.fn.getcwd()
@@ -48,7 +48,7 @@ return {
         {
             key_prefix .. 'F',
             function()
-                require('telescope.builtin').find_files({
+                Snacks.picker.files({
                     cwd = require('bolt-server').find_parent_subdir('test'),
                 })
             end,
