@@ -348,7 +348,13 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
+<<<<<<< HEAD
 # theme = Adventure
+||||||| parent of f277a4c (+ cursor shader in ghostty)
+theme = xcodewwdc
+=======
+# theme = xcodewwdc
+>>>>>>> f277a4c (+ cursor shader in ghostty)
 
 # The foreground and background color for selection. If this is not set, then
 # the selection color is just the inverted window background and foreground
@@ -1511,7 +1517,8 @@ vt-kam-allowed = false
 # 
 # Changing this value at runtime and reloading the configuration will only
 # affect new windows, tabs, and splits.
-custom-shader = 
+# custom-shader = shader.glsl
+custom-shader = cursor_blaze_no_trail.glsl
 
 # If `true` (default), the focused terminal surface will run an animation
 # loop when custom shaders are used. This uses slightly more CPU (generally
