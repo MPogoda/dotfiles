@@ -22,12 +22,18 @@ return {
             if vim.fn.filereadable(path) == 1 then
                 local content = vim.fn.readfile(path, '', 5)
                 for _, line in ipairs(content) do
-                    if line:find('"name": "taxify-server"', 1, true) then return true end
+                    if line:find('"name": "taxify-server"', 1, true) then
+                        return true
+                    end
                 end
             end
-            if dir == vim.env.HOME then break end
+            if dir == vim.env.HOME then
+                break
+            end
             local parent = vim.fn.fnamemodify(dir, ':h')
-            if parent == dir then break end
+            if parent == dir then
+                break
+            end
             dir = parent
         end
         return false
@@ -58,6 +64,7 @@ return {
         createKeyMap('/', 'grep_service_files', 'live /grep service'),
         createKeyMap('s', 'compile_service', 'compile [s]ervice', { watch = true }),
         createKeyMap('S', 'compile_service', 'compile [S]ervice (force)', { watch = true, force = true }),
+        createKeyMap(';', 'show_test_output', 'show test output'),
         createKeyMap('<c-s>', 'compile_service', 'compile [^s]ervice with tests', { with_tests = true, watch = true }),
         createKeyMap('g', 'api_gen_service', '[g]enerate api'),
 

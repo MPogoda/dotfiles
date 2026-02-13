@@ -12,7 +12,7 @@ return {
             '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
             desc = 'lsp definitions‥ (toggle)',
         },
-        { '<leader>xL', '<cmd>Trouble loclist toggle<cr>', desc = 'loclist (toggle)' },
-        { '<leader>xQ', '<cmd>Trouble qflist toggle<cr>', desc = 'quickfix list (toggle)' },
+        { '<leader>xl', '<cmd>Trouble loclist toggle<cr>', desc = 'loclist (toggle)' },
+        { '<leader>xq', '<cmd>Trouble qflist toggle<cr>', desc = 'quickfix list (toggle)' },
     },
 }
