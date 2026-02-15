@@ -348,7 +348,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
-theme = Adventure
+# theme = Adventure
 
 # The foreground and background color for selection. If this is not set, then
 # the selection color is just the inverted window background and foreground
@@ -1883,7 +1883,7 @@ gtk-wide-tabs = false
 # 
 # This configuration only has an effect if Ghostty was built with
 # Adwaita support.
-gtk-adwaita = false
+# gtk-adwaita = false
 
 # If `true` (default), applications running in the terminal can show desktop
 # notifications using certain escape sequences such as OSC 9 or OSC 777.
