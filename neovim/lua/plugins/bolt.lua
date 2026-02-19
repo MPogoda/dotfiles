@@ -54,7 +54,7 @@ return {
         {
             key_prefix .. 'F',
             function()
-                Snacks.picker.files({
+                require('snacks').picker.files({
                     cwd = require('bolt-server').find_parent_subdir('test'),
                 })
             end,
@@ -82,5 +82,7 @@ return {
 
         createKeyMap('q', 'toggle_terminal', 'toggle terminal'),
         createKeyMap('Q', 'close_terminal', 'close terminal'),
+
+        createKeyMap('n', 'collect_test_results', 'collect test requests'),
     },
 }
