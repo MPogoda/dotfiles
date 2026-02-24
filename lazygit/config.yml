@@ -1,0 +1,50 @@
+# lazygit configuration
+# https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+
+gui:
+  mouseEvents: true
+  nerdFontsVersion: "3"
+  showBottomLine: false
+  scrollHeight: 5
+  scrollOffMargin: 4
+  # Ayu Mirage theme
+  theme:
+    activeBorderColor:
+      - "#73D0FF" # blue
+      - bold
+    inactiveBorderColor:
+      - "#5C6773" # comment
+    searchingActiveBorderColor:
+      - "#95E6CB" # cyan
+      - bold
+    optionsTextColor:
+      - "#73D0FF" # blue
+    selectedLineBgColor:
+      - "#33415E" # selection
+    inactiveViewSelectedLineBgColor:
+      - "#2B3044" # dimmed selection
+    cherryPickedCommitFgColor:
+      - "#73D0FF" # blue
+    cherryPickedCommitBgColor:
+      - "#33415E" # selection
+    unstagedChangesColor:
+      - "#F28779" # red
+    defaultFgColor:
+      - "#CBCCC6" # foreground
+
+promptToReturnFromSubprocess: false
+
+git:
+  autoFetch: false
+
+customCommands:
+  - key: 'O'
+    context: 'localBranches'
+    description: 'Create draft PR onto selected branch'
+    prompts:
+      - type: 'input'
+        title: 'PR title'
+        key: 'Title'
+        initialValue: ''
+    command: 'gh pr create --draft --base {{.SelectedLocalBranch.Name}} --title {{.Form.Title | quote}}'
+    output: terminal
