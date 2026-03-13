@@ -76,36 +76,21 @@ function M.config(_, opts)
             require('nvim-navic').attach(client, bufNr)
         end
 
-        vim.keymap.set(
-            'n',
-            '<leader>nd',
-            function() Snacks.picker.lsp_definitions() end,
-            { desc = 'Definition', buffer = bufNr, noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            'n',
-            '<leader>nD',
-            function() Snacks.picker.lsp_declarations() end,
-            { desc = 'Declaration', buffer = bufNr, noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            'n',
-            '<leader>nt',
-            function() Snacks.picker.lsp_type_definitions() end,
-            { desc = 'Type definition', buffer = bufNr, noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            'n',
-            '<leader>ni',
-            function() Snacks.picker.lsp_implementations() end,
-            { desc = 'Implementation', buffer = bufNr, noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            'n',
-            '<leader>nr',
-            function() Snacks.picker.lsp_references() end,
-            { desc = 'References', buffer = bufNr, noremap = true, silent = true }
-        )
+        vim.keymap.set('n', '<leader>nd', function()
+            require('snacks').picker.lsp_definitions()
+        end, { desc = 'Definition', buffer = bufNr, noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>nD', function()
+            require('snacks').picker.lsp_declarations()
+        end, { desc = 'Declaration', buffer = bufNr, noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>nt', function()
+            require('snacks').picker.lsp_type_definitions()
+        end, { desc = 'Type definition', buffer = bufNr, noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>ni', function()
+            require('snacks').picker.lsp_implementations()
+        end, { desc = 'Implementation', buffer = bufNr, noremap = true, silent = true })
+        vim.keymap.set('n', '<leader>nr', function()
+            require('snacks').picker.lsp_references()
+        end, { desc = 'References', buffer = bufNr, noremap = true, silent = true })
 
         vim.keymap.set(
             'n',
@@ -152,6 +137,27 @@ function M.config(_, opts)
         },
         on_attach = on_attach,
     })
+
+    -- vim.api.nvim_create_autocmd('LspProgress', {
+    --     callback = function(ev)
+    --         local value = ev.data.params.value or {}
+    --         local msg = value.message or 'done'
+    --
+    --         -- rust analyszer in particular has really long LSP messages so truncate them
+    --         if #msg > 40 then
+    --             msg = msg:sub(1, 39) .. '…'
+    --         end
+    --
+    --         -- :h LspProgress
+    --         vim.api.nvim_echo({ { msg } }, false, {
+    --             id = 'lsp',
+    --             kind = 'progress',
+    --             title = value.title,
+    --             status = value.kind ~= 'end' and 'running' or 'success',
+    --             percent = value.percentage,
+    --         })
+    --     end,
+    -- })
 end
 
 return M
