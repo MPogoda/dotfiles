@@ -76,77 +76,77 @@ M.keys = {
     {
         '<leader>fb',
         function()
-            Snacks.picker.buffers({ layout = 'select' })
+            require('snacks').picker.buffers({ layout = 'select' })
         end,
         desc = 'Buffers',
     },
     {
         '<leader>ff',
         function()
-            Snacks.picker.files()
+            require('snacks').picker.files()
         end,
         desc = 'Files',
     },
     {
         '<leader>fG',
         function()
-            Snacks.picker.git_status()
+            require('snacks').picker.git_status()
         end,
         desc = 'Git status',
     },
     {
         '<leader>fg',
         function()
-            Snacks.picker.grep()
+            require('snacks').picker.grep()
         end,
         desc = 'Live Grep',
     },
     {
         '<leader>fo',
         function()
-            Snacks.picker.recent()
+            require('snacks').picker.recent()
         end,
         desc = 'Recent files',
     },
     {
         '<leader>f/',
         function()
-            Snacks.picker.grep_word()
+            require('snacks').picker.grep_word()
         end,
         desc = 'Grep current word',
     },
     {
         '<leader>f:',
         function()
-            Snacks.picker.commands()
+            require('snacks').picker.commands()
         end,
         desc = 'Commands',
     },
     {
         '<leader>fk',
         function()
-            Snacks.picker.keymaps()
+            require('snacks').picker.keymaps()
         end,
         desc = 'Keymaps',
     },
     {
         '<leader>fh',
         function()
-            Snacks.picker.help()
+            require('snacks').picker.help()
         end,
         desc = 'Help',
     },
     {
         '<leader>fd',
         function()
-            Snacks.picker.diagnostics()
+            require('snacks').picker.diagnostics()
         end,
         desc = 'Diagnostics',
     },
     {
         '<leader>fn',
         function()
-            Snacks.picker.files({ cwd = vim.fn.stdpath('config') })
+            require('snacks').picker.files({ cwd = vim.fn.stdpath('config') })
         end,
         desc = 'Nvim config',
     },
