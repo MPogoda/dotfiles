@@ -10,10 +10,8 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.diffopt:append('vertical')
 vim.opt.diffopt:append('indent-heuristic')
 
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldminlines = 100
-vim.opt.foldlevelstart = 3
+vim.opt.foldminlines = 50
+vim.opt.foldlevelstart = 2
 
 vim.opt.formatoptions:append('n') -- recognise numbered lists
 vim.opt.tabstop = 4
@@ -95,3 +93,23 @@ require('lazy').setup('plugins', {
 require('keybinds')
 require('qfutils')
 require('neovide')
+
+require('vim._core.ui2').enable({
+    enable = true,
+    msg = {
+        targets = 'msg',
+        cmd = { -- Options related to messages in the cmdline window.
+            height = 0.5, -- Maximum height while expanded for messages beyond 'cmdheight'.
+        },
+        dialog = { -- Options related to dialog window.
+            height = 0.5, -- Maximum height.
+        },
+        msg = { -- Options related to msg window.
+            height = 0.5, -- Maximum height.
+            timeout = 4000, -- Time a message is visible in the message window.
+        },
+        pager = { -- Options related to message window.
+            height = 1, -- Maximum height.
+        },
+    },
+})

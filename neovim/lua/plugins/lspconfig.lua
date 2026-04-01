@@ -136,27 +136,28 @@ function M.config(_, opts)
         },
         on_attach = on_attach,
     })
+    vim.api.nvim_create_autocmd('LspProgress', {
+        group = vim.api.nvim_create_augroup('lsp-progress-ghostty', { clear = true }),
+        callback = function(ev)
+            local value = ev.data.params.value or {}
+            local msg = value.message or 'done'
 
-    -- vim.api.nvim_create_autocmd('LspProgress', {
-    --     callback = function(ev)
-    --         local value = ev.data.params.value or {}
-    --         local msg = value.message or 'done'
-    --
-    --         -- rust analyszer in particular has really long LSP messages so truncate them
-    --         if #msg > 40 then
-    --             msg = msg:sub(1, 39) .. '…'
-    --         end
-    --
-    --         -- :h LspProgress
-    --         vim.api.nvim_echo({ { msg } }, false, {
-    --             id = 'lsp',
-    --             kind = 'progress',
-    --             title = value.title,
-    --             status = value.kind ~= 'end' and 'running' or 'success',
-    --             percent = value.percentage,
-    --         })
-    --     end,
-    -- })
+            -- rust analyszer in particular has really long LSP messages so truncate them
+            if #msg > 40 then
+                msg = msg:sub(1, 37) .. '...'
+            end
+
+            -- :h LspProgress
+            vim.api.nvim_echo({ { msg } }, false, {
+                id = 'lsp',
+                kind = 'progress',
+                title = value.title,
+                source = 'none',
+                status = value.kind ~= 'end' and 'running' or 'success',
+                percent = value.percentage,
+            })
+        end,
+    })
 end
 
 return M
