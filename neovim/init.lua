@@ -10,8 +10,6 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.diffopt:append('vertical')
 vim.opt.diffopt:append('indent-heuristic')
 
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldminlines = 5
 vim.opt.foldlevelstart = 2
 
@@ -94,3 +92,22 @@ require('lazy').setup('plugins', {
 
 require('keybinds')
 require('qfutils')
+require('vim._core.ui2').enable({
+    enable = true,
+    msg = {
+        targets = 'msg',
+        cmd = { -- Options related to messages in the cmdline window.
+            height = 0.5, -- Maximum height while expanded for messages beyond 'cmdheight'.
+        },
+        dialog = { -- Options related to dialog window.
+            height = 0.5, -- Maximum height.
+        },
+        msg = { -- Options related to msg window.
+            height = 0.5, -- Maximum height.
+            timeout = 4000, -- Time a message is visible in the message window.
+        },
+        pager = { -- Options related to message window.
+            height = 1, -- Maximum height.
+        },
+    },
+})
