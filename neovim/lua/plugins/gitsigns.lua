@@ -14,10 +14,8 @@ function M.config()
             vim.keymap.set({ 'v', 'n' }, '<leader>hs', gitsigns.stage_hunk, { buffer = 0, desc = 'Stage hunk' })
             vim.keymap.set({ 'v', 'n' }, '<leader>hr', gitsigns.reset_hunk, { buffer = 0, desc = 'Reset hunk' })
             vim.keymap.set('n', '<leader>hS', gitsigns.stage_buffer, { buffer = 0, desc = 'Stage ALL' })
-            vim.keymap.set('n', '<leader>hu', gitsigns.undo_stage_hunk, { buffer = 0, desc = 'Undo stage' })
             vim.keymap.set('n', '<leader>hR', gitsigns.reset_buffer, { buffer = 0, desc = 'Reset ALL' })
             vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk, { buffer = 0, desc = 'Preview hunk' })
-            vim.keymap.set('n', '<leader>hd', gitsigns.diffthis, { buffer = 0, desc = 'diffthis' })
             vim.keymap.set('n', '<leader>hb', function()
                 gitsigns.blame_line({ full = true })
             end, { buffer = 0, desc = 'Blame line' })
@@ -28,25 +26,19 @@ function M.config()
                 gitsigns.toggle_current_line_blame,
                 { buffer = 0, desc = 'Toggle current line [b]lame' }
             )
-            vim.keymap.set(
-                'n',
-                '<leader>td',
-                gitsigns.toggle_current_line_blame,
-                { buffer = 0, desc = 'Toggle [d]eleted' }
-            )
 
             vim.keymap.set('n', ']c', function()
                 if vim.wo.diff then
                     return ']c'
                 end
-                vim.schedule(gitsigns.next_hunk)
+                gitsigns.nav_hunk('next', { preview = true })
                 return '<Ignore>'
             end, { desc = 'Next hunk', expr = true, buffer = 0 })
             vim.keymap.set('n', '[c', function()
                 if vim.wo.diff then
                     return '[c'
                 end
-                vim.schedule(gitsigns.prev_hunk)
+                gitsigns.nav_hunk('prev', { preview = true })
                 return '<Ignore>'
             end, { desc = 'Prev hunk', expr = true, buffer = 0 })
 
