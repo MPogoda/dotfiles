@@ -12,7 +12,6 @@ local M = {
         -- 'saghen/blink.cmp',
         'nvim-lua/plenary.nvim',
         'SmiteshP/nvim-navic',
-        'aznhe21/actions-preview.nvim',
     },
 }
 
@@ -92,25 +91,6 @@ function M.config(_, opts)
             require('snacks').picker.lsp_references()
         end, { desc = 'References', buffer = bufNr, noremap = true, silent = true })
 
-        vim.keymap.set(
-            'n',
-            '<leader>nar',
-            vim.lsp.buf.rename,
-            { desc = 'Rename', buffer = bufNr, noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            'n',
-            '<leader>nac',
-            require('actions-preview').code_actions,
-            { desc = 'Code action', buffer = bufNr, noremap = true, silent = true }
-        )
-        vim.keymap.set(
-            'n',
-            '<leader>naC',
-            vim.lsp.buf.code_action,
-            { desc = 'Code action', buffer = bufNr, noremap = true, silent = true }
-        )
-        vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, { noremap = true, silent = true, buffer = bufNr })
     end
 
     local capabilities = vim.tbl_extend(
