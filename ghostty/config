@@ -3,7 +3,7 @@ font-family = "Iosevka SS09"
 font-family = "Hack Nerd Font Mono"
 font-family = "Monaco"
 font-style = Regular
-font-size = 14
+font-size = 12
 font-thicken = true
 
 # FreeType (Linux)
