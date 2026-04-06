@@ -9,6 +9,7 @@ local M = {
 function M.config()
     local languages = {
         'typescript',
+        'typescriptreact',
         'tsx',
         'javascript',
         'jsdoc',
