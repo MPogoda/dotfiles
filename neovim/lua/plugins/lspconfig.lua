@@ -3,14 +3,9 @@ local M = {
     name = 'lsp',
     lazy = false,
     dependencies = {
-        {
-            'nvimtools/none-ls.nvim',
-            dependencies = { 'nvimtools/none-ls-extras.nvim' },
-        },
         'folke/which-key.nvim',
         'hrsh7th/cmp-nvim-lsp',
         -- 'saghen/blink.cmp',
-        'nvim-lua/plenary.nvim',
         'SmiteshP/nvim-navic',
     },
 }
@@ -26,37 +21,8 @@ M.opts = {
     ts_ls = {},
     pylsp = {},
     bashls = {},
+    eslint = {},
 }
-
-local function nullLsHasFormatter(ft)
-    local sources = require('null-ls.sources')
-    local available = sources.get_available(ft, 'NULL_LS_FORMATTING')
-    return #available > 0
-end
-
-local function attachFormatting(client, bufNr)
-    local ft = vim.api.nvim_get_option_value('filetype', { buf = bufNr })
-    local enable = nullLsHasFormatter(ft) == (client.name == 'null-ls')
-
-    client.server_capabilities.documentFormattingProvider = enable
-    -- format on save
-    if client.server_capabilities.documentFormattingProvider then
-        local group = vim.api.nvim_create_augroup('LspBufFormat', { clear = false })
-        vim.api.nvim_clear_autocmds({ event = 'BufWritePre', group = group, buffer = bufNr })
-        vim.api.nvim_create_autocmd('BufWritePre', {
-            group = group,
-            buffer = bufNr,
-            callback = function()
-                vim.lsp.buf.format({
-                    filter = function(c)
-                        return c.name == 'null-ls'
-                    end,
-                    bufnr = bufNr,
-                })
-            end,
-        })
-    end
-end
 
 function M.config(_, opts)
     vim.diagnostic.config({
@@ -69,8 +35,6 @@ function M.config(_, opts)
     end
 
     local function on_attach(client, bufNr)
-        attachFormatting(client, bufNr)
-
         if client.server_capabilities.documentSymbolProvider then
             require('nvim-navic').attach(client, bufNr)
         end
@@ -106,16 +70,6 @@ function M.config(_, opts)
         vim.lsp.enable(server)
     end
 
-    local null_ls = require('null-ls')
-    null_ls.setup({
-        sources = {
-            require('none-ls.code_actions.eslint_d'),
-            require('none-ls.diagnostics.eslint_d'),
-            null_ls.builtins.formatting.stylua,
-            null_ls.builtins.formatting.prettierd,
-        },
-        on_attach = on_attach,
-    })
     vim.api.nvim_create_autocmd('LspProgress', {
         group = vim.api.nvim_create_augroup('lsp-progress-ghostty', { clear = true }),
         callback = function(ev)
