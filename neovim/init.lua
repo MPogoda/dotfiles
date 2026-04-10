@@ -113,3 +113,5 @@ require('vim._core.ui2').enable({
         },
     },
 })
+
+vim.lsp.document_color.enable(true, nil, { style = 'virtual' })
