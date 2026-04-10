@@ -89,7 +89,6 @@ function M.config(_, opts)
         vim.keymap.set('n', '<leader>nr', function()
             require('snacks').picker.lsp_references()
         end, { desc = 'References', buffer = bufNr, noremap = true, silent = true })
-
     end
 
     local capabilities = vim.tbl_extend(
