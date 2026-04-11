@@ -3,7 +3,6 @@ local M = {
     name = 'lsp',
     lazy = false,
     dependencies = {
-        'folke/which-key.nvim',
         'saghen/blink.cmp',
         'SmiteshP/nvim-navic',
     },
@@ -11,9 +10,7 @@ local M = {
 
 M.opts = {
     html = {},
-    jsonls = {
-        json = { format = { enable = true } },
-    },
+    jsonls = {},
     rust_analyzer = {},
     lua_ls = {},
     hls = {},
