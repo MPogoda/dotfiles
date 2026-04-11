@@ -1,10 +1,30 @@
-# Fonts
-font-family = "Iosevka SS09"
+# Fonts — Monaspace: different variant per style
+font-family = "Monaspace Argon"
+font-family-bold = "Monaspace Xenon"
+font-family-italic = "Monaspace Radon"
+font-family-bold-italic = "Monaspace Krypton"
+
+# Nerd Font fallback for icons
 font-family = "Hack Nerd Font Mono"
-font-family = "Monaco"
-font-style = Regular
+font-family-bold = "Hack Nerd Font Mono"
+font-family-italic = "Hack Nerd Font Mono"
+font-family-bold-italic = "Hack Nerd Font Mono"
+
 font-size = 14
-font-thicken = true
+font-thicken = false
+
+# OpenType features
+font-feature = calt
+font-feature = liga
+font-feature = ss01
+font-feature = ss02
+font-feature = ss03
+font-feature = ss04
+font-feature = ss05
+font-feature = ss06
+font-feature = ss07
+font-feature = ss08
+font-feature = ss09
 
 # FreeType (Linux)
 freetype-load-flags = hinting,force-autohint,monochrome,autohint

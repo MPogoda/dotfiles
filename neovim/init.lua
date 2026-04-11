@@ -160,3 +160,5 @@ msgs.set_pos = function(tgt)
 end
 
 vim.lsp.document_color.enable(true, nil, { style = 'virtual' })
+
+require('monaspace')
