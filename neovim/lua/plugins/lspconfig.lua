@@ -33,34 +33,29 @@ function M.config(_, opts)
         return true
     end
 
-    local function on_attach(client, bufNr)
-        if client.server_capabilities.documentSymbolProvider then
-            require('nvim-navic').attach(client, bufNr)
-        end
+    vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
+        callback = function(ev)
+            local client = vim.lsp.get_client_by_id(ev.data.client_id)
+            if client and client.server_capabilities.documentSymbolProvider then
+                require('nvim-navic').attach(client, ev.buf)
+            end
 
-        vim.keymap.set('n', '<leader>nd', function()
-            require('snacks').picker.lsp_definitions()
-        end, { desc = 'Definition', buffer = bufNr, noremap = true, silent = true })
-        vim.keymap.set('n', '<leader>nD', function()
-            require('snacks').picker.lsp_declarations()
-        end, { desc = 'Declaration', buffer = bufNr, noremap = true, silent = true })
-        vim.keymap.set('n', '<leader>nt', function()
-            require('snacks').picker.lsp_type_definitions()
-        end, { desc = 'Type definition', buffer = bufNr, noremap = true, silent = true })
-        vim.keymap.set('n', '<leader>ni', function()
-            require('snacks').picker.lsp_implementations()
-        end, { desc = 'Implementation', buffer = bufNr, noremap = true, silent = true })
-        vim.keymap.set('n', '<leader>nr', function()
-            require('snacks').picker.lsp_references()
-        end, { desc = 'References', buffer = bufNr, noremap = true, silent = true })
-    end
+            local map = function(key, fn, desc)
+                vim.keymap.set('n', key, fn, { desc = desc, buffer = ev.buf, noremap = true, silent = true })
+            end
+            map('<leader>nd', function() require('snacks').picker.lsp_definitions() end, 'Definition')
+            map('<leader>nD', function() require('snacks').picker.lsp_declarations() end, 'Declaration')
+            map('<leader>nt', function() require('snacks').picker.lsp_type_definitions() end, 'Type definition')
+            map('<leader>ni', function() require('snacks').picker.lsp_implementations() end, 'Implementation')
+            map('<leader>nr', function() require('snacks').picker.lsp_references() end, 'References')
+        end,
+    })
 
     local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-    local options = { on_attach = on_attach, capabilities = capabilities }
-
     for server, config in pairs(opts) do
-        config = vim.tbl_deep_extend('force', {}, options, config or {})
+        config = vim.tbl_deep_extend('force', {}, { capabilities = capabilities }, config or {})
         vim.lsp.config(server, config)
         vim.lsp.enable(server)
     end
