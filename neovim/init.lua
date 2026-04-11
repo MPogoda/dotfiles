@@ -95,3 +95,5 @@ require('qfutils')
 require('ui2')
 
 vim.lsp.document_color.enable(true, nil, { style = 'virtual' })
+
+require('monaspace')
