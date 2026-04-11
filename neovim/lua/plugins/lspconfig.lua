@@ -4,8 +4,7 @@ local M = {
     lazy = false,
     dependencies = {
         'folke/which-key.nvim',
-        'hrsh7th/cmp-nvim-lsp',
-        -- 'saghen/blink.cmp',
+        'saghen/blink.cmp',
         'SmiteshP/nvim-navic',
     },
 }
@@ -55,11 +54,7 @@ function M.config(_, opts)
         end, { desc = 'References', buffer = bufNr, noremap = true, silent = true })
     end
 
-    local capabilities = vim.tbl_extend(
-        'force',
-        vim.lsp.protocol.make_client_capabilities(),
-        require('cmp_nvim_lsp').default_capabilities()
-    )
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     local options = { on_attach = on_attach, capabilities = capabilities }
 
@@ -75,17 +70,12 @@ function M.config(_, opts)
             local value = ev.data.params.value or {}
             local msg = value.message or 'done'
 
-            -- rust analyszer in particular has really long LSP messages so truncate them
-            if #msg > 40 then
-                msg = msg:sub(1, 37) .. '...'
-            end
-
             -- :h LspProgress
             vim.api.nvim_echo({ { msg } }, false, {
-                id = 'lsp',
+                id = 'lsp' .. ev.data.params.token,
                 kind = 'progress',
                 title = value.title,
-                source = 'none',
+                source = 'vim.lsp',
                 status = value.kind ~= 'end' and 'running' or 'success',
                 percent = value.percentage,
             })

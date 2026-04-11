@@ -1,15 +1,18 @@
 local M = {
     'saghen/blink.cmp',
-    enabled = false,
     dependencies = {
         'rafamadriz/friendly-snippets',
         'folke/lazydev.nvim',
         'moyiz/blink-emoji.nvim',
     },
     version = '*',
-    event = 'InsertEnter',
+    event = { 'InsertEnter', 'CmdlineEnter' },
     opts = {
-        keymap = { preset = 'super-tab' },
+        keymap = {
+            preset = 'default',
+            ['<C-k>'] = { 'fallback' },
+            ['<C-s>'] = { 'show_signature', 'hide_signature', 'fallback' },
+        },
         completion = {
             documentation = {
                 auto_show = true,
@@ -17,8 +20,16 @@ local M = {
             },
             ghost_text = { enabled = true },
         },
+        cmdline = {
+            completion = {
+                menu = {
+                    auto_show = function(ctx)
+                        return ctx.mode == 'cmdline'
+                    end,
+                },
+            },
+        },
         appearance = {
-            use_nvim_cmp_as_default = true,
             nerd_font_variant = 'mono',
         },
         sources = {
@@ -43,7 +54,12 @@ local M = {
                 },
             },
         },
-        signature = { enabled = true },
+        signature = {
+            enabled = true,
+            trigger = {
+                show_on_accept = true,
+            },
+        },
     },
 }
 
