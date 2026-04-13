@@ -1,4 +1,0 @@
-[submodule "zsh/.zprezto"]
-    path = zsh/.zprezto
-    url = github.com:MPogoda/prezto
-    branch = master
