@@ -64,7 +64,6 @@ return {
         createKeyMap('/', 'grep_service_files', 'live /grep service'),
         createKeyMap('s', 'compile_service', 'compile [s]ervice', { watch = true }),
         createKeyMap('S', 'compile_service', 'compile [S]ervice (force)', { watch = true, force = true }),
-        createKeyMap(';', 'show_test_output', 'show test output'),
         createKeyMap('<c-s>', 'compile_service', 'compile [^s]ervice with tests', { with_tests = true, watch = true }),
         createKeyMap('g', 'api_gen_service', '[g]enerate api'),
 
