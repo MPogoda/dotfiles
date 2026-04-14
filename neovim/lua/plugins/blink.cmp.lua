@@ -6,7 +6,7 @@ local M = {
         'moyiz/blink-emoji.nvim',
     },
     version = '*',
-    event = { 'InsertEnter', 'CmdlineEnter' },
+    lazy = false,
     opts = {
         keymap = {
             preset = 'default',
