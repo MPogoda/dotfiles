@@ -49,7 +49,13 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern line cursor root)
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 
 # --- Custom aliases ---
-alias lh='ls -hAl --color=auto'
+if (( $+commands[eza] )); then
+  alias ls='eza'
+  alias lh='eza -hAl'
+else
+  alias ls='ls -G'
+  alias lh='ls -hAlG'
+fi
 
 # --- Custom functions ---
 insert_sudo() {
