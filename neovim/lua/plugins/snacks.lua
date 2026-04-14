@@ -11,7 +11,15 @@ M.opts['bigfile'] = {}
 M.opts['dashboard'] = {}
 M.opts['indent'] = {}
 M.opts['input'] = {}
-M.opts['lazygit'] = {}
+M.opts['lazygit'] = {
+    config = {
+        os = {
+            editPreset = 'nvim-remote',
+            edit = '[ -z "$NVIM" ] && (nvim -- {{filename}}) || (nvim --server "$NVIM" --remote-tab {{filename}})',
+            editAtLine = '[ -z "$NVIM" ] && (nvim +{{line}} -- {{filename}}) || (nvim --server "$NVIM" --remote-tab {{filename}} && nvim --server "$NVIM" --remote-send ":{{line}}<CR>")',
+        },
+    },
+}
 M.opts['notifier'] = {}
 M.opts['picker'] = {
     layout = 'ivy',
