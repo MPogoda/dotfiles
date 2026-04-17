@@ -57,6 +57,11 @@ else
   alias lh='ls -hAlG'
 fi
 
+alias esync='sudo nice eix-sync'
+alias update='sudo nice emerge --update --deep --newuse @world'
+alias emerge='sudo nice emerge'
+alias qlop='sudo qlop'
+
 # --- Custom functions ---
 insert_sudo() {
     [[ -z $BUFFER ]] && zle up-history
