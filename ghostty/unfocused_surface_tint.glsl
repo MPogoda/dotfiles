@@ -3,11 +3,12 @@ const float DESATURATE_AMOUNT = 0.14;
 const float TINT_AMOUNT = 0.05;
 const float VIGNETTE_AMOUNT = 0.05;
 const float TEXT_PRESERVE_AMOUNT = 0.62;
+const vec3 LUMINANCE_WEIGHTS = vec3(0.299, 0.587, 0.114);
 const vec3 WARM_TINT = vec3(1.0, 0.78, 0.48);
 
 float luminance(vec3 color)
 {
-    return dot(color, vec3(0.299, 0.587, 0.114));
+    return dot(color, LUMINANCE_WEIGHTS);
 }
 
 vec3 desaturate(vec3 color, float amount)
