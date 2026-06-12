@@ -56,6 +56,7 @@ shell-integration-features = cursor,sudo,title
 # Custom shader
 custom-shader = cursor_blaze_no_trail.glsl
 custom-shader = focus_cursor_pulse.glsl
+custom-shader = cursor_jump_ghost.glsl
 
 # Keybinds
 keybind = global:super+escape=toggle_quick_terminal
