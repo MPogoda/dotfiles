@@ -15,9 +15,15 @@ float parametricBlend(float t)
     return squared / (2.0 * (squared - t) + 1.0);
 }
 
-const vec4 CURSOR_COLOR = vec4(0.8, 0.725, 0.161, 1.0);
-const vec4 CURSOR_ACCENT = vec4(1.0, 0.0, 0.0, 1.0);
+const vec3 FALLBACK_CURSOR_COLOR = vec3(0.8, 0.725, 0.161);
+const vec3 WARM_ACCENT = vec3(1.0, 0.55, 0.18);
 const float DURATION = 0.1;
+
+vec3 cursorColor()
+{
+    float cursorBrightness = dot(iCurrentCursorColor.rgb, vec3(0.299, 0.587, 0.114));
+    return mix(FALLBACK_CURSOR_COLOR, iCurrentCursorColor.rgb, step(0.01, cursorBrightness));
+}
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
@@ -36,6 +42,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     float cursorDistance = sdBox(position, cursorCenter, cursor.zw * 0.5);
     float cursorMask = 1.0 - smoothstep(cursorDistance, 0.0, 0.003 * (1.0 - progress));
 
-    vec4 cursorLayer = mix(fragColor, CURSOR_ACCENT, cursorMask);
-    fragColor = mix(cursorLayer, CURSOR_COLOR, cursorMask);
+    vec3 color = cursorColor();
+    vec3 accent = mix(color, WARM_ACCENT, 0.28);
+    vec4 cursorLayer = mix(fragColor, vec4(accent, 1.0), cursorMask);
+    fragColor = mix(cursorLayer, vec4(color, 1.0), cursorMask);
 }
