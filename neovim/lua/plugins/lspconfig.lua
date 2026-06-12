@@ -14,7 +14,7 @@ M.opts = {
     rust_analyzer = {},
     lua_ls = {},
     hls = {},
-    ts_ls = {},
+    tsgo = {},
     pylsp = {},
     eslint = {},
 }
@@ -40,11 +40,21 @@ function M.config(_, opts)
             local map = function(key, fn, desc)
                 vim.keymap.set('n', key, fn, { desc = desc, buffer = ev.buf, noremap = true, silent = true })
             end
-            map('<leader>nd', function() require('snacks').picker.lsp_definitions() end, 'Definition')
-            map('<leader>nD', function() require('snacks').picker.lsp_declarations() end, 'Declaration')
-            map('<leader>nt', function() require('snacks').picker.lsp_type_definitions() end, 'Type definition')
-            map('<leader>ni', function() require('snacks').picker.lsp_implementations() end, 'Implementation')
-            map('<leader>nr', function() require('snacks').picker.lsp_references() end, 'References')
+            map('<leader>nd', function()
+                require('snacks').picker.lsp_definitions()
+            end, 'Definition')
+            map('<leader>nD', function()
+                require('snacks').picker.lsp_declarations()
+            end, 'Declaration')
+            map('<leader>nt', function()
+                require('snacks').picker.lsp_type_definitions()
+            end, 'Type definition')
+            map('<leader>ni', function()
+                require('snacks').picker.lsp_implementations()
+            end, 'Implementation')
+            map('<leader>nr', function()
+                require('snacks').picker.lsp_references()
+            end, 'References')
         end,
     })
 

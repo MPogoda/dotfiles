@@ -11,7 +11,7 @@ vim.opt.diffopt:append('vertical')
 vim.opt.diffopt:append('indent-heuristic')
 
 vim.opt.foldminlines = 50
-vim.opt.foldlevelstart = 2
+vim.opt.foldlevelstart = 1
 
 vim.opt.formatoptions:append('n') -- recognise numbered lists
 vim.opt.tabstop = 4
