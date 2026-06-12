@@ -6,6 +6,20 @@ const float END_SCALE = 1.4;
 const float MAX_OPACITY = 0.30;
 const float CORNER_RADIUS_RATIO = 0.28;
 const float TRAIL_LENGTH = 0.42;
+const vec3 LUMINANCE_WEIGHTS = vec3(0.299, 0.587, 0.114);
+const vec3 FALLBACK_CURSOR_COLOR = vec3(0.8, 0.725, 0.161);
+const vec3 WARM_ACCENT = vec3(1.0, 0.55, 0.18);
+
+float luminance(vec3 color)
+{
+    return dot(color, LUMINANCE_WEIGHTS);
+}
+
+vec3 cursorColor()
+{
+    float cursorBrightness = luminance(iCurrentCursorColor.rgb);
+    return mix(FALLBACK_CURSOR_COLOR, iCurrentCursorColor.rgb, step(0.01, cursorBrightness));
+}
 
 float easeOutCubic(float value)
 {
@@ -103,5 +117,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     mask += shellMask(fragCoord - currentCenter, halfSize, radius, progress, MAX_OPACITY * step(0.62, rawProgress));
 
     mask = clamp(mask, 0.0, 1.0);
-    fragColor.rgb = mix(fragColor.rgb, iCurrentCursorColor.rgb, mask);
+    vec3 jumpColor = mix(cursorColor(), WARM_ACCENT, 0.16);
+    fragColor.rgb = mix(fragColor.rgb, jumpColor, mask);
 }

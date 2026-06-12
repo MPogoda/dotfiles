@@ -15,13 +15,19 @@ float parametricBlend(float t)
     return squared / (2.0 * (squared - t) + 1.0);
 }
 
+const vec3 LUMINANCE_WEIGHTS = vec3(0.299, 0.587, 0.114);
 const vec3 FALLBACK_CURSOR_COLOR = vec3(0.8, 0.725, 0.161);
 const vec3 WARM_ACCENT = vec3(1.0, 0.55, 0.18);
 const float DURATION = 0.1;
 
+float luminance(vec3 color)
+{
+    return dot(color, LUMINANCE_WEIGHTS);
+}
+
 vec3 cursorColor()
 {
-    float cursorBrightness = dot(iCurrentCursorColor.rgb, vec3(0.299, 0.587, 0.114));
+    float cursorBrightness = luminance(iCurrentCursorColor.rgb);
     return mix(FALLBACK_CURSOR_COLOR, iCurrentCursorColor.rgb, step(0.01, cursorBrightness));
 }
 
