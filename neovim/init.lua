@@ -72,6 +72,8 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+require('ui2')
+
 local install_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.uv.fs_stat(install_path) then
     vim.fn.system({
@@ -92,7 +94,6 @@ require('lazy').setup('plugins', {
 
 require('keybinds')
 require('qfutils')
-require('ui2')
 
 vim.lsp.document_color.enable(true, nil, { style = 'virtual' })
 

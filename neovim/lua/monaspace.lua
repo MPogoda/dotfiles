@@ -29,8 +29,16 @@ vim.api.nvim_create_autocmd('ColorScheme', {
         set(0, '@string', { link = 'String' })
 
         -- Diagnostics → bold+italic → Monaspace Krypton (mechanical)
-        set(0, 'DiagnosticError', { bold = true, italic = true, fg = vim.api.nvim_get_hl(0, { name = 'DiagnosticError' }).fg })
-        set(0, 'DiagnosticWarn', { bold = true, italic = true, fg = vim.api.nvim_get_hl(0, { name = 'DiagnosticWarn' }).fg })
+        set(
+            0,
+            'DiagnosticError',
+            { bold = true, italic = true, fg = vim.api.nvim_get_hl(0, { name = 'DiagnosticError' }).fg }
+        )
+        set(
+            0,
+            'DiagnosticWarn',
+            { bold = true, italic = true, fg = vim.api.nvim_get_hl(0, { name = 'DiagnosticWarn' }).fg }
+        )
     end,
 })
 -- Trigger for the current colorscheme
